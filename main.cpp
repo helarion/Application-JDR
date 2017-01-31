@@ -1,33 +1,28 @@
 #include "headers/mainwindow.h"
+
+#include "headers/BD/jeu.h"
+
 #include <QApplication>
-#include <QtSql>
+#include <QDebug>
+
+#include <QFile>
+#include <QSettings>
+
+
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
+    QApplication app(argc, argv);
     MainWindow w;
 
-    QSqlQuery selectJeu;
+    jeu j1("D&D","test");
 
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    jeu j2();
 
-
-    db.setDatabaseName("jdr");
-    db.setUserName("root");
-    db.setPassword("");
-    db.setHostName("localhost");
-    if(db.open())
-    {
-    //cout << "ouverture OK" <<endl;
-
-    selectJeu=db.exec("SELECT * FROM 'jeu'");
-    while (selectJeu.next()) {
-          QString nomJeu = query.value(1).toString();
-      }
-
-    }
+    j1.Save();
+    j2.Load();
 
     w.show();
 
-    return a.exec();
+    return app.exec();
 }
