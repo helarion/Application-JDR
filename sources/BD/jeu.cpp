@@ -5,67 +5,49 @@
 #include <QFile>
 #include <QDebug>
 
-quint16 jeu::increment = 1;
+quint16 Jeu::increment = 1;
 
-jeu::jeu (const QString s_nom,const QString s_adrTheme) : num(increment++),nom(s_nom),adrTheme(s_adrTheme){}
-jeu::jeu (const jeu & copie)
+Jeu::Jeu (QString s_nom,QString s_adrTheme) : num(increment++)
 {
-    num = copie.num;
-    nom = copie.nom;
-    adrTheme = copie.adrTheme;
+    nom=s_nom;
+    adrTheme=s_adrTheme;
 }
-jeu::~jeu()
+Jeu::Jeu (const Jeu & Copie)
+{
+    num = Copie.num;
+    nom = Copie.nom;
+    adrTheme = Copie.adrTheme;
+}
+Jeu::Jeu (quint16 index){ Load(index); }
+Jeu::~Jeu()
 {}
 
-void jeu::afficher () const
+void Jeu::afficher () const
 {
-
+    qDebug() << num;
+    qDebug() << nom;
+    qDebug() << adrTheme;
 }
 
-quint16 jeu::getNum()
+quint16 Jeu::getNum()
 {
     return num;
 }
 
-QString jeu::getNom()
+QString Jeu::getNom()
 {
     return nom;
 }
 
-QString jeu::getTheme()
+QString Jeu::getTheme()
 {
     return adrTheme;
 }
 
-
-void jeu::initJeuSystem ()
-{
-    qRegisterMetaTypeStreamOperators<jeu>("jeu");
-
-    qMetaTypeId<jeu>();				// Teste la validité de la classe jeu
-}
-
-
-QDataStream & operator << (QDataStream & out, const jeu & valeur)
-{
-    out << valeur.num << valeur.nom << valeur.adrTheme;
-
-    return out;
-}
-
-QDataStream & operator >> (QDataStream & in, jeu & valeur)
-{
-    in >> valeur.num;
-    in >> valeur.nom;
-    in >> valeur.adrTheme;
-
-    return in;
-}
-
-void jeu::Save()
+void Jeu::Save()
 {
     qDebug() << num;
-    QString filename = "C:/Users/Axel/Documents/GitHub/Projet-S6/data/jeu/";
+    QString filename = "C:/Users/Axel/Documents/GitHub/Projet-S6/data/Jeu/";
     filename+=QString::number(num);
     qDebug() << filename;
     QFile file(filename);
@@ -86,9 +68,9 @@ void jeu::Save()
     qDebug() << filename << "Sauvegardé !";
 }
 
-void jeu::Load(quint index)
+void Jeu::Load(quint16 index)
 {
-    QString filename = "C:/Users/Axel/Documents/GitHub/Projet-S6/data/jeu/";
+    QString filename = "C:/Users/Axel/Documents/GitHub/Projet-S6/data/Jeu/";
     filename+=QString::number(index);
     QFile file(filename);
 
@@ -104,6 +86,8 @@ void jeu::Load(quint index)
     in >> num;
     in >> nom;
     in >> adrTheme;
+
+    qDebug() << index << " Récupéré.";
 
     file.close();
 

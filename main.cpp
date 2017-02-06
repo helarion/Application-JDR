@@ -1,26 +1,22 @@
 #include "headers/mainwindow.h"
 
 #include "headers/BD/jeu.h"
+#include "headers/BD/campagne.h"
 
 #include <QApplication>
 #include <QDebug>
 
-#include <QFile>
 #include <QSettings>
-
-
 
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
     MainWindow w;
+    Jeu j1(1);
 
-    jeu j1("D&D","test");
-
-    jeu j2();
-
-    j1.Save();
-    j2.Load();
+    Campagne c1(1);
+    c1.afficher();
+    c1.getJeu()->afficher();
 
     w.show();
 

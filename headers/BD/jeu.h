@@ -1,20 +1,20 @@
-#ifndef jeu_H
-#define jeu_H
+#ifndef Jeu_H
+#define Jeu_H
 
 #include <QVariant>
 #include <QString>
 
 
-class jeu
+class Jeu
 {
     public:
-        jeu (const QString s_nom = "",const QString s_adrTheme = "");	// Constructeur par défaut public
-        jeu (const jeu & copie); // Constructeur de copie public
-        ~jeu ();				// Destructeur public
-        void afficher () const;	// Affiche les informations du jeu dans la console
-        static void initJeuSystem ();
+        Jeu (QString s_nom,QString s_adrTheme);	// Constructeur par défaut public
+        Jeu (const Jeu & Copie); // Constructeur de Copie public
+        Jeu (quint16 index);
+        ~Jeu ();				// Destructeur public
+        void afficher () const;	// Affiche les informations du Jeu dans la console
         void Save();
-        void Load();
+        void Load(quint16 index);
         quint16 getNum();
         QString getNom();
         QString getTheme();
@@ -23,13 +23,6 @@ class jeu
         quint16 num;
         QString nom;
         QString adrTheme;
-
-        friend QDataStream & operator << (QDataStream &, const jeu &);
-        friend QDataStream & operator >> (QDataStream &, jeu &);
 };
-
-Q_DECLARE_METATYPE(jeu)
-QDataStream & operator << (QDataStream & out, const jeu & valeur);
-QDataStream & operator >> (QDataStream & in, jeu & valeur);
 
 #endif

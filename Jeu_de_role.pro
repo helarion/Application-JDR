@@ -24,7 +24,6 @@ SOURCES += main.cpp\
     sources/BD/jeu.cpp \
     sources/BD/jeuElement.cpp \
     sources/BD/joueur.cpp \
-    sources/BD/objetCol.cpp \
     sources/BD/objetLig.cpp \
     sources/BD/partie.cpp \
     sources/BD/personnage.cpp \
@@ -37,16 +36,15 @@ HEADERS  += headers/mainwindow.h \
     headers/BD/campagne.h \
     headers/BD/element.h \
     headers/BD/elementObjet.h \
-    headers/BD/grouper.h \
     headers/BD/jeu.h \
     headers/BD/jeuElement.h \
     headers/BD/joueur.h \
-    headers/BD/objetCol.h \
     headers/BD/objetLig.h \
     headers/BD/partie.h \
     headers/BD/personnage.h \
     headers/BD/valeurElement.h \
     headers/BD/valeurElementLong.h \
-    headers/BD/valeurObjet.h
+    headers/BD/valeurObjet.h \
+    headers/BD/groupe.h
 
 FORMS    += mainwindow.ui
