@@ -47,4 +47,8 @@ HEADERS  += headers/mainwindow.h \
     headers/BD/valeurObjet.h \
     headers/BD/groupe.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    formjeu.ui
+
+DISTFILES += \
+    listJeu.qml

@@ -18,7 +18,7 @@ Jeu::Jeu (const Jeu & Copie)
     nom = Copie.nom;
     adrTheme = Copie.adrTheme;
 }
-Jeu::Jeu (quint16 index){ Load(index); }
+Jeu::Jeu (QString index){ Load(index); }
 Jeu::~Jeu()
 {}
 
@@ -46,9 +46,10 @@ QString Jeu::getTheme()
 
 void Jeu::Save()
 {
-    qDebug() << num;
+    qDebug() << nom;
     QString filename = "C:/Users/Axel/Documents/GitHub/Projet-S6/data/Jeu/";
-    filename+=QString::number(num);
+    filename+=nom;
+    filename+=".data";
     qDebug() << filename;
     QFile file(filename);
 
@@ -68,10 +69,11 @@ void Jeu::Save()
     qDebug() << filename << "Sauvegardé !";
 }
 
-void Jeu::Load(quint16 index)
+void Jeu::Load(QString index)
 {
     QString filename = "C:/Users/Axel/Documents/GitHub/Projet-S6/data/Jeu/";
-    filename+=QString::number(index);
+    filename+=index;
+    filename+=".data";
     QFile file(filename);
 
     if(!file.open(QIODevice::ReadOnly))

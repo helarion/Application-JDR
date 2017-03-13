@@ -10,11 +10,11 @@ class Jeu
     public:
         Jeu (QString s_nom,QString s_adrTheme);	// Constructeur par défaut public
         Jeu (const Jeu & Copie); // Constructeur de Copie public
-        Jeu (quint16 index);
+        Jeu (QString index);
         ~Jeu ();				// Destructeur public
         void afficher () const;	// Affiche les informations du Jeu dans la console
         void Save();
-        void Load(quint16 index);
+        void Load(QString index);
         quint16 getNum();
         QString getNom();
         QString getTheme();
