@@ -231,7 +231,6 @@ Makefile: Jeu_de_role.pro C:\Qt\5.7\msvc2015_64\mkspecs\win32-msvc2015\qmake.con
 		C:\Qt\5.7\msvc2015_64\lib\qtmaind.prl \
 		C:\Qt\5.7\msvc2015_64\lib\Qt5Widgets.prl \
 		C:\Qt\5.7\msvc2015_64\lib\Qt5Gui.prl \
-		C:\Qt\5.7\msvc2015_64\lib\Qt5Sql.prl \
 		C:\Qt\5.7\msvc2015_64\lib\Qt5Core.prl
 	$(QMAKE) -spec win32-msvc2015 "CONFIG+=debug" "CONFIG+=qml_debug" -o Makefile Jeu_de_role.pro
 C:\Qt\5.7\msvc2015_64\mkspecs\features\spec_pre.prf:
@@ -392,7 +391,6 @@ Jeu_de_role.pro:
 C:\Qt\5.7\msvc2015_64\lib\qtmaind.prl:
 C:\Qt\5.7\msvc2015_64\lib\Qt5Widgets.prl:
 C:\Qt\5.7\msvc2015_64\lib\Qt5Gui.prl:
-C:\Qt\5.7\msvc2015_64\lib\Qt5Sql.prl:
 C:\Qt\5.7\msvc2015_64\lib\Qt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -spec win32-msvc2015 "CONFIG+=debug" "CONFIG+=qml_debug" -o Makefile Jeu_de_role.pro
