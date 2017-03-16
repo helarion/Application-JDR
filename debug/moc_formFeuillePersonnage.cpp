@@ -18,25 +18,25 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-struct qt_meta_stringdata_FeuillePersonnage_t {
+struct qt_meta_stringdata_formFeuillePersonnage_t {
     QByteArrayData data[1];
-    char stringdata0[18];
+    char stringdata0[22];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_FeuillePersonnage_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_formFeuillePersonnage_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_FeuillePersonnage_t qt_meta_stringdata_FeuillePersonnage = {
+static const qt_meta_stringdata_formFeuillePersonnage_t qt_meta_stringdata_formFeuillePersonnage = {
     {
-QT_MOC_LITERAL(0, 0, 17) // "FeuillePersonnage"
+QT_MOC_LITERAL(0, 0, 21) // "formFeuillePersonnage"
 
     },
-    "FeuillePersonnage"
+    "formFeuillePersonnage"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_FeuillePersonnage[] = {
+static const uint qt_meta_data_formFeuillePersonnage[] = {
 
  // content:
        7,       // revision
@@ -52,7 +52,7 @@ static const uint qt_meta_data_FeuillePersonnage[] = {
        0        // eod
 };
 
-void FeuillePersonnage::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void formFeuillePersonnage::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     Q_UNUSED(_o);
     Q_UNUSED(_id);
@@ -60,26 +60,26 @@ void FeuillePersonnage::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
     Q_UNUSED(_a);
 }
 
-const QMetaObject FeuillePersonnage::staticMetaObject = {
-    { &QDialog::staticMetaObject, qt_meta_stringdata_FeuillePersonnage.data,
-      qt_meta_data_FeuillePersonnage,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+const QMetaObject formFeuillePersonnage::staticMetaObject = {
+    { &QDialog::staticMetaObject, qt_meta_stringdata_formFeuillePersonnage.data,
+      qt_meta_data_formFeuillePersonnage,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
-const QMetaObject *FeuillePersonnage::metaObject() const
+const QMetaObject *formFeuillePersonnage::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *FeuillePersonnage::qt_metacast(const char *_clname)
+void *formFeuillePersonnage::qt_metacast(const char *_clname)
 {
     if (!_clname) return Q_NULLPTR;
-    if (!strcmp(_clname, qt_meta_stringdata_FeuillePersonnage.stringdata0))
-        return static_cast<void*>(const_cast< FeuillePersonnage*>(this));
+    if (!strcmp(_clname, qt_meta_stringdata_formFeuillePersonnage.stringdata0))
+        return static_cast<void*>(const_cast< formFeuillePersonnage*>(this));
     return QDialog::qt_metacast(_clname);
 }
 
-int FeuillePersonnage::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int formFeuillePersonnage::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QDialog::qt_metacall(_c, _id, _a);
     if (_id < 0)

@@ -1,14 +1,14 @@
 #include "./headers/fenetre/formFeuillePersonnage.h"
 #include "ui_formFeuillePersonnage.h"
 
-FeuillePersonnage::FeuillePersonnage(QWidget *parent) :
+formFeuillePersonnage::formFeuillePersonnage(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::FeuillePersonnage)
+    ui(new Ui::formFeuillePersonnage)
 {
     ui->setupUi(this);
 }
 
-FeuillePersonnage::~FeuillePersonnage()
+formFeuillePersonnage::~formFeuillePersonnage()
 {
     delete ui;
 }

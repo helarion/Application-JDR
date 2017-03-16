@@ -1,14 +1,14 @@
 #include "./headers/fenetre/formNouvellePartie.h"
-#include "ui_formNouvellepartie.h"
+#include "ui_formNouvellePartie.h"
 
-NouvellePartie::NouvellePartie(QWidget *parent) :
+formNouvellePartie::formNouvellePartie(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::NouvellePartie)
+    ui(new Ui::formNouvellePartie)
 {
     ui->setupUi(this);
 }
 
-NouvellePartie::~NouvellePartie()
+formNouvellePartie::~formNouvellePartie()
 {
     delete ui;
 }

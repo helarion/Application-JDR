@@ -1,22 +1,22 @@
-#ifndef NOUVELLEPARTIE_H
-#define NOUVELLEPARTIE_H
+#ifndef formNouvellePartie_H
+#define formNouvellePartie_H
 
 #include <QDialog>
 
 namespace Ui {
-class NouvellePartie;
+class formNouvellePartie;
 }
 
-class NouvellePartie : public QDialog
+class formNouvellePartie : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit NouvellePartie(QWidget *parent = 0);
-    ~NouvellePartie();
+    explicit formNouvellePartie(QWidget *parent = 0);
+    ~formNouvellePartie();
 
 private:
-    Ui::NouvellePartie *ui;
+    Ui::formNouvellePartie *ui;
 };
 
-#endif // NOUVELLEPARTIE_H
+#endif // formNouvellePartie_H

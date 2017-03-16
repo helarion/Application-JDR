@@ -18,25 +18,25 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-struct qt_meta_stringdata_Jeu_t {
+struct qt_meta_stringdata_formJeu_t {
     QByteArrayData data[1];
-    char stringdata0[4];
+    char stringdata0[8];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_Jeu_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_formJeu_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_Jeu_t qt_meta_stringdata_Jeu = {
+static const qt_meta_stringdata_formJeu_t qt_meta_stringdata_formJeu = {
     {
-QT_MOC_LITERAL(0, 0, 3) // "Jeu"
+QT_MOC_LITERAL(0, 0, 7) // "formJeu"
 
     },
-    "Jeu"
+    "formJeu"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_Jeu[] = {
+static const uint qt_meta_data_formJeu[] = {
 
  // content:
        7,       // revision
@@ -52,7 +52,7 @@ static const uint qt_meta_data_Jeu[] = {
        0        // eod
 };
 
-void Jeu::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void formJeu::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     Q_UNUSED(_o);
     Q_UNUSED(_id);
@@ -60,26 +60,26 @@ void Jeu::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **
     Q_UNUSED(_a);
 }
 
-const QMetaObject Jeu::staticMetaObject = {
-    { &QDialog::staticMetaObject, qt_meta_stringdata_Jeu.data,
-      qt_meta_data_Jeu,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+const QMetaObject formJeu::staticMetaObject = {
+    { &QDialog::staticMetaObject, qt_meta_stringdata_formJeu.data,
+      qt_meta_data_formJeu,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
-const QMetaObject *Jeu::metaObject() const
+const QMetaObject *formJeu::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *Jeu::qt_metacast(const char *_clname)
+void *formJeu::qt_metacast(const char *_clname)
 {
     if (!_clname) return Q_NULLPTR;
-    if (!strcmp(_clname, qt_meta_stringdata_Jeu.stringdata0))
-        return static_cast<void*>(const_cast< Jeu*>(this));
+    if (!strcmp(_clname, qt_meta_stringdata_formJeu.stringdata0))
+        return static_cast<void*>(const_cast< formJeu*>(this));
     return QDialog::qt_metacast(_clname);
 }
 
-int Jeu::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int formJeu::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QDialog::qt_metacall(_c, _id, _a);
     if (_id < 0)

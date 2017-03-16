@@ -18,27 +18,28 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-struct qt_meta_stringdata_ContinuerJeu_t {
+struct qt_meta_stringdata_formContinuerJeu_t {
     QByteArrayData data[3];
-    char stringdata0[36];
+    char stringdata0[40];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_ContinuerJeu_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_formContinuerJeu_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_ContinuerJeu_t qt_meta_stringdata_ContinuerJeu = {
+static const qt_meta_stringdata_formContinuerJeu_t qt_meta_stringdata_formContinuerJeu = {
     {
-QT_MOC_LITERAL(0, 0, 12), // "ContinuerJeu"
-QT_MOC_LITERAL(1, 13, 21), // "on_pushButton_clicked"
-QT_MOC_LITERAL(2, 35, 0) // ""
+QT_MOC_LITERAL(0, 0, 16), // "formContinuerJeu"
+QT_MOC_LITERAL(1, 17, 21), // "on_pushButton_clicked"
+QT_MOC_LITERAL(2, 39, 0) // ""
 
     },
-    "ContinuerJeu\0on_pushButton_clicked\0"
+    "formContinuerJeu\0on_pushButton_clicked\0"
+    ""
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_ContinuerJeu[] = {
+static const uint qt_meta_data_formContinuerJeu[] = {
 
  // content:
        7,       // revision
@@ -60,10 +61,10 @@ static const uint qt_meta_data_ContinuerJeu[] = {
        0        // eod
 };
 
-void ContinuerJeu::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void formContinuerJeu::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        ContinuerJeu *_t = static_cast<ContinuerJeu *>(_o);
+        formContinuerJeu *_t = static_cast<formContinuerJeu *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->on_pushButton_clicked(); break;
@@ -73,26 +74,26 @@ void ContinuerJeu::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
     Q_UNUSED(_a);
 }
 
-const QMetaObject ContinuerJeu::staticMetaObject = {
-    { &QDialog::staticMetaObject, qt_meta_stringdata_ContinuerJeu.data,
-      qt_meta_data_ContinuerJeu,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+const QMetaObject formContinuerJeu::staticMetaObject = {
+    { &QDialog::staticMetaObject, qt_meta_stringdata_formContinuerJeu.data,
+      qt_meta_data_formContinuerJeu,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
-const QMetaObject *ContinuerJeu::metaObject() const
+const QMetaObject *formContinuerJeu::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *ContinuerJeu::qt_metacast(const char *_clname)
+void *formContinuerJeu::qt_metacast(const char *_clname)
 {
     if (!_clname) return Q_NULLPTR;
-    if (!strcmp(_clname, qt_meta_stringdata_ContinuerJeu.stringdata0))
-        return static_cast<void*>(const_cast< ContinuerJeu*>(this));
+    if (!strcmp(_clname, qt_meta_stringdata_formContinuerJeu.stringdata0))
+        return static_cast<void*>(const_cast< formContinuerJeu*>(this));
     return QDialog::qt_metacast(_clname);
 }
 
-int ContinuerJeu::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int formContinuerJeu::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QDialog::qt_metacall(_c, _id, _a);
     if (_id < 0)

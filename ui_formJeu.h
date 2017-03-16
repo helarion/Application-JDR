@@ -15,33 +15,54 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QListWidget>
+#include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
 
-class Ui_Jeu
+class Ui_formJeu
 {
 public:
+    QLabel *label;
+    QListWidget *listJeu;
+    QPushButton *pushButton;
 
-    void setupUi(QDialog *Jeu)
+    void setupUi(QDialog *formJeu)
     {
-        if (Jeu->objectName().isEmpty())
-            Jeu->setObjectName(QStringLiteral("Jeu"));
-        Jeu->resize(400, 300);
+        if (formJeu->objectName().isEmpty())
+            formJeu->setObjectName(QStringLiteral("formJeu"));
+        formJeu->resize(400, 300);
+        label = new QLabel(formJeu);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(120, 20, 151, 31));
+        listJeu = new QListWidget(formJeu);
+        listJeu->setObjectName(QStringLiteral("listJeu"));
+        listJeu->setGeometry(QRect(120, 50, 151, 171));
+        pushButton = new QPushButton(formJeu);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(150, 250, 101, 31));
+        QFont font;
+        font.setBold(true);
+        font.setWeight(75);
+        pushButton->setFont(font);
 
-        retranslateUi(Jeu);
+        retranslateUi(formJeu);
 
-        QMetaObject::connectSlotsByName(Jeu);
+        QMetaObject::connectSlotsByName(formJeu);
     } // setupUi
 
-    void retranslateUi(QDialog *Jeu)
+    void retranslateUi(QDialog *formJeu)
     {
-        Jeu->setWindowTitle(QApplication::translate("Jeu", "Dialog", 0));
+        formJeu->setWindowTitle(QApplication::translate("formJeu", "Dialog", 0));
+        label->setText(QApplication::translate("formJeu", "S\303\251lectionner un jeu existant :", 0));
+        pushButton->setText(QApplication::translate("formJeu", "Valider", 0));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class Jeu: public Ui_Jeu {};
+    class formJeu: public Ui_formJeu {};
 } // namespace Ui
 
 QT_END_NAMESPACE

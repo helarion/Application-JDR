@@ -18,25 +18,25 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-struct qt_meta_stringdata_Partie_t {
+struct qt_meta_stringdata_formPartie_t {
     QByteArrayData data[1];
-    char stringdata0[7];
+    char stringdata0[11];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_Partie_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_formPartie_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_Partie_t qt_meta_stringdata_Partie = {
+static const qt_meta_stringdata_formPartie_t qt_meta_stringdata_formPartie = {
     {
-QT_MOC_LITERAL(0, 0, 6) // "Partie"
+QT_MOC_LITERAL(0, 0, 10) // "formPartie"
 
     },
-    "Partie"
+    "formPartie"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_Partie[] = {
+static const uint qt_meta_data_formPartie[] = {
 
  // content:
        7,       // revision
@@ -52,7 +52,7 @@ static const uint qt_meta_data_Partie[] = {
        0        // eod
 };
 
-void Partie::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void formPartie::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     Q_UNUSED(_o);
     Q_UNUSED(_id);
@@ -60,26 +60,26 @@ void Partie::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
     Q_UNUSED(_a);
 }
 
-const QMetaObject Partie::staticMetaObject = {
-    { &QDialog::staticMetaObject, qt_meta_stringdata_Partie.data,
-      qt_meta_data_Partie,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+const QMetaObject formPartie::staticMetaObject = {
+    { &QDialog::staticMetaObject, qt_meta_stringdata_formPartie.data,
+      qt_meta_data_formPartie,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
-const QMetaObject *Partie::metaObject() const
+const QMetaObject *formPartie::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *Partie::qt_metacast(const char *_clname)
+void *formPartie::qt_metacast(const char *_clname)
 {
     if (!_clname) return Q_NULLPTR;
-    if (!strcmp(_clname, qt_meta_stringdata_Partie.stringdata0))
-        return static_cast<void*>(const_cast< Partie*>(this));
+    if (!strcmp(_clname, qt_meta_stringdata_formPartie.stringdata0))
+        return static_cast<void*>(const_cast< formPartie*>(this));
     return QDialog::qt_metacast(_clname);
 }
 
-int Partie::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int formPartie::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QDialog::qt_metacall(_c, _id, _a);
     if (_id < 0)

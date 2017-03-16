@@ -1,14 +1,14 @@
 #include "./headers/fenetre/formNouvelleCampagne.h"
 #include "ui_formNouvelleCampagne.h"
 
-NouvelleCampagne::NouvelleCampagne(QWidget *parent) :
+formNouvelleCampagne::formNouvelleCampagne(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::NouvelleCampagne)
+    ui(new Ui::formNouvelleCampagne)
 {
     ui->setupUi(this);
 }
 
-NouvelleCampagne::~NouvelleCampagne()
+formNouvelleCampagne::~formNouvelleCampagne()
 {
     delete ui;
 }

@@ -7,9 +7,11 @@
 TEMPLATE = app
 
 QT += core gui
+      core
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Jeu_de_role
+
 
 FORMS += \
     sources/fenetre/formCampagne.ui \
@@ -38,7 +40,6 @@ HEADERS += \
     headers/BD/valeurElementLong.h \
     headers/BD/valeurObjet.h \
     headers/fenetre/formCampagne.h \
-    headers/fenetre/formContinuerJeu.h \
     headers/fenetre/formFeuillePersonnage.h \
     headers/fenetre/formInventaire.h \
     headers/fenetre/formNouveauJeu.h \
@@ -48,7 +49,6 @@ HEADERS += \
     headers/fenetre/formJeu.h \
     headers/mainwindow.h \
     ui_formCampagne.h \
-    ui_formContinuerJeu.h \
     ui_formFeuillePersonnage.h \
     ui_formInventaire.h \
     ui_formNouveauJeu.h \
@@ -74,7 +74,6 @@ SOURCES += \
     sources/BD/valeurElementLong.cpp \
     sources/BD/valeurObjet.cpp \
     sources/fenetre/formCampagne.cpp \
-    sources/fenetre/formContinuerJeu.cpp \
     sources/fenetre/formFeuillePersonnage.cpp \
     sources/fenetre/formInventaire.cpp \
     sources/fenetre/formNouveauJeu.cpp \

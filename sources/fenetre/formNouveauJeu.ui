@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>NouveauStyle</class>
- <widget class="QDialog" name="NouveauStyle">
+ <class>formNouveauJeu</class>
+ <widget class="QDialog" name="formNouveauJeu">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -26,7 +26,7 @@
     <string>Nom du nouveau Jeu :</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="NomStyle">
+  <widget class="QLineEdit" name="NomJeu">
    <property name="geometry">
     <rect>
      <x>170</x>
@@ -36,27 +36,17 @@
     </rect>
    </property>
   </widget>
-  <widget class="QTextEdit" name="DescriptionStyle">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>110</y>
-     <width>231</width>
-     <height>121</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>90</y>
+     <y>100</y>
      <width>121</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>Description :</string>
+    <string>Adresse du theme :</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
@@ -80,7 +70,7 @@
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="CreerStyle">
+  <widget class="QPushButton" name="CreerJeu">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -93,7 +83,7 @@
     <string>Creer</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="AnnulerStyle">
+  <widget class="QPushButton" name="AnnulerJeu">
    <property name="geometry">
     <rect>
      <x>190</x>
@@ -106,36 +96,23 @@
     <string>Annuler</string>
    </property>
   </widget>
-  <widget class="QListWidget" name="listWidget">
+  <widget class="QLineEdit" name="AdrTheme">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>110</y>
-     <width>101</width>
-     <height>151</height>
+     <x>170</x>
+     <y>100</y>
+     <width>113</width>
+     <height>20</height>
     </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>310</x>
-     <y>90</y>
-     <width>71</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Attributs :</string>
    </property>
   </widget>
  </widget>
  <resources/>
  <connections>
   <connection>
-   <sender>AnnulerStyle</sender>
+   <sender>AnnulerJeu</sender>
    <signal>clicked()</signal>
-   <receiver>NouveauStyle</receiver>
+   <receiver>formNouveauJeu</receiver>
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">

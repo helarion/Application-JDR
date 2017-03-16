@@ -22,7 +22,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_NouvellePartie
+class Ui_formNouvellePartie
 {
 public:
     QLabel *label;
@@ -34,55 +34,55 @@ public:
     QTextEdit *textEdit;
     QPushButton *pushButton;
 
-    void setupUi(QDialog *NouvellePartie)
+    void setupUi(QDialog *formNouvellePartie)
     {
-        if (NouvellePartie->objectName().isEmpty())
-            NouvellePartie->setObjectName(QStringLiteral("NouvellePartie"));
-        NouvellePartie->resize(312, 300);
-        label = new QLabel(NouvellePartie);
+        if (formNouvellePartie->objectName().isEmpty())
+            formNouvellePartie->setObjectName(QStringLiteral("formNouvellePartie"));
+        formNouvellePartie->resize(312, 300);
+        label = new QLabel(formNouvellePartie);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(160, 20, 101, 31));
-        label_2 = new QLabel(NouvellePartie);
+        label_2 = new QLabel(formNouvellePartie);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(20, 60, 47, 13));
-        label_3 = new QLabel(NouvellePartie);
+        label_3 = new QLabel(formNouvellePartie);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(20, 90, 47, 13));
-        lineEdit = new QLineEdit(NouvellePartie);
+        lineEdit = new QLineEdit(formNouvellePartie);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
         lineEdit->setGeometry(QRect(60, 60, 113, 20));
-        lineEdit_2 = new QLineEdit(NouvellePartie);
+        lineEdit_2 = new QLineEdit(formNouvellePartie);
         lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
         lineEdit_2->setGeometry(QRect(60, 90, 113, 20));
-        label_4 = new QLabel(NouvellePartie);
+        label_4 = new QLabel(formNouvellePartie);
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setGeometry(QRect(10, 110, 71, 16));
-        textEdit = new QTextEdit(NouvellePartie);
+        textEdit = new QTextEdit(formNouvellePartie);
         textEdit->setObjectName(QStringLiteral("textEdit"));
         textEdit->setGeometry(QRect(20, 130, 261, 101));
-        pushButton = new QPushButton(NouvellePartie);
+        pushButton = new QPushButton(formNouvellePartie);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(120, 250, 75, 23));
 
-        retranslateUi(NouvellePartie);
+        retranslateUi(formNouvellePartie);
 
-        QMetaObject::connectSlotsByName(NouvellePartie);
+        QMetaObject::connectSlotsByName(formNouvellePartie);
     } // setupUi
 
-    void retranslateUi(QDialog *NouvellePartie)
+    void retranslateUi(QDialog *formNouvellePartie)
     {
-        NouvellePartie->setWindowTitle(QApplication::translate("NouvellePartie", "Dialog", 0));
-        label->setText(QApplication::translate("NouvellePartie", "Nouvelle Partie :", 0));
-        label_2->setText(QApplication::translate("NouvellePartie", "Date :", 0));
-        label_3->setText(QApplication::translate("NouvellePartie", "Nom :", 0));
-        label_4->setText(QApplication::translate("NouvellePartie", "Description :", 0));
-        pushButton->setText(QApplication::translate("NouvellePartie", "Valider", 0));
+        formNouvellePartie->setWindowTitle(QApplication::translate("formNouvellePartie", "Dialog", 0));
+        label->setText(QApplication::translate("formNouvellePartie", "Nouvelle Partie :", 0));
+        label_2->setText(QApplication::translate("formNouvellePartie", "Date :", 0));
+        label_3->setText(QApplication::translate("formNouvellePartie", "Nom :", 0));
+        label_4->setText(QApplication::translate("formNouvellePartie", "Description :", 0));
+        pushButton->setText(QApplication::translate("formNouvellePartie", "Valider", 0));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class NouvellePartie: public Ui_NouvellePartie {};
+    class formNouvellePartie: public Ui_formNouvellePartie {};
 } // namespace Ui
 
 QT_END_NAMESPACE

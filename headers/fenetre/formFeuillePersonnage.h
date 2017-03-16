@@ -1,22 +1,22 @@
-#ifndef FEUILLEPERSONNAGE_H
-#define FEUILLEPERSONNAGE_H
+#ifndef formFeuillePersonnage_H
+#define formFeuillePersonnage_H
 
 #include <QDialog>
 
 namespace Ui {
-class FeuillePersonnage;
+class formFeuillePersonnage;
 }
 
-class FeuillePersonnage : public QDialog
+class formFeuillePersonnage : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit FeuillePersonnage(QWidget *parent = 0);
-    ~FeuillePersonnage();
+    explicit formFeuillePersonnage(QWidget *parent = 0);
+    ~formFeuillePersonnage();
 
 private:
-    Ui::FeuillePersonnage *ui;
+    Ui::formFeuillePersonnage *ui;
 };
 
-#endif // FEUILLEPERSONNAGE_H
+#endif // formFeuillePersonnage_H

@@ -1,7 +1,7 @@
 #include "headers/mainwindow.h"
 #include "ui_mainwindow.h"
 #include "headers/fenetre/formNouveauJeu.h"
-#include "headers/fenetre/formContinuerJeu.h"
+#include "headers/fenetre/formJeu.h"
 #include <QtWidgets>
 
 
@@ -20,14 +20,14 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_New_clicked()
 {
-    NouveauJeu nouveauJeu;
-    nouveauJeu.setModal(true);
-    nouveauJeu.exec();
+    formNouveauJeu formNouveauJeu;
+    formNouveauJeu.setModal(true);
+    formNouveauJeu.exec();
 }
 
 void MainWindow::on_Continue_clicked()
 {
-    ContinuerJeu continuerJeu;
-    continuerJeu.setModal(true);
-    continuerJeu.exec();
+    formJeu formJeu;
+    formJeu.setModal(true);
+    formJeu.exec();
 }

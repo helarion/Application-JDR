@@ -1,14 +1,14 @@
 #include "./headers/fenetre/formInventaire.h"
 #include "ui_formInventaire.h"
 
-Inventaire::Inventaire(QWidget *parent) :
+formInventaire::formInventaire(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::Inventaire)
+    ui(new Ui::formInventaire)
 {
     ui->setupUi(this);
 }
 
-Inventaire::~Inventaire()
+formInventaire::~formInventaire()
 {
     delete ui;
 }

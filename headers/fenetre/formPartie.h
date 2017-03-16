@@ -1,22 +1,22 @@
-#ifndef PARTIE_H
-#define PARTIE_H
+#ifndef formPartie_H
+#define formPartie_H
 
 #include <QDialog>
 
 namespace Ui {
-class Partie;
+class formPartie;
 }
 
-class Partie : public QDialog
+class formPartie : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit Partie(QWidget *parent = 0);
-    ~Partie();
+    explicit formPartie(QWidget *parent = 0);
+    ~formPartie();
 
 private:
-    Ui::Partie *ui;
+    Ui::formPartie *ui;
 };
 
-#endif // PARTIE_H
+#endif // formPartie_H

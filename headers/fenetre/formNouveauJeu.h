@@ -1,24 +1,26 @@
-#ifndef NOUVEAUJeu_H
-#define NOUVEAUJeu_H
+#ifndef formNouveauJeu_H
+#define formNouveauJeu_H
 
 #include <QDialog>
 
 namespace Ui {
-class NouveauJeu;
+class formNouveauJeu;
 }
 
-class NouveauJeu : public QDialog
+class formNouveauJeu : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit NouveauJeu(QWidget *parent = 0);
-    ~NouveauJeu();
+    explicit formNouveauJeu(QWidget *parent = 0);
+    ~formNouveauJeu();
 
 private slots:
 
+    void on_CreerJeu_clicked();
+
 private:
-    Ui::NouveauJeu *ui;
+    Ui::formNouveauJeu *ui;
 };
 
-#endif // NOUVEAUJeu_H
+#endif // formNouveauJeu_H

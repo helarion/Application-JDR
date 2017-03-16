@@ -1,22 +1,22 @@
-#ifndef CAMPAGNE_H
-#define CAMPAGNE_H
+#ifndef formCampagne_H
+#define formCampagne_H
 
 #include <QDialog>
 
 namespace Ui {
-class Campagne;
+class formCampagne;
 }
 
-class Campagne : public QDialog
+class formCampagne : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit Campagne(QWidget *parent = 0);
-    ~Campagne();
+    explicit formCampagne(QWidget *parent = 0);
+    ~formCampagne();
 
 private:
-    Ui::Campagne *ui;
+    Ui::formCampagne *ui;
 };
 
-#endif // CAMPAGNE_H
+#endif // formCampagne_H

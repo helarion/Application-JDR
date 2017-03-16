@@ -1,22 +1,22 @@
-#ifndef INVENTAIRE_H
-#define INVENTAIRE_H
+#ifndef formInventaire_H
+#define formInventaire_H
 
 #include <QDialog>
 
 namespace Ui {
-class Inventaire;
+class formInventaire;
 }
 
-class Inventaire : public QDialog
+class formInventaire : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit Inventaire(QWidget *parent = 0);
-    ~Inventaire();
+    explicit formInventaire(QWidget *parent = 0);
+    ~formInventaire();
 
 private:
-    Ui::Inventaire *ui;
+    Ui::formInventaire *ui;
 };
 
-#endif // INVENTAIRE_H
+#endif // formInventaire_H

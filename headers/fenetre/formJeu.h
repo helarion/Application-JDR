@@ -1,22 +1,22 @@
-#ifndef Jeu_H
-#define Jeu_H
+#ifndef formJeu_H
+#define formJeu_H
 
 #include <QDialog>
 
 namespace Ui {
-class Jeu;
+class formJeu;
 }
 
-class Jeu : public QDialog
+class formJeu : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit Jeu(QWidget *parent = 0);
-    ~Jeu();
+    explicit formJeu(QWidget *parent = 0);
+    ~formJeu();
 
 private:
-    Ui::Jeu *ui;
+    Ui::formJeu *ui;
 };
 
-#endif // Jeu_H
+#endif // formJeu_H

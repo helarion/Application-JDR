@@ -1,22 +1,22 @@
-#ifndef NOUVELLECAMPAGNE_H
-#define NOUVELLECAMPAGNE_H
+#ifndef formNouvelleCampagne_H
+#define formNouvelleCampagne_H
 
 #include <QDialog>
 
 namespace Ui {
-class NouvelleCampagne;
+class formNouvelleCampagne;
 }
 
-class NouvelleCampagne : public QDialog
+class formNouvelleCampagne : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit NouvelleCampagne(QWidget *parent = 0);
-    ~NouvelleCampagne();
+    explicit formNouvelleCampagne(QWidget *parent = 0);
+    ~formNouvelleCampagne();
 
 private:
-    Ui::NouvelleCampagne *ui;
+    Ui::formNouvelleCampagne *ui;
 };
 
-#endif // NOUVELLECAMPAGNE_H
+#endif // formNouvelleCampagne_H

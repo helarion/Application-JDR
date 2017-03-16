@@ -18,25 +18,25 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-struct qt_meta_stringdata_Campagne_t {
+struct qt_meta_stringdata_formCampagne_t {
     QByteArrayData data[1];
-    char stringdata0[9];
+    char stringdata0[13];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_Campagne_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_formCampagne_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_Campagne_t qt_meta_stringdata_Campagne = {
+static const qt_meta_stringdata_formCampagne_t qt_meta_stringdata_formCampagne = {
     {
-QT_MOC_LITERAL(0, 0, 8) // "Campagne"
+QT_MOC_LITERAL(0, 0, 12) // "formCampagne"
 
     },
-    "Campagne"
+    "formCampagne"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_Campagne[] = {
+static const uint qt_meta_data_formCampagne[] = {
 
  // content:
        7,       // revision
@@ -52,7 +52,7 @@ static const uint qt_meta_data_Campagne[] = {
        0        // eod
 };
 
-void Campagne::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void formCampagne::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     Q_UNUSED(_o);
     Q_UNUSED(_id);
@@ -60,26 +60,26 @@ void Campagne::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
     Q_UNUSED(_a);
 }
 
-const QMetaObject Campagne::staticMetaObject = {
-    { &QDialog::staticMetaObject, qt_meta_stringdata_Campagne.data,
-      qt_meta_data_Campagne,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+const QMetaObject formCampagne::staticMetaObject = {
+    { &QDialog::staticMetaObject, qt_meta_stringdata_formCampagne.data,
+      qt_meta_data_formCampagne,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
-const QMetaObject *Campagne::metaObject() const
+const QMetaObject *formCampagne::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *Campagne::qt_metacast(const char *_clname)
+void *formCampagne::qt_metacast(const char *_clname)
 {
     if (!_clname) return Q_NULLPTR;
-    if (!strcmp(_clname, qt_meta_stringdata_Campagne.stringdata0))
-        return static_cast<void*>(const_cast< Campagne*>(this));
+    if (!strcmp(_clname, qt_meta_stringdata_formCampagne.stringdata0))
+        return static_cast<void*>(const_cast< formCampagne*>(this));
     return QDialog::qt_metacast(_clname);
 }
 
-int Campagne::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int formCampagne::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QDialog::qt_metacall(_c, _id, _a);
     if (_id < 0)
