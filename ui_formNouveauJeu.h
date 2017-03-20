@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'formNouveauJeu.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -71,12 +71,12 @@ public:
 
     void retranslateUi(QDialog *formNouveauJeu)
     {
-        formNouveauJeu->setWindowTitle(QApplication::translate("formNouveauJeu", "Dialog", 0));
-        label->setText(QApplication::translate("formNouveauJeu", "Nom du nouveau Jeu :", 0));
-        label_2->setText(QApplication::translate("formNouveauJeu", "Adresse du theme :", 0));
-        label_3->setText(QApplication::translate("formNouveauJeu", "Nouveau Jeu :", 0));
-        CreerJeu->setText(QApplication::translate("formNouveauJeu", "Creer", 0));
-        AnnulerJeu->setText(QApplication::translate("formNouveauJeu", "Annuler", 0));
+        formNouveauJeu->setWindowTitle(QApplication::translate("formNouveauJeu", "Dialog", Q_NULLPTR));
+        label->setText(QApplication::translate("formNouveauJeu", "Nom du nouveau Jeu :", Q_NULLPTR));
+        label_2->setText(QApplication::translate("formNouveauJeu", "Adresse du theme :", Q_NULLPTR));
+        label_3->setText(QApplication::translate("formNouveauJeu", "Nouveau Jeu :", Q_NULLPTR));
+        CreerJeu->setText(QApplication::translate("formNouveauJeu", "Creer", Q_NULLPTR));
+        AnnulerJeu->setText(QApplication::translate("formNouveauJeu", "Annuler", Q_NULLPTR));
     } // retranslateUi
 
 };

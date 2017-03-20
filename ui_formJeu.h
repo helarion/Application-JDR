@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'formJeu.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -54,9 +54,9 @@ public:
 
     void retranslateUi(QDialog *formJeu)
     {
-        formJeu->setWindowTitle(QApplication::translate("formJeu", "Dialog", 0));
-        label->setText(QApplication::translate("formJeu", "S\303\251lectionner un jeu existant :", 0));
-        pushButton->setText(QApplication::translate("formJeu", "Valider", 0));
+        formJeu->setWindowTitle(QApplication::translate("formJeu", "Dialog", Q_NULLPTR));
+        label->setText(QApplication::translate("formJeu", "S\303\251lectionner un jeu existant :", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("formJeu", "Valider", Q_NULLPTR));
     } // retranslateUi
 
 };

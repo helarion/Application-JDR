@@ -11,7 +11,8 @@ formJeu::formJeu(QWidget *parent) :
     ui(new Ui::formJeu)
 {
     ui->setupUi(this);
-    QVector<Jeu> listJeu(100);
+    qDebug() << "test";
+    //QVector<Jeu> listJeu(100);
     QString nom;
     QStringList list;
     QString path="data/Jeu";
@@ -22,7 +23,7 @@ formJeu::formJeu(QWidget *parent) :
             list=file.fileName().split(".data");
             nom=list.at(0);
             Jeu j(nom);
-            listJeu.append(j);
+            //listJeu.append(j);
             ui->listJeu->addItem(nom);
             qDebug() << "FILE: " <<nom;
         }

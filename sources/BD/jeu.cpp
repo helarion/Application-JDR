@@ -47,7 +47,7 @@ QString Jeu::getTheme()
 void Jeu::Save()
 {
     qDebug() << nom;
-    QString filename = "C:/Users/Axel/Documents/GitHub/Projet-S6/data/Jeu/";
+    QString filename = "data/Jeu/";
     filename+=nom;
     filename+=".data";
     qDebug() << filename;
@@ -71,7 +71,7 @@ void Jeu::Save()
 
 void Jeu::Load(QString index)
 {
-    QString filename = "C:/Users/Axel/Documents/GitHub/Projet-S6/data/Jeu/";
+    QString filename = "data/Jeu/";
     filename+=index;
     filename+=".data";
     QFile file(filename);

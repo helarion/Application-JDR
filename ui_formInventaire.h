@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'formInventaire.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -75,12 +75,12 @@ public:
 
     void retranslateUi(QDialog *formInventaire)
     {
-        formInventaire->setWindowTitle(QApplication::translate("formInventaire", "Dialog", 0));
-        label->setText(QApplication::translate("formInventaire", "Inventaire :", 0));
-        label_2->setText(QApplication::translate("formInventaire", "Objets :", 0));
-        label_3->setText(QApplication::translate("formInventaire", "Argent :", 0));
-        label_4->setText(QApplication::translate("formInventaire", "Usure :", 0));
-        label_5->setText(QApplication::translate("formInventaire", "Description :", 0));
+        formInventaire->setWindowTitle(QApplication::translate("formInventaire", "Dialog", Q_NULLPTR));
+        label->setText(QApplication::translate("formInventaire", "Inventaire :", Q_NULLPTR));
+        label_2->setText(QApplication::translate("formInventaire", "Objets :", Q_NULLPTR));
+        label_3->setText(QApplication::translate("formInventaire", "Argent :", Q_NULLPTR));
+        label_4->setText(QApplication::translate("formInventaire", "Usure :", Q_NULLPTR));
+        label_5->setText(QApplication::translate("formInventaire", "Description :", Q_NULLPTR));
     } // retranslateUi
 
 };

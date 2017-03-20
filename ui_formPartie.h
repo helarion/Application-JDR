@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'formPartie.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -75,14 +75,14 @@ public:
 
     void retranslateUi(QDialog *formPartie)
     {
-        formPartie->setWindowTitle(QApplication::translate("formPartie", "Dialog", 0));
-        label->setText(QApplication::translate("formPartie", "Parties :", 0));
-        label_2->setText(QApplication::translate("formPartie", "Liste :", 0));
-        label_3->setText(QApplication::translate("formPartie", "Desscription :", 0));
-        pushButton->setText(QApplication::translate("formPartie", "Selectionner", 0));
-        pushButton_2->setText(QApplication::translate("formPartie", "Supprimer", 0));
-        pushButton_3->setText(QApplication::translate("formPartie", "Ajouter", 0));
-        pushButton_4->setText(QApplication::translate("formPartie", "Editer", 0));
+        formPartie->setWindowTitle(QApplication::translate("formPartie", "Dialog", Q_NULLPTR));
+        label->setText(QApplication::translate("formPartie", "Parties :", Q_NULLPTR));
+        label_2->setText(QApplication::translate("formPartie", "Liste :", Q_NULLPTR));
+        label_3->setText(QApplication::translate("formPartie", "Desscription :", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("formPartie", "Selectionner", Q_NULLPTR));
+        pushButton_2->setText(QApplication::translate("formPartie", "Supprimer", Q_NULLPTR));
+        pushButton_3->setText(QApplication::translate("formPartie", "Ajouter", Q_NULLPTR));
+        pushButton_4->setText(QApplication::translate("formPartie", "Editer", Q_NULLPTR));
     } // retranslateUi
 
 };

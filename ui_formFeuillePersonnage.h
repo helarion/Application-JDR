@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'formFeuillePersonnage.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -189,27 +189,27 @@ public:
 
     void retranslateUi(QDialog *formFeuillePersonnage)
     {
-        formFeuillePersonnage->setWindowTitle(QApplication::translate("formFeuillePersonnage", "Dialog", 0));
-        label->setText(QApplication::translate("formFeuillePersonnage", "Joueur :", 0));
-        label_2->setText(QApplication::translate("formFeuillePersonnage", "Pr\303\251nom :", 0));
-        label_3->setText(QApplication::translate("formFeuillePersonnage", "Nom :", 0));
-        label_4->setText(QApplication::translate("formFeuillePersonnage", "Race :", 0));
-        label_5->setText(QApplication::translate("formFeuillePersonnage", "Classe :", 0));
-        label_6->setText(QApplication::translate("formFeuillePersonnage", "Sexe :", 0));
-        label_7->setText(QApplication::translate("formFeuillePersonnage", "______________________________________________________________________________", 0));
-        label_8->setText(QApplication::translate("formFeuillePersonnage", "Comp\303\251tences :", 0));
-        label_9->setText(QApplication::translate("formFeuillePersonnage", "Attribut 1", 0));
-        label_10->setText(QApplication::translate("formFeuillePersonnage", "Attribut 2 ", 0));
-        label_11->setText(QApplication::translate("formFeuillePersonnage", "Attribut 3", 0));
-        label_12->setText(QApplication::translate("formFeuillePersonnage", "Attribut 4", 0));
-        label_13->setText(QApplication::translate("formFeuillePersonnage", "Attribut 5", 0));
-        label_14->setText(QApplication::translate("formFeuillePersonnage", "Attribut 6", 0));
-        label_15->setText(QApplication::translate("formFeuillePersonnage", "PV :", 0));
-        label_16->setText(QApplication::translate("formFeuillePersonnage", "/", 0));
-        label_17->setText(QApplication::translate("formFeuillePersonnage", "Niveau :", 0));
-        label_18->setText(QApplication::translate("formFeuillePersonnage", "Age :", 0));
-        label_19->setText(QApplication::translate("formFeuillePersonnage", "Descriptif :", 0));
-        pushButton->setText(QApplication::translate("formFeuillePersonnage", "Inventaire", 0));
+        formFeuillePersonnage->setWindowTitle(QApplication::translate("formFeuillePersonnage", "Dialog", Q_NULLPTR));
+        label->setText(QApplication::translate("formFeuillePersonnage", "Joueur :", Q_NULLPTR));
+        label_2->setText(QApplication::translate("formFeuillePersonnage", "Pr\303\251nom :", Q_NULLPTR));
+        label_3->setText(QApplication::translate("formFeuillePersonnage", "Nom :", Q_NULLPTR));
+        label_4->setText(QApplication::translate("formFeuillePersonnage", "Race :", Q_NULLPTR));
+        label_5->setText(QApplication::translate("formFeuillePersonnage", "Classe :", Q_NULLPTR));
+        label_6->setText(QApplication::translate("formFeuillePersonnage", "Sexe :", Q_NULLPTR));
+        label_7->setText(QApplication::translate("formFeuillePersonnage", "______________________________________________________________________________", Q_NULLPTR));
+        label_8->setText(QApplication::translate("formFeuillePersonnage", "Comp\303\251tences :", Q_NULLPTR));
+        label_9->setText(QApplication::translate("formFeuillePersonnage", "Attribut 1", Q_NULLPTR));
+        label_10->setText(QApplication::translate("formFeuillePersonnage", "Attribut 2 ", Q_NULLPTR));
+        label_11->setText(QApplication::translate("formFeuillePersonnage", "Attribut 3", Q_NULLPTR));
+        label_12->setText(QApplication::translate("formFeuillePersonnage", "Attribut 4", Q_NULLPTR));
+        label_13->setText(QApplication::translate("formFeuillePersonnage", "Attribut 5", Q_NULLPTR));
+        label_14->setText(QApplication::translate("formFeuillePersonnage", "Attribut 6", Q_NULLPTR));
+        label_15->setText(QApplication::translate("formFeuillePersonnage", "PV :", Q_NULLPTR));
+        label_16->setText(QApplication::translate("formFeuillePersonnage", "/", Q_NULLPTR));
+        label_17->setText(QApplication::translate("formFeuillePersonnage", "Niveau :", Q_NULLPTR));
+        label_18->setText(QApplication::translate("formFeuillePersonnage", "Age :", Q_NULLPTR));
+        label_19->setText(QApplication::translate("formFeuillePersonnage", "Descriptif :", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("formFeuillePersonnage", "Inventaire", Q_NULLPTR));
     } // retranslateUi
 
 };

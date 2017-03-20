@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'formCampagne.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -58,10 +58,10 @@ public:
 
     void retranslateUi(QDialog *formCampagne)
     {
-        formCampagne->setWindowTitle(QApplication::translate("formCampagne", "Dialog", 0));
-        label->setText(QApplication::translate("formCampagne", "Campagne", 0));
-        pushButton->setText(QApplication::translate("formCampagne", "Nouvelle Campagne", 0));
-        pushButton_2->setText(QApplication::translate("formCampagne", "Continuer une la campagne selection\303\251e", 0));
+        formCampagne->setWindowTitle(QApplication::translate("formCampagne", "Dialog", Q_NULLPTR));
+        label->setText(QApplication::translate("formCampagne", "Campagne", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("formCampagne", "Nouvelle Campagne", Q_NULLPTR));
+        pushButton_2->setText(QApplication::translate("formCampagne", "Continuer une la campagne selection\303\251e", Q_NULLPTR));
     } // retranslateUi
 
 };

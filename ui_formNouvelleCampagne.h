@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'formNouvelleCampagne.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -75,12 +75,12 @@ public:
 
     void retranslateUi(QDialog *formNouvelleCampagne)
     {
-        formNouvelleCampagne->setWindowTitle(QApplication::translate("formNouvelleCampagne", "Dialog", 0));
-        label->setText(QApplication::translate("formNouvelleCampagne", "Nouvelle campagne :", 0));
-        label_2->setText(QApplication::translate("formNouvelleCampagne", "Personnages :", 0));
-        label_3->setText(QApplication::translate("formNouvelleCampagne", "Nom :", 0));
-        label_4->setText(QApplication::translate("formNouvelleCampagne", "Description :", 0));
-        label_5->setText(QApplication::translate("formNouvelleCampagne", "Lieu de d\303\251part :", 0));
+        formNouvelleCampagne->setWindowTitle(QApplication::translate("formNouvelleCampagne", "Dialog", Q_NULLPTR));
+        label->setText(QApplication::translate("formNouvelleCampagne", "Nouvelle campagne :", Q_NULLPTR));
+        label_2->setText(QApplication::translate("formNouvelleCampagne", "Personnages :", Q_NULLPTR));
+        label_3->setText(QApplication::translate("formNouvelleCampagne", "Nom :", Q_NULLPTR));
+        label_4->setText(QApplication::translate("formNouvelleCampagne", "Description :", Q_NULLPTR));
+        label_5->setText(QApplication::translate("formNouvelleCampagne", "Lieu de d\303\251part :", Q_NULLPTR));
     } // retranslateUi
 
 };

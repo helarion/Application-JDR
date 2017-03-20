@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -84,10 +84,10 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
-        label->setText(QApplication::translate("MainWindow", "Gestionnaire de jeu de r\303\264le ", 0));
-        New->setText(QApplication::translate("MainWindow", "Commencer un nouveau jeu", 0));
-        Continue->setText(QApplication::translate("MainWindow", "Reprendre un jeu existant", 0));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
+        label->setText(QApplication::translate("MainWindow", "Gestionnaire de jeu de r\303\264le ", Q_NULLPTR));
+        New->setText(QApplication::translate("MainWindow", "Commencer un nouveau jeu", Q_NULLPTR));
+        Continue->setText(QApplication::translate("MainWindow", "Reprendre un jeu existant", Q_NULLPTR));
     } // retranslateUi
 
 };
