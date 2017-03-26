@@ -1,6 +1,9 @@
 #ifndef ElementObjet_H
 #define ElementObjet_H
 
+#include "headers/BD/element.h"
+
+#include <QVector>
 #include <QVariant>
 #include <QString>
 
@@ -11,6 +14,7 @@ class ElementObjet
         quint16 num;
         QString nom;
         bool preset;
+        QVector<Element> listElements;
     public:
         ElementObjet (QString s_nom,bool s_preset);	// Constructeur par défaut public
         ElementObjet (const ElementObjet & copie); // Constructeur de copie public
@@ -21,7 +25,7 @@ class ElementObjet
         void Load(quint16 index);
         quint16 getNum();
         bool getPreset();
-        Jeu* getJeu();
+        QVector<Element> getListElements();
 };
 
 #endif

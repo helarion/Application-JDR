@@ -11,6 +11,7 @@ class Element
         quint16 num;
         QString nom;
         quint16 type;
+        bool preset;
     public:
         Element (QString s_nom,quint16 s_type);	// Constructeur par défaut public
         Element (const Element & copie); // Constructeur de copie public
@@ -22,6 +23,7 @@ class Element
         quint16 getNum();
         QString getNom();
         quint16 getType();
+        bool getPreset();
 };
 
 #endif

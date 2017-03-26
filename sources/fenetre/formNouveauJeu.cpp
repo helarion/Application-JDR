@@ -1,5 +1,6 @@
 #include "headers/fenetre/formNouveauJeu.h"
 #include "ui_formNouveauJeu.h"
+#include "headers/fenetre/formNouveauAttribut.h"
 
 #include "headers/BD/jeu.h"
 #include <QFileDialog>
@@ -33,5 +34,7 @@ void formNouveauJeu::on_parcourirButton_clicked()
 
 void formNouveauJeu::on_nouveauAttributBUtton_clicked()
 {
-
+    formNouveauAttribut formNouveauAttribut;
+    formNouveauAttribut.setModal(true);
+    formNouveauAttribut.exec();
 }

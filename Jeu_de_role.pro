@@ -56,7 +56,9 @@ HEADERS += \
     headers/fenetre/formModifierJeu.h \
     headers/fenetre/formModifierCampagne.h \
     headers/fenetre/formModifierAttribut.h \
-    headers/fenetre/formNouveauAttribut.h
+    headers/fenetre/formNouveauAttribut.h \
+    headers/BD/typeattribut.h \
+    sources/BD/typeattribut.h
 
 SOURCES += \
     sources/BD/campagne.cpp \
@@ -81,4 +83,5 @@ SOURCES += \
     sources/fenetre/formModifierJeu.cpp \
     sources/fenetre/formModifierCampagne.cpp \
     sources/fenetre/formModifierAttribut.cpp \
-    sources/fenetre/formNouveauAttribut.cpp
+    sources/fenetre/formNouveauAttribut.cpp \
+    sources/BD/typeattribut.cpp

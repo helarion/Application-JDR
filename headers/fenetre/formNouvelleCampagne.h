@@ -15,6 +15,9 @@ public:
     explicit formNouvelleCampagne(QWidget *parent = 0);
     ~formNouvelleCampagne();
 
+private slots:
+    void on_creerButton_clicked();
+
 private:
     Ui::formNouvelleCampagne *ui;
 };

@@ -12,3 +12,8 @@ formNouvelleCampagne::~formNouvelleCampagne()
 {
     delete ui;
 }
+
+void formNouvelleCampagne::on_creerButton_clicked()
+{
+
+}
