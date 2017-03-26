@@ -1,6 +1,8 @@
-#include "./headers/fenetre/formNouveauJeu.h"
+#include "headers/fenetre/formNouveauJeu.h"
 #include "ui_formNouveauJeu.h"
-#include "./headers/BD/jeu.h"
+
+#include "headers/BD/jeu.h"
+#include <QFileDialog>
 
 formNouveauJeu::formNouveauJeu(QWidget *parent) :
     QDialog(parent),
@@ -18,7 +20,18 @@ formNouveauJeu::~formNouveauJeu()
 void formNouveauJeu::on_CreerJeu_clicked()
 {
     QString nom = ui->NomJeu->text();
-    QString theme = ui->AdrTheme->text();
+    QString theme = "ui->AdrTheme->text()";
     Jeu j(nom,theme);
     j.Save();
+}
+
+void formNouveauJeu::on_parcourirButton_clicked()
+{
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"),"",tr("Images (*.png *.bmp *.jpg)"));
+    ui->AdrTheme->setText(fileName);
+}
+
+void formNouveauJeu::on_nouveauAttributBUtton_clicked()
+{
+
 }

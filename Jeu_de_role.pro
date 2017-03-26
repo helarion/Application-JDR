@@ -8,21 +8,22 @@ TEMPLATE = app
 
 QT += core gui
       core
+      uitools
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Jeu_de_role
 DESTDIR = $$PWD
 
 FORMS += \
-    sources/fenetre/formCampagne.ui \
-    sources/fenetre/formFeuillePersonnage.ui \
-    sources/fenetre/formInventaire.ui \
     sources/fenetre/formNouveauJeu.ui \
     sources/fenetre/formNouvelleCampagne.ui \
     sources/fenetre/formNouvellePartie.ui \
-    sources/fenetre/formPartie.ui \
-    sources/fenetre/formJeu.ui \
-    sources/mainwindow.ui
+    sources/mainwindow.ui \
+    sources/fenetre/formModifierJeu.ui \
+    sources/fenetre/formModifierAttribut.ui \
+    sources/fenetre/formModifierCampagne.ui \
+    sources/fenetre/formNouveauAttribut.ui
 
 HEADERS += \
     headers/BD/campagne.h \
@@ -39,14 +40,9 @@ HEADERS += \
     headers/BD/valeurElement.h \
     headers/BD/valeurElementLong.h \
     headers/BD/valeurObjet.h \
-    headers/fenetre/formCampagne.h \
-    headers/fenetre/formFeuillePersonnage.h \
-    headers/fenetre/formInventaire.h \
     headers/fenetre/formNouveauJeu.h \
     headers/fenetre/formNouvelleCampagne.h \
     headers/fenetre/formNouvellePartie.h \
-    headers/fenetre/formPartie.h \
-    headers/fenetre/formJeu.h \
     headers/mainwindow.h \
     ui_formCampagne.h \
     ui_formFeuillePersonnage.h \
@@ -57,6 +53,10 @@ HEADERS += \
     ui_formPartie.h \
     ui_formJeu.h \
     ui_mainwindow.h \
+    headers/fenetre/formModifierJeu.h \
+    headers/fenetre/formModifierCampagne.h \
+    headers/fenetre/formModifierAttribut.h \
+    headers/fenetre/formNouveauAttribut.h
 
 SOURCES += \
     sources/BD/campagne.cpp \
@@ -73,13 +73,12 @@ SOURCES += \
     sources/BD/valeurElement.cpp \
     sources/BD/valeurElementLong.cpp \
     sources/BD/valeurObjet.cpp \
-    sources/fenetre/formCampagne.cpp \
-    sources/fenetre/formFeuillePersonnage.cpp \
-    sources/fenetre/formInventaire.cpp \
     sources/fenetre/formNouveauJeu.cpp \
     sources/fenetre/formNouvelleCampagne.cpp \
     sources/fenetre/formNouvellePartie.cpp \
-    sources/fenetre/formPartie.cpp \
-    sources/fenetre/formJeu.cpp \
     sources/main.cpp \
-    sources/mainwindow.cpp
+    sources/mainwindow.cpp \
+    sources/fenetre/formModifierJeu.cpp \
+    sources/fenetre/formModifierCampagne.cpp \
+    sources/fenetre/formModifierAttribut.cpp \
+    sources/fenetre/formNouveauAttribut.cpp

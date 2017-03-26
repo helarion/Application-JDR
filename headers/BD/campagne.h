@@ -13,14 +13,16 @@ class Campagne
         QString nom;
         Jeu* jeu;
         QString scenario;
+        QString titre;
 	public:
+        Campagne();
         Campagne (QString s_nom,QString s_scenario,Jeu* s_jeu);	// Constructeur par défaut public
         Campagne (const Campagne & copie); // Constructeur de copie public
-        Campagne (quint16 index);
+        Campagne (QString titre);
         ~Campagne ();				// Destructeur public
         void afficher () const;	// Affiche les informations du Campagne dans la console
         void Save();
-        void Load(quint16 index);
+        void Load(QString titre);
         quint16 getNum();
         QString getNom();
         QString getScenario();

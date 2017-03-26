@@ -1,4 +1,4 @@
-#include "../../headers/BD/jeu.h"
+#include "headers/BD/jeu.h"
 
 #include <QDataStream>
 #include <iostream>
@@ -7,10 +7,20 @@
 
 quint16 Jeu::increment = 1;
 
+Jeu::Jeu ()
+{
+    num=-1;
+    nom="";
+    adrTheme="";
+    titre="";
+}
+
 Jeu::Jeu (QString s_nom,QString s_adrTheme) : num(increment++)
 {
     nom=s_nom;
     adrTheme=s_adrTheme;
+    titre=nom.toLower();
+    titre.replace( " ", "_" );
 }
 Jeu::Jeu (const Jeu & Copie)
 {
@@ -18,7 +28,7 @@ Jeu::Jeu (const Jeu & Copie)
     nom = Copie.nom;
     adrTheme = Copie.adrTheme;
 }
-Jeu::Jeu (QString index){ Load(index); }
+Jeu::Jeu (QString titre){ Load(titre); }
 Jeu::~Jeu()
 {}
 
@@ -48,7 +58,7 @@ void Jeu::Save()
 {
     qDebug() << nom;
     QString filename = "data/Jeu/";
-    filename+=nom;
+    filename+=titre;
     filename+=".data";
     qDebug() << filename;
     QFile file(filename);
@@ -69,10 +79,10 @@ void Jeu::Save()
     qDebug() << filename << "Sauvegardé !";
 }
 
-void Jeu::Load(QString index)
+void Jeu::Load(QString titre)
 {
     QString filename = "data/Jeu/";
-    filename+=index;
+    filename+=titre;
     filename+=".data";
     QFile file(filename);
 
@@ -89,7 +99,7 @@ void Jeu::Load(QString index)
     in >> nom;
     in >> adrTheme;
 
-    qDebug() << index << " Récupéré.";
+    qDebug() << titre << " Récupéré.";
 
     file.close();
 

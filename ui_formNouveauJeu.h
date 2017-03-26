@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'formNouveauJeu.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.1
+** Created by: Qt User Interface Compiler version 5.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -14,54 +14,138 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QFormLayout>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_formNouveauJeu
 {
 public:
+    QGridLayout *gridLayout;
+    QHBoxLayout *horizontalLayout_3;
+    QPushButton *CreerJeu;
+    QPushButton *AnnulerJeu;
+    QLabel *label_3;
+    QFormLayout *formLayout;
     QLabel *label;
     QLineEdit *NomJeu;
     QLabel *label_2;
-    QLabel *label_3;
-    QPushButton *CreerJeu;
-    QPushButton *AnnulerJeu;
     QLineEdit *AdrTheme;
+    QPushButton *parcourirButton;
+    QHBoxLayout *horizontalLayout;
+    QListWidget *listWidget;
+    QVBoxLayout *verticalLayout;
+    QPushButton *nouveauAttributBUtton;
+    QPushButton *modifierAttributButton;
+    QPushButton *supprimerAttributButton;
+    QLabel *label_4;
 
     void setupUi(QDialog *formNouveauJeu)
     {
         if (formNouveauJeu->objectName().isEmpty())
             formNouveauJeu->setObjectName(QStringLiteral("formNouveauJeu"));
-        formNouveauJeu->resize(435, 302);
-        label = new QLabel(formNouveauJeu);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(50, 70, 121, 21));
-        NomJeu = new QLineEdit(formNouveauJeu);
-        NomJeu->setObjectName(QStringLiteral("NomJeu"));
-        NomJeu->setGeometry(QRect(170, 70, 113, 20));
-        label_2 = new QLabel(formNouveauJeu);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(50, 100, 121, 21));
+        formNouveauJeu->resize(704, 475);
+        gridLayout = new QGridLayout(formNouveauJeu);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        CreerJeu = new QPushButton(formNouveauJeu);
+        CreerJeu->setObjectName(QStringLiteral("CreerJeu"));
+
+        horizontalLayout_3->addWidget(CreerJeu);
+
+        AnnulerJeu = new QPushButton(formNouveauJeu);
+        AnnulerJeu->setObjectName(QStringLiteral("AnnulerJeu"));
+
+        horizontalLayout_3->addWidget(AnnulerJeu);
+
+
+        gridLayout->addLayout(horizontalLayout_3, 6, 0, 1, 1);
+
         label_3 = new QLabel(formNouveauJeu);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(40, 10, 341, 51));
         QFont font;
         font.setPointSize(14);
         label_3->setFont(font);
         label_3->setAlignment(Qt::AlignCenter);
-        CreerJeu = new QPushButton(formNouveauJeu);
-        CreerJeu->setObjectName(QStringLiteral("CreerJeu"));
-        CreerJeu->setGeometry(QRect(50, 250, 75, 23));
-        AnnulerJeu = new QPushButton(formNouveauJeu);
-        AnnulerJeu->setObjectName(QStringLiteral("AnnulerJeu"));
-        AnnulerJeu->setGeometry(QRect(190, 250, 75, 23));
+
+        gridLayout->addWidget(label_3, 0, 0, 1, 2);
+
+        formLayout = new QFormLayout();
+        formLayout->setObjectName(QStringLiteral("formLayout"));
+        label = new QLabel(formNouveauJeu);
+        label->setObjectName(QStringLiteral("label"));
+
+        formLayout->setWidget(0, QFormLayout::LabelRole, label);
+
+        NomJeu = new QLineEdit(formNouveauJeu);
+        NomJeu->setObjectName(QStringLiteral("NomJeu"));
+
+        formLayout->setWidget(0, QFormLayout::FieldRole, NomJeu);
+
+        label_2 = new QLabel(formNouveauJeu);
+        label_2->setObjectName(QStringLiteral("label_2"));
+
+        formLayout->setWidget(1, QFormLayout::LabelRole, label_2);
+
         AdrTheme = new QLineEdit(formNouveauJeu);
         AdrTheme->setObjectName(QStringLiteral("AdrTheme"));
-        AdrTheme->setGeometry(QRect(170, 100, 113, 20));
+
+        formLayout->setWidget(1, QFormLayout::FieldRole, AdrTheme);
+
+        parcourirButton = new QPushButton(formNouveauJeu);
+        parcourirButton->setObjectName(QStringLiteral("parcourirButton"));
+
+        formLayout->setWidget(2, QFormLayout::FieldRole, parcourirButton);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(-1, -1, -1, 0);
+        listWidget = new QListWidget(formNouveauJeu);
+        listWidget->setObjectName(QStringLiteral("listWidget"));
+
+        horizontalLayout->addWidget(listWidget);
+
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setContentsMargins(-1, -1, 0, -1);
+        nouveauAttributBUtton = new QPushButton(formNouveauJeu);
+        nouveauAttributBUtton->setObjectName(QStringLiteral("nouveauAttributBUtton"));
+
+        verticalLayout->addWidget(nouveauAttributBUtton);
+
+        modifierAttributButton = new QPushButton(formNouveauJeu);
+        modifierAttributButton->setObjectName(QStringLiteral("modifierAttributButton"));
+
+        verticalLayout->addWidget(modifierAttributButton);
+
+        supprimerAttributButton = new QPushButton(formNouveauJeu);
+        supprimerAttributButton->setObjectName(QStringLiteral("supprimerAttributButton"));
+
+        verticalLayout->addWidget(supprimerAttributButton);
+
+
+        horizontalLayout->addLayout(verticalLayout);
+
+
+        formLayout->setLayout(4, QFormLayout::SpanningRole, horizontalLayout);
+
+        label_4 = new QLabel(formNouveauJeu);
+        label_4->setObjectName(QStringLiteral("label_4"));
+
+        formLayout->setWidget(3, QFormLayout::LabelRole, label_4);
+
+
+        gridLayout->addLayout(formLayout, 1, 0, 1, 1);
+
 
         retranslateUi(formNouveauJeu);
         QObject::connect(AnnulerJeu, SIGNAL(clicked()), formNouveauJeu, SLOT(close()));
@@ -71,12 +155,17 @@ public:
 
     void retranslateUi(QDialog *formNouveauJeu)
     {
-        formNouveauJeu->setWindowTitle(QApplication::translate("formNouveauJeu", "Dialog", Q_NULLPTR));
-        label->setText(QApplication::translate("formNouveauJeu", "Nom du nouveau Jeu :", Q_NULLPTR));
-        label_2->setText(QApplication::translate("formNouveauJeu", "Adresse du theme :", Q_NULLPTR));
-        label_3->setText(QApplication::translate("formNouveauJeu", "Nouveau Jeu :", Q_NULLPTR));
-        CreerJeu->setText(QApplication::translate("formNouveauJeu", "Creer", Q_NULLPTR));
-        AnnulerJeu->setText(QApplication::translate("formNouveauJeu", "Annuler", Q_NULLPTR));
+        formNouveauJeu->setWindowTitle(QApplication::translate("formNouveauJeu", "Dialog", 0));
+        CreerJeu->setText(QApplication::translate("formNouveauJeu", "Creer", 0));
+        AnnulerJeu->setText(QApplication::translate("formNouveauJeu", "Annuler", 0));
+        label_3->setText(QApplication::translate("formNouveauJeu", "Nouveau Jeu :", 0));
+        label->setText(QApplication::translate("formNouveauJeu", "Nom du nouveau Jeu :", 0));
+        label_2->setText(QApplication::translate("formNouveauJeu", "Image th\303\250me :", 0));
+        parcourirButton->setText(QApplication::translate("formNouveauJeu", "Parcourir", 0));
+        nouveauAttributBUtton->setText(QApplication::translate("formNouveauJeu", "Nouveau", 0));
+        modifierAttributButton->setText(QApplication::translate("formNouveauJeu", "Modifier", 0));
+        supprimerAttributButton->setText(QApplication::translate("formNouveauJeu", "Supprimer", 0));
+        label_4->setText(QApplication::translate("formNouveauJeu", "Attributs", 0));
     } // retranslateUi
 
 };

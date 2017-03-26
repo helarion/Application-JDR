@@ -7,13 +7,16 @@ namespace Ui {
 class formJeu;
 }
 
-class formJeu : public QDialog
+class formJeu : public QWidget
 {
     Q_OBJECT
 
 public:
     explicit formJeu(QWidget *parent = 0);
     ~formJeu();
+
+private slots:
+    void on_nouveauJeuButton_clicked();
 
 private:
     Ui::formJeu *ui;

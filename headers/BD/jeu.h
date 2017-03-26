@@ -4,10 +4,10 @@
 #include <QVariant>
 #include <QString>
 
-
 class Jeu
 {
     public:
+        Jeu ();
         Jeu (QString s_nom,QString s_adrTheme);	// Constructeur par défaut public
         Jeu (const Jeu & Copie); // Constructeur de Copie public
         Jeu (QString index);
@@ -23,6 +23,7 @@ class Jeu
         quint16 num;
         QString nom;
         QString adrTheme;
+        QString titre;
 };
 
 #endif

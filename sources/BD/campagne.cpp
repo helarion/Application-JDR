@@ -1,4 +1,4 @@
-#include "../../headers/BD/Campagne.h"
+#include "headers/BD/Campagne.h"
 #include <QDataStream>
 #include <iostream>
 #include <QFile>
@@ -6,19 +6,24 @@
 
 quint16 Campagne::increment = 1;
 
+Campagne::Campagne () {}
+
 Campagne::Campagne (QString s_nom, QString s_scenario, Jeu* s_jeu) : num(increment++)
 {
     nom=s_nom;
     scenario=s_scenario;
     jeu=s_jeu;
+    titre=nom.toLower();
+    titre.replace( " ", "_" );
 }
 Campagne::Campagne (const Campagne & Copie)
 {
     num = Copie.num;
     nom = Copie.nom;
     scenario = Copie.scenario;
+    titre = Copie.titre;
 }
-Campagne::Campagne (quint16 index){ Load(index); }
+Campagne::Campagne (QString titre){ Load(titre); }
 Campagne::~Campagne()
 {}
 
@@ -52,7 +57,7 @@ Jeu* Campagne::getJeu()
 void Campagne::Save()
 {
     qDebug() << num;
-    QString filename = "C:/Users/Axel/Documents/GitHub/Projet-S6/data/Campagne/";
+    QString filename = "data/Campagne/";
     filename+=QString::number(num);
     qDebug() << filename;
     QFile file(filename);
@@ -64,7 +69,6 @@ void Campagne::Save()
     }
 
     QDataStream out(&file);
-    //out.setVersion(QDataStream::Qt_5_1);
 
     out << num << nom << scenario;
 
@@ -73,10 +77,11 @@ void Campagne::Save()
     qDebug() << filename << "Sauvegardé !";
 }
 
-void Campagne::Load(quint16 index)
+void Campagne::Load(QString titre)
 {
-    QString filename = "C:/Users/Axel/Documents/GitHub/Projet-S6/data/Campagne/";
-    filename+=QString::number(index);
+    QString filename = "data/Campagne/";
+    filename+=titre;
+    filename+=".data";
     QFile file(filename);
 
     if(!file.open(QIODevice::ReadOnly))
@@ -92,8 +97,7 @@ void Campagne::Load(quint16 index)
     in >> nom;
     in >> scenario;
 
-    qDebug() << index << " Récupéré.";
+    qDebug() << titre << " Récupéré.";
 
     file.close();
-
 }

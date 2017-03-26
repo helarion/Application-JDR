@@ -19,6 +19,10 @@ private slots:
 
     void on_CreerJeu_clicked();
 
+    void on_parcourirButton_clicked();
+
+    void on_nouveauAttributBUtton_clicked();
+
 private:
     Ui::formNouveauJeu *ui;
 };
