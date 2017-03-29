@@ -1,3 +1,9 @@
+// Tools
+#include <QtWidgets>
+#include <QWidget>
+#include <QDebug>
+#include <QVector>
+
 #include "headers/mainwindow.h"
 #include "ui_mainwindow.h"
 
@@ -13,17 +19,13 @@
 #include "headers/BD/jeu.h"
 #include "headers/BD/campagne.h"
 #include "headers/BD/partie.h"
-
-// Tools
-#include <QtWidgets>
-#include <QWidget>
-#include <QDebug>
-#include <QVector>
+#include "headers/BD/attribut.h"
 
 int index=0;
 QVector<Jeu> listJeu(100);
 QVector<Campagne> listCampagne(100);
 QVector<Partie> listPartie(100);
+QVector<Attribut> listAttribut(100);
 
 Jeu* jeu;
 Campagne* campagne;
@@ -70,6 +72,18 @@ void MainWindow::on_jeuButton_clicked()
            qDebug() << "FILE: " <<nom;
        }
    }
+   path="data/Attribut";
+   dir.setPath(path);
+   files = dir.entryInfoList();
+   foreach (QFileInfo file, files){
+       if (!file.isDir()){
+           list=file.fileName().split(".data");
+           nom=list.at(0);
+           Attribut a(nom);
+           listAttribut.append(a);
+           qDebug() << "FILE: " <<nom;
+       }
+    }
 }
 
 void MainWindow::on_retourButton_clicked()

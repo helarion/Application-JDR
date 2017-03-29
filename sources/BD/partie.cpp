@@ -1,8 +1,9 @@
-#include "headers/BD/Partie.h"
 #include <QDataStream>
 #include <iostream>
 #include <QFile>
 #include <QDebug>
+
+#include "headers/BD/Partie.h"
 
 quint16 Partie::increment = 1;
 

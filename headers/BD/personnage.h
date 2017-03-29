@@ -1,16 +1,18 @@
-class personnage
+#include <QString>
+
+class Personnage
 {
 	private:
 		int num;
 		int campagne;
 		int partie;
 		int joueur;
-		QtString nom;
-		QtString prenom;
+        QString nom;
+        QString prenom;
 		int age;
-		QtString description;
-		QtString equipement;
-		QtString sexe;
+        QString description;
+        QString equipement;
+        QString sexe;
 	public:
-		personnage();
-}
+        Personnage();
+};

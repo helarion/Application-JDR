@@ -1,9 +1,9 @@
-#include "headers/BD/jeu.h"
-
 #include <QDataStream>
 #include <iostream>
 #include <QFile>
 #include <QDebug>
+
+#include "headers/BD/jeu.h"
 
 quint16 Jeu::increment = 1;
 

@@ -41,7 +41,7 @@ public:
     QLineEdit *AdrTheme;
     QPushButton *parcourirButton;
     QHBoxLayout *horizontalLayout;
-    QListWidget *listWidget;
+    QListWidget *listAttribut;
     QVBoxLayout *verticalLayout;
     QPushButton *nouveauAttributBUtton;
     QPushButton *modifierAttributButton;
@@ -109,10 +109,10 @@ public:
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(-1, -1, -1, 0);
-        listWidget = new QListWidget(formNouveauJeu);
-        listWidget->setObjectName(QStringLiteral("listWidget"));
+        listAttribut = new QListWidget(formNouveauJeu);
+        listAttribut->setObjectName(QStringLiteral("listAttribut"));
 
-        horizontalLayout->addWidget(listWidget);
+        horizontalLayout->addWidget(listAttribut);
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));

@@ -1,8 +1,9 @@
-#include "headers/BD/Campagne.h"
 #include <QDataStream>
 #include <iostream>
 #include <QFile>
 #include <QDebug>
+
+#include "headers/BD/Campagne.h"
 
 quint16 Campagne::increment = 1;
 

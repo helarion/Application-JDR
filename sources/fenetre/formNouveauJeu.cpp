@@ -1,9 +1,10 @@
+#include <QFileDialog>
+
 #include "headers/fenetre/formNouveauJeu.h"
 #include "ui_formNouveauJeu.h"
 #include "headers/fenetre/formNouveauAttribut.h"
 
 #include "headers/BD/jeu.h"
-#include <QFileDialog>
 
 formNouveauJeu::formNouveauJeu(QWidget *parent) :
     QDialog(parent),

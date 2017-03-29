@@ -27,22 +27,27 @@ FORMS += \
 
 HEADERS += \
     headers/BD/campagne.h \
-    headers/BD/element.h \
-    headers/BD/elementObjet.h \
     headers/BD/groupe.h \
     headers/BD/jeu.h \
-    headers/BD/jeuElement.h \
+    headers/BD/jeuAttribut.h \
     headers/BD/joueur.h \
     headers/BD/objetCol.h \
     headers/BD/objetLig.h \
     headers/BD/partie.h \
     headers/BD/personnage.h \
-    headers/BD/valeurElement.h \
-    headers/BD/valeurElementLong.h \
+    headers/BD/valeurAttribut.h \
+    headers/BD/valeurAttributLong.h \
     headers/BD/valeurObjet.h \
+    headers/BD/typeattribut.h \
+    headers/BD/attribut.h \
+    headers/BD/attributObjet.h \
     headers/fenetre/formNouveauJeu.h \
     headers/fenetre/formNouvelleCampagne.h \
     headers/fenetre/formNouvellePartie.h \
+    headers/fenetre/formModifierJeu.h \
+    headers/fenetre/formModifierCampagne.h \
+    headers/fenetre/formModifierAttribut.h \
+    headers/fenetre/formNouveauAttribut.h \
     headers/mainwindow.h \
     ui_formCampagne.h \
     ui_formFeuillePersonnage.h \
@@ -53,35 +58,32 @@ HEADERS += \
     ui_formPartie.h \
     ui_formJeu.h \
     ui_mainwindow.h \
-    headers/fenetre/formModifierJeu.h \
-    headers/fenetre/formModifierCampagne.h \
-    headers/fenetre/formModifierAttribut.h \
-    headers/fenetre/formNouveauAttribut.h \
-    headers/BD/typeattribut.h \
-    sources/BD/typeattribut.h
+    headers/BD/valeurAttributtLong.h
 
 SOURCES += \
     sources/BD/campagne.cpp \
-    sources/BD/element.cpp \
-    sources/BD/elementObjet.cpp \
     sources/BD/grouper.cpp \
     sources/BD/jeu.cpp \
-    sources/BD/jeuElement.cpp \
     sources/BD/joueur.cpp \
     sources/BD/objetCol.cpp \
     sources/BD/objetLig.cpp \
     sources/BD/partie.cpp \
     sources/BD/personnage.cpp \
-    sources/BD/valeurElement.cpp \
-    sources/BD/valeurElementLong.cpp \
+    sources/BD/valeurAttribut.cpp \
+    sources/BD/valeurAttributLong.cpp \
     sources/BD/valeurObjet.cpp \
+    sources/BD/typeattribut.cpp \
+    sources/BD/attribut.cpp \
+    sources/BD/attributObjet.cpp \
+    sources/BD/valeurAttribut.cpp \
+    sources/BD/valeurAttributLong.cpp \
     sources/fenetre/formNouveauJeu.cpp \
     sources/fenetre/formNouvelleCampagne.cpp \
     sources/fenetre/formNouvellePartie.cpp \
-    sources/main.cpp \
-    sources/mainwindow.cpp \
     sources/fenetre/formModifierJeu.cpp \
     sources/fenetre/formModifierCampagne.cpp \
     sources/fenetre/formModifierAttribut.cpp \
     sources/fenetre/formNouveauAttribut.cpp \
-    sources/BD/typeattribut.cpp
+    sources/main.cpp \
+    sources/mainwindow.cpp
+

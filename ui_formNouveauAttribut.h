@@ -13,14 +13,16 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QFormLayout>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
 
@@ -33,7 +35,10 @@ public:
     QLineEdit *Nom;
     QComboBox *comboTypeAttribut;
     QLabel *label_2;
-    QDialogButtonBox *buttonBox;
+    QCheckBox *checkBox;
+    QHBoxLayout *horizontalLayout;
+    QPushButton *creerAttributButton;
+    QPushButton *retourButton;
 
     void setupUi(QDialog *formNouveauAttribut)
     {
@@ -64,20 +69,33 @@ public:
 
         formLayout->setWidget(1, QFormLayout::LabelRole, label_2);
 
+        checkBox = new QCheckBox(formNouveauAttribut);
+        checkBox->setObjectName(QStringLiteral("checkBox"));
+
+        formLayout->setWidget(2, QFormLayout::FieldRole, checkBox);
+
 
         gridLayout->addLayout(formLayout, 0, 0, 1, 1);
 
-        buttonBox = new QDialogButtonBox(formNouveauAttribut);
-        buttonBox->setObjectName(QStringLiteral("buttonBox"));
-        buttonBox->setOrientation(Qt::Horizontal);
-        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(-1, -1, -1, 0);
+        creerAttributButton = new QPushButton(formNouveauAttribut);
+        creerAttributButton->setObjectName(QStringLiteral("creerAttributButton"));
 
-        gridLayout->addWidget(buttonBox, 1, 0, 1, 1);
+        horizontalLayout->addWidget(creerAttributButton);
+
+        retourButton = new QPushButton(formNouveauAttribut);
+        retourButton->setObjectName(QStringLiteral("retourButton"));
+
+        horizontalLayout->addWidget(retourButton);
+
+
+        gridLayout->addLayout(horizontalLayout, 1, 0, 1, 1);
 
 
         retranslateUi(formNouveauAttribut);
-        QObject::connect(buttonBox, SIGNAL(accepted()), formNouveauAttribut, SLOT(accept()));
-        QObject::connect(buttonBox, SIGNAL(rejected()), formNouveauAttribut, SLOT(reject()));
+        QObject::connect(retourButton, SIGNAL(clicked()), formNouveauAttribut, SLOT(close()));
 
         QMetaObject::connectSlotsByName(formNouveauAttribut);
     } // setupUi
@@ -87,6 +105,9 @@ public:
         formNouveauAttribut->setWindowTitle(QApplication::translate("formNouveauAttribut", "Dialog", 0));
         label->setText(QApplication::translate("formNouveauAttribut", "Nom :", 0));
         label_2->setText(QApplication::translate("formNouveauAttribut", "Type d'attribut :", 0));
+        checkBox->setText(QApplication::translate("formNouveauAttribut", "Preset", 0));
+        creerAttributButton->setText(QApplication::translate("formNouveauAttribut", "Valider", 0));
+        retourButton->setText(QApplication::translate("formNouveauAttribut", "Annuler", 0));
     } // retranslateUi
 
 };

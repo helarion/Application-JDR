@@ -82,7 +82,7 @@
         <number>0</number>
        </property>
        <item>
-        <widget class="QListWidget" name="listWidget"/>
+        <widget class="QListWidget" name="listAttribut"/>
        </item>
        <item>
         <layout class="QVBoxLayout" name="verticalLayout">

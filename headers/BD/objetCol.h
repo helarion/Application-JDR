@@ -3,7 +3,7 @@
 
 #include <QVariant>
 #include <QString>
-#include "elementObjet.h"
+#include "attributObjet.h"
 
 class ObjetCol
 {

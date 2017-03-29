@@ -1,4 +1,4 @@
-#include "typeattribut.h"
+#include "headers/BD/typeattribut.h"
 
 typeAttribut::typeAttribut()
 {

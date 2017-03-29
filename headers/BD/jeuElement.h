@@ -4,7 +4,7 @@
 #include <QVariant>
 #include <QString>
 #include "Jeu.h"
-#include "element.h"
+#include "attribut.h"
 
 class JeuElement
 {
