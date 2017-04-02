@@ -52,8 +52,9 @@ public:
     QPushButton *selectionnerJeuButton;
     QPushButton *modifierJeuButton;
     QPushButton *nouveauJeuButton;
-    QListWidget *listJeu;
     QLabel *label_2;
+    QListWidget *listJeu;
+    QLabel *themeJeu;
     QWidget *Campagnes;
     QGridLayout *gridLayout_10;
     QWidget *Campagne;
@@ -220,11 +221,6 @@ public:
 
         gridLayout_4->addLayout(verticalLayout_2, 2, 1, 1, 1);
 
-        listJeu = new QListWidget(Jeu);
-        listJeu->setObjectName(QStringLiteral("listJeu"));
-
-        gridLayout_4->addWidget(listJeu, 2, 0, 1, 1);
-
         label_2 = new QLabel(Jeu);
         label_2->setObjectName(QStringLiteral("label_2"));
         QFont font3;
@@ -233,6 +229,16 @@ public:
         label_2->setAlignment(Qt::AlignCenter);
 
         gridLayout_4->addWidget(label_2, 1, 0, 1, 1);
+
+        listJeu = new QListWidget(Jeu);
+        listJeu->setObjectName(QStringLiteral("listJeu"));
+
+        gridLayout_4->addWidget(listJeu, 2, 0, 1, 1);
+
+        themeJeu = new QLabel(Jeu);
+        themeJeu->setObjectName(QStringLiteral("themeJeu"));
+
+        gridLayout_4->addWidget(themeJeu, 2, 2, 1, 1);
 
 
         gridLayout_11->addWidget(Jeu, 0, 0, 1, 1);
@@ -572,6 +578,7 @@ public:
         modifierJeuButton->setText(QApplication::translate("MainWindow", "Modifier", 0));
         nouveauJeuButton->setText(QApplication::translate("MainWindow", "Nouveau", 0));
         label_2->setText(QApplication::translate("MainWindow", "S\303\251lectionner un jeu existant :", 0));
+        themeJeu->setText(QString());
         label_3->setText(QApplication::translate("MainWindow", "Campagne", 0));
         selectionnerCampagneButton->setText(QApplication::translate("MainWindow", "Selectionner", 0));
         modifierCampagneButton->setText(QApplication::translate("MainWindow", "Modifier", 0));

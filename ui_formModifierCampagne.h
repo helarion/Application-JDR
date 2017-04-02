@@ -14,94 +14,106 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListWidget>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QTextEdit>
+#include <QtWidgets/QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_formModifierCampagne
 {
 public:
-    QGridLayout *gridLayout;
+    QVBoxLayout *verticalLayout_2;
     QLabel *label;
-    QLabel *label_5;
-    QLineEdit *lineEdit_2;
-    QLabel *label_2;
-    QLabel *label_3;
-    QListWidget *listWidget;
-    QLineEdit *lineEdit;
+    QGridLayout *gridLayout_2;
     QLabel *label_4;
+    QLineEdit *lineEdit;
+    QLabel *label_3;
+    QLineEdit *lineEdit_2;
     QTextEdit *textEdit;
-    QDialogButtonBox *buttonBox;
+    QLabel *label_2;
+    QListWidget *listWidget;
+    QHBoxLayout *horizontalLayout;
+    QPushButton *modifierCampagneButton;
+    QPushButton *retourButton;
 
     void setupUi(QDialog *formModifierCampagne)
     {
         if (formModifierCampagne->objectName().isEmpty())
             formModifierCampagne->setObjectName(QStringLiteral("formModifierCampagne"));
-        formModifierCampagne->resize(400, 300);
-        gridLayout = new QGridLayout(formModifierCampagne);
-        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        formModifierCampagne->resize(502, 397);
+        verticalLayout_2 = new QVBoxLayout(formModifierCampagne);
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         label = new QLabel(formModifierCampagne);
         label->setObjectName(QStringLiteral("label"));
 
-        gridLayout->addWidget(label, 0, 1, 1, 2);
+        verticalLayout_2->addWidget(label);
 
-        label_5 = new QLabel(formModifierCampagne);
-        label_5->setObjectName(QStringLiteral("label_5"));
+        gridLayout_2 = new QGridLayout();
+        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+        label_4 = new QLabel(formModifierCampagne);
+        label_4->setObjectName(QStringLiteral("label_4"));
 
-        gridLayout->addWidget(label_5, 1, 0, 1, 1);
-
-        lineEdit_2 = new QLineEdit(formModifierCampagne);
-        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
-
-        gridLayout->addWidget(lineEdit_2, 1, 1, 1, 2);
-
-        label_2 = new QLabel(formModifierCampagne);
-        label_2->setObjectName(QStringLiteral("label_2"));
-
-        gridLayout->addWidget(label_2, 2, 0, 1, 1);
-
-        label_3 = new QLabel(formModifierCampagne);
-        label_3->setObjectName(QStringLiteral("label_3"));
-
-        gridLayout->addWidget(label_3, 2, 2, 1, 1);
-
-        listWidget = new QListWidget(formModifierCampagne);
-        listWidget->setObjectName(QStringLiteral("listWidget"));
-
-        gridLayout->addWidget(listWidget, 3, 0, 3, 2);
+        gridLayout_2->addWidget(label_4, 6, 0, 1, 1);
 
         lineEdit = new QLineEdit(formModifierCampagne);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
 
-        gridLayout->addWidget(lineEdit, 3, 2, 1, 1);
+        gridLayout_2->addWidget(lineEdit, 1, 0, 1, 1);
 
-        label_4 = new QLabel(formModifierCampagne);
-        label_4->setObjectName(QStringLiteral("label_4"));
+        label_3 = new QLabel(formModifierCampagne);
+        label_3->setObjectName(QStringLiteral("label_3"));
 
-        gridLayout->addWidget(label_4, 4, 2, 1, 1);
+        gridLayout_2->addWidget(label_3, 0, 0, 1, 1);
+
+        lineEdit_2 = new QLineEdit(formModifierCampagne);
+        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
+
+        gridLayout_2->addWidget(lineEdit_2, 3, 0, 1, 1);
 
         textEdit = new QTextEdit(formModifierCampagne);
         textEdit->setObjectName(QStringLiteral("textEdit"));
 
-        gridLayout->addWidget(textEdit, 5, 2, 1, 1);
+        gridLayout_2->addWidget(textEdit, 7, 0, 1, 1);
 
-        buttonBox = new QDialogButtonBox(formModifierCampagne);
-        buttonBox->setObjectName(QStringLiteral("buttonBox"));
-        buttonBox->setOrientation(Qt::Horizontal);
-        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
+        label_2 = new QLabel(formModifierCampagne);
+        label_2->setObjectName(QStringLiteral("label_2"));
 
-        gridLayout->addWidget(buttonBox, 6, 0, 1, 3);
+        gridLayout_2->addWidget(label_2, 2, 0, 1, 1);
+
+        listWidget = new QListWidget(formModifierCampagne);
+        listWidget->setObjectName(QStringLiteral("listWidget"));
+
+        gridLayout_2->addWidget(listWidget, 3, 0, 1, 1);
+
+
+        verticalLayout_2->addLayout(gridLayout_2);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(-1, 0, -1, -1);
+        modifierCampagneButton = new QPushButton(formModifierCampagne);
+        modifierCampagneButton->setObjectName(QStringLiteral("modifierCampagneButton"));
+
+        horizontalLayout->addWidget(modifierCampagneButton);
+
+        retourButton = new QPushButton(formModifierCampagne);
+        retourButton->setObjectName(QStringLiteral("retourButton"));
+
+        horizontalLayout->addWidget(retourButton);
+
+
+        verticalLayout_2->addLayout(horizontalLayout);
 
 
         retranslateUi(formModifierCampagne);
-        QObject::connect(buttonBox, SIGNAL(accepted()), formModifierCampagne, SLOT(accept()));
-        QObject::connect(buttonBox, SIGNAL(rejected()), formModifierCampagne, SLOT(reject()));
+        QObject::connect(retourButton, SIGNAL(clicked()), formModifierCampagne, SLOT(close()));
 
         QMetaObject::connectSlotsByName(formModifierCampagne);
     } // setupUi
@@ -110,10 +122,11 @@ public:
     {
         formModifierCampagne->setWindowTitle(QApplication::translate("formModifierCampagne", "Dialog", 0));
         label->setText(QApplication::translate("formModifierCampagne", "Modifier Campagne:", 0));
-        label_5->setText(QApplication::translate("formModifierCampagne", "Lieu de d\303\251part :", 0));
-        label_2->setText(QApplication::translate("formModifierCampagne", "Personnages :", 0));
-        label_3->setText(QApplication::translate("formModifierCampagne", "Nom :", 0));
         label_4->setText(QApplication::translate("formModifierCampagne", "Description :", 0));
+        label_3->setText(QApplication::translate("formModifierCampagne", "Nom :", 0));
+        label_2->setText(QApplication::translate("formModifierCampagne", "Personnages :", 0));
+        modifierCampagneButton->setText(QApplication::translate("formModifierCampagne", "Valider", 0));
+        retourButton->setText(QApplication::translate("formModifierCampagne", "Annuler", 0));
     } // retranslateUi
 
 };

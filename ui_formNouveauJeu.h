@@ -34,19 +34,20 @@ public:
     QPushButton *CreerJeu;
     QPushButton *AnnulerJeu;
     QLabel *label_3;
+    QLabel *themeImage;
     QFormLayout *formLayout;
     QLabel *label;
-    QLineEdit *NomJeu;
+    QLineEdit *nomJeu;
     QLabel *label_2;
-    QLineEdit *AdrTheme;
+    QLineEdit *theme;
     QPushButton *parcourirButton;
+    QLabel *label_4;
     QHBoxLayout *horizontalLayout;
     QListWidget *listAttribut;
     QVBoxLayout *verticalLayout;
     QPushButton *nouveauAttributBUtton;
     QPushButton *modifierAttributButton;
     QPushButton *supprimerAttributButton;
-    QLabel *label_4;
 
     void setupUi(QDialog *formNouveauJeu)
     {
@@ -79,6 +80,14 @@ public:
 
         gridLayout->addWidget(label_3, 0, 0, 1, 2);
 
+        themeImage = new QLabel(formNouveauJeu);
+        themeImage->setObjectName(QStringLiteral("themeImage"));
+        themeImage->setEnabled(true);
+        themeImage->setMinimumSize(QSize(300, 300));
+        themeImage->setMaximumSize(QSize(300, 300));
+
+        gridLayout->addWidget(themeImage, 1, 1, 1, 1);
+
         formLayout = new QFormLayout();
         formLayout->setObjectName(QStringLiteral("formLayout"));
         label = new QLabel(formNouveauJeu);
@@ -86,25 +95,30 @@ public:
 
         formLayout->setWidget(0, QFormLayout::LabelRole, label);
 
-        NomJeu = new QLineEdit(formNouveauJeu);
-        NomJeu->setObjectName(QStringLiteral("NomJeu"));
+        nomJeu = new QLineEdit(formNouveauJeu);
+        nomJeu->setObjectName(QStringLiteral("nomJeu"));
 
-        formLayout->setWidget(0, QFormLayout::FieldRole, NomJeu);
+        formLayout->setWidget(0, QFormLayout::FieldRole, nomJeu);
 
         label_2 = new QLabel(formNouveauJeu);
         label_2->setObjectName(QStringLiteral("label_2"));
 
         formLayout->setWidget(1, QFormLayout::LabelRole, label_2);
 
-        AdrTheme = new QLineEdit(formNouveauJeu);
-        AdrTheme->setObjectName(QStringLiteral("AdrTheme"));
+        theme = new QLineEdit(formNouveauJeu);
+        theme->setObjectName(QStringLiteral("theme"));
 
-        formLayout->setWidget(1, QFormLayout::FieldRole, AdrTheme);
+        formLayout->setWidget(1, QFormLayout::FieldRole, theme);
 
         parcourirButton = new QPushButton(formNouveauJeu);
         parcourirButton->setObjectName(QStringLiteral("parcourirButton"));
 
         formLayout->setWidget(2, QFormLayout::FieldRole, parcourirButton);
+
+        label_4 = new QLabel(formNouveauJeu);
+        label_4->setObjectName(QStringLiteral("label_4"));
+
+        formLayout->setWidget(3, QFormLayout::LabelRole, label_4);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
@@ -138,11 +152,6 @@ public:
 
         formLayout->setLayout(4, QFormLayout::SpanningRole, horizontalLayout);
 
-        label_4 = new QLabel(formNouveauJeu);
-        label_4->setObjectName(QStringLiteral("label_4"));
-
-        formLayout->setWidget(3, QFormLayout::LabelRole, label_4);
-
 
         gridLayout->addLayout(formLayout, 1, 0, 1, 1);
 
@@ -159,13 +168,14 @@ public:
         CreerJeu->setText(QApplication::translate("formNouveauJeu", "Creer", 0));
         AnnulerJeu->setText(QApplication::translate("formNouveauJeu", "Annuler", 0));
         label_3->setText(QApplication::translate("formNouveauJeu", "Nouveau Jeu :", 0));
+        themeImage->setText(QString());
         label->setText(QApplication::translate("formNouveauJeu", "Nom du nouveau Jeu :", 0));
         label_2->setText(QApplication::translate("formNouveauJeu", "Image th\303\250me :", 0));
         parcourirButton->setText(QApplication::translate("formNouveauJeu", "Parcourir", 0));
+        label_4->setText(QApplication::translate("formNouveauJeu", "Attributs", 0));
         nouveauAttributBUtton->setText(QApplication::translate("formNouveauJeu", "Nouveau", 0));
         modifierAttributButton->setText(QApplication::translate("formNouveauJeu", "Modifier", 0));
         supprimerAttributButton->setText(QApplication::translate("formNouveauJeu", "Supprimer", 0));
-        label_4->setText(QApplication::translate("formNouveauJeu", "Attributs", 0));
     } // retranslateUi
 
 };

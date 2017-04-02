@@ -15,75 +15,76 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = Jeu_de_role
 DESTDIR = $$PWD
 
-FORMS += \
-    sources/fenetre/formNouveauJeu.ui \
-    sources/fenetre/formNouvelleCampagne.ui \
-    sources/fenetre/formNouvellePartie.ui \
-    sources/mainwindow.ui \
-    sources/fenetre/formModifierJeu.ui \
-    sources/fenetre/formModifierAttribut.ui \
-    sources/fenetre/formModifierCampagne.ui \
-    sources/fenetre/formNouveauAttribut.ui
-
 HEADERS += \
-    headers/BD/campagne.h \
-    headers/BD/groupe.h \
-    headers/BD/jeu.h \
-    headers/BD/jeuAttribut.h \
-    headers/BD/joueur.h \
-    headers/BD/objetCol.h \
-    headers/BD/objetLig.h \
-    headers/BD/partie.h \
-    headers/BD/personnage.h \
-    headers/BD/valeurAttribut.h \
-    headers/BD/valeurAttributLong.h \
-    headers/BD/valeurObjet.h \
-    headers/BD/typeattribut.h \
-    headers/BD/attribut.h \
-    headers/BD/attributObjet.h \
-    headers/fenetre/formNouveauJeu.h \
-    headers/fenetre/formNouvelleCampagne.h \
-    headers/fenetre/formNouvellePartie.h \
-    headers/fenetre/formModifierJeu.h \
-    headers/fenetre/formModifierCampagne.h \
-    headers/fenetre/formModifierAttribut.h \
-    headers/fenetre/formNouveauAttribut.h \
-    headers/mainwindow.h \
-    ui_formCampagne.h \
-    ui_formFeuillePersonnage.h \
-    ui_formInventaire.h \
+    ui_formModifierAttribut.h \
+    ui_formModifierCampagne.h \
+    ui_formModifierJeu.h \
+    ui_formNouveauAttribut.h \
     ui_formNouveauJeu.h \
     ui_formNouvelleCampagne.h \
     ui_formNouvellePartie.h \
-    ui_formPartie.h \
-    ui_formJeu.h \
     ui_mainwindow.h \
-    headers/BD/valeurAttributtLong.h
+    mainwindow.h \
+    BD/attribut.h \
+    BD/attributObjet.h \
+    BD/campagne.h \
+    BD/groupe.h \
+    BD/jeu.h \
+    BD/jeuElement.h \
+    BD/joueur.h \
+    BD/objetCol.h \
+    BD/objetLig.h \
+    BD/partie.h \
+    BD/personnage.h \
+    BD/typeattribut.h \
+    BD/valeurAttribut.h \
+    BD/valeurAttributtLong.h \
+    BD/valeurObjet.h \
+    fenetre/formCampagne.h \
+    fenetre/formInventaire.h \
+    fenetre/formModifierAttribut.h \
+    fenetre/formModifierCampagne.h \
+    fenetre/formModifierJeu.h \
+    fenetre/formNouveauAttribut.h \
+    fenetre/formNouveauJeu.h \
+    fenetre/formNouvelleCampagne.h \
+    fenetre/formNouvellePartie.h \
+    BD/collections.h
+
+FORMS += \
+    mainwindow.ui \
+    fenetre/formModifierAttribut.ui \
+    fenetre/formModifierCampagne.ui \
+    fenetre/formNouveauAttribut.ui \
+    fenetre/formNouveauJeu.ui \
+    fenetre/formNouvelleCampagne.ui \
+    fenetre/formNouvellePartie.ui \
+    fenetre/formModifierJeu.ui
 
 SOURCES += \
-    sources/BD/campagne.cpp \
-    sources/BD/grouper.cpp \
-    sources/BD/jeu.cpp \
-    sources/BD/joueur.cpp \
-    sources/BD/objetCol.cpp \
-    sources/BD/objetLig.cpp \
-    sources/BD/partie.cpp \
-    sources/BD/personnage.cpp \
-    sources/BD/valeurAttribut.cpp \
-    sources/BD/valeurAttributLong.cpp \
-    sources/BD/valeurObjet.cpp \
-    sources/BD/typeattribut.cpp \
-    sources/BD/attribut.cpp \
-    sources/BD/attributObjet.cpp \
-    sources/BD/valeurAttribut.cpp \
-    sources/BD/valeurAttributLong.cpp \
-    sources/fenetre/formNouveauJeu.cpp \
-    sources/fenetre/formNouvelleCampagne.cpp \
-    sources/fenetre/formNouvellePartie.cpp \
-    sources/fenetre/formModifierJeu.cpp \
-    sources/fenetre/formModifierCampagne.cpp \
-    sources/fenetre/formModifierAttribut.cpp \
-    sources/fenetre/formNouveauAttribut.cpp \
-    sources/main.cpp \
-    sources/mainwindow.cpp
+    main.cpp \
+    mainwindow.cpp \
+    BD/attribut.cpp \
+    BD/attributObjet.cpp \
+    BD/campagne.cpp \
+    BD/grouper.cpp \
+    BD/jeu.cpp \
+    BD/jeuElement.cpp \
+    BD/joueur.cpp \
+    BD/objetCol.cpp \
+    BD/objetLig.cpp \
+    BD/partie.cpp \
+    BD/personnage.cpp \
+    BD/typeattribut.cpp \
+    BD/valeurAttribut.cpp \
+    BD/valeurAttributLong.cpp \
+    BD/valeurObjet.cpp \
+    fenetre/formModifierAttribut.cpp \
+    fenetre/formModifierCampagne.cpp \
+    fenetre/formModifierJeu.cpp \
+    fenetre/formNouveauAttribut.cpp \
+    fenetre/formNouveauJeu.cpp \
+    fenetre/formNouvelleCampagne.cpp \
+    fenetre/formNouvellePartie.cpp \
+    BD/collections.cpp
 

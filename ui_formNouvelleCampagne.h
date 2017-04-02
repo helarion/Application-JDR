@@ -29,15 +29,15 @@ class Ui_formNouvelleCampagne
 {
 public:
     QGridLayout *gridLayout;
-    QListWidget *listWidget;
+    QListWidget *personnagesList;
     QLabel *label_2;
-    QLineEdit *lineEdit;
+    QLineEdit *nomCampagne;
     QPushButton *creerButton;
     QLabel *label;
     QLabel *label_3;
     QPushButton *annulerButton;
     QLabel *label_4;
-    QTextEdit *textEdit;
+    QTextEdit *scenarioCampagne;
     QVBoxLayout *verticalLayout;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
@@ -47,23 +47,23 @@ public:
     {
         if (formNouvelleCampagne->objectName().isEmpty())
             formNouvelleCampagne->setObjectName(QStringLiteral("formNouvelleCampagne"));
-        formNouvelleCampagne->resize(369, 300);
+        formNouvelleCampagne->resize(369, 328);
         gridLayout = new QGridLayout(formNouvelleCampagne);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        listWidget = new QListWidget(formNouvelleCampagne);
-        listWidget->setObjectName(QStringLiteral("listWidget"));
+        personnagesList = new QListWidget(formNouvelleCampagne);
+        personnagesList->setObjectName(QStringLiteral("personnagesList"));
 
-        gridLayout->addWidget(listWidget, 5, 0, 3, 2);
+        gridLayout->addWidget(personnagesList, 5, 0, 3, 2);
 
         label_2 = new QLabel(formNouvelleCampagne);
         label_2->setObjectName(QStringLiteral("label_2"));
 
         gridLayout->addWidget(label_2, 4, 0, 1, 1);
 
-        lineEdit = new QLineEdit(formNouvelleCampagne);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        nomCampagne = new QLineEdit(formNouvelleCampagne);
+        nomCampagne->setObjectName(QStringLiteral("nomCampagne"));
 
-        gridLayout->addWidget(lineEdit, 2, 1, 1, 2);
+        gridLayout->addWidget(nomCampagne, 2, 1, 1, 2);
 
         creerButton = new QPushButton(formNouvelleCampagne);
         creerButton->setObjectName(QStringLiteral("creerButton"));
@@ -90,10 +90,10 @@ public:
 
         gridLayout->addWidget(label_4, 3, 0, 1, 1);
 
-        textEdit = new QTextEdit(formNouvelleCampagne);
-        textEdit->setObjectName(QStringLiteral("textEdit"));
+        scenarioCampagne = new QTextEdit(formNouvelleCampagne);
+        scenarioCampagne->setObjectName(QStringLiteral("scenarioCampagne"));
 
-        gridLayout->addWidget(textEdit, 3, 1, 1, 1);
+        gridLayout->addWidget(scenarioCampagne, 3, 1, 1, 1);
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));

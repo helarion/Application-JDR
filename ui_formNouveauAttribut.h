@@ -33,9 +33,9 @@ public:
     QFormLayout *formLayout;
     QLabel *label;
     QLineEdit *Nom;
-    QComboBox *comboTypeAttribut;
+    QComboBox *typeAttributCombo;
     QLabel *label_2;
-    QCheckBox *checkBox;
+    QCheckBox *presetCheck;
     QHBoxLayout *horizontalLayout;
     QPushButton *creerAttributButton;
     QPushButton *retourButton;
@@ -59,20 +59,20 @@ public:
 
         formLayout->setWidget(0, QFormLayout::FieldRole, Nom);
 
-        comboTypeAttribut = new QComboBox(formNouveauAttribut);
-        comboTypeAttribut->setObjectName(QStringLiteral("comboTypeAttribut"));
+        typeAttributCombo = new QComboBox(formNouveauAttribut);
+        typeAttributCombo->setObjectName(QStringLiteral("typeAttributCombo"));
 
-        formLayout->setWidget(1, QFormLayout::FieldRole, comboTypeAttribut);
+        formLayout->setWidget(1, QFormLayout::FieldRole, typeAttributCombo);
 
         label_2 = new QLabel(formNouveauAttribut);
         label_2->setObjectName(QStringLiteral("label_2"));
 
         formLayout->setWidget(1, QFormLayout::LabelRole, label_2);
 
-        checkBox = new QCheckBox(formNouveauAttribut);
-        checkBox->setObjectName(QStringLiteral("checkBox"));
+        presetCheck = new QCheckBox(formNouveauAttribut);
+        presetCheck->setObjectName(QStringLiteral("presetCheck"));
 
-        formLayout->setWidget(2, QFormLayout::FieldRole, checkBox);
+        formLayout->setWidget(2, QFormLayout::FieldRole, presetCheck);
 
 
         gridLayout->addLayout(formLayout, 0, 0, 1, 1);
@@ -105,7 +105,7 @@ public:
         formNouveauAttribut->setWindowTitle(QApplication::translate("formNouveauAttribut", "Dialog", 0));
         label->setText(QApplication::translate("formNouveauAttribut", "Nom :", 0));
         label_2->setText(QApplication::translate("formNouveauAttribut", "Type d'attribut :", 0));
-        checkBox->setText(QApplication::translate("formNouveauAttribut", "Preset", 0));
+        presetCheck->setText(QApplication::translate("formNouveauAttribut", "Preset", 0));
         creerAttributButton->setText(QApplication::translate("formNouveauAttribut", "Valider", 0));
         retourButton->setText(QApplication::translate("formNouveauAttribut", "Annuler", 0));
     } // retranslateUi
