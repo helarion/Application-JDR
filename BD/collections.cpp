@@ -20,9 +20,9 @@ void addAttribut(Attribut a) { listAttribut.prepend(a); }
 void addCampagne(Campagne c) { listCampagne.prepend(c); }
 void addPartie(Partie p) { listPartie.prepend(p); }
 
-extern void deleteJeu(Jeu* j)
+extern void deleteJeu(Jeu j)
 {
-    QString titre=j->getTitre();
+    QString titre=j.getTitre();
     QString path="data/Jeu/"+titre+".data";
     qDebug() << "titre:" << titre;
     qDebug() << "path:" << path;

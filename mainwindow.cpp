@@ -115,6 +115,6 @@ void MainWindow::on_listJeu_itemSelectionChanged()
 {
     jeuSelect=chercheNomJeu(ui->listJeu->currentItem()->text());
     qDebug() << "jeu:";
-    listJeu[jeuSelect]->afficher();
-    ui->themeJeu->setPixmap(QPixmap(jeuSelect->getTheme()));
+    listJeu[jeuSelect].afficher();
+    ui->themeJeu->setPixmap(QPixmap(listJeu[jeuSelect].getTheme()));
 }

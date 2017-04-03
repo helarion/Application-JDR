@@ -13,7 +13,7 @@
     extern void addCampagne(Campagne c);
     extern void addPartie(Partie p);
 
-    extern void deleteJeu(Jeu* j);
+    extern void deleteJeu(Jeu j);
     extern void deleteAttribut(Attribut* a);
     extern void deleteCampagne(Campagne* c);
     extern void deletePartie(Partie* p);
