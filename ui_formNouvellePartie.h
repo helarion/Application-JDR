@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'formNouvellePartie.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -71,12 +71,12 @@ public:
 
     void retranslateUi(QDialog *formNouvellePartie)
     {
-        formNouvellePartie->setWindowTitle(QApplication::translate("formNouvellePartie", "Dialog", 0));
-        label->setText(QApplication::translate("formNouvellePartie", "Nouvelle Partie :", 0));
-        label_2->setText(QApplication::translate("formNouvellePartie", "Date :", 0));
-        label_3->setText(QApplication::translate("formNouvellePartie", "Nom :", 0));
-        label_4->setText(QApplication::translate("formNouvellePartie", "Description :", 0));
-        pushButton->setText(QApplication::translate("formNouvellePartie", "Valider", 0));
+        formNouvellePartie->setWindowTitle(QApplication::translate("formNouvellePartie", "Dialog", Q_NULLPTR));
+        label->setText(QApplication::translate("formNouvellePartie", "Nouvelle Partie :", Q_NULLPTR));
+        label_2->setText(QApplication::translate("formNouvellePartie", "Date :", Q_NULLPTR));
+        label_3->setText(QApplication::translate("formNouvellePartie", "Nom :", Q_NULLPTR));
+        label_4->setText(QApplication::translate("formNouvellePartie", "Description :", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("formNouvellePartie", "Valider", Q_NULLPTR));
     } // retranslateUi
 
 };

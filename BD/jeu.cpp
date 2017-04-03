@@ -91,9 +91,10 @@ void Jeu::setTheme(QString s_theme)
 {
     QFile image(s_theme);
     QFileInfo info(s_theme);
-    s_theme="data/Jeu/"+titre+"."+info.suffix();
-    image.copy(s_theme);
-    adrTheme=s_theme;
+    QString chemin="data/Jeu/"+titre+"."+info.suffix();
+    //qDebug() << "chemin:" << chemin;
+    image.copy(chemin);
+    adrTheme=chemin;
 
 }
 

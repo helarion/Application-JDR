@@ -15,9 +15,9 @@ formModifierJeu::formModifierJeu(QWidget *parent) :
 {
     ui->setupUi(this);
     qDebug() << "jeu:";
-    jeuSelect->afficher();
-    ui->nomJeu->setText(jeuSelect->getNom());
-    ui->theme->setText(jeuSelect->getTheme());
+    listJeu[jeuSelect]->afficher();
+    ui->nomJeu->setText(listJeu[jeuSelect]->getNom());
+    ui->theme->setText(listJeu[jeuSelect]->getTheme());
 }
 
 formModifierJeu::~formModifierJeu()
@@ -28,16 +28,17 @@ formModifierJeu::~formModifierJeu()
 void formModifierJeu::on_supprimerJeuButton_clicked()
 {
     // yes no
-    deleteJeu(jeuSelect);
+    deleteJeu(listJeu[jeuSelect]);
     emit listJeuChanged();
     this->close();
 }
 
 void formModifierJeu::on_modifierJeuButton_clicked()
 {
-    jeuSelect->setNom(ui->nomJeu->text());
+    listJeu[jeuSelect]->setNom(ui->nomJeu->text());
     QString fileName=ui->theme->text();
-    jeuSelect->setTheme(fileName);
+    qDebug() << "fileName:" << fileName;
+    listJeu[jeuSelect]->setTheme(fileName);
     emit listJeuChanged();
     this->close();
 }

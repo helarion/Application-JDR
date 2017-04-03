@@ -23,7 +23,7 @@
     extern void remplirListCampagne();
     extern void remplirListPartie();
 
-    extern Jeu * chercheNomJeu(QString nom);
+    extern int chercheNomJeu(QString nom);
 
     extern QVector<Jeu> listJeu;
     extern QVector<Attribut> listAttribut;
@@ -32,9 +32,9 @@
 
     extern quint8 indexStack;
 
-    extern Jeu* jeuSelect;
-    extern Campagne* campagneSelect;
-    extern Partie* partieSelect;
-    extern Attribut* attributSelect;
+    extern int jeuSelect;
+    extern int campagneSelect;
+    extern int partieSelect;
+    extern int attributSelect;
 
 #endif // COLLECTIONS_H

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'formModifierJeu.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -14,7 +14,6 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QFormLayout>
-#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -29,32 +28,123 @@ QT_BEGIN_NAMESPACE
 class Ui_formModifierJeu
 {
 public:
-    QGridLayout *gridLayout;
+    QVBoxLayout *verticalLayout_2;
+    QLabel *label;
+    QHBoxLayout *CentreV;
+    QFormLayout *formulaire;
+    QLabel *label_2;
+    QLabel *label_3;
+    QLineEdit *theme;
+    QLineEdit *nomJeu;
+    QHBoxLayout *Attributs;
+    QListWidget *listAttribut;
+    QVBoxLayout *boutons;
+    QPushButton *nouveauAttribut;
+    QPushButton *modifierAttribut;
+    QPushButton *supprimerAttribut;
+    QPushButton *parcourirButton;
+    QLabel *label_4;
+    QLabel *themeImage;
     QHBoxLayout *horizontalLayout;
     QPushButton *supprimerJeuButton;
     QPushButton *modifierJeuButton;
     QPushButton *retourButton;
-    QLabel *label;
-    QLabel *themeImage;
-    QFormLayout *formLayout;
-    QLabel *label_2;
-    QLabel *label_3;
-    QLineEdit *theme;
-    QPushButton *parcourirButton;
-    QVBoxLayout *verticalLayout;
-    QPushButton *nouveauAttribut;
-    QPushButton *modifierAttribut;
-    QPushButton *supprimerAttribut;
-    QListWidget *listAttribut;
-    QLineEdit *nomJeu;
 
     void setupUi(QWidget *formModifierJeu)
     {
         if (formModifierJeu->objectName().isEmpty())
             formModifierJeu->setObjectName(QStringLiteral("formModifierJeu"));
         formModifierJeu->resize(660, 418);
-        gridLayout = new QGridLayout(formModifierJeu);
-        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        verticalLayout_2 = new QVBoxLayout(formModifierJeu);
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        label = new QLabel(formModifierJeu);
+        label->setObjectName(QStringLiteral("label"));
+        QFont font;
+        font.setPointSize(20);
+        label->setFont(font);
+        label->setAlignment(Qt::AlignCenter);
+
+        verticalLayout_2->addWidget(label);
+
+        CentreV = new QHBoxLayout();
+        CentreV->setObjectName(QStringLiteral("CentreV"));
+        CentreV->setContentsMargins(-1, 0, -1, -1);
+        formulaire = new QFormLayout();
+        formulaire->setObjectName(QStringLiteral("formulaire"));
+        label_2 = new QLabel(formModifierJeu);
+        label_2->setObjectName(QStringLiteral("label_2"));
+
+        formulaire->setWidget(0, QFormLayout::LabelRole, label_2);
+
+        label_3 = new QLabel(formModifierJeu);
+        label_3->setObjectName(QStringLiteral("label_3"));
+
+        formulaire->setWidget(1, QFormLayout::LabelRole, label_3);
+
+        theme = new QLineEdit(formModifierJeu);
+        theme->setObjectName(QStringLiteral("theme"));
+
+        formulaire->setWidget(1, QFormLayout::FieldRole, theme);
+
+        nomJeu = new QLineEdit(formModifierJeu);
+        nomJeu->setObjectName(QStringLiteral("nomJeu"));
+
+        formulaire->setWidget(0, QFormLayout::FieldRole, nomJeu);
+
+        Attributs = new QHBoxLayout();
+        Attributs->setObjectName(QStringLiteral("Attributs"));
+        Attributs->setContentsMargins(-1, -1, 0, 0);
+        listAttribut = new QListWidget(formModifierJeu);
+        listAttribut->setObjectName(QStringLiteral("listAttribut"));
+
+        Attributs->addWidget(listAttribut);
+
+        boutons = new QVBoxLayout();
+        boutons->setObjectName(QStringLiteral("boutons"));
+        nouveauAttribut = new QPushButton(formModifierJeu);
+        nouveauAttribut->setObjectName(QStringLiteral("nouveauAttribut"));
+
+        boutons->addWidget(nouveauAttribut);
+
+        modifierAttribut = new QPushButton(formModifierJeu);
+        modifierAttribut->setObjectName(QStringLiteral("modifierAttribut"));
+
+        boutons->addWidget(modifierAttribut);
+
+        supprimerAttribut = new QPushButton(formModifierJeu);
+        supprimerAttribut->setObjectName(QStringLiteral("supprimerAttribut"));
+
+        boutons->addWidget(supprimerAttribut);
+
+
+        Attributs->addLayout(boutons);
+
+
+        formulaire->setLayout(4, QFormLayout::FieldRole, Attributs);
+
+        parcourirButton = new QPushButton(formModifierJeu);
+        parcourirButton->setObjectName(QStringLiteral("parcourirButton"));
+
+        formulaire->setWidget(2, QFormLayout::FieldRole, parcourirButton);
+
+        label_4 = new QLabel(formModifierJeu);
+        label_4->setObjectName(QStringLiteral("label_4"));
+
+        formulaire->setWidget(3, QFormLayout::FieldRole, label_4);
+
+
+        CentreV->addLayout(formulaire);
+
+        themeImage = new QLabel(formModifierJeu);
+        themeImage->setObjectName(QStringLiteral("themeImage"));
+        themeImage->setMinimumSize(QSize(300, 300));
+        themeImage->setMaximumSize(QSize(300, 300));
+
+        CentreV->addWidget(themeImage);
+
+
+        verticalLayout_2->addLayout(CentreV);
+
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(-1, 0, -1, -1);
@@ -74,77 +164,7 @@ public:
         horizontalLayout->addWidget(retourButton);
 
 
-        gridLayout->addLayout(horizontalLayout, 3, 2, 1, 1);
-
-        label = new QLabel(formModifierJeu);
-        label->setObjectName(QStringLiteral("label"));
-        QFont font;
-        font.setPointSize(20);
-        label->setFont(font);
-
-        gridLayout->addWidget(label, 0, 2, 1, 1, Qt::AlignHCenter);
-
-        themeImage = new QLabel(formModifierJeu);
-        themeImage->setObjectName(QStringLiteral("themeImage"));
-        themeImage->setMinimumSize(QSize(300, 300));
-        themeImage->setMaximumSize(QSize(300, 300));
-
-        gridLayout->addWidget(themeImage, 2, 3, 1, 1);
-
-        formLayout = new QFormLayout();
-        formLayout->setObjectName(QStringLiteral("formLayout"));
-        label_2 = new QLabel(formModifierJeu);
-        label_2->setObjectName(QStringLiteral("label_2"));
-
-        formLayout->setWidget(0, QFormLayout::LabelRole, label_2);
-
-        label_3 = new QLabel(formModifierJeu);
-        label_3->setObjectName(QStringLiteral("label_3"));
-
-        formLayout->setWidget(1, QFormLayout::LabelRole, label_3);
-
-        theme = new QLineEdit(formModifierJeu);
-        theme->setObjectName(QStringLiteral("theme"));
-
-        formLayout->setWidget(1, QFormLayout::FieldRole, theme);
-
-        parcourirButton = new QPushButton(formModifierJeu);
-        parcourirButton->setObjectName(QStringLiteral("parcourirButton"));
-
-        formLayout->setWidget(2, QFormLayout::FieldRole, parcourirButton);
-
-        verticalLayout = new QVBoxLayout();
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        nouveauAttribut = new QPushButton(formModifierJeu);
-        nouveauAttribut->setObjectName(QStringLiteral("nouveauAttribut"));
-
-        verticalLayout->addWidget(nouveauAttribut);
-
-        modifierAttribut = new QPushButton(formModifierJeu);
-        modifierAttribut->setObjectName(QStringLiteral("modifierAttribut"));
-
-        verticalLayout->addWidget(modifierAttribut);
-
-        supprimerAttribut = new QPushButton(formModifierJeu);
-        supprimerAttribut->setObjectName(QStringLiteral("supprimerAttribut"));
-
-        verticalLayout->addWidget(supprimerAttribut);
-
-
-        formLayout->setLayout(3, QFormLayout::FieldRole, verticalLayout);
-
-        listAttribut = new QListWidget(formModifierJeu);
-        listAttribut->setObjectName(QStringLiteral("listAttribut"));
-
-        formLayout->setWidget(3, QFormLayout::LabelRole, listAttribut);
-
-        nomJeu = new QLineEdit(formModifierJeu);
-        nomJeu->setObjectName(QStringLiteral("nomJeu"));
-
-        formLayout->setWidget(0, QFormLayout::FieldRole, nomJeu);
-
-
-        gridLayout->addLayout(formLayout, 2, 2, 1, 1);
+        verticalLayout_2->addLayout(horizontalLayout);
 
 
         retranslateUi(formModifierJeu);
@@ -154,18 +174,19 @@ public:
 
     void retranslateUi(QWidget *formModifierJeu)
     {
-        formModifierJeu->setWindowTitle(QApplication::translate("formModifierJeu", "Form", 0));
-        supprimerJeuButton->setText(QApplication::translate("formModifierJeu", "Supprimer", 0));
-        modifierJeuButton->setText(QApplication::translate("formModifierJeu", "Modifier", 0));
-        retourButton->setText(QApplication::translate("formModifierJeu", "Annuler", 0));
-        label->setText(QApplication::translate("formModifierJeu", "Modification Jeu", 0));
+        formModifierJeu->setWindowTitle(QApplication::translate("formModifierJeu", "Modification Jeu", Q_NULLPTR));
+        label->setText(QApplication::translate("formModifierJeu", "Modification Jeu", Q_NULLPTR));
+        label_2->setText(QApplication::translate("formModifierJeu", "Nom du jeu", Q_NULLPTR));
+        label_3->setText(QApplication::translate("formModifierJeu", "Th\303\250me", Q_NULLPTR));
+        nouveauAttribut->setText(QApplication::translate("formModifierJeu", "Ajouter", Q_NULLPTR));
+        modifierAttribut->setText(QApplication::translate("formModifierJeu", "Modifier", Q_NULLPTR));
+        supprimerAttribut->setText(QApplication::translate("formModifierJeu", "Supprimer", Q_NULLPTR));
+        parcourirButton->setText(QApplication::translate("formModifierJeu", "Parcourir", Q_NULLPTR));
+        label_4->setText(QApplication::translate("formModifierJeu", "Attributs", Q_NULLPTR));
         themeImage->setText(QString());
-        label_2->setText(QApplication::translate("formModifierJeu", "Nom du jeu", 0));
-        label_3->setText(QApplication::translate("formModifierJeu", "Th\303\250me", 0));
-        parcourirButton->setText(QApplication::translate("formModifierJeu", "Parcourir", 0));
-        nouveauAttribut->setText(QApplication::translate("formModifierJeu", "Ajouter", 0));
-        modifierAttribut->setText(QApplication::translate("formModifierJeu", "Modifier", 0));
-        supprimerAttribut->setText(QApplication::translate("formModifierJeu", "Supprimer", 0));
+        supprimerJeuButton->setText(QApplication::translate("formModifierJeu", "Supprimer", Q_NULLPTR));
+        modifierJeuButton->setText(QApplication::translate("formModifierJeu", "Modifier", Q_NULLPTR));
+        retourButton->setText(QApplication::translate("formModifierJeu", "Annuler", Q_NULLPTR));
     } // retranslateUi
 
 };

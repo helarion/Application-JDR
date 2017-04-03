@@ -18,7 +18,6 @@ DESTDIR = $$PWD
 HEADERS += \
     ui_formModifierAttribut.h \
     ui_formModifierCampagne.h \
-    ui_formModifierJeu.h \
     ui_formNouveauAttribut.h \
     ui_formNouveauJeu.h \
     ui_formNouvelleCampagne.h \
@@ -49,7 +48,8 @@ HEADERS += \
     fenetre/formNouveauJeu.h \
     fenetre/formNouvelleCampagne.h \
     fenetre/formNouvellePartie.h \
-    BD/collections.h
+    BD/collections.h \
+    ui_formModifierJeu.h
 
 FORMS += \
     mainwindow.ui \

@@ -111,15 +111,10 @@ void MainWindow::on_selectionnerCampagneButton_clicked()
     remplirListPartie();
 }
 
-void MainWindow::on_listJeu_itemClicked(QListWidgetItem *item)
-{
-   ;
-}
-
 void MainWindow::on_listJeu_itemSelectionChanged()
 {
     jeuSelect=chercheNomJeu(ui->listJeu->currentItem()->text());
     qDebug() << "jeu:";
-    jeuSelect->afficher();
+    listJeu[jeuSelect]->afficher();
     ui->themeJeu->setPixmap(QPixmap(jeuSelect->getTheme()));
 }

@@ -35,8 +35,6 @@ private slots:
 
     void on_selectionnerCampagneButton_clicked();
 
-    void on_listJeu_itemClicked(QListWidgetItem *item);
-
     void on_listJeu_itemSelectionChanged();
 
 private:

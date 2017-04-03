@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'formNouveauAttribut.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -102,12 +102,12 @@ public:
 
     void retranslateUi(QDialog *formNouveauAttribut)
     {
-        formNouveauAttribut->setWindowTitle(QApplication::translate("formNouveauAttribut", "Dialog", 0));
-        label->setText(QApplication::translate("formNouveauAttribut", "Nom :", 0));
-        label_2->setText(QApplication::translate("formNouveauAttribut", "Type d'attribut :", 0));
-        presetCheck->setText(QApplication::translate("formNouveauAttribut", "Preset", 0));
-        creerAttributButton->setText(QApplication::translate("formNouveauAttribut", "Valider", 0));
-        retourButton->setText(QApplication::translate("formNouveauAttribut", "Annuler", 0));
+        formNouveauAttribut->setWindowTitle(QApplication::translate("formNouveauAttribut", "Dialog", Q_NULLPTR));
+        label->setText(QApplication::translate("formNouveauAttribut", "Nom :", Q_NULLPTR));
+        label_2->setText(QApplication::translate("formNouveauAttribut", "Type d'attribut :", Q_NULLPTR));
+        presetCheck->setText(QApplication::translate("formNouveauAttribut", "Preset", Q_NULLPTR));
+        creerAttributButton->setText(QApplication::translate("formNouveauAttribut", "Valider", Q_NULLPTR));
+        retourButton->setText(QApplication::translate("formNouveauAttribut", "Annuler", Q_NULLPTR));
     } // retranslateUi
 
 };

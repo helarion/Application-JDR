@@ -11,10 +11,127 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Modification Jeu</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="3" column="2">
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Modification Jeu</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="CentreV">
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <layout class="QFormLayout" name="formulaire">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Nom du jeu</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Thème</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="theme"/>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="nomJeu"/>
+       </item>
+       <item row="4" column="1">
+        <layout class="QHBoxLayout" name="Attributs">
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QListWidget" name="listAttribut"/>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="boutons">
+           <item>
+            <widget class="QPushButton" name="nouveauAttribut">
+             <property name="text">
+              <string>Ajouter</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="modifierAttribut">
+             <property name="text">
+              <string>Modifier</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="supprimerAttribut">
+             <property name="text">
+              <string>Supprimer</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item row="2" column="1">
+        <widget class="QPushButton" name="parcourirButton">
+         <property name="text">
+          <string>Parcourir</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>Attributs</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QLabel" name="themeImage">
+       <property name="minimumSize">
+        <size>
+         <width>300</width>
+         <height>300</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>300</width>
+         <height>300</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <property name="topMargin">
       <number>0</number>
@@ -39,96 +156,6 @@
         <string>Annuler</string>
        </property>
       </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="0" column="2" alignment="Qt::AlignHCenter">
-    <widget class="QLabel" name="label">
-     <property name="font">
-      <font>
-       <pointsize>20</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Modification Jeu</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="3">
-    <widget class="QLabel" name="themeImage">
-     <property name="minimumSize">
-      <size>
-       <width>300</width>
-       <height>300</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>300</width>
-       <height>300</height>
-      </size>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="2">
-    <layout class="QFormLayout" name="formLayout">
-     <item row="0" column="0">
-      <widget class="QLabel" name="label_2">
-       <property name="text">
-        <string>Nom du jeu</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_3">
-       <property name="text">
-        <string>Thème</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="theme"/>
-     </item>
-     <item row="2" column="1">
-      <widget class="QPushButton" name="parcourirButton">
-       <property name="text">
-        <string>Parcourir</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="1">
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QPushButton" name="nouveauAttribut">
-         <property name="text">
-          <string>Ajouter</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="modifierAttribut">
-         <property name="text">
-          <string>Modifier</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="supprimerAttribut">
-         <property name="text">
-          <string>Supprimer</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item row="3" column="0">
-      <widget class="QListWidget" name="listAttribut"/>
-     </item>
-     <item row="0" column="1">
-      <widget class="QLineEdit" name="nomJeu"/>
      </item>
     </layout>
    </item>

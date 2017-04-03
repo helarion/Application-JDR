@@ -10,10 +10,10 @@ QVector<Partie> listPartie(500);
 
 quint8 indexStack=0;
 
-Jeu* jeuSelect=NULL;
-Campagne* campagneSelect=NULL;
-Partie* partieSelect=NULL;
-Attribut* attributSelect=NULL;
+int jeuSelect=-1;
+int campagneSelect=-1;
+int partieSelect=-1;
+int attributSelect=-1;
 
 void addJeu(Jeu j) { listJeu.prepend(j); }
 void addAttribut(Attribut a) { listAttribut.prepend(a); }
@@ -48,7 +48,7 @@ void remplirListJeu()
             nom=list.at(0);
             Jeu j(nom);
             listJeu.append(j);
-            qDebug() << "FILE: " <<nom;
+            //qDebug() << "FILE: " <<nom;
         }
     }
 }
@@ -109,11 +109,11 @@ void remplirListPartie()
     }
 }
 
-Jeu * chercheNomJeu(QString nom)
+int chercheNomJeu(QString nom)
 {
     for(int i=0;i<listJeu.size();i++)
     {
-        if(listJeu[i].getNom()==nom) return &listJeu[i];
+        if(listJeu[i].getNom()==nom) return i;
     }
-    return NULL;
+    return -1;
 }

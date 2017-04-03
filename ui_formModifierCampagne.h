@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'formModifierCampagne.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -120,13 +120,13 @@ public:
 
     void retranslateUi(QDialog *formModifierCampagne)
     {
-        formModifierCampagne->setWindowTitle(QApplication::translate("formModifierCampagne", "Dialog", 0));
-        label->setText(QApplication::translate("formModifierCampagne", "Modifier Campagne:", 0));
-        label_4->setText(QApplication::translate("formModifierCampagne", "Description :", 0));
-        label_3->setText(QApplication::translate("formModifierCampagne", "Nom :", 0));
-        label_2->setText(QApplication::translate("formModifierCampagne", "Personnages :", 0));
-        modifierCampagneButton->setText(QApplication::translate("formModifierCampagne", "Valider", 0));
-        retourButton->setText(QApplication::translate("formModifierCampagne", "Annuler", 0));
+        formModifierCampagne->setWindowTitle(QApplication::translate("formModifierCampagne", "Dialog", Q_NULLPTR));
+        label->setText(QApplication::translate("formModifierCampagne", "Modifier Campagne:", Q_NULLPTR));
+        label_4->setText(QApplication::translate("formModifierCampagne", "Description :", Q_NULLPTR));
+        label_3->setText(QApplication::translate("formModifierCampagne", "Nom :", Q_NULLPTR));
+        label_2->setText(QApplication::translate("formModifierCampagne", "Personnages :", Q_NULLPTR));
+        modifierCampagneButton->setText(QApplication::translate("formModifierCampagne", "Valider", Q_NULLPTR));
+        retourButton->setText(QApplication::translate("formModifierCampagne", "Annuler", Q_NULLPTR));
     } // retranslateUi
 
 };

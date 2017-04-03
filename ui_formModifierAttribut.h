@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'formModifierAttribut.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -44,7 +44,7 @@ public:
 
     void retranslateUi(QDialog *formModifierAttribut)
     {
-        formModifierAttribut->setWindowTitle(QApplication::translate("formModifierAttribut", "Dialog", 0));
+        formModifierAttribut->setWindowTitle(QApplication::translate("formModifierAttribut", "Dialog", Q_NULLPTR));
     } // retranslateUi
 
 };
