@@ -52,6 +52,7 @@ void MainWindow::on_jeuButton_clicked()
    indexStack=1;
    ui->contentStack->setCurrentIndex(indexStack);
    remplirListJeu();
+   afficherJeu();
    ui->listJeu->clear();
    for(int i=0;i<listJeu.size();i++)
    {
@@ -84,10 +85,17 @@ void MainWindow::on_modifierJeuButton_clicked()
 
 void MainWindow::on_selectionnerJeuButton_clicked()
 {
-    ui->listJeu->selectedItems();
     indexStack=2;
     ui->contentStack->setCurrentIndex(indexStack);
     remplirListCampagne();
+    ui->listCampagne->clear();
+    for(int i=0;i<listCampagne.size();i++)
+    {
+        if(listCampagne[i].getJeu().compare(listJeu[jeuSelect]))
+        {
+            ui->listCampagne->addItem(listCampagne[i].getNom());
+        }
+    }
 }
 
 void MainWindow::on_nouveauCampagneButton_clicked()
@@ -114,7 +122,8 @@ void MainWindow::on_selectionnerCampagneButton_clicked()
 void MainWindow::on_listJeu_itemSelectionChanged()
 {
     jeuSelect=chercheNomJeu(ui->listJeu->currentItem()->text());
-    qDebug() << "jeu:";
-    listJeu[jeuSelect].afficher();
+    //listJeu[jeuSelect].afficher();
     ui->themeJeu->setPixmap(QPixmap(listJeu[jeuSelect].getTheme()));
+    ui->themeJeu->adjustSize();
+    ui->themeJeu->setScaledContents(true);
 }

@@ -6,6 +6,7 @@
 
 #include "fenetre/formModifierJeu.h"
 #include "ui_formModifierJeu.h"
+#include "fenetre/formNouveauAttribut.h"
 
 #include "BD/collections.h"
 
@@ -14,15 +15,40 @@ formModifierJeu::formModifierJeu(QWidget *parent) :
     ui(new Ui::formModifierJeu)
 {
     ui->setupUi(this);
-    qDebug() << "jeu:";
-    listJeu[jeuSelect].afficher();
+    remplirListAttribut();
+    afficherAttribut();
     ui->nomJeu->setText(listJeu[jeuSelect].getNom());
     ui->theme->setText(listJeu[jeuSelect].getTheme());
+    ui->listAttributDisp->clear();
+    ui->listAttributSelect->clear();
+    bool test=true;
+    for(int i=0;i<listAttribut.size();i++)
+    {
+        for(int i=0;i<ui->listAttributSelect->size().height();i++)
+        {
+            if(ui->listAttributSelect[i]==listAttribut[i].getNom())
+            {
+                test=false;
+                break;
+            }
+        }
+        if(test==true) ui->listAttributDisp->addItem(listAttribut[i].getNom());
+    }
 }
 
 formModifierJeu::~formModifierJeu()
 {
     delete ui;
+}
+
+void formModifierJeu::changementAttribut()
+{
+    remplirListAttribut();
+    ui->listAttributDisp->clear();
+    for(int i=0;i<listAttribut.size();i++)
+    {
+        ui->listAttributDisp->addItem(listAttribut[i].getNom());
+    }
 }
 
 void formModifierJeu::on_supprimerJeuButton_clicked()
@@ -50,4 +76,12 @@ void formModifierJeu::on_parcourirButton_clicked()
     ui->themeImage->setPixmap(fileName);
     ui->themeImage->adjustSize();
     ui->themeImage->setScaledContents(true);
+}
+
+void formModifierJeu::on_nouveauAttribut_clicked()
+{
+    formNouveauAttribut formNouveauAttribut;
+    formNouveauAttribut.setModal(true);
+    QObject::connect(&formNouveauAttribut, SIGNAL(listAttributChanged()),this, SLOT(changementAttribut()));
+    formNouveauAttribut.exec();
 }

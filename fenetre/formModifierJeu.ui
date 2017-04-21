@@ -65,14 +65,38 @@
           <number>0</number>
          </property>
          <item>
-          <widget class="QListWidget" name="listAttribut"/>
+          <widget class="QListWidget" name="listAttributSelect"/>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QPushButton" name="pushButton_2">
+             <property name="text">
+              <string>&lt;--</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton">
+             <property name="text">
+              <string>--&gt;</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QListWidget" name="listAttributDisp"/>
          </item>
          <item>
           <layout class="QVBoxLayout" name="boutons">
            <item>
             <widget class="QPushButton" name="nouveauAttribut">
              <property name="text">
-              <string>Ajouter</string>
+              <string>Nouveau</string>
              </property>
             </widget>
            </item>

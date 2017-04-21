@@ -5,26 +5,31 @@
 
 #include "BD/Campagne.h"
 
-quint16 Campagne::increment = 1;
+Campagne::Campagne ()
+{
+    nom="";
+    scenario="";
+    titreJeu="";
+}
 
-Campagne::Campagne () {}
-
-Campagne::Campagne (QString s_nom, QString s_scenario, Jeu* s_jeu) : num(increment++)
+Campagne::Campagne (QString s_nom, QString s_scenario, QString s_titreJeu)
 {
     nom=s_nom;
     scenario=s_scenario;
-    jeu=s_jeu;
+    titreJeu=s_titreJeu;
+    jeu.Load(titreJeu);
     titre=nom.toLower();
     titre.replace( " ", "_" );
 }
 Campagne::Campagne (const Campagne & Copie)
 {
-    num = Copie.num;
     nom = Copie.nom;
     scenario = Copie.scenario;
     titre = Copie.titre;
+    jeu = Copie.jeu;
 }
 Campagne::Campagne (QString titre){ Load(titre); }
+
 Campagne::~Campagne()
 {}
 
@@ -50,17 +55,35 @@ QString Campagne::getScenario()
     return scenario;
 }
 
-Jeu* Campagne::getJeu()
+Jeu Campagne::getJeu()
 {
     return jeu;
 }
 
+QString Campagne::getTitreJeu()
+{
+    return titreJeu;
+}
+
+void Campagne::setJeu(Jeu j) { jeu = j;}
+
+void Campagne::setTitreJeu(QString titreJeu)
+{
+    jeu=Jeu(titreJeu);
+    this->titreJeu=titreJeu;
+}
+
+bool Campagne::compare(Campagne c)
+{
+    if(nom==c.getNom() && scenario==c.getScenario() && jeu.compare(c.getJeu())) return true;
+    return false;
+}
+
 void Campagne::Save()
 {
-    qDebug() << num;
     QString filename = "data/Campagne/";
-    filename+=QString::number(num);
-    qDebug() << filename;
+    filename+=titre;
+    filename+=".data";
     QFile file(filename);
 
     if(!file.open(QIODevice::WriteOnly))
@@ -71,17 +94,17 @@ void Campagne::Save()
 
     QDataStream out(&file);
 
-    out << num << nom << scenario;
+    out << nom << scenario << titreJeu << titre;
 
     file.flush();
     file.close();
     qDebug() << filename << "Sauvegardé !";
 }
 
-void Campagne::Load(QString titre)
+void Campagne::Load(QString fichier)
 {
     QString filename = "data/Campagne/";
-    filename+=titre;
+    filename+=fichier;
     filename+=".data";
     QFile file(filename);
 
@@ -94,9 +117,12 @@ void Campagne::Load(QString titre)
     QDataStream in(&file);
     in.setVersion(QDataStream::Qt_5_1);
 
-    in >> num;
     in >> nom;
     in >> scenario;
+    in >> titreJeu;
+    in >> titre;
+
+    jeu.Load(titreJeu);
 
     qDebug() << titre << " Récupéré.";
 

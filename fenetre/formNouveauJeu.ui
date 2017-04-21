@@ -111,7 +111,31 @@
         <number>0</number>
        </property>
        <item>
-        <widget class="QListWidget" name="listAttribut"/>
+        <widget class="QListWidget" name="listAttributSelect"/>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="ajouterButton">
+           <property name="text">
+            <string>&lt;--</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="retirerButton">
+           <property name="text">
+            <string>--&gt;</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QListWidget" name="listAttributDisp"/>
        </item>
        <item>
         <layout class="QVBoxLayout" name="verticalLayout">

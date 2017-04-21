@@ -11,12 +11,13 @@ class Campagne
         static quint16 increment;
         quint16 num;
         QString nom;
-        Jeu* jeu;
+        QString titreJeu;
+        Jeu jeu;
         QString scenario;
         QString titre;
 	public:
         Campagne();
-        Campagne (QString s_nom,QString s_scenario,Jeu* s_jeu);	// Constructeur par défaut public
+        Campagne (QString s_nom,QString s_scenario,QString s_titreJeu);	// Constructeur par défaut public
         Campagne (const Campagne & copie); // Constructeur de copie public
         Campagne (QString titre);
         ~Campagne ();				// Destructeur public
@@ -26,8 +27,12 @@ class Campagne
         quint16 getNum();
         QString getNom();
         QString getTitre();
+        QString getTitreJeu();
         QString getScenario();
-        Jeu* getJeu();
+        bool compare(Campagne c);
+        void setJeu(Jeu j);
+        void setTitreJeu(QString titreJeu);
+        Jeu getJeu();
 };
 
 #endif

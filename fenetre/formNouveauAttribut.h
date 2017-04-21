@@ -18,6 +18,9 @@ public:
 private slots:
     void on_creerAttributButton_clicked();
 
+signals:
+    void listAttributChanged();
+
 private:
     Ui::formNouveauAttribut *ui;
 };

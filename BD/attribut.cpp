@@ -5,11 +5,15 @@
 
 #include "BD/Attribut.h"
 
-quint16 Attribut::increment = 1;
+Attribut::Attribut ()
+{
+    nom="";
+    type=-1;
+    preset=false;
+    titre="";
+}
 
-Attribut::Attribut () {}
-
-Attribut::Attribut (QString s_nom,quint16 s_type,bool s_preset) : num(increment++)
+Attribut::Attribut (QString s_nom,int s_type,bool s_preset)
 {
     nom=s_nom;
     type=s_type;
@@ -19,7 +23,6 @@ Attribut::Attribut (QString s_nom,quint16 s_type,bool s_preset) : num(increment+
 }
 Attribut::Attribut (const Attribut & Copie)
 {
-    num = Copie.num;
     nom = Copie.nom;
     preset = Copie.preset;
     type = Copie.type;
@@ -31,15 +34,10 @@ Attribut::~Attribut()
 
 void Attribut::afficher () const
 {
-    qDebug() << num;
-    qDebug() << nom;
-    qDebug() << preset;
-    qDebug() << type;
-}
-
-quint16 Attribut::getNum()
-{
-    return num;
+    qDebug() << "nom: " << nom;
+    qDebug() << "preset: " << preset;
+    qDebug() << "type: " << type;
+    qDebug() << "titre: " << titre;
 }
 
 QString Attribut::getNom()
@@ -47,11 +45,12 @@ QString Attribut::getNom()
     return nom;
 }
 
+bool Attribut::getPreset() { return preset;}
+
 void Attribut::Save()
 {
-    qDebug() << num;
     QString filename = "data/Attribut/";
-    filename+=titre;
+    filename+=titre+".data";
     qDebug() << filename;
     QFile file(filename);
 
@@ -63,17 +62,17 @@ void Attribut::Save()
 
     QDataStream out(&file);
 
-    out << num << nom << titre << type << preset;
+    out << nom << titre << type << preset;
 
     file.flush();
     file.close();
     qDebug() << filename << "Sauvegardé !";
 }
 
-void Attribut::Load(QString titre)
+void Attribut::Load(QString nomFichier)
 {
     QString filename = "data/Attribut/";
-    filename+=titre;
+    filename+=nomFichier;
     filename+=".data";
     QFile file(filename);
 
@@ -86,7 +85,6 @@ void Attribut::Load(QString titre)
     QDataStream in(&file);
     in.setVersion(QDataStream::Qt_5_1);
 
-    in >> num;
     in >> nom;
     in >> titre;
     in >> type;

@@ -16,7 +16,8 @@ formNouveauJeu::formNouveauJeu(QWidget *parent) :
     ui->setupUi(this);
     for(int i=0;i<listAttribut.size();i++)
     {
-        ui->listAttribut->addItem(listAttribut[i].getNom());
+        if(listAttribut[i].getPreset()) ui->listAttributSelect->addItem(listAttribut[i].getNom());
+        else ui->listAttributDisp->addItem(listAttribut[i].getNom());
     }
 }
 
@@ -30,7 +31,7 @@ void formNouveauJeu::on_CreerJeu_clicked()
 {
     QString nom = ui->nomJeu->text();
     QString theme = ui->theme->text();
-    QVector<Attribut*> list(100);
+    QVector<Attribut> list(100);
     Jeu j(nom,theme,list);
     j.Save();
     emit listJeuChanged();

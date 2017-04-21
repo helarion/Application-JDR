@@ -22,6 +22,10 @@ private slots:
 
     void on_parcourirButton_clicked();
 
+    void on_nouveauAttribut_clicked();
+
+    void changementAttribut();
+
 signals:
     void listJeuChanged();
 

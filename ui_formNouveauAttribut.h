@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'formNouveauAttribut.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.1
+** Created by: Qt User Interface Compiler version 5.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -30,15 +30,16 @@ class Ui_formNouveauAttribut
 {
 public:
     QGridLayout *gridLayout;
+    QHBoxLayout *horizontalLayout;
+    QPushButton *creerAttributButton;
+    QPushButton *retourButton;
     QFormLayout *formLayout;
     QLabel *label;
     QLineEdit *Nom;
     QComboBox *typeAttributCombo;
     QLabel *label_2;
     QCheckBox *presetCheck;
-    QHBoxLayout *horizontalLayout;
-    QPushButton *creerAttributButton;
-    QPushButton *retourButton;
+    QLabel *label_3;
 
     void setupUi(QDialog *formNouveauAttribut)
     {
@@ -47,6 +48,22 @@ public:
         formNouveauAttribut->resize(400, 300);
         gridLayout = new QGridLayout(formNouveauAttribut);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(-1, -1, -1, 0);
+        creerAttributButton = new QPushButton(formNouveauAttribut);
+        creerAttributButton->setObjectName(QStringLiteral("creerAttributButton"));
+
+        horizontalLayout->addWidget(creerAttributButton);
+
+        retourButton = new QPushButton(formNouveauAttribut);
+        retourButton->setObjectName(QStringLiteral("retourButton"));
+
+        horizontalLayout->addWidget(retourButton);
+
+
+        gridLayout->addLayout(horizontalLayout, 2, 0, 1, 1);
+
         formLayout = new QFormLayout();
         formLayout->setObjectName(QStringLiteral("formLayout"));
         label = new QLabel(formNouveauAttribut);
@@ -75,23 +92,15 @@ public:
         formLayout->setWidget(2, QFormLayout::FieldRole, presetCheck);
 
 
-        gridLayout->addLayout(formLayout, 0, 0, 1, 1);
+        gridLayout->addLayout(formLayout, 1, 0, 1, 1);
 
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        horizontalLayout->setContentsMargins(-1, -1, -1, 0);
-        creerAttributButton = new QPushButton(formNouveauAttribut);
-        creerAttributButton->setObjectName(QStringLiteral("creerAttributButton"));
+        label_3 = new QLabel(formNouveauAttribut);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        QFont font;
+        font.setPointSize(20);
+        label_3->setFont(font);
 
-        horizontalLayout->addWidget(creerAttributButton);
-
-        retourButton = new QPushButton(formNouveauAttribut);
-        retourButton->setObjectName(QStringLiteral("retourButton"));
-
-        horizontalLayout->addWidget(retourButton);
-
-
-        gridLayout->addLayout(horizontalLayout, 1, 0, 1, 1);
+        gridLayout->addWidget(label_3, 0, 0, 1, 1, Qt::AlignHCenter);
 
 
         retranslateUi(formNouveauAttribut);
@@ -102,12 +111,13 @@ public:
 
     void retranslateUi(QDialog *formNouveauAttribut)
     {
-        formNouveauAttribut->setWindowTitle(QApplication::translate("formNouveauAttribut", "Dialog", Q_NULLPTR));
-        label->setText(QApplication::translate("formNouveauAttribut", "Nom :", Q_NULLPTR));
-        label_2->setText(QApplication::translate("formNouveauAttribut", "Type d'attribut :", Q_NULLPTR));
-        presetCheck->setText(QApplication::translate("formNouveauAttribut", "Preset", Q_NULLPTR));
-        creerAttributButton->setText(QApplication::translate("formNouveauAttribut", "Valider", Q_NULLPTR));
-        retourButton->setText(QApplication::translate("formNouveauAttribut", "Annuler", Q_NULLPTR));
+        formNouveauAttribut->setWindowTitle(QApplication::translate("formNouveauAttribut", "Dialog", 0));
+        creerAttributButton->setText(QApplication::translate("formNouveauAttribut", "Valider", 0));
+        retourButton->setText(QApplication::translate("formNouveauAttribut", "Annuler", 0));
+        label->setText(QApplication::translate("formNouveauAttribut", "Nom :", 0));
+        label_2->setText(QApplication::translate("formNouveauAttribut", "Type d'attribut :", 0));
+        presetCheck->setText(QApplication::translate("formNouveauAttribut", "Preset", 0));
+        label_3->setText(QApplication::translate("formNouveauAttribut", "Attributs", 0));
     } // retranslateUi
 
 };

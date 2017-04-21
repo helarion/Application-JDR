@@ -7,17 +7,14 @@
 #include "BD/jeu.h"
 #include "BD/collections.h"
 
-quint16 Jeu::increment = 1;
-
 Jeu::Jeu ()
 {
-    num=-1;
     nom="";
     adrTheme="";
     titre="";
 }
 
-Jeu::Jeu (QString s_nom,QString s_adrTheme, QVector<Attribut*> list) : num(increment++)
+Jeu::Jeu (QString s_nom,QString s_adrTheme, QVector<Attribut> list)
 {
     nom=s_nom;
     titre=nom.toLower();
@@ -31,7 +28,6 @@ Jeu::Jeu (QString s_nom,QString s_adrTheme, QVector<Attribut*> list) : num(incre
 }
 Jeu::Jeu (const Jeu & Copie)
 {
-    num = Copie.num;
     nom = Copie.nom;
     adrTheme = Copie.adrTheme;
     titre = Copie.titre;
@@ -42,7 +38,6 @@ Jeu::~Jeu()
 
 void Jeu::afficher () const
 {
-    qDebug() << num;
     qDebug() << nom;
     qDebug() << adrTheme;
     qDebug() << titre;
@@ -51,11 +46,6 @@ void Jeu::afficher () const
 QString Jeu::getTitre()
 {
     return titre;
-}
-
-quint16 Jeu::getNum()
-{
-    return num;
 }
 
 QString Jeu::getNom()
@@ -67,6 +57,8 @@ QString Jeu::getTheme()
 {
     return adrTheme;
 }
+
+QVector<Attribut> getListAttribut() {return listAttribut;}
 
 void Jeu::setNom(QString s_nom)
 {
@@ -89,14 +81,32 @@ void Jeu::setNom(QString s_nom)
 
 void Jeu::setTheme(QString s_theme)
 {
+    QFile::remove(adrTheme);
+    /*if (QFile::exists(s_theme))
+    {
+        // YES NO
+        QFile::remove(s_theme);
+    }*/
     QFile image(s_theme);
     QFileInfo info(s_theme);
     QString chemin="data/Jeu/"+titre+"."+info.suffix();
     //qDebug() << "chemin:" << chemin;
     image.copy(chemin);
     adrTheme=chemin;
-
 }
+
+void Jeu::editAttribut(int index, QString titre)
+{
+    listTitreAttribut.replace(index,titre);
+}
+
+bool Jeu::compare(Jeu j)
+{
+    if(nom==j.getNom() && adrTheme==j.getTheme()) return true;
+    return false;
+}
+
+QVector<QString> Jeu::getListTitreAttribut() { return listTitreAttribut; }
 
 void Jeu::Save()
 {
@@ -115,7 +125,7 @@ void Jeu::Save()
     QDataStream out(&file);
     //out.setVersion(QDataStream::Qt_5_1);
 
-    out << num << nom << adrTheme << titre;
+    out << nom << adrTheme << titre << listTitreAttribut;
 
     file.flush();
     file.close();
@@ -138,10 +148,16 @@ void Jeu::Load(QString nomFichier)
     QDataStream in(&file);
     in.setVersion(QDataStream::Qt_5_1);
 
-    in >> num;
     in >> nom;
     in >> adrTheme;
     in >> titre;
+    in >> listTitreAttribut;
+
+    for(int i=0;i<listTitreAttribut.size();i++)
+    {
+        Attribut a(listTitreAttribut[i]);
+        listAttribut.append(a);
+    }
 
     qDebug() << titre << " Récupéré.";
 

@@ -18,6 +18,13 @@
     extern void deleteCampagne(Campagne* c);
     extern void deletePartie(Partie* p);
 
+    extern void updateJeu(Jeu precedent, Jeu nouveau);
+
+    void afficherJeu();
+    void afficherAttribut();
+    void afficherCampagne();
+    void afficherPartie();
+
     extern void remplirListJeu();
     extern void remplirListAttribut();
     extern void remplirListCampagne();

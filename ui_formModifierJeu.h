@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'formModifierJeu.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.1
+** Created by: Qt User Interface Compiler version 5.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -37,7 +37,11 @@ public:
     QLineEdit *theme;
     QLineEdit *nomJeu;
     QHBoxLayout *Attributs;
-    QListWidget *listAttribut;
+    QListWidget *listAttributSelect;
+    QVBoxLayout *verticalLayout_3;
+    QPushButton *pushButton_2;
+    QPushButton *pushButton;
+    QListWidget *listAttributDisp;
     QVBoxLayout *boutons;
     QPushButton *nouveauAttribut;
     QPushButton *modifierAttribut;
@@ -94,10 +98,31 @@ public:
         Attributs = new QHBoxLayout();
         Attributs->setObjectName(QStringLiteral("Attributs"));
         Attributs->setContentsMargins(-1, -1, 0, 0);
-        listAttribut = new QListWidget(formModifierJeu);
-        listAttribut->setObjectName(QStringLiteral("listAttribut"));
+        listAttributSelect = new QListWidget(formModifierJeu);
+        listAttributSelect->setObjectName(QStringLiteral("listAttributSelect"));
 
-        Attributs->addWidget(listAttribut);
+        Attributs->addWidget(listAttributSelect);
+
+        verticalLayout_3 = new QVBoxLayout();
+        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
+        verticalLayout_3->setContentsMargins(-1, -1, 0, -1);
+        pushButton_2 = new QPushButton(formModifierJeu);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+
+        verticalLayout_3->addWidget(pushButton_2);
+
+        pushButton = new QPushButton(formModifierJeu);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+
+        verticalLayout_3->addWidget(pushButton);
+
+
+        Attributs->addLayout(verticalLayout_3);
+
+        listAttributDisp = new QListWidget(formModifierJeu);
+        listAttributDisp->setObjectName(QStringLiteral("listAttributDisp"));
+
+        Attributs->addWidget(listAttributDisp);
 
         boutons = new QVBoxLayout();
         boutons->setObjectName(QStringLiteral("boutons"));
@@ -174,19 +199,21 @@ public:
 
     void retranslateUi(QWidget *formModifierJeu)
     {
-        formModifierJeu->setWindowTitle(QApplication::translate("formModifierJeu", "Modification Jeu", Q_NULLPTR));
-        label->setText(QApplication::translate("formModifierJeu", "Modification Jeu", Q_NULLPTR));
-        label_2->setText(QApplication::translate("formModifierJeu", "Nom du jeu", Q_NULLPTR));
-        label_3->setText(QApplication::translate("formModifierJeu", "Th\303\250me", Q_NULLPTR));
-        nouveauAttribut->setText(QApplication::translate("formModifierJeu", "Ajouter", Q_NULLPTR));
-        modifierAttribut->setText(QApplication::translate("formModifierJeu", "Modifier", Q_NULLPTR));
-        supprimerAttribut->setText(QApplication::translate("formModifierJeu", "Supprimer", Q_NULLPTR));
-        parcourirButton->setText(QApplication::translate("formModifierJeu", "Parcourir", Q_NULLPTR));
-        label_4->setText(QApplication::translate("formModifierJeu", "Attributs", Q_NULLPTR));
+        formModifierJeu->setWindowTitle(QApplication::translate("formModifierJeu", "Modification Jeu", 0));
+        label->setText(QApplication::translate("formModifierJeu", "Modification Jeu", 0));
+        label_2->setText(QApplication::translate("formModifierJeu", "Nom du jeu", 0));
+        label_3->setText(QApplication::translate("formModifierJeu", "Th\303\250me", 0));
+        pushButton_2->setText(QApplication::translate("formModifierJeu", "<--", 0));
+        pushButton->setText(QApplication::translate("formModifierJeu", "-->", 0));
+        nouveauAttribut->setText(QApplication::translate("formModifierJeu", "Nouveau", 0));
+        modifierAttribut->setText(QApplication::translate("formModifierJeu", "Modifier", 0));
+        supprimerAttribut->setText(QApplication::translate("formModifierJeu", "Supprimer", 0));
+        parcourirButton->setText(QApplication::translate("formModifierJeu", "Parcourir", 0));
+        label_4->setText(QApplication::translate("formModifierJeu", "Attributs", 0));
         themeImage->setText(QString());
-        supprimerJeuButton->setText(QApplication::translate("formModifierJeu", "Supprimer", Q_NULLPTR));
-        modifierJeuButton->setText(QApplication::translate("formModifierJeu", "Modifier", Q_NULLPTR));
-        retourButton->setText(QApplication::translate("formModifierJeu", "Annuler", Q_NULLPTR));
+        supprimerJeuButton->setText(QApplication::translate("formModifierJeu", "Supprimer", 0));
+        modifierJeuButton->setText(QApplication::translate("formModifierJeu", "Modifier", 0));
+        retourButton->setText(QApplication::translate("formModifierJeu", "Annuler", 0));
     } // retranslateUi
 
 };

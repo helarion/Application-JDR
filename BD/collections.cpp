@@ -3,10 +3,10 @@
 
 #include "collections.h"
 
-QVector<Jeu> listJeu(100);
-QVector<Attribut> listAttribut(1000);
-QVector<Campagne> listCampagne(250);
-QVector<Partie> listPartie(500);
+QVector<Jeu> listJeu;
+QVector<Attribut> listAttribut;
+QVector<Campagne> listCampagne;
+QVector<Partie> listPartie;
 
 quint8 indexStack=0;
 
@@ -19,6 +19,27 @@ void addJeu(Jeu j) { listJeu.prepend(j); }
 void addAttribut(Attribut a) { listAttribut.prepend(a); }
 void addCampagne(Campagne c) { listCampagne.prepend(c); }
 void addPartie(Partie p) { listPartie.prepend(p); }
+
+void updateJeu(QString prec, QString suiv)
+{
+    for(int i=0;i<listCampagne.size(); i++)
+    {
+        if(listCampagne[i].getTitreJeu()==prec) listCampagne[i].setTitreJeu(suiv);
+    }
+}
+
+void updateAttribut(QString prec, QString suiv)
+{
+    for(int i=0;i<listJeu.size(); i++)
+    {
+        QVector<QString> l=listJeu[i].getListTitreAttribut();
+        for (int j=0;j<l.size();j++)
+        {
+            if(l[j]==(prec)) listJeu[i].editAttribut(j,suiv);
+        }
+
+    }
+}
 
 extern void deleteJeu(Jeu j)
 {
@@ -34,6 +55,38 @@ extern void deleteAttribut(Attribut* a);
 extern void deleteCampagne(Campagne* c);
 extern void deletePartie(Partie* p);
 
+void afficherJeu()
+{
+    for(int i=0; i<listJeu.size(); i++)
+    {
+        listJeu[i].afficher();
+    }
+}
+
+void afficherAttribut()
+{
+    for(int i=0; i<listAttribut.size(); i++)
+    {
+        listAttribut[i].afficher();
+    }
+}
+
+void afficherCampagne()
+{
+    for(int i=0; i<listCampagne.size(); i++)
+    {
+        listCampagne[i].afficher();
+    }
+}
+
+void afficherPartie()
+{
+    for(int i=0; i<listPartie.size(); i++)
+    {
+        listPartie[i].afficher();
+    }
+}
+
 void remplirListJeu()
 {
     listJeu.clear();
@@ -48,11 +101,9 @@ void remplirListJeu()
             nom=list.at(0);
             Jeu j(nom);
             listJeu.append(j);
-            //qDebug() << "FILE: " <<nom;
         }
     }
 }
-
 
 void remplirListAttribut()
 {
@@ -75,6 +126,7 @@ void remplirListAttribut()
 
 void remplirListCampagne()
 {
+    listCampagne.clear();
     QString nom;
     QStringList list;
     QString path="data/Campagne";
