@@ -26,7 +26,7 @@ formModifierJeu::formModifierJeu(QWidget *parent) :
     {
         for(int i=0;i<ui->listAttributSelect->size().height();i++)
         {
-            if(ui->listAttributSelect[i]==listAttribut[i].getNom())
+            if(ui->listAttributSelect->item(i)->text()==listAttribut[i].getNom())
             {
                 test=false;
                 break;
