@@ -14,11 +14,10 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
-#include <QtWidgets/QListWidget>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
@@ -28,95 +27,70 @@ QT_BEGIN_NAMESPACE
 class Ui_formNouvelleCampagne
 {
 public:
-    QGridLayout *gridLayout;
-    QListWidget *personnagesList;
-    QLabel *label_2;
-    QLineEdit *nomCampagne;
-    QPushButton *creerButton;
+    QVBoxLayout *verticalLayout;
     QLabel *label;
     QLabel *label_3;
-    QPushButton *annulerButton;
+    QLineEdit *nomCampagne;
     QLabel *label_4;
     QTextEdit *scenarioCampagne;
-    QVBoxLayout *verticalLayout;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
+    QHBoxLayout *horizontalLayout;
+    QPushButton *creerButton;
+    QPushButton *annulerButton;
 
     void setupUi(QDialog *formNouvelleCampagne)
     {
         if (formNouvelleCampagne->objectName().isEmpty())
             formNouvelleCampagne->setObjectName(QStringLiteral("formNouvelleCampagne"));
         formNouvelleCampagne->resize(369, 328);
-        gridLayout = new QGridLayout(formNouvelleCampagne);
-        gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        personnagesList = new QListWidget(formNouvelleCampagne);
-        personnagesList->setObjectName(QStringLiteral("personnagesList"));
-
-        gridLayout->addWidget(personnagesList, 5, 0, 3, 2);
-
-        label_2 = new QLabel(formNouvelleCampagne);
-        label_2->setObjectName(QStringLiteral("label_2"));
-
-        gridLayout->addWidget(label_2, 4, 0, 1, 1);
-
-        nomCampagne = new QLineEdit(formNouvelleCampagne);
-        nomCampagne->setObjectName(QStringLiteral("nomCampagne"));
-
-        gridLayout->addWidget(nomCampagne, 2, 1, 1, 2);
-
-        creerButton = new QPushButton(formNouvelleCampagne);
-        creerButton->setObjectName(QStringLiteral("creerButton"));
-
-        gridLayout->addWidget(creerButton, 8, 0, 1, 2);
-
+        verticalLayout = new QVBoxLayout(formNouvelleCampagne);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         label = new QLabel(formNouvelleCampagne);
         label->setObjectName(QStringLiteral("label"));
+        QFont font;
+        font.setPointSize(20);
+        label->setFont(font);
 
-        gridLayout->addWidget(label, 0, 1, 1, 2);
+        verticalLayout->addWidget(label, 0, Qt::AlignHCenter);
 
         label_3 = new QLabel(formNouvelleCampagne);
         label_3->setObjectName(QStringLiteral("label_3"));
 
-        gridLayout->addWidget(label_3, 2, 0, 1, 1);
+        verticalLayout->addWidget(label_3);
 
-        annulerButton = new QPushButton(formNouvelleCampagne);
-        annulerButton->setObjectName(QStringLiteral("annulerButton"));
+        nomCampagne = new QLineEdit(formNouvelleCampagne);
+        nomCampagne->setObjectName(QStringLiteral("nomCampagne"));
 
-        gridLayout->addWidget(annulerButton, 8, 2, 1, 1);
+        verticalLayout->addWidget(nomCampagne);
 
         label_4 = new QLabel(formNouvelleCampagne);
         label_4->setObjectName(QStringLiteral("label_4"));
 
-        gridLayout->addWidget(label_4, 3, 0, 1, 1);
+        verticalLayout->addWidget(label_4);
 
         scenarioCampagne = new QTextEdit(formNouvelleCampagne);
         scenarioCampagne->setObjectName(QStringLiteral("scenarioCampagne"));
 
-        gridLayout->addWidget(scenarioCampagne, 3, 1, 1, 1);
+        verticalLayout->addWidget(scenarioCampagne);
 
-        verticalLayout = new QVBoxLayout();
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        pushButton = new QPushButton(formNouvelleCampagne);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(-1, 0, -1, -1);
+        creerButton = new QPushButton(formNouvelleCampagne);
+        creerButton->setObjectName(QStringLiteral("creerButton"));
 
-        verticalLayout->addWidget(pushButton);
+        horizontalLayout->addWidget(creerButton);
 
-        pushButton_2 = new QPushButton(formNouvelleCampagne);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        annulerButton = new QPushButton(formNouvelleCampagne);
+        annulerButton->setObjectName(QStringLiteral("annulerButton"));
 
-        verticalLayout->addWidget(pushButton_2);
-
-        pushButton_3 = new QPushButton(formNouvelleCampagne);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-
-        verticalLayout->addWidget(pushButton_3);
+        horizontalLayout->addWidget(annulerButton);
 
 
-        gridLayout->addLayout(verticalLayout, 5, 2, 1, 1);
+        verticalLayout->addLayout(horizontalLayout);
 
 
         retranslateUi(formNouvelleCampagne);
+        QObject::connect(annulerButton, SIGNAL(clicked()), formNouvelleCampagne, SLOT(close()));
 
         QMetaObject::connectSlotsByName(formNouvelleCampagne);
     } // setupUi
@@ -124,15 +98,11 @@ public:
     void retranslateUi(QDialog *formNouvelleCampagne)
     {
         formNouvelleCampagne->setWindowTitle(QApplication::translate("formNouvelleCampagne", "Dialog", 0));
-        label_2->setText(QApplication::translate("formNouvelleCampagne", "Personnages :", 0));
-        creerButton->setText(QApplication::translate("formNouvelleCampagne", "Cr\303\251er", 0));
         label->setText(QApplication::translate("formNouvelleCampagne", "Nouvelle campagne :", 0));
         label_3->setText(QApplication::translate("formNouvelleCampagne", "Nom :", 0));
-        annulerButton->setText(QApplication::translate("formNouvelleCampagne", "Annuler", 0));
         label_4->setText(QApplication::translate("formNouvelleCampagne", "Scenario:", 0));
-        pushButton->setText(QApplication::translate("formNouvelleCampagne", "Ajouter", 0));
-        pushButton_2->setText(QApplication::translate("formNouvelleCampagne", "Modifier", 0));
-        pushButton_3->setText(QApplication::translate("formNouvelleCampagne", "Supprimer", 0));
+        creerButton->setText(QApplication::translate("formNouvelleCampagne", "Cr\303\251er", 0));
+        annulerButton->setText(QApplication::translate("formNouvelleCampagne", "Annuler", 0));
     } // retranslateUi
 
 };

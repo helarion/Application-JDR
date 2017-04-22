@@ -14,10 +14,17 @@ formNouveauJeu::formNouveauJeu(QWidget *parent) :
     ui(new Ui::formNouveauJeu)
 {
     ui->setupUi(this);
+    remplirListAttribut();
+    ui->listAttributDisp->clear();
+    ui->listAttributSelect->clear();
+
     for(int i=0;i<listAttribut.size();i++)
     {
-        if(listAttribut[i].getPreset()) ui->listAttributSelect->addItem(listAttribut[i].getNom());
-        else ui->listAttributDisp->addItem(listAttribut[i].getNom());
+        QListWidgetItem *newItem = new QListWidgetItem;
+        newItem->setData(Qt::UserRole,i); // on met l'index de l'objet dans la liste comme donnée
+        newItem->setText(listAttribut[i].getNom()); // le nom de l'objet comme text affiché
+        if(listAttribut[i].getPreset()) ui->listAttributSelect->addItem(newItem);
+        else ui->listAttributDisp->addItem(newItem);
     }
 }
 
@@ -29,9 +36,16 @@ formNouveauJeu::~formNouveauJeu()
 
 void formNouveauJeu::on_CreerJeu_clicked()
 {
+    // récupération des valeurs du formulaire
     QString nom = ui->nomJeu->text();
     QString theme = ui->theme->text();
-    QVector<Attribut> list(100);
+    // récupération des attributs selectionnés
+    QVector<Attribut> list;
+    for(int i=0;i<ui->listAttributSelect->count();i++)
+    {
+        int index=ui->listAttributSelect->item(i)->data(Qt::UserRole).toInt();
+        list.append(listAttribut[index]);
+    }
     Jeu j(nom,theme,list);
     j.Save();
     emit listJeuChanged();

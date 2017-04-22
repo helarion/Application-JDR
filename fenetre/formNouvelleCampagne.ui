@@ -13,78 +13,55 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="5" column="0" rowspan="3" colspan="2">
-    <widget class="QListWidget" name="personnagesList"/>
-   </item>
-   <item row="4" column="0">
-    <widget class="QLabel" name="label_2">
-     <property name="text">
-      <string>Personnages :</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="1" colspan="2">
-    <widget class="QLineEdit" name="nomCampagne"/>
-   </item>
-   <item row="8" column="0" colspan="2">
-    <widget class="QPushButton" name="creerButton">
-     <property name="text">
-      <string>Créer</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="1" colspan="2">
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item alignment="Qt::AlignHCenter">
     <widget class="QLabel" name="label">
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
      <property name="text">
       <string>Nouvelle campagne :</string>
      </property>
     </widget>
    </item>
-   <item row="2" column="0">
+   <item>
     <widget class="QLabel" name="label_3">
      <property name="text">
       <string>Nom :</string>
      </property>
     </widget>
    </item>
-   <item row="8" column="2">
-    <widget class="QPushButton" name="annulerButton">
-     <property name="text">
-      <string>Annuler</string>
-     </property>
-    </widget>
+   <item>
+    <widget class="QLineEdit" name="nomCampagne"/>
    </item>
-   <item row="3" column="0">
+   <item>
     <widget class="QLabel" name="label_4">
      <property name="text">
       <string>Scenario:</string>
      </property>
     </widget>
    </item>
-   <item row="3" column="1">
+   <item>
     <widget class="QTextEdit" name="scenarioCampagne"/>
    </item>
-   <item row="5" column="2">
-    <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="topMargin">
+      <number>0</number>
+     </property>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="creerButton">
        <property name="text">
-        <string>Ajouter</string>
+        <string>Créer</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="annulerButton">
        <property name="text">
-        <string>Modifier</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_3">
-       <property name="text">
-        <string>Supprimer</string>
+        <string>Annuler</string>
        </property>
       </widget>
      </item>
@@ -93,5 +70,22 @@
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>annulerButton</sender>
+   <signal>clicked()</signal>
+   <receiver>formNouvelleCampagne</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>272</x>
+     <y>303</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>184</x>
+     <y>163</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

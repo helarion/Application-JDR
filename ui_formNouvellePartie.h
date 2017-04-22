@@ -14,57 +14,154 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QFormLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTextEdit>
+#include <QtWidgets/QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_formNouvellePartie
 {
 public:
+    QVBoxLayout *verticalLayout_3;
     QLabel *label;
-    QLabel *label_2;
+    QFormLayout *formLayout;
+    QLineEdit *nomPartie;
     QLabel *label_3;
-    QLineEdit *lineEdit;
-    QLineEdit *lineEdit_2;
     QLabel *label_4;
-    QTextEdit *textEdit;
-    QPushButton *pushButton;
+    QLabel *label_2;
+    QLineEdit *date;
+    QTextEdit *resumePartie;
+    QHBoxLayout *horizontalLayout;
+    QVBoxLayout *verticalLayout_2;
+    QLabel *label_5;
+    QListWidget *listPersonnages;
+    QVBoxLayout *verticalLayout;
+    QPushButton *ajouterPersonnageButton;
+    QPushButton *modifierPersonnageButton;
+    QPushButton *supprimerPersonnageButton;
+    QHBoxLayout *horizontalLayout_2;
+    QPushButton *validerButton;
+    QPushButton *retourButton;
 
     void setupUi(QDialog *formNouvellePartie)
     {
         if (formNouvellePartie->objectName().isEmpty())
             formNouvellePartie->setObjectName(QStringLiteral("formNouvellePartie"));
-        formNouvellePartie->resize(312, 300);
+        formNouvellePartie->resize(400, 444);
+        verticalLayout_3 = new QVBoxLayout(formNouvellePartie);
+        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         label = new QLabel(formNouvellePartie);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(160, 20, 101, 31));
-        label_2 = new QLabel(formNouvellePartie);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(20, 60, 47, 13));
+        QFont font;
+        font.setPointSize(20);
+        label->setFont(font);
+
+        verticalLayout_3->addWidget(label, 0, Qt::AlignHCenter);
+
+        formLayout = new QFormLayout();
+        formLayout->setObjectName(QStringLiteral("formLayout"));
+        formLayout->setContentsMargins(-1, 0, 0, -1);
+        nomPartie = new QLineEdit(formNouvellePartie);
+        nomPartie->setObjectName(QStringLiteral("nomPartie"));
+
+        formLayout->setWidget(0, QFormLayout::FieldRole, nomPartie);
+
         label_3 = new QLabel(formNouvellePartie);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(20, 90, 47, 13));
-        lineEdit = new QLineEdit(formNouvellePartie);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(60, 60, 113, 20));
-        lineEdit_2 = new QLineEdit(formNouvellePartie);
-        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
-        lineEdit_2->setGeometry(QRect(60, 90, 113, 20));
+
+        formLayout->setWidget(0, QFormLayout::LabelRole, label_3);
+
         label_4 = new QLabel(formNouvellePartie);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(10, 110, 71, 16));
-        textEdit = new QTextEdit(formNouvellePartie);
-        textEdit->setObjectName(QStringLiteral("textEdit"));
-        textEdit->setGeometry(QRect(20, 130, 261, 101));
-        pushButton = new QPushButton(formNouvellePartie);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(120, 250, 75, 23));
+
+        formLayout->setWidget(2, QFormLayout::LabelRole, label_4);
+
+        label_2 = new QLabel(formNouvellePartie);
+        label_2->setObjectName(QStringLiteral("label_2"));
+
+        formLayout->setWidget(4, QFormLayout::LabelRole, label_2);
+
+        date = new QLineEdit(formNouvellePartie);
+        date->setObjectName(QStringLiteral("date"));
+
+        formLayout->setWidget(4, QFormLayout::FieldRole, date);
+
+        resumePartie = new QTextEdit(formNouvellePartie);
+        resumePartie->setObjectName(QStringLiteral("resumePartie"));
+
+        formLayout->setWidget(3, QFormLayout::SpanningRole, resumePartie);
+
+
+        verticalLayout_3->addLayout(formLayout);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(-1, -1, 0, -1);
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        verticalLayout_2->setContentsMargins(-1, -1, 0, -1);
+        label_5 = new QLabel(formNouvellePartie);
+        label_5->setObjectName(QStringLiteral("label_5"));
+
+        verticalLayout_2->addWidget(label_5);
+
+        listPersonnages = new QListWidget(formNouvellePartie);
+        listPersonnages->setObjectName(QStringLiteral("listPersonnages"));
+
+        verticalLayout_2->addWidget(listPersonnages);
+
+
+        horizontalLayout->addLayout(verticalLayout_2);
+
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        ajouterPersonnageButton = new QPushButton(formNouvellePartie);
+        ajouterPersonnageButton->setObjectName(QStringLiteral("ajouterPersonnageButton"));
+
+        verticalLayout->addWidget(ajouterPersonnageButton);
+
+        modifierPersonnageButton = new QPushButton(formNouvellePartie);
+        modifierPersonnageButton->setObjectName(QStringLiteral("modifierPersonnageButton"));
+
+        verticalLayout->addWidget(modifierPersonnageButton);
+
+        supprimerPersonnageButton = new QPushButton(formNouvellePartie);
+        supprimerPersonnageButton->setObjectName(QStringLiteral("supprimerPersonnageButton"));
+
+        verticalLayout->addWidget(supprimerPersonnageButton);
+
+
+        horizontalLayout->addLayout(verticalLayout);
+
+
+        verticalLayout_3->addLayout(horizontalLayout);
+
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalLayout_2->setContentsMargins(-1, 0, -1, -1);
+        validerButton = new QPushButton(formNouvellePartie);
+        validerButton->setObjectName(QStringLiteral("validerButton"));
+
+        horizontalLayout_2->addWidget(validerButton);
+
+        retourButton = new QPushButton(formNouvellePartie);
+        retourButton->setObjectName(QStringLiteral("retourButton"));
+
+        horizontalLayout_2->addWidget(retourButton);
+
+
+        verticalLayout_3->addLayout(horizontalLayout_2);
+
 
         retranslateUi(formNouvellePartie);
+        QObject::connect(retourButton, SIGNAL(clicked()), formNouvellePartie, SLOT(close()));
 
         QMetaObject::connectSlotsByName(formNouvellePartie);
     } // setupUi
@@ -73,10 +170,15 @@ public:
     {
         formNouvellePartie->setWindowTitle(QApplication::translate("formNouvellePartie", "Dialog", 0));
         label->setText(QApplication::translate("formNouvellePartie", "Nouvelle Partie :", 0));
-        label_2->setText(QApplication::translate("formNouvellePartie", "Date :", 0));
         label_3->setText(QApplication::translate("formNouvellePartie", "Nom :", 0));
         label_4->setText(QApplication::translate("formNouvellePartie", "Description :", 0));
-        pushButton->setText(QApplication::translate("formNouvellePartie", "Valider", 0));
+        label_2->setText(QApplication::translate("formNouvellePartie", "Date :", 0));
+        label_5->setText(QApplication::translate("formNouvellePartie", "Personnages :", 0));
+        ajouterPersonnageButton->setText(QApplication::translate("formNouvellePartie", "Ajouter", 0));
+        modifierPersonnageButton->setText(QApplication::translate("formNouvellePartie", "Modifier", 0));
+        supprimerPersonnageButton->setText(QApplication::translate("formNouvellePartie", "Supprimer", 0));
+        validerButton->setText(QApplication::translate("formNouvellePartie", "Valider", 0));
+        retourButton->setText(QApplication::translate("formNouvellePartie", "Annuler", 0));
     } // retranslateUi
 
 };

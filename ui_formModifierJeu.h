@@ -39,8 +39,8 @@ public:
     QHBoxLayout *Attributs;
     QListWidget *listAttributSelect;
     QVBoxLayout *verticalLayout_3;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton;
+    QPushButton *ajouterButton;
+    QPushButton *supprimerButton;
     QListWidget *listAttributDisp;
     QVBoxLayout *boutons;
     QPushButton *nouveauAttribut;
@@ -58,7 +58,7 @@ public:
     {
         if (formModifierJeu->objectName().isEmpty())
             formModifierJeu->setObjectName(QStringLiteral("formModifierJeu"));
-        formModifierJeu->resize(660, 418);
+        formModifierJeu->resize(763, 418);
         verticalLayout_2 = new QVBoxLayout(formModifierJeu);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         label = new QLabel(formModifierJeu);
@@ -106,15 +106,15 @@ public:
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(-1, -1, 0, -1);
-        pushButton_2 = new QPushButton(formModifierJeu);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        ajouterButton = new QPushButton(formModifierJeu);
+        ajouterButton->setObjectName(QStringLiteral("ajouterButton"));
 
-        verticalLayout_3->addWidget(pushButton_2);
+        verticalLayout_3->addWidget(ajouterButton);
 
-        pushButton = new QPushButton(formModifierJeu);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
+        supprimerButton = new QPushButton(formModifierJeu);
+        supprimerButton->setObjectName(QStringLiteral("supprimerButton"));
 
-        verticalLayout_3->addWidget(pushButton);
+        verticalLayout_3->addWidget(supprimerButton);
 
 
         Attributs->addLayout(verticalLayout_3);
@@ -193,6 +193,7 @@ public:
 
 
         retranslateUi(formModifierJeu);
+        QObject::connect(retourButton, SIGNAL(clicked()), formModifierJeu, SLOT(close()));
 
         QMetaObject::connectSlotsByName(formModifierJeu);
     } // setupUi
@@ -203,8 +204,8 @@ public:
         label->setText(QApplication::translate("formModifierJeu", "Modification Jeu", 0));
         label_2->setText(QApplication::translate("formModifierJeu", "Nom du jeu", 0));
         label_3->setText(QApplication::translate("formModifierJeu", "Th\303\250me", 0));
-        pushButton_2->setText(QApplication::translate("formModifierJeu", "<--", 0));
-        pushButton->setText(QApplication::translate("formModifierJeu", "-->", 0));
+        ajouterButton->setText(QApplication::translate("formModifierJeu", "<--", 0));
+        supprimerButton->setText(QApplication::translate("formModifierJeu", "-->", 0));
         nouveauAttribut->setText(QApplication::translate("formModifierJeu", "Nouveau", 0));
         modifierAttribut->setText(QApplication::translate("formModifierJeu", "Modifier", 0));
         supprimerAttribut->setText(QApplication::translate("formModifierJeu", "Supprimer", 0));

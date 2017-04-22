@@ -37,6 +37,8 @@ private slots:
 
     void on_listJeu_itemSelectionChanged();
 
+    void on_listCampagne_itemSelectionChanged();
+
 private:
     Ui::MainWindow *ui;
 public slots:

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>660</width>
+    <width>763</width>
     <height>418</height>
    </rect>
   </property>
@@ -73,14 +73,14 @@
             <number>0</number>
            </property>
            <item>
-            <widget class="QPushButton" name="pushButton_2">
+            <widget class="QPushButton" name="ajouterButton">
              <property name="text">
               <string>&lt;--</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton">
+            <widget class="QPushButton" name="supprimerButton">
              <property name="text">
               <string>--&gt;</string>
              </property>
@@ -186,5 +186,22 @@
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>retourButton</sender>
+   <signal>clicked()</signal>
+   <receiver>formModifierJeu</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>629</x>
+     <y>393</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>381</x>
+     <y>208</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

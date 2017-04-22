@@ -161,11 +161,20 @@ void remplirListPartie()
     }
 }
 
-int chercheNomJeu(QString nom)
+int chercheTitreJeu(QString titre)
 {
     for(int i=0;i<listJeu.size();i++)
     {
-        if(listJeu[i].getNom()==nom) return i;
+        if(listJeu[i].getTitre()==titre) return i;
+    }
+    return -1;
+}
+
+int chercheTitreCampagne(QString titre)
+{
+    for(int i=0;i<listCampagne.size();i++)
+    {
+        if(listCampagne[i].getTitre()==titre) return i;
     }
     return -1;
 }

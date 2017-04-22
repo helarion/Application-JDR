@@ -26,6 +26,7 @@ class Jeu
         QVector<QString> getListTitreAttribut();
         void setNom(QString s_nom);
         void setTheme(QString s_theme);
+        void setListAttribut(QVector<Attribut> list);
         void editAttribut(int index, QString titre);
 	private:
         QString nom;

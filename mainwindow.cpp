@@ -39,11 +39,15 @@ MainWindow::~MainWindow()
 void MainWindow::changementJeu()
 {
     remplirListJeu();
-    qDebug() << "je récupère le signal";
     ui->listJeu->clear();
     for(int i=0;i<listJeu.size();i++)
     {
-     ui->listJeu->addItem(listJeu[i].getNom());
+        QListWidgetItem *newItem = new QListWidgetItem;
+        // on met le titre de l'objet comme donnée
+        newItem->setData(Qt::UserRole,listJeu[i].getTitre());
+        // le nom de l'objet comme text affiché
+        newItem->setText(listJeu[i].getNom());
+        ui->listJeu->addItem(newItem);
     }
 }
 
@@ -52,11 +56,15 @@ void MainWindow::on_jeuButton_clicked()
    indexStack=1;
    ui->contentStack->setCurrentIndex(indexStack);
    remplirListJeu();
-   afficherJeu();
    ui->listJeu->clear();
    for(int i=0;i<listJeu.size();i++)
    {
-    ui->listJeu->addItem(listJeu[i].getNom());
+       QListWidgetItem *newItem = new QListWidgetItem;
+       // on met le titre de l'objet comme donnée
+       newItem->setData(Qt::UserRole,listJeu[i].getTitre());
+       // le nom de l'objet comme text affiché
+       newItem->setText(listJeu[i].getNom());
+       ui->listJeu->addItem(newItem);
    }
 }
 
@@ -93,7 +101,12 @@ void MainWindow::on_selectionnerJeuButton_clicked()
     {
         if(listCampagne[i].getJeu().compare(listJeu[jeuSelect]))
         {
-            ui->listCampagne->addItem(listCampagne[i].getNom());
+            QListWidgetItem *newItem = new QListWidgetItem;
+            // on met le titre de l'objet comme donnée
+            newItem->setData(Qt::UserRole,listCampagne[i].getTitre());
+            // le nom de l'objet comme text affiché
+            newItem->setText(listCampagne[i].getNom());
+            ui->listCampagne->addItem(newItem);
         }
     }
 }
@@ -121,9 +134,13 @@ void MainWindow::on_selectionnerCampagneButton_clicked()
 
 void MainWindow::on_listJeu_itemSelectionChanged()
 {
-    jeuSelect=chercheNomJeu(ui->listJeu->currentItem()->text());
-    //listJeu[jeuSelect].afficher();
+    jeuSelect=chercheTitreJeu(ui->listJeu->currentItem()->data(Qt::UserRole).toString());
     ui->themeJeu->setPixmap(QPixmap(listJeu[jeuSelect].getTheme()));
     ui->themeJeu->adjustSize();
     ui->themeJeu->setScaledContents(true);
+}
+
+void MainWindow::on_listCampagne_itemSelectionChanged()
+{
+    campagneSelect=chercheTitreCampagne(ui->listCampagne->currentItem()->data(Qt::UserRole).toString());
 }

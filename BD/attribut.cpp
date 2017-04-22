@@ -45,6 +45,11 @@ QString Attribut::getNom()
     return nom;
 }
 
+QString Attribut::getTitre()
+{
+    return titre;
+}
+
 bool Attribut::getPreset() { return preset;}
 
 void Attribut::Save()
@@ -66,7 +71,7 @@ void Attribut::Save()
 
     file.flush();
     file.close();
-    qDebug() << filename << "Sauvegardé !";
+    //qDebug() << filename << "Sauvegardé !";
 }
 
 void Attribut::Load(QString nomFichier)
@@ -90,7 +95,7 @@ void Attribut::Load(QString nomFichier)
     in >> type;
     in >> preset;
 
-    qDebug() << titre << " Récupéré.";
+    //qDebug() << titre << " Récupéré.";
 
     file.close();
 }

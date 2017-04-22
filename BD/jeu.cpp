@@ -24,13 +24,20 @@ Jeu::Jeu (QString s_nom,QString s_adrTheme, QVector<Attribut> list)
     s_adrTheme="data/Jeu/"+titre+"."+info.suffix();
     image.copy(s_adrTheme);
     adrTheme=s_adrTheme;
-    listAttribut=list;
+    this->listAttribut=list;
+    // on remplit la liste des titres
+    for(int i=0;i<this->listAttribut.size();i++)
+    {
+        listTitreAttribut.append(listAttribut[i].getTitre());
+    }
 }
 Jeu::Jeu (const Jeu & Copie)
 {
     nom = Copie.nom;
     adrTheme = Copie.adrTheme;
     titre = Copie.titre;
+    this->listAttribut=Copie.listAttribut;
+    this->listTitreAttribut=Copie.listTitreAttribut;
 }
 Jeu::Jeu (QString nomFichier){ Load(nomFichier); }
 Jeu::~Jeu()
@@ -58,7 +65,7 @@ QString Jeu::getTheme()
     return adrTheme;
 }
 
-QVector<Attribut> getListAttribut() {return listAttribut;}
+QVector<Attribut> Jeu::getListAttribut() {return this->listAttribut;}
 
 void Jeu::setNom(QString s_nom)
 {
@@ -95,6 +102,17 @@ void Jeu::setTheme(QString s_theme)
     adrTheme=chemin;
 }
 
+void Jeu::setListAttribut(QVector<Attribut> list)
+{
+    this->listAttribut.clear();
+    this->listTitreAttribut.clear();
+    this->listAttribut=list;
+    for(int i=0;i<this->listAttribut.size();i++)
+    {
+        this->listTitreAttribut.append(this->listAttribut[i].getTitre());
+    }
+}
+
 void Jeu::editAttribut(int index, QString titre)
 {
     listTitreAttribut.replace(index,titre);
@@ -129,7 +147,7 @@ void Jeu::Save()
 
     file.flush();
     file.close();
-    qDebug() << filename << "Sauvegardé !";
+    //qDebug() << filename << "Sauvegardé !";
 }
 
 void Jeu::Load(QString nomFichier)
@@ -153,13 +171,16 @@ void Jeu::Load(QString nomFichier)
     in >> titre;
     in >> listTitreAttribut;
 
+    this->listAttribut.clear();
+
     for(int i=0;i<listTitreAttribut.size();i++)
     {
         Attribut a(listTitreAttribut[i]);
-        listAttribut.append(a);
+        a.afficher();
+        this->listAttribut.append(a);
     }
 
-    qDebug() << titre << " Récupéré.";
+    //qDebug() << titre << " Récupéré.";
 
     file.close();
 

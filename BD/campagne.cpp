@@ -60,6 +60,11 @@ Jeu Campagne::getJeu()
     return jeu;
 }
 
+QString Campagne::getTitre()
+{
+    return titre;
+}
+
 QString Campagne::getTitreJeu()
 {
     return titreJeu;
