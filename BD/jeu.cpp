@@ -176,7 +176,6 @@ void Jeu::Load(QString nomFichier)
     for(int i=0;i<listTitreAttribut.size();i++)
     {
         Attribut a(listTitreAttribut[i]);
-        a.afficher();
         this->listAttribut.append(a);
     }
 

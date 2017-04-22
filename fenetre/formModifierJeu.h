@@ -32,6 +32,8 @@ private slots:
 
     void on_supprimerAttribut_clicked();
 
+    void on_modifierAttribut_clicked();
+
 signals:
     void listJeuChanged();
 

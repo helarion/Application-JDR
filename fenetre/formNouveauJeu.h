@@ -23,6 +23,14 @@ private slots:
 
     void on_nouveauAttributButton_clicked();
 
+    void changementAttribut();
+
+    void on_ajouterButton_clicked();
+
+    void on_retirerButton_clicked();
+
+    void on_supprimerAttributButton_clicked();
+
 signals:
 
     void listJeuChanged();

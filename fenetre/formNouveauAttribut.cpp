@@ -27,7 +27,7 @@ void formNouveauAttribut::on_creerAttributButton_clicked()
 {
     QString nom=ui->Nom->text();
     int type=ui->typeAttributCombo->currentIndex();
-    bool preset=ui->presetCheck;
+    bool preset=ui->presetCheck->isChecked();
     Attribut a(nom,type,preset);
     a.Save();
     // update la liste dans formJeu

@@ -37,6 +37,7 @@ public:
     QLabel *label_3;
     QHBoxLayout *horizontalLayout;
     QPushButton *modifierCampagneButton;
+    QPushButton *supprimerButton;
     QPushButton *retourButton;
 
     void setupUi(QDialog *formModifierCampagne)
@@ -87,6 +88,11 @@ public:
 
         horizontalLayout->addWidget(modifierCampagneButton);
 
+        supprimerButton = new QPushButton(formModifierCampagne);
+        supprimerButton->setObjectName(QStringLiteral("supprimerButton"));
+
+        horizontalLayout->addWidget(supprimerButton);
+
         retourButton = new QPushButton(formModifierCampagne);
         retourButton->setObjectName(QStringLiteral("retourButton"));
 
@@ -109,6 +115,7 @@ public:
         label_4->setText(QApplication::translate("formModifierCampagne", "Scenario:", 0));
         label_3->setText(QApplication::translate("formModifierCampagne", "Nom :", 0));
         modifierCampagneButton->setText(QApplication::translate("formModifierCampagne", "Valider", 0));
+        supprimerButton->setText(QApplication::translate("formModifierCampagne", "Supprimer", 0));
         retourButton->setText(QApplication::translate("formModifierCampagne", "Annuler", 0));
     } // retranslateUi
 

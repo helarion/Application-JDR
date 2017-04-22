@@ -37,6 +37,7 @@
     // recherche de l'index d'un objet à partir de son nom
     extern int chercheTitreJeu(QString titre);
     extern int chercheTitreCampagne(QString titre);
+    extern int chercheTitreAttribut(QString titre);
 
     // données (collections et index)
     extern QVector<Jeu> listJeu;

@@ -35,6 +35,7 @@ class Ui_MainWindow
 public:
     QWidget *centralWidget;
     QGridLayout *gridLayout_12;
+    QPushButton *retourButton;
     QStackedWidget *contentStack;
     QWidget *MenuPrincipal;
     QGridLayout *gridLayout_9;
@@ -67,15 +68,17 @@ public:
     QPushButton *nouveauCampagneButton;
     QWidget *Parties;
     QGridLayout *gridLayout_13;
+    QVBoxLayout *verticalLayout;
     QLabel *label_4;
+    QHBoxLayout *horizontalLayout_2;
     QLabel *label_6;
+    QListWidget *listPartie;
+    QVBoxLayout *verticalLayout_3;
+    QPushButton *selectionnerPartieButton;
+    QPushButton *modifierPartieButton;
+    QPushButton *ajouterPartieButton;
     QLabel *label_5;
-    QListWidget *listWidget_2;
-    QTextEdit *textEdit;
-    QPushButton *pushButton_3;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_4;
+    QTextEdit *resumePartie;
     QWidget *Personnages;
     QGridLayout *gridLayout_14;
     QLabel *label_7;
@@ -116,7 +119,6 @@ public:
     QPushButton *pushButton_5;
     QTextEdit *textEdit_2;
     QWidget *page_5;
-    QPushButton *retourButton;
     QMenuBar *menuBar;
     QStatusBar *statusBar;
 
@@ -131,6 +133,11 @@ public:
         gridLayout_12->setSpacing(6);
         gridLayout_12->setContentsMargins(11, 11, 11, 11);
         gridLayout_12->setObjectName(QStringLiteral("gridLayout_12"));
+        retourButton = new QPushButton(centralWidget);
+        retourButton->setObjectName(QStringLiteral("retourButton"));
+
+        gridLayout_12->addWidget(retourButton, 1, 0, 1, 1, Qt::AlignRight);
+
         contentStack = new QStackedWidget(centralWidget);
         contentStack->setObjectName(QStringLiteral("contentStack"));
         MenuPrincipal = new QWidget();
@@ -303,50 +310,67 @@ public:
         gridLayout_13->setSpacing(6);
         gridLayout_13->setContentsMargins(11, 11, 11, 11);
         gridLayout_13->setObjectName(QStringLiteral("gridLayout_13"));
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setSpacing(6);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setContentsMargins(-1, 0, -1, -1);
         label_4 = new QLabel(Parties);
         label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setFont(font3);
 
-        gridLayout_13->addWidget(label_4, 0, 1, 1, 2);
+        verticalLayout->addWidget(label_4, 0, Qt::AlignHCenter);
 
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setSpacing(6);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalLayout_2->setContentsMargins(0, 0, -1, -1);
         label_6 = new QLabel(Parties);
         label_6->setObjectName(QStringLiteral("label_6"));
 
-        gridLayout_13->addWidget(label_6, 1, 0, 1, 1);
+        horizontalLayout_2->addWidget(label_6);
+
+        listPartie = new QListWidget(Parties);
+        listPartie->setObjectName(QStringLiteral("listPartie"));
+
+        horizontalLayout_2->addWidget(listPartie);
+
+        verticalLayout_3 = new QVBoxLayout();
+        verticalLayout_3->setSpacing(6);
+        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
+        verticalLayout_3->setContentsMargins(0, -1, -1, -1);
+        selectionnerPartieButton = new QPushButton(Parties);
+        selectionnerPartieButton->setObjectName(QStringLiteral("selectionnerPartieButton"));
+
+        verticalLayout_3->addWidget(selectionnerPartieButton);
+
+        modifierPartieButton = new QPushButton(Parties);
+        modifierPartieButton->setObjectName(QStringLiteral("modifierPartieButton"));
+
+        verticalLayout_3->addWidget(modifierPartieButton);
+
+        ajouterPartieButton = new QPushButton(Parties);
+        ajouterPartieButton->setObjectName(QStringLiteral("ajouterPartieButton"));
+
+        verticalLayout_3->addWidget(ajouterPartieButton);
+
+
+        horizontalLayout_2->addLayout(verticalLayout_3);
+
+
+        verticalLayout->addLayout(horizontalLayout_2);
 
         label_5 = new QLabel(Parties);
         label_5->setObjectName(QStringLiteral("label_5"));
 
-        gridLayout_13->addWidget(label_5, 1, 2, 1, 2);
+        verticalLayout->addWidget(label_5);
 
-        listWidget_2 = new QListWidget(Parties);
-        listWidget_2->setObjectName(QStringLiteral("listWidget_2"));
+        resumePartie = new QTextEdit(Parties);
+        resumePartie->setObjectName(QStringLiteral("resumePartie"));
 
-        gridLayout_13->addWidget(listWidget_2, 2, 0, 1, 2);
+        verticalLayout->addWidget(resumePartie);
 
-        textEdit = new QTextEdit(Parties);
-        textEdit->setObjectName(QStringLiteral("textEdit"));
 
-        gridLayout_13->addWidget(textEdit, 2, 2, 1, 2);
-
-        pushButton_3 = new QPushButton(Parties);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-
-        gridLayout_13->addWidget(pushButton_3, 3, 0, 1, 1);
-
-        pushButton = new QPushButton(Parties);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-
-        gridLayout_13->addWidget(pushButton, 3, 1, 2, 2);
-
-        pushButton_2 = new QPushButton(Parties);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-
-        gridLayout_13->addWidget(pushButton_2, 3, 3, 1, 1);
-
-        pushButton_4 = new QPushButton(Parties);
-        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-
-        gridLayout_13->addWidget(pushButton_4, 4, 0, 1, 1);
+        gridLayout_13->addLayout(verticalLayout, 1, 1, 1, 1);
 
         contentStack->addWidget(Parties);
         Personnages = new QWidget();
@@ -548,11 +572,6 @@ public:
 
         gridLayout_12->addWidget(contentStack, 0, 0, 1, 1);
 
-        retourButton = new QPushButton(centralWidget);
-        retourButton->setObjectName(QStringLiteral("retourButton"));
-
-        gridLayout_12->addWidget(retourButton, 1, 0, 1, 1, Qt::AlignRight);
-
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -564,7 +583,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        contentStack->setCurrentIndex(2);
+        contentStack->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -573,6 +592,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
+        retourButton->setText(QApplication::translate("MainWindow", "Retour", 0));
         jeuButton->setText(QApplication::translate("MainWindow", "Jeux", 0));
         autreButton->setText(QApplication::translate("MainWindow", "Autre", 0));
         label->setText(QApplication::translate("MainWindow", "Gestionnaire de jeu de r\303\264le ", 0));
@@ -587,11 +607,10 @@ public:
         nouveauCampagneButton->setText(QApplication::translate("MainWindow", "Nouveau", 0));
         label_4->setText(QApplication::translate("MainWindow", "Parties :", 0));
         label_6->setText(QApplication::translate("MainWindow", "Liste :", 0));
-        label_5->setText(QApplication::translate("MainWindow", "Desscription :", 0));
-        pushButton_3->setText(QApplication::translate("MainWindow", "Ajouter", 0));
-        pushButton->setText(QApplication::translate("MainWindow", "Selectionner", 0));
-        pushButton_2->setText(QApplication::translate("MainWindow", "Supprimer", 0));
-        pushButton_4->setText(QApplication::translate("MainWindow", "Editer", 0));
+        selectionnerPartieButton->setText(QApplication::translate("MainWindow", "Selectionner", 0));
+        modifierPartieButton->setText(QApplication::translate("MainWindow", "Modifier", 0));
+        ajouterPartieButton->setText(QApplication::translate("MainWindow", "Ajouter", 0));
+        label_5->setText(QApplication::translate("MainWindow", "Resum\303\251 :", 0));
         label_7->setText(QApplication::translate("MainWindow", "Joueur :", 0));
         label_23->setText(QApplication::translate("MainWindow", "Age :", 0));
         label_9->setText(QApplication::translate("MainWindow", "Pr\303\251nom :", 0));
@@ -612,7 +631,6 @@ public:
         label_14->setText(QApplication::translate("MainWindow", "Attribut 6", 0));
         label_19->setText(QApplication::translate("MainWindow", "Descriptif :", 0));
         pushButton_5->setText(QApplication::translate("MainWindow", "Inventaire", 0));
-        retourButton->setText(QApplication::translate("MainWindow", "Retour", 0));
     } // retranslateUi
 
 };

@@ -49,7 +49,7 @@ public:
     QPushButton *retirerButton;
     QListWidget *listAttributDisp;
     QVBoxLayout *verticalLayout;
-    QPushButton *nouveauAttributBUtton;
+    QPushButton *nouveauAttributButton;
     QPushButton *modifierAttributButton;
     QPushButton *supprimerAttributButton;
 
@@ -156,10 +156,10 @@ public:
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(-1, -1, 0, -1);
-        nouveauAttributBUtton = new QPushButton(formNouveauJeu);
-        nouveauAttributBUtton->setObjectName(QStringLiteral("nouveauAttributBUtton"));
+        nouveauAttributButton = new QPushButton(formNouveauJeu);
+        nouveauAttributButton->setObjectName(QStringLiteral("nouveauAttributButton"));
 
-        verticalLayout->addWidget(nouveauAttributBUtton);
+        verticalLayout->addWidget(nouveauAttributButton);
 
         modifierAttributButton = new QPushButton(formNouveauJeu);
         modifierAttributButton->setObjectName(QStringLiteral("modifierAttributButton"));
@@ -200,7 +200,7 @@ public:
         label_4->setText(QApplication::translate("formNouveauJeu", "Attributs", 0));
         ajouterButton->setText(QApplication::translate("formNouveauJeu", "<--", 0));
         retirerButton->setText(QApplication::translate("formNouveauJeu", "-->", 0));
-        nouveauAttributBUtton->setText(QApplication::translate("formNouveauJeu", "Nouveau", 0));
+        nouveauAttributButton->setText(QApplication::translate("formNouveauJeu", "Nouveau", 0));
         modifierAttributButton->setText(QApplication::translate("formNouveauJeu", "Modifier", 0));
         supprimerAttributButton->setText(QApplication::translate("formNouveauJeu", "Supprimer", 0));
     } // retranslateUi

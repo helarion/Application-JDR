@@ -8,6 +8,7 @@
 #include "fenetre/formModifierJeu.h"
 #include "ui_formModifierJeu.h"
 #include "fenetre/formNouveauAttribut.h"
+#include "fenetre/formModifierAttribut.h"
 
 #include "BD/collections.h"
 
@@ -32,14 +33,18 @@ formModifierJeu::formModifierJeu(QWidget *parent) :
         // le nom de l'objet comme text affiché
         newItem->setText(listJeu[jeuSelect].getListAttribut()[i].getNom());
         ui->listAttributSelect->addItem(newItem);
+
     }
+
 
     // ajout des attributs non séléctionnés dans la liste des attributs dispnibles
     for(int i=0;i<listAttribut.size();i++)
     {
         test=true;
-        for(int j=0;i<ui->listAttributSelect->count();j++)
+        qDebug() << "taille" << ui->listAttributSelect->count();
+        for(int j=0;j<ui->listAttributSelect->count();j++)
         {
+            qDebug() <<"boucle";
             // teste si l'attribut regardé de la liste est déja selectionné
             if(ui->listAttributSelect->item(j)->data(Qt::UserRole).toString()==listAttribut[i].getTitre())
             {
@@ -185,4 +190,16 @@ void formModifierJeu::on_supprimerButton_clicked()
 void formModifierJeu::on_supprimerAttribut_clicked()
 {
     ui->listAttributDisp->currentItem();
+}
+
+void formModifierJeu::on_modifierAttribut_clicked()
+{
+    if(ui->listAttributDisp->currentItem()!=NULL)
+    {
+        attributSelect=chercheTitreAttribut(ui->listAttributDisp->currentItem()->data(Qt::UserRole).toString());
+        formModifierAttribut formModifierAttribut;
+        formModifierAttribut.setModal(true);
+        QObject::connect(&formModifierAttribut, SIGNAL(listAttributChanged()),this, SLOT(changementAttribut()));
+        formModifierAttribut.exec();
+    }
 }

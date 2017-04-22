@@ -29,6 +29,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->contentStack->setCurrentIndex(indexStack);
+    ui->retourButton->hide();
 }
 
 MainWindow::~MainWindow()
@@ -53,6 +54,7 @@ void MainWindow::changementJeu()
 
 void MainWindow::on_jeuButton_clicked()
 {
+   ui->retourButton->setVisible(true);
    indexStack=1;
    ui->contentStack->setCurrentIndex(indexStack);
    remplirListJeu();
@@ -72,6 +74,7 @@ void MainWindow::on_retourButton_clicked()
 {
     indexStack--;
     ui->contentStack->setCurrentIndex(indexStack);
+    if(indexStack==0) ui->retourButton->hide();
 }
 
 void MainWindow::on_nouveauJeuButton_clicked()
@@ -130,6 +133,19 @@ void MainWindow::on_selectionnerCampagneButton_clicked()
     indexStack=3;
     ui->contentStack->setCurrentIndex(indexStack);
     remplirListPartie();
+    ui->listPartie->clear();
+    for(int i=0;i<listPartie.size();i++)
+    {
+        if(listPartie[i].getCampagne().compare(listCampagne[campagneSelect]))
+        {
+            QListWidgetItem *newItem = new QListWidgetItem;
+            // on met le titre de l'objet comme donnée
+            newItem->setData(Qt::UserRole,listPartie[i].getTitre());
+            // le nom de l'objet comme text affiché
+            newItem->setText(listPartie[i].getNom());
+            ui->listPartie->addItem(newItem);
+        }
+    }
 }
 
 void MainWindow::on_listJeu_itemSelectionChanged()

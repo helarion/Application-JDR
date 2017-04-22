@@ -2736,16 +2736,22 @@ debug\formModifierCampagne.obj: fenetre\formModifierCampagne.cpp fenetre\formmod
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextformat.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qpen.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextoption.h \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QListWidget \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlistwidget.h \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlistview.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QPushButton \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QTextEdit \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtextedit.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextdocument.h \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout \
+		BD/collections.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\QVector \
+		BD/jeu.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\QString \
+		BD/attribut.h \
+		BD/partie.h \
+		BD\Campagne.h \
+		BD\Jeu.h \
+		BD/campagne.h
 
 debug\formModifierJeu.obj: fenetre\formModifierJeu.cpp C:\Qt\5.7\msvc2015_64\include\QtCore\qDebug \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qdebug.h \
@@ -2852,6 +2858,8 @@ debug\formModifierJeu.obj: fenetre\formModifierJeu.cpp C:\Qt\5.7\msvc2015_64\inc
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qvector2d.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qtouchdevice.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\QPixMap \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QMessageBox \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qmessagebox.h \
 		fenetre/formModifierJeu.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog \
 		ui_formModifierJeu.h \
@@ -2911,6 +2919,7 @@ debug\formModifierJeu.obj: fenetre\formModifierJeu.cpp C:\Qt\5.7\msvc2015_64\inc
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QWidget \
+		fenetre/formNouveauAttribut.h \
 		BD/collections.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QVector \
 		BD/jeu.h \
@@ -3373,11 +3382,11 @@ debug\formNouvelleCampagne.obj: fenetre\formNouvelleCampagne.cpp fenetre/formNou
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QButtonGroup \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qbuttongroup.h \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QGridLayout \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHBoxLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
@@ -3404,16 +3413,22 @@ debug\formNouvelleCampagne.obj: fenetre\formNouvelleCampagne.cpp fenetre/formNou
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextformat.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qpen.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextoption.h \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QListWidget \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlistwidget.h \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlistview.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QPushButton \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QTextEdit \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtextedit.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextdocument.h \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout \
+		BD/collections.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\QVector \
+		BD/jeu.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\QString \
+		BD/attribut.h \
+		BD/partie.h \
+		BD\Campagne.h \
+		BD\Jeu.h \
+		BD/campagne.h
 
 debug\formNouvellePartie.obj: fenetre\formNouvellePartie.cpp fenetre/formNouvellePartie.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog \
@@ -3529,6 +3544,14 @@ debug\formNouvellePartie.obj: fenetre\formNouvellePartie.cpp fenetre/formNouvell
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QButtonGroup \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QFormLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qformlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHBoxLayout \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
@@ -3555,12 +3578,16 @@ debug\formNouvellePartie.obj: fenetre\formNouvellePartie.cpp fenetre/formNouvell
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextformat.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qpen.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextoption.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QListWidget \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlistwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlistview.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QPushButton \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QTextEdit \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtextedit.h \
-		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextdocument.h
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextdocument.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout
 
 debug\collections.obj: BD\collections.cpp C:\Qt\5.7\msvc2015_64\include\QtCore\QDir \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qdir.h \

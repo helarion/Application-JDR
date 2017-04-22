@@ -18,6 +18,8 @@ public:
 private slots:
     void on_creerButton_clicked();
 
+    void on_supprimerButton_clicked();
+
 private:
     Ui::formNouvelleCampagne *ui;
 };

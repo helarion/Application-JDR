@@ -35,14 +35,8 @@ Campagne::~Campagne()
 
 void Campagne::afficher () const
 {
-    qDebug() << num;
     qDebug() << nom;
     qDebug() << scenario;
-}
-
-quint16 Campagne::getNum()
-{
-    return num;
 }
 
 QString Campagne::getNom()

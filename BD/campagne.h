@@ -8,8 +8,6 @@
 class Campagne
 {
 	private:
-        static quint16 increment;
-        quint16 num;
         QString nom;
         QString titreJeu;
         Jeu jeu;
@@ -24,7 +22,6 @@ class Campagne
         void afficher () const;	// Affiche les informations du Campagne dans la console
         void Save();
         void Load(QString titre);
-        quint16 getNum();
         QString getNom();
         QString getTitre();
         QString getTitreJeu();

@@ -35,6 +35,7 @@ public:
     QTextEdit *scenarioCampagne;
     QHBoxLayout *horizontalLayout;
     QPushButton *creerButton;
+    QPushButton *supprimerButton;
     QPushButton *annulerButton;
 
     void setupUi(QDialog *formNouvelleCampagne)
@@ -80,6 +81,11 @@ public:
 
         horizontalLayout->addWidget(creerButton);
 
+        supprimerButton = new QPushButton(formNouvelleCampagne);
+        supprimerButton->setObjectName(QStringLiteral("supprimerButton"));
+
+        horizontalLayout->addWidget(supprimerButton);
+
         annulerButton = new QPushButton(formNouvelleCampagne);
         annulerButton->setObjectName(QStringLiteral("annulerButton"));
 
@@ -102,6 +108,7 @@ public:
         label_3->setText(QApplication::translate("formNouvelleCampagne", "Nom :", 0));
         label_4->setText(QApplication::translate("formNouvelleCampagne", "Scenario:", 0));
         creerButton->setText(QApplication::translate("formNouvelleCampagne", "Cr\303\251er", 0));
+        supprimerButton->setText(QApplication::translate("formNouvelleCampagne", "Supprimer", 0));
         annulerButton->setText(QApplication::translate("formNouvelleCampagne", "Annuler", 0));
     } // retranslateUi
 

@@ -24,3 +24,8 @@ void formNouvelleCampagne::on_creerButton_clicked()
     c.Save();
     this->close();
 }
+
+void formNouvelleCampagne::on_supprimerButton_clicked()
+{
+
+}

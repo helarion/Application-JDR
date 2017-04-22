@@ -15,6 +15,12 @@ public:
     explicit formModifierAttribut(QWidget *parent = 0);
     ~formModifierAttribut();
 
+signals:
+    void listAttributChanged();
+
+private slots:
+    void on_creerAttributButton_clicked();
+
 private:
     Ui::formModifierAttribut *ui;
 };

@@ -5,24 +5,29 @@
 
 #include "BD/Partie.h"
 
-quint16 Partie::increment = 1;
+Partie::Partie ()
+{
+    nom="";
+    resume="";
+    titre="";
+}
 
-Partie::Partie () {}
-
-Partie::Partie (QString s_nom, QString s_resume, Campagne* s_campagne) : num(increment++)
+Partie::Partie (QString s_nom, QString s_resume, Campagne s_campagne)
 {
     nom=s_nom;
     resume=s_resume;
     campagne=s_campagne;
+    titreCampagne=campagne.getTitre();
     titre=nom.toLower();
     titre.replace( " ", "_" );
 }
 Partie::Partie (const Partie & Copie)
 {
-    num = Copie.num;
     nom = Copie.nom;
     resume = Copie.resume;
     titre = Copie.titre;
+    campagne = Copie.campagne;
+    titreCampagne = Copie.titreCampagne;
 }
 Partie::Partie (QString titre){ Load(titre); }
 Partie::~Partie()
@@ -30,14 +35,8 @@ Partie::~Partie()
 
 void Partie::afficher () const
 {
-    qDebug() << num;
     qDebug() << nom;
     qDebug() << resume;
-}
-
-quint16 Partie::getNum()
-{
-    return num;
 }
 
 QString Partie::getNom()
@@ -50,17 +49,25 @@ QString Partie::getResume()
     return resume;
 }
 
-Campagne* Partie::getCampagne()
+Campagne Partie::getCampagne()
 {
     return campagne;
 }
 
+QString Partie::getTitreCampagne()
+{
+    return titreCampagne;
+}
+
+QString Partie::getTitre()
+{
+    return titre;
+}
+
 void Partie::Save()
 {
-    qDebug() << num;
     QString filename = "data/Partie/";
-    filename+=QString::number(num);
-    qDebug() << filename;
+    filename+=titre+".data";
     QFile file(filename);
 
     if(!file.open(QIODevice::WriteOnly))
@@ -71,7 +78,7 @@ void Partie::Save()
 
     QDataStream out(&file);
 
-    out << num << nom << resume;
+    out << nom << resume << titreCampagne;
 
     file.flush();
     file.close();
@@ -94,11 +101,11 @@ void Partie::Load(QString titre)
     QDataStream in(&file);
     in.setVersion(QDataStream::Qt_5_1);
 
-    in >> num;
     in >> nom;
     in >> resume;
+    in >> titreCampagne;
 
-    qDebug() << titre << " Récupéré.";
+    campagne.Load(titreCampagne);
 
     file.close();
 }

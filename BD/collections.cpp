@@ -45,8 +45,8 @@ extern void deleteJeu(Jeu j)
 {
     QString titre=j.getTitre();
     QString path="data/Jeu/"+titre+".data";
-    qDebug() << "titre:" << titre;
-    qDebug() << "path:" << path;
+    //qDebug() << "titre:" << titre;
+    //qDebug() << "path:" << path;
     QDir d;
     d.remove(path);
 }
@@ -119,7 +119,7 @@ void remplirListAttribut()
             nom=list.at(0);
             Attribut a(nom);
             listAttribut.append(a);
-            qDebug() << "FILE: " <<nom;
+            //qDebug() << "FILE: " <<nom;
         }
     }
 }
@@ -138,7 +138,7 @@ void remplirListCampagne()
             nom=list.at(0);
             Campagne c(nom);
             listCampagne.append(c);
-            qDebug() << "FILE: " <<nom;
+            //qDebug() << "FILE: " <<nom;
         }
     }
 }
@@ -156,7 +156,7 @@ void remplirListPartie()
             nom=list.at(0);
             Partie p(nom);
             listPartie.append(p);
-            qDebug() << "FILE: " <<nom;
+            //qDebug() << "FILE: " <<nom;
         }
     }
 }
@@ -175,6 +175,15 @@ int chercheTitreCampagne(QString titre)
     for(int i=0;i<listCampagne.size();i++)
     {
         if(listCampagne[i].getTitre()==titre) return i;
+    }
+    return -1;
+}
+
+int chercheTitreAttribut(QString titre)
+{
+    for(int i=0;i<listAttribut.size();i++)
+    {
+        if(listAttribut[i].getTitre()==titre) return i;
     }
     return -1;
 }
