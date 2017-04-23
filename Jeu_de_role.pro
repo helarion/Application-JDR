@@ -49,7 +49,8 @@ HEADERS += \
     fenetre/formNouvelleCampagne.h \
     fenetre/formNouvellePartie.h \
     BD/collections.h \
-    ui_formModifierJeu.h
+    ui_formModifierJeu.h \
+    fenetre/formModifierPartie.h
 
 FORMS += \
     mainwindow.ui \
@@ -59,7 +60,8 @@ FORMS += \
     fenetre/formNouveauJeu.ui \
     fenetre/formNouvelleCampagne.ui \
     fenetre/formNouvellePartie.ui \
-    fenetre/formModifierJeu.ui
+    fenetre/formModifierJeu.ui \
+    fenetre/formModifierPartie.ui
 
 SOURCES += \
     main.cpp \
@@ -86,5 +88,6 @@ SOURCES += \
     fenetre/formNouveauJeu.cpp \
     fenetre/formNouvelleCampagne.cpp \
     fenetre/formNouvellePartie.cpp \
-    BD/collections.cpp
+    BD/collections.cpp \
+    fenetre/formModifierPartie.cpp
 
