@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'formNouvellePartie.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -168,17 +168,17 @@ public:
 
     void retranslateUi(QDialog *formNouvellePartie)
     {
-        formNouvellePartie->setWindowTitle(QApplication::translate("formNouvellePartie", "Dialog", 0));
-        label->setText(QApplication::translate("formNouvellePartie", "Nouvelle Partie :", 0));
-        label_3->setText(QApplication::translate("formNouvellePartie", "Nom :", 0));
-        label_4->setText(QApplication::translate("formNouvellePartie", "Description :", 0));
-        label_2->setText(QApplication::translate("formNouvellePartie", "Date :", 0));
-        label_5->setText(QApplication::translate("formNouvellePartie", "Personnages :", 0));
-        ajouterPersonnageButton->setText(QApplication::translate("formNouvellePartie", "Ajouter", 0));
-        modifierPersonnageButton->setText(QApplication::translate("formNouvellePartie", "Modifier", 0));
-        supprimerPersonnageButton->setText(QApplication::translate("formNouvellePartie", "Supprimer", 0));
-        validerButton->setText(QApplication::translate("formNouvellePartie", "Valider", 0));
-        retourButton->setText(QApplication::translate("formNouvellePartie", "Annuler", 0));
+        formNouvellePartie->setWindowTitle(QApplication::translate("formNouvellePartie", "Dialog", Q_NULLPTR));
+        label->setText(QApplication::translate("formNouvellePartie", "Nouvelle Partie :", Q_NULLPTR));
+        label_3->setText(QApplication::translate("formNouvellePartie", "Nom :", Q_NULLPTR));
+        label_4->setText(QApplication::translate("formNouvellePartie", "Description :", Q_NULLPTR));
+        label_2->setText(QApplication::translate("formNouvellePartie", "Date :", Q_NULLPTR));
+        label_5->setText(QApplication::translate("formNouvellePartie", "Personnages :", Q_NULLPTR));
+        ajouterPersonnageButton->setText(QApplication::translate("formNouvellePartie", "Ajouter", Q_NULLPTR));
+        modifierPersonnageButton->setText(QApplication::translate("formNouvellePartie", "Modifier", Q_NULLPTR));
+        supprimerPersonnageButton->setText(QApplication::translate("formNouvellePartie", "Supprimer", Q_NULLPTR));
+        validerButton->setText(QApplication::translate("formNouvellePartie", "Valider", Q_NULLPTR));
+        retourButton->setText(QApplication::translate("formNouvellePartie", "Annuler", Q_NULLPTR));
     } // retranslateUi
 
 };

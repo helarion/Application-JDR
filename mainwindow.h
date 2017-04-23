@@ -39,6 +39,12 @@ private slots:
 
     void on_listCampagne_itemSelectionChanged();
 
+    void on_ajouterPartieButton_clicked();
+
+    void on_modifierPartieButton_clicked();
+
+    void on_selectionnerPartieButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 public slots:

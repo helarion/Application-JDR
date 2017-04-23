@@ -15,6 +15,7 @@
 #include "fenetre/formModifierCampagne.h"
 #include "fenetre/formNouveauAttribut.h"
 #include "fenetre/formModifierAttribut.h"
+#include "fenetre/formNouvellePartie.h"
 
 // Database
 #include "BD/jeu.h"
@@ -159,4 +160,21 @@ void MainWindow::on_listJeu_itemSelectionChanged()
 void MainWindow::on_listCampagne_itemSelectionChanged()
 {
     campagneSelect=chercheTitreCampagne(ui->listCampagne->currentItem()->data(Qt::UserRole).toString());
+}
+
+void MainWindow::on_ajouterPartieButton_clicked()
+{
+    formNouvellePartie formNouvellePartie;
+    formNouvellePartie.setModal(true);
+    formNouvellePartie.exec();
+}
+
+void MainWindow::on_modifierPartieButton_clicked()
+{
+
+}
+
+void MainWindow::on_selectionnerPartieButton_clicked()
+{
+
 }

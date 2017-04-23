@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -83,41 +83,41 @@ public:
     QGridLayout *gridLayout_14;
     QLabel *label_7;
     QLabel *label_23;
-    QLineEdit *lineEdit_15;
+    QLineEdit *AgeEdit;
     QLabel *label_9;
-    QLineEdit *lineEdit;
+    QLineEdit *PrenomPersonnageEdit;
     QLabel *label_22;
-    QLineEdit *lineEdit_3;
+    QLineEdit *RaceEdit;
     QLabel *label_20;
-    QLineEdit *lineEdit_14;
+    QLineEdit *NiveauEdit;
     QLabel *label_12;
-    QLineEdit *lineEdit_2;
+    QLineEdit *NomEdit;
     QLabel *label_8;
-    QLineEdit *lineEdit_4;
+    QLineEdit *ClasseEdit;
     QLabel *label_18;
-    QLineEdit *lineEdit_5;
+    QLineEdit *SexeEdit;
     QLabel *label_24;
-    QLabel *label_15;
-    QLineEdit *lineEdit_12;
+    QLabel *SanteLabel;
+    QLineEdit *PVactuelEdit;
     QLabel *label_16;
-    QLineEdit *lineEdit_13;
+    QLineEdit *PVmaxEdit;
     QLabel *label_11;
-    QLabel *label_21;
-    QLineEdit *lineEdit_6;
-    QLabel *label_25;
-    QLineEdit *lineEdit_9;
-    QListWidget *listWidget_3;
-    QLabel *label_10;
-    QLineEdit *lineEdit_7;
-    QLabel *label_13;
-    QLineEdit *lineEdit_10;
-    QLabel *label_17;
-    QLineEdit *lineEdit_8;
-    QLabel *label_14;
-    QLineEdit *lineEdit_11;
+    QLabel *Attribut_1Label;
+    QLineEdit *Attribut_1Edit;
+    QLabel *Attribut_4Label;
+    QLineEdit *Attribut_4Edit;
+    QListWidget *CompetenceList;
+    QLabel *Attribut_2Label;
+    QLineEdit *Attribut_2Edit;
+    QLabel *Attribut_5Label;
+    QLineEdit *Attribut_5Edit;
+    QLabel *Attribut_3Label;
+    QLineEdit *Attribut_3Edit;
+    QLabel *Attribut_6Label;
+    QLineEdit *Attribut_6Edit;
     QLabel *label_19;
-    QPushButton *pushButton_5;
-    QTextEdit *textEdit_2;
+    QPushButton *InventaireButton;
+    QTextEdit *DescriptifEdit;
     QWidget *page_5;
     QMenuBar *menuBar;
     QStatusBar *statusBar;
@@ -389,70 +389,70 @@ public:
 
         gridLayout_14->addWidget(label_23, 0, 10, 1, 1);
 
-        lineEdit_15 = new QLineEdit(Personnages);
-        lineEdit_15->setObjectName(QStringLiteral("lineEdit_15"));
+        AgeEdit = new QLineEdit(Personnages);
+        AgeEdit->setObjectName(QStringLiteral("AgeEdit"));
 
-        gridLayout_14->addWidget(lineEdit_15, 0, 11, 1, 1);
+        gridLayout_14->addWidget(AgeEdit, 0, 11, 1, 1);
 
         label_9 = new QLabel(Personnages);
         label_9->setObjectName(QStringLiteral("label_9"));
 
         gridLayout_14->addWidget(label_9, 1, 0, 1, 1);
 
-        lineEdit = new QLineEdit(Personnages);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        PrenomPersonnageEdit = new QLineEdit(Personnages);
+        PrenomPersonnageEdit->setObjectName(QStringLiteral("PrenomPersonnageEdit"));
 
-        gridLayout_14->addWidget(lineEdit, 1, 1, 1, 5);
+        gridLayout_14->addWidget(PrenomPersonnageEdit, 1, 1, 1, 5);
 
         label_22 = new QLabel(Personnages);
         label_22->setObjectName(QStringLiteral("label_22"));
 
         gridLayout_14->addWidget(label_22, 1, 6, 1, 2);
 
-        lineEdit_3 = new QLineEdit(Personnages);
-        lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
+        RaceEdit = new QLineEdit(Personnages);
+        RaceEdit->setObjectName(QStringLiteral("RaceEdit"));
 
-        gridLayout_14->addWidget(lineEdit_3, 1, 8, 1, 2);
+        gridLayout_14->addWidget(RaceEdit, 1, 8, 1, 2);
 
         label_20 = new QLabel(Personnages);
         label_20->setObjectName(QStringLiteral("label_20"));
 
         gridLayout_14->addWidget(label_20, 1, 10, 1, 1);
 
-        lineEdit_14 = new QLineEdit(Personnages);
-        lineEdit_14->setObjectName(QStringLiteral("lineEdit_14"));
+        NiveauEdit = new QLineEdit(Personnages);
+        NiveauEdit->setObjectName(QStringLiteral("NiveauEdit"));
 
-        gridLayout_14->addWidget(lineEdit_14, 1, 11, 1, 1);
+        gridLayout_14->addWidget(NiveauEdit, 1, 11, 1, 1);
 
         label_12 = new QLabel(Personnages);
         label_12->setObjectName(QStringLiteral("label_12"));
 
         gridLayout_14->addWidget(label_12, 2, 0, 1, 1);
 
-        lineEdit_2 = new QLineEdit(Personnages);
-        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
+        NomEdit = new QLineEdit(Personnages);
+        NomEdit->setObjectName(QStringLiteral("NomEdit"));
 
-        gridLayout_14->addWidget(lineEdit_2, 2, 1, 1, 5);
+        gridLayout_14->addWidget(NomEdit, 2, 1, 1, 5);
 
         label_8 = new QLabel(Personnages);
         label_8->setObjectName(QStringLiteral("label_8"));
 
         gridLayout_14->addWidget(label_8, 2, 6, 1, 2);
 
-        lineEdit_4 = new QLineEdit(Personnages);
-        lineEdit_4->setObjectName(QStringLiteral("lineEdit_4"));
+        ClasseEdit = new QLineEdit(Personnages);
+        ClasseEdit->setObjectName(QStringLiteral("ClasseEdit"));
 
-        gridLayout_14->addWidget(lineEdit_4, 2, 8, 1, 2);
+        gridLayout_14->addWidget(ClasseEdit, 2, 8, 1, 2);
 
         label_18 = new QLabel(Personnages);
         label_18->setObjectName(QStringLiteral("label_18"));
 
         gridLayout_14->addWidget(label_18, 2, 10, 1, 1);
 
-        lineEdit_5 = new QLineEdit(Personnages);
-        lineEdit_5->setObjectName(QStringLiteral("lineEdit_5"));
+        SexeEdit = new QLineEdit(Personnages);
+        SexeEdit->setObjectName(QStringLiteral("SexeEdit"));
 
-        gridLayout_14->addWidget(lineEdit_5, 2, 11, 1, 1);
+        gridLayout_14->addWidget(SexeEdit, 2, 11, 1, 1);
 
         label_24 = new QLabel(Personnages);
         label_24->setObjectName(QStringLiteral("label_24"));
@@ -460,110 +460,110 @@ public:
 
         gridLayout_14->addWidget(label_24, 3, 0, 1, 12);
 
-        label_15 = new QLabel(Personnages);
-        label_15->setObjectName(QStringLiteral("label_15"));
+        SanteLabel = new QLabel(Personnages);
+        SanteLabel->setObjectName(QStringLiteral("SanteLabel"));
 
-        gridLayout_14->addWidget(label_15, 4, 2, 1, 3);
+        gridLayout_14->addWidget(SanteLabel, 4, 2, 1, 3);
 
-        lineEdit_12 = new QLineEdit(Personnages);
-        lineEdit_12->setObjectName(QStringLiteral("lineEdit_12"));
+        PVactuelEdit = new QLineEdit(Personnages);
+        PVactuelEdit->setObjectName(QStringLiteral("PVactuelEdit"));
 
-        gridLayout_14->addWidget(lineEdit_12, 4, 5, 1, 1);
+        gridLayout_14->addWidget(PVactuelEdit, 4, 5, 1, 1);
 
         label_16 = new QLabel(Personnages);
         label_16->setObjectName(QStringLiteral("label_16"));
 
         gridLayout_14->addWidget(label_16, 4, 6, 1, 1);
 
-        lineEdit_13 = new QLineEdit(Personnages);
-        lineEdit_13->setObjectName(QStringLiteral("lineEdit_13"));
+        PVmaxEdit = new QLineEdit(Personnages);
+        PVmaxEdit->setObjectName(QStringLiteral("PVmaxEdit"));
 
-        gridLayout_14->addWidget(lineEdit_13, 4, 7, 1, 2);
+        gridLayout_14->addWidget(PVmaxEdit, 4, 7, 1, 2);
 
         label_11 = new QLabel(Personnages);
         label_11->setObjectName(QStringLiteral("label_11"));
 
         gridLayout_14->addWidget(label_11, 4, 10, 1, 2);
 
-        label_21 = new QLabel(Personnages);
-        label_21->setObjectName(QStringLiteral("label_21"));
+        Attribut_1Label = new QLabel(Personnages);
+        Attribut_1Label->setObjectName(QStringLiteral("Attribut_1Label"));
 
-        gridLayout_14->addWidget(label_21, 5, 0, 1, 3);
+        gridLayout_14->addWidget(Attribut_1Label, 5, 0, 1, 3);
 
-        lineEdit_6 = new QLineEdit(Personnages);
-        lineEdit_6->setObjectName(QStringLiteral("lineEdit_6"));
+        Attribut_1Edit = new QLineEdit(Personnages);
+        Attribut_1Edit->setObjectName(QStringLiteral("Attribut_1Edit"));
 
-        gridLayout_14->addWidget(lineEdit_6, 5, 3, 1, 2);
+        gridLayout_14->addWidget(Attribut_1Edit, 5, 3, 1, 2);
 
-        label_25 = new QLabel(Personnages);
-        label_25->setObjectName(QStringLiteral("label_25"));
+        Attribut_4Label = new QLabel(Personnages);
+        Attribut_4Label->setObjectName(QStringLiteral("Attribut_4Label"));
 
-        gridLayout_14->addWidget(label_25, 5, 6, 1, 3);
+        gridLayout_14->addWidget(Attribut_4Label, 5, 6, 1, 3);
 
-        lineEdit_9 = new QLineEdit(Personnages);
-        lineEdit_9->setObjectName(QStringLiteral("lineEdit_9"));
+        Attribut_4Edit = new QLineEdit(Personnages);
+        Attribut_4Edit->setObjectName(QStringLiteral("Attribut_4Edit"));
 
-        gridLayout_14->addWidget(lineEdit_9, 5, 9, 1, 1);
+        gridLayout_14->addWidget(Attribut_4Edit, 5, 9, 1, 1);
 
-        listWidget_3 = new QListWidget(Personnages);
-        listWidget_3->setObjectName(QStringLiteral("listWidget_3"));
+        CompetenceList = new QListWidget(Personnages);
+        CompetenceList->setObjectName(QStringLiteral("CompetenceList"));
 
-        gridLayout_14->addWidget(listWidget_3, 5, 10, 3, 2);
+        gridLayout_14->addWidget(CompetenceList, 5, 10, 3, 2);
 
-        label_10 = new QLabel(Personnages);
-        label_10->setObjectName(QStringLiteral("label_10"));
+        Attribut_2Label = new QLabel(Personnages);
+        Attribut_2Label->setObjectName(QStringLiteral("Attribut_2Label"));
 
-        gridLayout_14->addWidget(label_10, 6, 0, 1, 2);
+        gridLayout_14->addWidget(Attribut_2Label, 6, 0, 1, 2);
 
-        lineEdit_7 = new QLineEdit(Personnages);
-        lineEdit_7->setObjectName(QStringLiteral("lineEdit_7"));
+        Attribut_2Edit = new QLineEdit(Personnages);
+        Attribut_2Edit->setObjectName(QStringLiteral("Attribut_2Edit"));
 
-        gridLayout_14->addWidget(lineEdit_7, 6, 3, 1, 2);
+        gridLayout_14->addWidget(Attribut_2Edit, 6, 3, 1, 2);
 
-        label_13 = new QLabel(Personnages);
-        label_13->setObjectName(QStringLiteral("label_13"));
+        Attribut_5Label = new QLabel(Personnages);
+        Attribut_5Label->setObjectName(QStringLiteral("Attribut_5Label"));
 
-        gridLayout_14->addWidget(label_13, 6, 6, 1, 3);
+        gridLayout_14->addWidget(Attribut_5Label, 6, 6, 1, 3);
 
-        lineEdit_10 = new QLineEdit(Personnages);
-        lineEdit_10->setObjectName(QStringLiteral("lineEdit_10"));
+        Attribut_5Edit = new QLineEdit(Personnages);
+        Attribut_5Edit->setObjectName(QStringLiteral("Attribut_5Edit"));
 
-        gridLayout_14->addWidget(lineEdit_10, 6, 9, 1, 1);
+        gridLayout_14->addWidget(Attribut_5Edit, 6, 9, 1, 1);
 
-        label_17 = new QLabel(Personnages);
-        label_17->setObjectName(QStringLiteral("label_17"));
+        Attribut_3Label = new QLabel(Personnages);
+        Attribut_3Label->setObjectName(QStringLiteral("Attribut_3Label"));
 
-        gridLayout_14->addWidget(label_17, 7, 0, 1, 2);
+        gridLayout_14->addWidget(Attribut_3Label, 7, 0, 1, 2);
 
-        lineEdit_8 = new QLineEdit(Personnages);
-        lineEdit_8->setObjectName(QStringLiteral("lineEdit_8"));
+        Attribut_3Edit = new QLineEdit(Personnages);
+        Attribut_3Edit->setObjectName(QStringLiteral("Attribut_3Edit"));
 
-        gridLayout_14->addWidget(lineEdit_8, 7, 3, 1, 2);
+        gridLayout_14->addWidget(Attribut_3Edit, 7, 3, 1, 2);
 
-        label_14 = new QLabel(Personnages);
-        label_14->setObjectName(QStringLiteral("label_14"));
+        Attribut_6Label = new QLabel(Personnages);
+        Attribut_6Label->setObjectName(QStringLiteral("Attribut_6Label"));
 
-        gridLayout_14->addWidget(label_14, 7, 6, 1, 3);
+        gridLayout_14->addWidget(Attribut_6Label, 7, 6, 1, 3);
 
-        lineEdit_11 = new QLineEdit(Personnages);
-        lineEdit_11->setObjectName(QStringLiteral("lineEdit_11"));
+        Attribut_6Edit = new QLineEdit(Personnages);
+        Attribut_6Edit->setObjectName(QStringLiteral("Attribut_6Edit"));
 
-        gridLayout_14->addWidget(lineEdit_11, 7, 9, 1, 1);
+        gridLayout_14->addWidget(Attribut_6Edit, 7, 9, 1, 1);
 
         label_19 = new QLabel(Personnages);
         label_19->setObjectName(QStringLiteral("label_19"));
 
         gridLayout_14->addWidget(label_19, 8, 4, 1, 2);
 
-        pushButton_5 = new QPushButton(Personnages);
-        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        InventaireButton = new QPushButton(Personnages);
+        InventaireButton->setObjectName(QStringLiteral("InventaireButton"));
 
-        gridLayout_14->addWidget(pushButton_5, 9, 0, 1, 2);
+        gridLayout_14->addWidget(InventaireButton, 9, 0, 1, 2);
 
-        textEdit_2 = new QTextEdit(Personnages);
-        textEdit_2->setObjectName(QStringLiteral("textEdit_2"));
+        DescriptifEdit = new QTextEdit(Personnages);
+        DescriptifEdit->setObjectName(QStringLiteral("DescriptifEdit"));
 
-        gridLayout_14->addWidget(textEdit_2, 9, 2, 1, 10);
+        gridLayout_14->addWidget(DescriptifEdit, 9, 2, 1, 10);
 
         contentStack->addWidget(Personnages);
         page_5 = new QWidget();
@@ -575,7 +575,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 795, 25));
+        menuBar->setGeometry(QRect(0, 0, 795, 21));
         MainWindow->setMenuBar(menuBar);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
@@ -583,7 +583,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        contentStack->setCurrentIndex(3);
+        contentStack->setCurrentIndex(4);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -591,46 +591,46 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
-        retourButton->setText(QApplication::translate("MainWindow", "Retour", 0));
-        jeuButton->setText(QApplication::translate("MainWindow", "Jeux", 0));
-        autreButton->setText(QApplication::translate("MainWindow", "Autre", 0));
-        label->setText(QApplication::translate("MainWindow", "Gestionnaire de jeu de r\303\264le ", 0));
-        selectionnerJeuButton->setText(QApplication::translate("MainWindow", "Selectionner", 0));
-        modifierJeuButton->setText(QApplication::translate("MainWindow", "Modifier", 0));
-        nouveauJeuButton->setText(QApplication::translate("MainWindow", "Nouveau", 0));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
+        retourButton->setText(QApplication::translate("MainWindow", "Retour", Q_NULLPTR));
+        jeuButton->setText(QApplication::translate("MainWindow", "Jeux", Q_NULLPTR));
+        autreButton->setText(QApplication::translate("MainWindow", "Autre", Q_NULLPTR));
+        label->setText(QApplication::translate("MainWindow", "Gestionnaire de jeu de r\303\264le ", Q_NULLPTR));
+        selectionnerJeuButton->setText(QApplication::translate("MainWindow", "Selectionner", Q_NULLPTR));
+        modifierJeuButton->setText(QApplication::translate("MainWindow", "Modifier", Q_NULLPTR));
+        nouveauJeuButton->setText(QApplication::translate("MainWindow", "Nouveau", Q_NULLPTR));
         themeJeu->setText(QString());
-        label_2->setText(QApplication::translate("MainWindow", "S\303\251lectionner un jeu existant :", 0));
-        label_3->setText(QApplication::translate("MainWindow", "Campagne", 0));
-        selectionnerCampagneButton->setText(QApplication::translate("MainWindow", "Selectionner", 0));
-        modifierCampagneButton->setText(QApplication::translate("MainWindow", "Modifier", 0));
-        nouveauCampagneButton->setText(QApplication::translate("MainWindow", "Nouveau", 0));
-        label_4->setText(QApplication::translate("MainWindow", "Parties :", 0));
-        label_6->setText(QApplication::translate("MainWindow", "Liste :", 0));
-        selectionnerPartieButton->setText(QApplication::translate("MainWindow", "Selectionner", 0));
-        modifierPartieButton->setText(QApplication::translate("MainWindow", "Modifier", 0));
-        ajouterPartieButton->setText(QApplication::translate("MainWindow", "Ajouter", 0));
-        label_5->setText(QApplication::translate("MainWindow", "Resum\303\251 :", 0));
-        label_7->setText(QApplication::translate("MainWindow", "Joueur :", 0));
-        label_23->setText(QApplication::translate("MainWindow", "Age :", 0));
-        label_9->setText(QApplication::translate("MainWindow", "Pr\303\251nom :", 0));
-        label_22->setText(QApplication::translate("MainWindow", "Race :", 0));
-        label_20->setText(QApplication::translate("MainWindow", "Niveau :", 0));
-        label_12->setText(QApplication::translate("MainWindow", "Nom :", 0));
-        label_8->setText(QApplication::translate("MainWindow", "Classe :", 0));
-        label_18->setText(QApplication::translate("MainWindow", "Sexe :", 0));
-        label_24->setText(QApplication::translate("MainWindow", "______________________________________________________________________________", 0));
-        label_15->setText(QApplication::translate("MainWindow", "PV :", 0));
-        label_16->setText(QApplication::translate("MainWindow", "/", 0));
-        label_11->setText(QApplication::translate("MainWindow", "Comp\303\251tences :", 0));
-        label_21->setText(QApplication::translate("MainWindow", "Attribut 1", 0));
-        label_25->setText(QApplication::translate("MainWindow", "Attribut 4", 0));
-        label_10->setText(QApplication::translate("MainWindow", "Attribut 2 ", 0));
-        label_13->setText(QApplication::translate("MainWindow", "Attribut 5", 0));
-        label_17->setText(QApplication::translate("MainWindow", "Attribut 3", 0));
-        label_14->setText(QApplication::translate("MainWindow", "Attribut 6", 0));
-        label_19->setText(QApplication::translate("MainWindow", "Descriptif :", 0));
-        pushButton_5->setText(QApplication::translate("MainWindow", "Inventaire", 0));
+        label_2->setText(QApplication::translate("MainWindow", "S\303\251lectionner un jeu existant :", Q_NULLPTR));
+        label_3->setText(QApplication::translate("MainWindow", "Campagne", Q_NULLPTR));
+        selectionnerCampagneButton->setText(QApplication::translate("MainWindow", "Selectionner", Q_NULLPTR));
+        modifierCampagneButton->setText(QApplication::translate("MainWindow", "Modifier", Q_NULLPTR));
+        nouveauCampagneButton->setText(QApplication::translate("MainWindow", "Nouveau", Q_NULLPTR));
+        label_4->setText(QApplication::translate("MainWindow", "Parties :", Q_NULLPTR));
+        label_6->setText(QApplication::translate("MainWindow", "Liste :", Q_NULLPTR));
+        selectionnerPartieButton->setText(QApplication::translate("MainWindow", "Selectionner", Q_NULLPTR));
+        modifierPartieButton->setText(QApplication::translate("MainWindow", "Modifier", Q_NULLPTR));
+        ajouterPartieButton->setText(QApplication::translate("MainWindow", "Ajouter", Q_NULLPTR));
+        label_5->setText(QApplication::translate("MainWindow", "Resum\303\251 :", Q_NULLPTR));
+        label_7->setText(QApplication::translate("MainWindow", "Joueur :", Q_NULLPTR));
+        label_23->setText(QApplication::translate("MainWindow", "Age :", Q_NULLPTR));
+        label_9->setText(QApplication::translate("MainWindow", "Pr\303\251nom :", Q_NULLPTR));
+        label_22->setText(QApplication::translate("MainWindow", "Race :", Q_NULLPTR));
+        label_20->setText(QApplication::translate("MainWindow", "Niveau :", Q_NULLPTR));
+        label_12->setText(QApplication::translate("MainWindow", "Nom :", Q_NULLPTR));
+        label_8->setText(QApplication::translate("MainWindow", "Classe :", Q_NULLPTR));
+        label_18->setText(QApplication::translate("MainWindow", "Sexe :", Q_NULLPTR));
+        label_24->setText(QApplication::translate("MainWindow", "______________________________________________________________________________", Q_NULLPTR));
+        SanteLabel->setText(QApplication::translate("MainWindow", "PV :", Q_NULLPTR));
+        label_16->setText(QApplication::translate("MainWindow", "/", Q_NULLPTR));
+        label_11->setText(QApplication::translate("MainWindow", "Comp\303\251tences :", Q_NULLPTR));
+        Attribut_1Label->setText(QApplication::translate("MainWindow", "Attribut 1", Q_NULLPTR));
+        Attribut_4Label->setText(QApplication::translate("MainWindow", "Attribut 4", Q_NULLPTR));
+        Attribut_2Label->setText(QApplication::translate("MainWindow", "Attribut 2 ", Q_NULLPTR));
+        Attribut_5Label->setText(QApplication::translate("MainWindow", "Attribut 5", Q_NULLPTR));
+        Attribut_3Label->setText(QApplication::translate("MainWindow", "Attribut 3", Q_NULLPTR));
+        Attribut_6Label->setText(QApplication::translate("MainWindow", "Attribut 6", Q_NULLPTR));
+        label_19->setText(QApplication::translate("MainWindow", "Descriptif :", Q_NULLPTR));
+        InventaireButton->setText(QApplication::translate("MainWindow", "Inventaire", Q_NULLPTR));
     } // retranslateUi
 
 };
