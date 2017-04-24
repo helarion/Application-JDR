@@ -14,10 +14,10 @@
     extern void addCampagne(Campagne c);
     extern void addPartie(Partie p);
 
-    extern void deleteJeu(Jeu j);
-    extern void deleteAttribut(Attribut* a);
-    extern void deleteCampagne(Campagne* c);
-    extern void deletePartie(Partie* p);
+    extern void deleteJeu(int index);
+    extern void deleteAttribut(int index);
+    extern void deleteCampagne(int index);
+    extern void deletePartie(int index);
 
     // mises à jour d'un objet
     extern void updateJeu(Jeu precedent, Jeu nouveau);

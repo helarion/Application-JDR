@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'formModifierJeu.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.1
+** Created by: Qt User Interface Compiler version 5.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -45,7 +45,6 @@ public:
     QVBoxLayout *boutons;
     QPushButton *nouveauAttribut;
     QPushButton *modifierAttribut;
-    QPushButton *supprimerAttribut;
     QPushButton *parcourirButton;
     QLabel *label_4;
     QLabel *themeImage;
@@ -136,11 +135,6 @@ public:
 
         boutons->addWidget(modifierAttribut);
 
-        supprimerAttribut = new QPushButton(formModifierJeu);
-        supprimerAttribut->setObjectName(QStringLiteral("supprimerAttribut"));
-
-        boutons->addWidget(supprimerAttribut);
-
 
         Attributs->addLayout(boutons);
 
@@ -200,21 +194,20 @@ public:
 
     void retranslateUi(QWidget *formModifierJeu)
     {
-        formModifierJeu->setWindowTitle(QApplication::translate("formModifierJeu", "Modification Jeu", Q_NULLPTR));
-        label->setText(QApplication::translate("formModifierJeu", "Modification Jeu", Q_NULLPTR));
-        label_2->setText(QApplication::translate("formModifierJeu", "Nom du jeu", Q_NULLPTR));
-        label_3->setText(QApplication::translate("formModifierJeu", "Th\303\250me", Q_NULLPTR));
-        ajouterButton->setText(QApplication::translate("formModifierJeu", "<--", Q_NULLPTR));
-        supprimerButton->setText(QApplication::translate("formModifierJeu", "-->", Q_NULLPTR));
-        nouveauAttribut->setText(QApplication::translate("formModifierJeu", "Nouveau", Q_NULLPTR));
-        modifierAttribut->setText(QApplication::translate("formModifierJeu", "Modifier", Q_NULLPTR));
-        supprimerAttribut->setText(QApplication::translate("formModifierJeu", "Supprimer", Q_NULLPTR));
-        parcourirButton->setText(QApplication::translate("formModifierJeu", "Parcourir", Q_NULLPTR));
-        label_4->setText(QApplication::translate("formModifierJeu", "Attributs", Q_NULLPTR));
+        formModifierJeu->setWindowTitle(QApplication::translate("formModifierJeu", "Modification Jeu", 0));
+        label->setText(QApplication::translate("formModifierJeu", "Modification Jeu", 0));
+        label_2->setText(QApplication::translate("formModifierJeu", "Nom du jeu", 0));
+        label_3->setText(QApplication::translate("formModifierJeu", "Th\303\250me", 0));
+        ajouterButton->setText(QApplication::translate("formModifierJeu", "<--", 0));
+        supprimerButton->setText(QApplication::translate("formModifierJeu", "-->", 0));
+        nouveauAttribut->setText(QApplication::translate("formModifierJeu", "Nouveau", 0));
+        modifierAttribut->setText(QApplication::translate("formModifierJeu", "Modifier", 0));
+        parcourirButton->setText(QApplication::translate("formModifierJeu", "Parcourir", 0));
+        label_4->setText(QApplication::translate("formModifierJeu", "Attributs", 0));
         themeImage->setText(QString());
-        supprimerJeuButton->setText(QApplication::translate("formModifierJeu", "Supprimer", Q_NULLPTR));
-        modifierJeuButton->setText(QApplication::translate("formModifierJeu", "Modifier", Q_NULLPTR));
-        retourButton->setText(QApplication::translate("formModifierJeu", "Annuler", Q_NULLPTR));
+        supprimerJeuButton->setText(QApplication::translate("formModifierJeu", "Supprimer", 0));
+        modifierJeuButton->setText(QApplication::translate("formModifierJeu", "Modifier", 0));
+        retourButton->setText(QApplication::translate("formModifierJeu", "Annuler", 0));
     } // retranslateUi
 
 };

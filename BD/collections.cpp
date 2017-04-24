@@ -41,19 +41,41 @@ void updateAttribut(QString prec, QString suiv)
     }
 }
 
-extern void deleteJeu(Jeu j)
+extern void deleteJeu(int index)
 {
-    QString titre=j.getTitre();
+    QString titre=listJeu[index].getTitre();
     QString path="data/Jeu/"+titre+".data";
-    //qDebug() << "titre:" << titre;
-    //qDebug() << "path:" << path;
     QDir d;
     d.remove(path);
+    listJeu.remove(index);
 }
 
-extern void deleteAttribut(Attribut* a);
-extern void deleteCampagne(Campagne* c);
-extern void deletePartie(Partie* p);
+extern void deleteAttribut(int index)
+{
+    QString titre=listAttribut[index].getTitre();
+    QString path="data/Attribut/"+titre+".data";
+    QDir d;
+    d.remove(path);
+    listAttribut.remove(index);
+}
+
+extern void deleteCampagne(int index)
+{
+    QString titre=listCampagne[index].getTitre();
+    QString path="data/Campagne/"+titre+".data";
+    QDir d;
+    d.remove(path);
+    listCampagne.remove(index);
+}
+
+extern void deletePartie(int index)
+{
+    QString titre=listPartie[index].getTitre();
+    QString path="data/Partie/"+titre+".data";
+    QDir d;
+    d.remove(path);
+    listPartie.remove(index);
+}
 
 void afficherJeu()
 {

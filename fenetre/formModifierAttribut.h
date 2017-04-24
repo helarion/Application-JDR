@@ -19,7 +19,9 @@ signals:
     void listAttributChanged();
 
 private slots:
-    void on_creerAttributButton_clicked();
+    void on_supprimerButton_clicked();
+
+    void on_modifierAttributButton_clicked();
 
 private:
     Ui::formModifierAttribut *ui;

@@ -41,16 +41,21 @@ MainWindow::~MainWindow()
 void MainWindow::changementJeu()
 {
     remplirListJeu();
+    qDebug() << "remplit le vector";
     ui->listJeu->clear();
+    qDebug() << "vide la liste";
     for(int i=0;i<listJeu.size();i++)
     {
+        qDebug() << "fait un item";
         QListWidgetItem *newItem = new QListWidgetItem;
         // on met le titre de l'objet comme donnée
         newItem->setData(Qt::UserRole,listJeu[i].getTitre());
         // le nom de l'objet comme text affiché
         newItem->setText(listJeu[i].getNom());
         ui->listJeu->addItem(newItem);
+        qDebug() << "ajoute item";
     }
+    qDebug() << "Fin";
 }
 
 void MainWindow::on_jeuButton_clicked()

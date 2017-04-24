@@ -24,6 +24,9 @@ class Attribut
         int getType();
         QString getTitre();
         bool getPreset();
+        void setNom(QString nom);
+        void setType(int type);
+        void setPreset(bool preset);
 };
 
 #endif

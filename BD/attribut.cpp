@@ -52,6 +52,34 @@ QString Attribut::getTitre()
 
 bool Attribut::getPreset() { return preset;}
 
+void Attribut::setNom(QString nom)
+{
+    this->nom=nom;
+
+    QString filename = "data/Attribut/";
+    filename+=titre;
+    filename+=".data";
+    QFile file(filename);
+    file.remove();
+
+    // nouveau titre de fichier adapté au nom
+    titre=nom.toLower();
+    titre.replace( " ", "_" );
+
+    // Sauvegarde du nouveau fichier
+    Save();
+}
+
+void Attribut::setType(int type)
+{
+    this->type=type;
+}
+
+void Attribut::setPreset(bool preset)
+{
+    this->preset=preset;
+}
+
 void Attribut::Save()
 {
     QString filename = "data/Attribut/";

@@ -63,9 +63,16 @@
       <number>0</number>
      </property>
      <item>
-      <widget class="QPushButton" name="creerAttributButton">
+      <widget class="QPushButton" name="modifierAttributButton">
        <property name="text">
         <string>Modifier</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="supprimerButton">
+       <property name="text">
+        <string>Supprimer</string>
        </property>
       </widget>
      </item>

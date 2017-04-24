@@ -78,7 +78,7 @@ void formModifierJeu::changementAttribut()
     for(int i=0;i<listAttribut.size();i++)
     {
         test=true;
-        for(int j=0;i<ui->listAttributSelect->count();j++)
+        for(int j=0;j<ui->listAttributSelect->count();j++)
         {
             // teste si l'attribut regardé de la liste est déja selectionné
             if(ui->listAttributSelect->item(j)->data(Qt::UserRole).toString()==listAttribut[i].getTitre())
@@ -105,7 +105,7 @@ void formModifierJeu::on_supprimerJeuButton_clicked()
     reply = QMessageBox::question(this, "Suppression", "Etes vous sur de vouloir supprimer ce jeu ?",
                                     QMessageBox::Yes|QMessageBox::No);
     if (reply == QMessageBox::Yes) {
-      deleteJeu(listJeu[jeuSelect]);
+      deleteJeu(jeuSelect);
           emit listJeuChanged();
           this->close();
     }
@@ -114,7 +114,6 @@ void formModifierJeu::on_supprimerJeuButton_clicked()
 void formModifierJeu::on_modifierJeuButton_clicked()
 {
     // on récupère les données
-    listJeu[jeuSelect].setNom(ui->nomJeu->text());
     QString fileName=ui->theme->text();
     if(listJeu[jeuSelect].getTheme()!=fileName) listJeu[jeuSelect].setTheme(fileName);
     // on liste les attributs selectionnés
@@ -125,9 +124,8 @@ void formModifierJeu::on_modifierJeuButton_clicked()
         Attribut a(titre);
         list.append(a);
     }
-    qDebug() << "taille=" << list.size();
     listJeu[jeuSelect].setListAttribut(list);
-    listJeu[jeuSelect].Save();
+    listJeu[jeuSelect].setNom(ui->nomJeu->text());
     // on signale une modification
     emit listJeuChanged();
     // on ferme le formulaire
@@ -185,11 +183,6 @@ void formModifierJeu::on_supprimerButton_clicked()
         ui->listAttributDisp->addItem(newItem);
         delete item;
     }
-}
-
-void formModifierJeu::on_supprimerAttribut_clicked()
-{
-    ui->listAttributDisp->currentItem();
 }
 
 void formModifierJeu::on_modifierAttribut_clicked()

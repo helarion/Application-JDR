@@ -30,8 +30,6 @@ private slots:
 
     void on_supprimerButton_clicked();
 
-    void on_supprimerAttribut_clicked();
-
     void on_modifierAttribut_clicked();
 
 signals:
