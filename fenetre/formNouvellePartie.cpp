@@ -12,3 +12,8 @@ formNouvellePartie::~formNouvellePartie()
 {
     delete ui;
 }
+
+void formNouvellePartie::on_retourButton_clicked()
+{
+
+}

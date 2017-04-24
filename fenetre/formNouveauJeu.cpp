@@ -3,6 +3,7 @@
 #include "fenetre/formNouveauJeu.h"
 #include "ui_formNouveauJeu.h"
 #include "fenetre/formNouveauAttribut.h"
+#include "fenetre/formModifierAttribut.h"
 #include "mainwindow.h"
 
 #include "BD/jeu.h"
@@ -138,4 +139,11 @@ void formNouveauJeu::on_retirerButton_clicked()
 void formNouveauJeu::on_supprimerAttributButton_clicked()
 {
 
+}
+
+void formNouveauJeu::on_modifierAttributButton_clicked()
+{
+    formModifierAttribut formModifierAttribut;
+    formModifierAttribut.setModal(true);
+    formModifierAttribut.exec();
 }

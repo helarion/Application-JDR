@@ -16,6 +16,7 @@
 #include "fenetre/formNouveauAttribut.h"
 #include "fenetre/formModifierAttribut.h"
 #include "fenetre/formNouvellePartie.h"
+#include "fenetre/formModifierPartie.h"
 
 // Database
 #include "BD/jeu.h"
@@ -176,7 +177,10 @@ void MainWindow::on_ajouterPartieButton_clicked()
 
 void MainWindow::on_modifierPartieButton_clicked()
 {
-
+    formModifierPartie formModifierPartie;
+    //QObject::connect(&formModifierJeu, SIGNAL(listJeuChanged()),this, SLOT(changementJeu()));
+    formModifierPartie.setModal(true);
+    formModifierPartie.exec();
 }
 
 void MainWindow::on_selectionnerPartieButton_clicked()

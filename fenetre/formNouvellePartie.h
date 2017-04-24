@@ -15,6 +15,9 @@ public:
     explicit formNouvellePartie(QWidget *parent = 0);
     ~formNouvellePartie();
 
+private slots:
+    void on_retourButton_clicked();
+
 private:
     Ui::formNouvellePartie *ui;
 };
