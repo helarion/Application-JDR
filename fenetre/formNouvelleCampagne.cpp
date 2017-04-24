@@ -29,3 +29,8 @@ void formNouvelleCampagne::on_supprimerButton_clicked()
 {
 
 }
+
+void formNouvelleCampagne::on_annulerButton_clicked()
+{
+
+}

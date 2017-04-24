@@ -20,6 +20,8 @@ private slots:
 
     void on_supprimerButton_clicked();
 
+    void on_annulerButton_clicked();
+
 private:
     Ui::formNouvelleCampagne *ui;
 };

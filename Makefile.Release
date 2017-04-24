@@ -2103,6 +2103,7 @@ release\mainwindow.obj: mainwindow.cpp "C:\Program Files (x86)\Qt\5.7\msvc2015_6
 		fenetre/formNouveauAttribut.h \
 		fenetre/formModifierAttribut.h \
 		fenetre/formNouvellePartie.h \
+		fenetre/formModifierPartie.h \
 		BD/jeu.h \
 		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtCore\QString" \
 		BD/attribut.h \
@@ -3400,6 +3401,7 @@ release\formNouveauJeu.obj: fenetre\formNouveauJeu.cpp "C:\Program Files (x86)\Q
 		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h" \
 		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout" \
 		fenetre/formNouveauAttribut.h \
+		fenetre/formModifierAttribut.h \
 		mainwindow.h \
 		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\QMainWindow" \
 		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qmainwindow.h" \
@@ -3911,7 +3913,66 @@ release\formModifierPartie.obj: fenetre\formModifierPartie.cpp fenetre/formModif
 		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtCore\qfiledevice.h" \
 		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtGui\qvector2d.h" \
 		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtGui\qtouchdevice.h" \
-		ui_formModifierPartie.h
+		ui_formModifierPartie.h \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtCore\QVariant" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\QAction" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qaction.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtGui\qicon.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\QApplication" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qapplication.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtCore\qcoreapplication.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtCore\qeventloop.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtGui\qguiapplication.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtGui\qinputmethod.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\QButtonGroup" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qbuttongroup.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\QFormLayout" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qformlayout.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\QLayout" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qlayout.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\QHBoxLayout" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\QHeaderView" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qheaderview.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qframe.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtCore\qabstractitemmodel.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtCore\qitemselectionmodel.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtGui\qvalidator.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtCore\qregularexpression.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qslider.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qstyle.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qtabbar.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qrubberband.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\QLabel" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qlabel.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\QLineEdit" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qlineedit.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtGui\qtextcursor.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtGui\qtextformat.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtGui\qpen.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtGui\qtextoption.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\QListWidget" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qlistwidget.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qlistview.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\QPushButton" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\QTextEdit" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\qtextedit.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtGui\qtextdocument.h" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\include\QtWidgets\QWidget"
 
 release\moc_mainwindow.obj: release\moc_mainwindow.cpp 
 
