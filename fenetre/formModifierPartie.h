@@ -20,6 +20,9 @@ signals:
     void listPartieChanged();
 
 
+private slots:
+    void on_ajouterPersonnageButton_2_clicked();
+
 private:
     Ui::formModifierPartie *ui;
 };

@@ -1,5 +1,6 @@
 #include "formModifierPartie.h"
 #include "ui_formModifierPartie.h"
+#include "fenetre/formNouveauPersonnage.h"
 
 formModifierPartie::formModifierPartie(QWidget *parent) :
     QDialog(parent),
@@ -11,4 +12,11 @@ formModifierPartie::formModifierPartie(QWidget *parent) :
 formModifierPartie::~formModifierPartie()
 {
     delete ui;
+}
+
+void formModifierPartie::on_ajouterPersonnageButton_2_clicked()
+{
+    formNouveauPersonnage formNouveauPersonnage;
+    formNouveauPersonnage.setModal(true);
+    formNouveauPersonnage.exec();
 }
