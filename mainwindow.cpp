@@ -217,6 +217,7 @@ void MainWindow::on_ajouterPartieButton_clicked()
 {
     formNouvellePartie formNouvellePartie;
     formNouvellePartie.setModal(true);
+    QObject::connect(&formNouvellePartie, SIGNAL(listPartieChanged()),this, SLOT(changementPartie()));
     formNouvellePartie.exec();
 }
 

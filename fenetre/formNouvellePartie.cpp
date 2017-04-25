@@ -46,8 +46,3 @@ void formNouvellePartie::on_modifierPersonnageButton_clicked()
 {
 
 }
-
-void formNouvellePartie::on_supprimerPersonnageButton_clicked()
-{
-
-}

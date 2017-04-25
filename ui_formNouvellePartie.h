@@ -45,7 +45,6 @@ public:
     QVBoxLayout *verticalLayout;
     QPushButton *ajouterPersonnageButton;
     QPushButton *modifierPersonnageButton;
-    QPushButton *supprimerPersonnageButton;
     QHBoxLayout *horizontalLayout_2;
     QPushButton *validerButton;
     QPushButton *retourButton;
@@ -132,11 +131,6 @@ public:
 
         verticalLayout->addWidget(modifierPersonnageButton);
 
-        supprimerPersonnageButton = new QPushButton(formNouvellePartie);
-        supprimerPersonnageButton->setObjectName(QStringLiteral("supprimerPersonnageButton"));
-
-        verticalLayout->addWidget(supprimerPersonnageButton);
-
 
         horizontalLayout->addLayout(verticalLayout);
 
@@ -176,7 +170,6 @@ public:
         label_5->setText(QApplication::translate("formNouvellePartie", "Personnages :", 0));
         ajouterPersonnageButton->setText(QApplication::translate("formNouvellePartie", "Ajouter", 0));
         modifierPersonnageButton->setText(QApplication::translate("formNouvellePartie", "Modifier", 0));
-        supprimerPersonnageButton->setText(QApplication::translate("formNouvellePartie", "Supprimer", 0));
         validerButton->setText(QApplication::translate("formNouvellePartie", "Valider", 0));
         retourButton->setText(QApplication::translate("formNouvellePartie", "Annuler", 0));
     } // retranslateUi

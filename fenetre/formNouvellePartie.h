@@ -22,8 +22,6 @@ private slots:
 
     void on_modifierPersonnageButton_clicked();
 
-    void on_supprimerPersonnageButton_clicked();
-
 signals:
 
     void listPartieChanged();
