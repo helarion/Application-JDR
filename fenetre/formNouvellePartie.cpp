@@ -1,5 +1,6 @@
 #include "fenetre/formNouvellePartie.h"
 #include "ui_formNouvellePartie.h"
+#include "fenetre/formNouveauPersonnage.h"
 
 #include "BD/personnage.h"
 #include "BD/campagne.h"
@@ -39,7 +40,9 @@ void formNouvellePartie::on_validerButton_clicked()
 
 void formNouvellePartie::on_ajouterPersonnageButton_clicked()
 {
-
+    formNouveauPersonnage formNouveauPersonnage;
+    formNouveauPersonnage.setModal(true);
+    formNouveauPersonnage.exec();
 }
 
 void formNouvellePartie::on_modifierPersonnageButton_clicked()

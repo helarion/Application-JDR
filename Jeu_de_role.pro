@@ -50,7 +50,9 @@ HEADERS += \
     fenetre/formNouvellePartie.h \
     BD/collections.h \
     ui_formModifierJeu.h \
-    fenetre/formModifierPartie.h
+    fenetre/formModifierPartie.h \
+    fenetre/formNouveauPersonnage.h \
+    fenetre/formModifierPersonnage.h
 
 FORMS += \
     mainwindow.ui \
@@ -61,7 +63,9 @@ FORMS += \
     fenetre/formNouvelleCampagne.ui \
     fenetre/formNouvellePartie.ui \
     fenetre/formModifierJeu.ui \
-    fenetre/formModifierPartie.ui
+    fenetre/formModifierPartie.ui \
+    fenetre/formNouveauPersonnage.ui \
+    fenetre/formModifierPersonnage.ui
 
 SOURCES += \
     main.cpp \
@@ -89,5 +93,7 @@ SOURCES += \
     fenetre/formNouvelleCampagne.cpp \
     fenetre/formNouvellePartie.cpp \
     BD/collections.cpp \
-    fenetre/formModifierPartie.cpp
+    fenetre/formModifierPartie.cpp \
+    fenetre/formNouveauPersonnage.cpp \
+    fenetre/formModifierPersonnage.cpp
 

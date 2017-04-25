@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>formModifierPersonnage</class>
+ <widget class="QDialog" name="formModifierPersonnage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>797</width>
+    <height>435</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="label_22">
+   <property name="geometry">
+    <rect>
+     <x>389</x>
+     <y>56</y>
+     <width>62</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Race :</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="ClasseEdit">
+   <property name="geometry">
+    <rect>
+     <x>457</x>
+     <y>82</y>
+     <width>155</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_24">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>107</y>
+     <width>759</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>______________________________________________________________________________</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="PrenomPersonnageEdit">
+   <property name="geometry">
+    <rect>
+     <x>191</x>
+     <y>56</y>
+     <width>181</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Attribut_4Label">
+   <property name="geometry">
+    <rect>
+     <x>307</x>
+     <y>152</y>
+     <width>108</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Attribut 4</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_20">
+   <property name="geometry">
+    <rect>
+     <x>635</x>
+     <y>58</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Niveau :</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="AgeEdit">
+   <property name="geometry">
+    <rect>
+     <x>687</x>
+     <y>36</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="retourButton">
+   <property name="geometry">
+    <rect>
+     <x>705</x>
+     <y>398</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Retour</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_12">
+   <property name="geometry">
+    <rect>
+     <x>142</x>
+     <y>82</y>
+     <width>43</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Nom :</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="SexeEdit">
+   <property name="geometry">
+    <rect>
+     <x>687</x>
+     <y>88</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Attribut_2Label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>178</y>
+     <width>75</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Attribut 2 </string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Attribut_5Edit">
+   <property name="geometry">
+    <rect>
+     <x>421</x>
+     <y>178</y>
+     <width>109</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="NomEdit">
+   <property name="geometry">
+    <rect>
+     <x>191</x>
+     <y>82</y>
+     <width>181</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>231</x>
+     <y>0</y>
+     <width>351</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Feuille de Personnage :</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="PVmaxEdit">
+   <property name="geometry">
+    <rect>
+     <x>329</x>
+     <y>126</y>
+     <width>86</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_23">
+   <property name="geometry">
+    <rect>
+     <x>641</x>
+     <y>36</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Age :</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Attribut_3Edit">
+   <property name="geometry">
+    <rect>
+     <x>99</x>
+     <y>204</y>
+     <width>86</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="NiveauEdit">
+   <property name="geometry">
+    <rect>
+     <x>687</x>
+     <y>62</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Attribut_5Label">
+   <property name="geometry">
+    <rect>
+     <x>307</x>
+     <y>178</y>
+     <width>108</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Attribut 5</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="InventaireButton">
+   <property name="geometry">
+    <rect>
+     <x>13</x>
+     <y>280</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Inventaire</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Attribut_2Edit">
+   <property name="geometry">
+    <rect>
+     <x>99</x>
+     <y>178</y>
+     <width>86</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="CompetenceList">
+   <property name="geometry">
+    <rect>
+     <x>536</x>
+     <y>152</y>
+     <width>233</width>
+     <height>73</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="RaceEdit">
+   <property name="geometry">
+    <rect>
+     <x>457</x>
+     <y>56</y>
+     <width>155</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_9">
+   <property name="geometry">
+    <rect>
+     <x>142</x>
+     <y>56</y>
+     <width>43</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Prénom :</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="SanteLabel">
+   <property name="geometry">
+    <rect>
+     <x>91</x>
+     <y>126</y>
+     <width>94</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PV :</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_19">
+   <property name="geometry">
+    <rect>
+     <x>145</x>
+     <y>228</y>
+     <width>155</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Descriptif :</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_11">
+   <property name="geometry">
+    <rect>
+     <x>536</x>
+     <y>126</y>
+     <width>233</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Compétences :</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="PVactuelEdit">
+   <property name="geometry">
+    <rect>
+     <x>191</x>
+     <y>126</y>
+     <width>110</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Attribut_1Label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>152</y>
+     <width>83</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Attribut 1</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Attribut_4Edit">
+   <property name="geometry">
+    <rect>
+     <x>421</x>
+     <y>152</y>
+     <width>109</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="DescriptifEdit">
+   <property name="geometry">
+    <rect>
+     <x>105</x>
+     <y>258</y>
+     <width>678</width>
+     <height>131</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>411</x>
+     <y>30</y>
+     <width>201</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Joueur :</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Attribut_1Edit">
+   <property name="geometry">
+    <rect>
+     <x>99</x>
+     <y>152</y>
+     <width>86</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8">
+   <property name="geometry">
+    <rect>
+     <x>389</x>
+     <y>82</y>
+     <width>62</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Classe :</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_18">
+   <property name="geometry">
+    <rect>
+     <x>641</x>
+     <y>86</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Sexe :</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="ImagePerosnnageLabel">
+   <property name="geometry">
+    <rect>
+     <x>15</x>
+     <y>8</y>
+     <width>111</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Attribut_6Edit">
+   <property name="geometry">
+    <rect>
+     <x>421</x>
+     <y>204</y>
+     <width>109</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_16">
+   <property name="geometry">
+    <rect>
+     <x>307</x>
+     <y>126</y>
+     <width>16</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>/</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Attribut_6Label">
+   <property name="geometry">
+    <rect>
+     <x>307</x>
+     <y>204</y>
+     <width>108</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Attribut 6</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Attribut_3Label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>204</y>
+     <width>75</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Attribut 3</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>retourButton</sender>
+   <signal>clicked()</signal>
+   <receiver>formModifierPersonnage</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>742</x>
+     <y>409</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>398</x>
+     <y>217</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
