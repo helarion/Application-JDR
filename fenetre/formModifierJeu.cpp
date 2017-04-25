@@ -62,6 +62,9 @@ formModifierJeu::formModifierJeu(QWidget *parent) :
             ui->listAttributDisp->addItem(newItem);
         }
     }
+    ui->themeImage->setPixmap(QPixmap(listJeu[jeuSelect].getTheme()));
+    ui->themeImage->adjustSize();
+    ui->themeImage->setScaledContents(true);
 }
 
 formModifierJeu::~formModifierJeu()

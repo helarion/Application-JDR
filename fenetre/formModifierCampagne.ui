@@ -58,7 +58,7 @@
      <item>
       <widget class="QPushButton" name="modifierCampagneButton">
        <property name="text">
-        <string>Valider</string>
+        <string>Modifier</string>
        </property>
       </widget>
      </item>

@@ -15,6 +15,11 @@ public:
     explicit formModifierPartie(QWidget *parent = 0);
     ~formModifierPartie();
 
+signals:
+
+    void listPartieChanged();
+
+
 private:
     Ui::formModifierPartie *ui;
 };

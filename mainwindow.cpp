@@ -59,6 +59,49 @@ void MainWindow::changementJeu()
     qDebug() << "Fin";
 }
 
+void MainWindow::changementCampagne()
+{
+    remplirListCampagne();
+    qDebug() << "remplit le vector";
+    ui->listCampagne->clear();
+    qDebug() << "vide la liste";
+    for(int i=0;i<listCampagne.size();i++)
+    {
+        if(listCampagne[i].getJeu().compare(listJeu[jeuSelect]))
+        {
+            qDebug() << "fait un item";
+            QListWidgetItem *newItem = new QListWidgetItem;
+            // on met le titre de l'objet comme donnée
+            newItem->setData(Qt::UserRole,listCampagne[i].getTitre());
+            // le nom de l'objet comme text affiché
+            newItem->setText(listCampagne[i].getNom());
+            ui->listCampagne->addItem(newItem);
+            qDebug() << "ajoute item";
+        }
+    }
+    qDebug() << "Fin";
+}
+
+void MainWindow::changementPartie()
+{
+    remplirListPartie();
+    qDebug() << "remplit le vector";
+    ui->listPartie->clear();
+    qDebug() << "vide la liste";
+    for(int i=0;i<listPartie.size();i++)
+    {
+        qDebug() << "fait un item";
+        QListWidgetItem *newItem = new QListWidgetItem;
+        // on met le titre de l'objet comme donnée
+        newItem->setData(Qt::UserRole,listPartie[i].getTitre());
+        // le nom de l'objet comme text affiché
+        newItem->setText(listPartie[i].getNom());
+        ui->listPartie->addItem(newItem);
+        qDebug() << "ajoute item";
+    }
+    qDebug() << "Fin";
+}
+
 void MainWindow::on_jeuButton_clicked()
 {
    ui->retourButton->setVisible(true);
@@ -125,6 +168,7 @@ void MainWindow::on_nouveauCampagneButton_clicked()
 {
     formNouvelleCampagne formNouvelleCampagne;
     formNouvelleCampagne.setModal(true);
+    QObject::connect(&formNouvelleCampagne, SIGNAL(listCampagneChanged()),this, SLOT(changementCampagne()));
     formNouvelleCampagne.exec();
 }
 
@@ -132,6 +176,7 @@ void MainWindow::on_modifierCampagneButton_clicked()
 {
     formModifierCampagne formModifierCampagne;
     formModifierCampagne.setModal(true);
+    QObject::connect(&formModifierCampagne, SIGNAL(listCampagneChanged()),this, SLOT(changementCampagne()));
     formModifierCampagne.exec();
 }
 
@@ -178,7 +223,7 @@ void MainWindow::on_ajouterPartieButton_clicked()
 void MainWindow::on_modifierPartieButton_clicked()
 {
     formModifierPartie formModifierPartie;
-    //QObject::connect(&formModifierJeu, SIGNAL(listJeuChanged()),this, SLOT(changementJeu()));
+    QObject::connect(&formModifierPartie, SIGNAL(listPartieChanged()),this, SLOT(changementPartie()));
     formModifierPartie.setModal(true);
     formModifierPartie.exec();
 }

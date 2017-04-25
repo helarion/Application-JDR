@@ -7,17 +7,20 @@
 #include "BD/attribut.h"
 #include "BD/partie.h"
 #include "BD/campagne.h"
+#include "BD/personnage.h"
 
     // ajouts et suppressions
     extern void addJeu(Jeu j);
     extern void addAttribut(Attribut a);
     extern void addCampagne(Campagne c);
     extern void addPartie(Partie p);
+    extern void addPartie(Personnage p);
 
     extern void deleteJeu(int index);
     extern void deleteAttribut(int index);
     extern void deleteCampagne(int index);
     extern void deletePartie(int index);
+    extern void deletePersonnage(int index);
 
     // mises à jour d'un objet
     extern void updateJeu(Jeu precedent, Jeu nouveau);
@@ -27,12 +30,14 @@
     void afficherAttribut();
     void afficherCampagne();
     void afficherPartie();
+    void afficherPersonnage();
 
     //récupérations des objets sérialisés dans les listes
     extern void remplirListJeu();
     extern void remplirListAttribut();
     extern void remplirListCampagne();
     extern void remplirListPartie();
+    extern void remplirListPersonnage();
 
     // recherche de l'index d'un objet à partir de son nom
     extern int chercheTitreJeu(QString titre);
@@ -44,6 +49,7 @@
     extern QVector<Attribut> listAttribut;
     extern QVector<Campagne> listCampagne;
     extern QVector<Partie> listPartie;
+    extern QVector<Personnage> listPersonnage;
 
     extern quint8 indexStack;
 
@@ -51,5 +57,6 @@
     extern int campagneSelect;
     extern int partieSelect;
     extern int attributSelect;
+    extern int personnageSelect;
 
 #endif // COLLECTIONS_H

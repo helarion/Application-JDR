@@ -49,6 +49,8 @@ private:
     Ui::MainWindow *ui;
 public slots:
     void changementJeu();
+    void changementCampagne();
+    void changementPartie();
 };
 
 #endif // MAINWINDOW_H

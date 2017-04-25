@@ -15,6 +15,14 @@ public:
     explicit formModifierCampagne(QWidget *parent = 0);
     ~formModifierCampagne();
 
+private slots:
+    void on_supprimerButton_clicked();
+
+    void on_modifierCampagneButton_clicked();
+
+signals:
+    void listCampagneChanged();
+
 private:
     Ui::formModifierCampagne *ui;
 };

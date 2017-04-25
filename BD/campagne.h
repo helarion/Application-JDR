@@ -27,7 +27,8 @@ class Campagne
         QString getTitreJeu();
         QString getScenario();
         bool compare(Campagne c);
-        void setJeu(Jeu j);
+        void setScenario(QString scenario);
+        void setNom(QString nom);
         void setTitreJeu(QString titreJeu);
         Jeu getJeu();
 };

@@ -16,7 +16,17 @@ public:
     ~formNouvellePartie();
 
 private slots:
-    void on_retourButton_clicked();
+    void on_validerButton_clicked();
+
+    void on_ajouterPersonnageButton_clicked();
+
+    void on_modifierPersonnageButton_clicked();
+
+    void on_supprimerPersonnageButton_clicked();
+
+signals:
+
+    void listPartieChanged();
 
 private:
     Ui::formNouvellePartie *ui;

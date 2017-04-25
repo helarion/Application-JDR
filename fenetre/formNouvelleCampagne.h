@@ -22,6 +22,9 @@ private slots:
 
     void on_annulerButton_clicked();
 
+signals:
+    void listCampagneChanged();
+
 private:
     Ui::formNouvelleCampagne *ui;
 };

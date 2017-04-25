@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'formNouvelleCampagne.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.1
+** Created by: Qt User Interface Compiler version 5.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -35,7 +35,6 @@ public:
     QTextEdit *scenarioCampagne;
     QHBoxLayout *horizontalLayout;
     QPushButton *creerButton;
-    QPushButton *supprimerButton;
     QPushButton *annulerButton;
 
     void setupUi(QDialog *formNouvelleCampagne)
@@ -81,11 +80,6 @@ public:
 
         horizontalLayout->addWidget(creerButton);
 
-        supprimerButton = new QPushButton(formNouvelleCampagne);
-        supprimerButton->setObjectName(QStringLiteral("supprimerButton"));
-
-        horizontalLayout->addWidget(supprimerButton);
-
         annulerButton = new QPushButton(formNouvelleCampagne);
         annulerButton->setObjectName(QStringLiteral("annulerButton"));
 
@@ -103,13 +97,12 @@ public:
 
     void retranslateUi(QDialog *formNouvelleCampagne)
     {
-        formNouvelleCampagne->setWindowTitle(QApplication::translate("formNouvelleCampagne", "Dialog", Q_NULLPTR));
-        label->setText(QApplication::translate("formNouvelleCampagne", "Nouvelle campagne :", Q_NULLPTR));
-        label_3->setText(QApplication::translate("formNouvelleCampagne", "Nom :", Q_NULLPTR));
-        label_4->setText(QApplication::translate("formNouvelleCampagne", "Scenario:", Q_NULLPTR));
-        creerButton->setText(QApplication::translate("formNouvelleCampagne", "Cr\303\251er", Q_NULLPTR));
-        supprimerButton->setText(QApplication::translate("formNouvelleCampagne", "Supprimer", Q_NULLPTR));
-        annulerButton->setText(QApplication::translate("formNouvelleCampagne", "Annuler", Q_NULLPTR));
+        formNouvelleCampagne->setWindowTitle(QApplication::translate("formNouvelleCampagne", "Dialog", 0));
+        label->setText(QApplication::translate("formNouvelleCampagne", "Nouvelle campagne :", 0));
+        label_3->setText(QApplication::translate("formNouvelleCampagne", "Nom :", 0));
+        label_4->setText(QApplication::translate("formNouvelleCampagne", "Scenario:", 0));
+        creerButton->setText(QApplication::translate("formNouvelleCampagne", "Cr\303\251er", 0));
+        annulerButton->setText(QApplication::translate("formNouvelleCampagne", "Annuler", 0));
     } // retranslateUi
 
 };

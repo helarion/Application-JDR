@@ -22,6 +22,7 @@ void formNouvelleCampagne::on_creerButton_clicked()
     QString titreJeu=listJeu[jeuSelect].getTitre();
     Campagne c(nom,scenario,titreJeu);
     c.Save();
+    emit listCampagneChanged();
     this->close();
 }
 

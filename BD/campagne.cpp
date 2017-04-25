@@ -64,7 +64,29 @@ QString Campagne::getTitreJeu()
     return titreJeu;
 }
 
-void Campagne::setJeu(Jeu j) { jeu = j;}
+void Campagne::setNom(QString s_nom)
+{
+    nom=s_nom; // modification du nom
+
+    // suppression du fichier actuel
+    QString filename = "data/Campagne/";
+    filename+=titre;
+    filename+=".data";
+    QFile file(filename);
+    file.remove();
+
+    // nouveau titre de fichier adapté au nom
+    titre=nom.toLower();
+    titre.replace( " ", "_" );
+
+    // Sauvegarde du nouveau fichier
+    Save();
+}
+
+void Campagne::setScenario(QString s_scenario)
+{
+    scenario=s_scenario;
+}
 
 void Campagne::setTitreJeu(QString titreJeu)
 {

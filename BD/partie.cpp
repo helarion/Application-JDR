@@ -12,11 +12,16 @@ Partie::Partie ()
     titre="";
 }
 
-Partie::Partie (QString s_nom, QString s_resume, Campagne s_campagne)
+Partie::Partie (QString s_nom, QString s_resume, Campagne s_campagne, QVector<Personnage> s_personnages)
 {
     nom=s_nom;
     resume=s_resume;
     campagne=s_campagne;
+    personnages=s_personnages;
+    for(int i=0;i<personnages.size();i++)
+    {
+        titrePersonnages.append(personnages[i].getTitre());
+    }
     titreCampagne=campagne.getTitre();
     titre=nom.toLower();
     titre.replace( " ", "_" );
@@ -62,6 +67,55 @@ QString Partie::getTitreCampagne()
 QString Partie::getTitre()
 {
     return titre;
+}
+
+QVector<Personnage> Partie::getPersonnage()
+{
+    return personnages;
+}
+
+QVector<QString> Partie::getTitrePersonnages()
+{
+    return titrePersonnages;
+}
+
+void Partie::setNom(QString s_nom)
+{
+    nom=s_nom; // modification du nom
+
+    // suppression du fichier actuel
+    QString filename = "data/Partie/";
+    filename+=titre;
+    filename+=".data";
+    QFile file(filename);
+    file.remove();
+
+    // nouveau titre de fichier adapté au nom
+    titre=nom.toLower();
+    titre.replace( " ", "_" );
+
+    // Sauvegarde du nouveau fichier
+    Save();
+}
+
+void Partie::setResume(QString s_resume)
+{
+    resume=s_resume;
+}
+
+void Partie::setCampagne(Campagne s_campagne)
+{
+    campagne=s_campagne;
+}
+
+void Partie::setPersonnages(QVector<Personnage> s_personnages)
+{
+    personnages=s_personnages;
+    titrePersonnages.clear();
+    for(int i=0;i<personnages.size();i++)
+    {
+        titrePersonnages.append(personnages[i].getTitre());
+    }
 }
 
 void Partie::Save()
