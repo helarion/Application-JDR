@@ -45,6 +45,8 @@ private slots:
 
     void on_selectionnerPartieButton_clicked();
 
+    void on_autreButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 public slots:
