@@ -23,6 +23,8 @@ signals:
 private slots:
     void on_ajouterPersonnageButton_2_clicked();
 
+    void changementPersonnage();
+
 private:
     Ui::formModifierPartie *ui;
 };

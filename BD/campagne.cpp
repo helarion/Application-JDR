@@ -35,6 +35,7 @@ Campagne::~Campagne()
 
 void Campagne::afficher () const
 {
+    qDebug() << "Affichage Campagne:";
     qDebug() << nom;
     qDebug() << scenario;
 }

@@ -41,7 +41,7 @@ public:
     QHBoxLayout *horizontalLayout;
     QVBoxLayout *verticalLayout_2;
     QLabel *label_5;
-    QListWidget *listPersonnages;
+    QListWidget *listPersonnage;
     QVBoxLayout *verticalLayout;
     QPushButton *ajouterPersonnageButton;
     QPushButton *modifierPersonnageButton;
@@ -111,10 +111,10 @@ public:
 
         verticalLayout_2->addWidget(label_5);
 
-        listPersonnages = new QListWidget(formNouvellePartie);
-        listPersonnages->setObjectName(QStringLiteral("listPersonnages"));
+        listPersonnage = new QListWidget(formNouvellePartie);
+        listPersonnage->setObjectName(QStringLiteral("listPersonnage"));
 
-        verticalLayout_2->addWidget(listPersonnages);
+        verticalLayout_2->addWidget(listPersonnage);
 
 
         horizontalLayout->addLayout(verticalLayout_2);

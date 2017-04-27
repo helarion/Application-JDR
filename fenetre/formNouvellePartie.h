@@ -18,6 +18,8 @@ public:
 private slots:
     void on_validerButton_clicked();
 
+    void changementPersonnage();
+
     void on_ajouterPersonnageButton_clicked();
 
     void on_modifierPersonnageButton_clicked();

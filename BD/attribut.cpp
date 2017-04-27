@@ -50,6 +50,11 @@ QString Attribut::getTitre()
     return titre;
 }
 
+int Attribut::getType()
+{
+    return type;
+}
+
 bool Attribut::getPreset() { return preset;}
 
 void Attribut::setNom(QString nom)

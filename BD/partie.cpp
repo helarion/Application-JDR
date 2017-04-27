@@ -40,6 +40,7 @@ Partie::~Partie()
 
 void Partie::afficher () const
 {
+    qDebug() << "Affichage Partie:";
     qDebug() << nom;
     qDebug() << resume;
 }

@@ -13,9 +13,10 @@ formNouveauAttribut::formNouveauAttribut(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->typeAttributCombo->addItem("Nom=Valeur");
-    ui->typeAttributCombo->addItem("Nom=Valeur/Valeur");
-    ui->typeAttributCombo->addItem("Nom=Liste objets");
+    ui->typeAttributCombo->addItem("Attribut (Exemple:Force)"); //type 0
+    ui->typeAttributCombo->addItem("Valeur/Valeur (Exemple: Points de vie)"); //type 1
+    ui->typeAttributCombo->addItem("Compétence (Exemple:Epée longue)"); //type 2
+    ui->typeAttributCombo->addItem("Liste (Exemple: liste de sorts)"); //type 3
 }
 
 formNouveauAttribut::~formNouveauAttribut()
