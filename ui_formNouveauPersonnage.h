@@ -21,471 +21,395 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
-<<<<<<< HEAD
-#include <QtWidgets/QVBoxLayout>
-=======
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QTableView>
 #include <QtWidgets/QTextEdit>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
->>>>>>> origin/master
 
 QT_BEGIN_NAMESPACE
 
 class Ui_formNouveauPersonnage
 {
 public:
-<<<<<<< HEAD
+    QVBoxLayout *verticalLayout_3;
+    QStackedWidget *stackedWidget;
+    QWidget *FeuillePersonnage_3;
     QVBoxLayout *verticalLayout;
-    QLabel *label;
-    QVBoxLayout *verticalLayout_2;
-    QHBoxLayout *informationsLayout;
-    QLabel *label_9;
-    QLineEdit *prenom;
-    QLabel *label_12;
-    QLineEdit *nom;
-    QLabel *label_23;
-    QLineEdit *age;
-    QLabel *label_18;
-    QLineEdit *sexe;
-    QFrame *line;
-    QHBoxLayout *valeurLayout;
+    QHBoxLayout *horizontalLayout;
+    QLabel *ImagePerosnnageLabel_3;
+    QLabel *label_67;
+    QLabel *label_71;
+    QLineEdit *joueurEdit;
+    QHBoxLayout *information1Layout;
+    QLabel *label_68;
+    QLineEdit *NomEdit_3;
+    QLabel *label_69;
+    QLineEdit *PrenomPersonnageEdit_3;
+    QLabel *label_70;
+    QLineEdit *AgeEdit_3;
+    QLabel *label_72;
+    QLineEdit *SexeEdit_3;
+    QHBoxLayout *information2Layout;
+    QLabel *label_73;
+    QLineEdit *RaceEdit_3;
+    QLabel *label_74;
+    QLineEdit *NiveauEdit_3;
+    QLabel *label_75;
+    QLineEdit *ClasseEdit_3;
     QFrame *line_2;
+    QLabel *label_76;
+    QHBoxLayout *valeurLayout;
+    QFrame *line;
+    QLabel *label_77;
     QHBoxLayout *attributLayout;
     QFrame *line_3;
+    QLabel *label_78;
     QGridLayout *competenceLayout;
-    QVBoxLayout *textLayout;
-    QHBoxLayout *horizontalLayout_3;
-    QPushButton *creerButton;
-    QPushButton *retourButton;
-=======
-    QStackedWidget *stackedWidget;
-    QWidget *FeuillePersonnage;
-    QLineEdit *Attribut_3Edit;
-    QLineEdit *Attribut_6Edit;
-    QLabel *Attribut_2Label;
-    QLineEdit *Attribut_4Edit;
-    QLineEdit *NiveauEdit;
-    QLineEdit *PrenomPersonnageEdit;
-    QLabel *Attribut_4Label;
-    QLabel *label_22;
-    QLabel *label_16;
-    QLineEdit *Attribut_2Edit;
-    QLineEdit *PVactuelEdit;
-    QLabel *label_20;
-    QLabel *label_11;
-    QTextEdit *DescriptifEdit;
-    QPushButton *retourButton;
-    QLineEdit *Attribut_5Edit;
-    QLineEdit *RaceEdit;
-    QLineEdit *Attribut_1Edit;
-    QLabel *label_19;
-    QLabel *label_23;
-    QLabel *Attribut_5Label;
-    QLabel *Attribut_6Label;
-    QLineEdit *PVmaxEdit;
-    QLineEdit *ClasseEdit;
-    QLabel *label_12;
-    QLabel *label_9;
-    QLabel *ImagePerosnnageLabel;
-    QLabel *Attribut_3Label;
-    QLabel *SanteLabel;
-    QLineEdit *NomEdit;
-    QLabel *label_8;
-    QPushButton *InventaireButton;
-    QLabel *label_18;
-    QLabel *label;
-    QLabel *label_24;
-    QListWidget *CompetenceList;
-    QLineEdit *SexeEdit;
-    QLabel *label_7;
-    QLabel *Attribut_1Label;
-    QLineEdit *AgeEdit;
-    QWidget *Inventaire;
-    QLabel *label_2;
-    QLabel *label_3;
-    QLabel *label_4;
-    QLineEdit *ArgentEdit;
-    QLabel *label_5;
-    QLineEdit *EncombrementValeurEdit;
-    QLabel *label_6;
-    QLineEdit *EncombrementSeuilEdit;
-    QLabel *label_10;
-    QTableView *ArmeTable;
-    QLabel *label_13;
-    QLabel *label_14;
-    QLabel *label_15;
-    QLabel *label_17;
-    QTableView *ArmureTable;
-    QLabel *label_21;
-    QLabel *label_25;
-    QLabel *label_26;
-    QLabel *label_27;
-    QTableView *ObjetTable;
-    QLabel *label_28;
-    QLabel *label_29;
-    QLabel *label_30;
-    QLabel *label_31;
-    QLabel *label_32;
-    QLabel *label_33;
-    QPushButton *RetourButton;
->>>>>>> origin/master
+    QFrame *line_4;
+    QVBoxLayout *verticalLayout_2;
+    QLabel *label_79;
+    QTextEdit *descirptionEdit;
+    QPushButton *InventaireButton_3;
+    QPushButton *retourButton_3;
+    QWidget *Inventaire_3;
+    QLabel *label_80;
+    QLabel *label_81;
+    QLineEdit *ArgentLineEdit_3;
+    QTableView *ObjetTable_3;
+    QLineEdit *EncombrementValeurEdit_3;
+    QLabel *label_82;
+    QLabel *label_83;
+    QLabel *label_84;
+    QLineEdit *EncombrementSeuilEdit_3;
+    QLabel *label_85;
+    QLabel *label_86;
+    QLabel *label_87;
+    QLabel *label_88;
+    QTableView *ArmesTable_3;
+    QLabel *label_89;
+    QLabel *label_90;
+    QLabel *label_91;
+    QLabel *label_92;
+    QLabel *label_93;
+    QLabel *label_94;
+    QLabel *label_95;
+    QLabel *label_96;
+    QLabel *label_97;
+    QLabel *label_98;
+    QTableView *ArmureTable_3;
+    QLabel *label_99;
+    QPushButton *RetourButton_3;
 
     void setupUi(QDialog *formNouveauPersonnage)
     {
         if (formNouveauPersonnage->objectName().isEmpty())
             formNouveauPersonnage->setObjectName(QStringLiteral("formNouveauPersonnage"));
-<<<<<<< HEAD
-        formNouveauPersonnage->resize(756, 459);
-        verticalLayout = new QVBoxLayout(formNouveauPersonnage);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        label = new QLabel(formNouveauPersonnage);
-        label->setObjectName(QStringLiteral("label"));
-        label->setMaximumSize(QSize(400, 50));
-=======
-        formNouveauPersonnage->resize(796, 434);
+        formNouveauPersonnage->resize(756, 529);
+        verticalLayout_3 = new QVBoxLayout(formNouveauPersonnage);
+        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         stackedWidget = new QStackedWidget(formNouveauPersonnage);
         stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
-        stackedWidget->setGeometry(QRect(10, 0, 781, 431));
-        FeuillePersonnage = new QWidget();
-        FeuillePersonnage->setObjectName(QStringLiteral("FeuillePersonnage"));
-        Attribut_3Edit = new QLineEdit(FeuillePersonnage);
-        Attribut_3Edit->setObjectName(QStringLiteral("Attribut_3Edit"));
-        Attribut_3Edit->setGeometry(QRect(88, 212, 86, 20));
-        Attribut_6Edit = new QLineEdit(FeuillePersonnage);
-        Attribut_6Edit->setObjectName(QStringLiteral("Attribut_6Edit"));
-        Attribut_6Edit->setGeometry(QRect(410, 212, 109, 20));
-        Attribut_2Label = new QLabel(FeuillePersonnage);
-        Attribut_2Label->setObjectName(QStringLiteral("Attribut_2Label"));
-        Attribut_2Label->setGeometry(QRect(-1, 186, 75, 20));
-        Attribut_4Edit = new QLineEdit(FeuillePersonnage);
-        Attribut_4Edit->setObjectName(QStringLiteral("Attribut_4Edit"));
-        Attribut_4Edit->setGeometry(QRect(410, 160, 109, 20));
-        NiveauEdit = new QLineEdit(FeuillePersonnage);
-        NiveauEdit->setObjectName(QStringLiteral("NiveauEdit"));
-        NiveauEdit->setGeometry(QRect(676, 70, 91, 20));
-        PrenomPersonnageEdit = new QLineEdit(FeuillePersonnage);
-        PrenomPersonnageEdit->setObjectName(QStringLiteral("PrenomPersonnageEdit"));
-        PrenomPersonnageEdit->setGeometry(QRect(180, 64, 181, 20));
-        Attribut_4Label = new QLabel(FeuillePersonnage);
-        Attribut_4Label->setObjectName(QStringLiteral("Attribut_4Label"));
-        Attribut_4Label->setGeometry(QRect(296, 160, 108, 20));
-        label_22 = new QLabel(FeuillePersonnage);
-        label_22->setObjectName(QStringLiteral("label_22"));
-        label_22->setGeometry(QRect(378, 64, 62, 20));
-        label_16 = new QLabel(FeuillePersonnage);
-        label_16->setObjectName(QStringLiteral("label_16"));
-        label_16->setGeometry(QRect(296, 134, 16, 20));
-        Attribut_2Edit = new QLineEdit(FeuillePersonnage);
-        Attribut_2Edit->setObjectName(QStringLiteral("Attribut_2Edit"));
-        Attribut_2Edit->setGeometry(QRect(88, 186, 86, 20));
-        PVactuelEdit = new QLineEdit(FeuillePersonnage);
-        PVactuelEdit->setObjectName(QStringLiteral("PVactuelEdit"));
-        PVactuelEdit->setGeometry(QRect(180, 134, 110, 20));
-        label_20 = new QLabel(FeuillePersonnage);
-        label_20->setObjectName(QStringLiteral("label_20"));
-        label_20->setGeometry(QRect(624, 66, 40, 20));
-        label_11 = new QLabel(FeuillePersonnage);
-        label_11->setObjectName(QStringLiteral("label_11"));
-        label_11->setGeometry(QRect(525, 134, 233, 20));
-        DescriptifEdit = new QTextEdit(FeuillePersonnage);
-        DescriptifEdit->setObjectName(QStringLiteral("DescriptifEdit"));
-        DescriptifEdit->setGeometry(QRect(94, 266, 678, 131));
-        retourButton = new QPushButton(FeuillePersonnage);
-        retourButton->setObjectName(QStringLiteral("retourButton"));
-        retourButton->setGeometry(QRect(694, 406, 75, 23));
-        Attribut_5Edit = new QLineEdit(FeuillePersonnage);
-        Attribut_5Edit->setObjectName(QStringLiteral("Attribut_5Edit"));
-        Attribut_5Edit->setGeometry(QRect(410, 186, 109, 20));
-        RaceEdit = new QLineEdit(FeuillePersonnage);
-        RaceEdit->setObjectName(QStringLiteral("RaceEdit"));
-        RaceEdit->setGeometry(QRect(446, 64, 155, 20));
-        Attribut_1Edit = new QLineEdit(FeuillePersonnage);
-        Attribut_1Edit->setObjectName(QStringLiteral("Attribut_1Edit"));
-        Attribut_1Edit->setGeometry(QRect(88, 160, 86, 20));
-        label_19 = new QLabel(FeuillePersonnage);
-        label_19->setObjectName(QStringLiteral("label_19"));
-        label_19->setGeometry(QRect(134, 236, 155, 13));
-        label_23 = new QLabel(FeuillePersonnage);
-        label_23->setObjectName(QStringLiteral("label_23"));
-        label_23->setGeometry(QRect(630, 44, 40, 20));
-        Attribut_5Label = new QLabel(FeuillePersonnage);
-        Attribut_5Label->setObjectName(QStringLiteral("Attribut_5Label"));
-        Attribut_5Label->setGeometry(QRect(296, 186, 108, 20));
-        Attribut_6Label = new QLabel(FeuillePersonnage);
-        Attribut_6Label->setObjectName(QStringLiteral("Attribut_6Label"));
-        Attribut_6Label->setGeometry(QRect(296, 212, 108, 21));
-        PVmaxEdit = new QLineEdit(FeuillePersonnage);
-        PVmaxEdit->setObjectName(QStringLiteral("PVmaxEdit"));
-        PVmaxEdit->setGeometry(QRect(318, 134, 86, 20));
-        ClasseEdit = new QLineEdit(FeuillePersonnage);
-        ClasseEdit->setObjectName(QStringLiteral("ClasseEdit"));
-        ClasseEdit->setGeometry(QRect(446, 90, 155, 20));
-        label_12 = new QLabel(FeuillePersonnage);
-        label_12->setObjectName(QStringLiteral("label_12"));
-        label_12->setGeometry(QRect(131, 90, 43, 20));
-        label_9 = new QLabel(FeuillePersonnage);
-        label_9->setObjectName(QStringLiteral("label_9"));
-        label_9->setGeometry(QRect(131, 64, 43, 20));
-        ImagePerosnnageLabel = new QLabel(FeuillePersonnage);
-        ImagePerosnnageLabel->setObjectName(QStringLiteral("ImagePerosnnageLabel"));
-        ImagePerosnnageLabel->setGeometry(QRect(4, 16, 111, 111));
-        Attribut_3Label = new QLabel(FeuillePersonnage);
-        Attribut_3Label->setObjectName(QStringLiteral("Attribut_3Label"));
-        Attribut_3Label->setGeometry(QRect(-1, 212, 75, 21));
-        SanteLabel = new QLabel(FeuillePersonnage);
-        SanteLabel->setObjectName(QStringLiteral("SanteLabel"));
-        SanteLabel->setGeometry(QRect(80, 134, 94, 20));
-        NomEdit = new QLineEdit(FeuillePersonnage);
-        NomEdit->setObjectName(QStringLiteral("NomEdit"));
-        NomEdit->setGeometry(QRect(180, 90, 181, 20));
-        label_8 = new QLabel(FeuillePersonnage);
-        label_8->setObjectName(QStringLiteral("label_8"));
-        label_8->setGeometry(QRect(378, 90, 62, 20));
-        InventaireButton = new QPushButton(FeuillePersonnage);
-        InventaireButton->setObjectName(QStringLiteral("InventaireButton"));
-        InventaireButton->setGeometry(QRect(2, 288, 75, 23));
-        label_18 = new QLabel(FeuillePersonnage);
-        label_18->setObjectName(QStringLiteral("label_18"));
-        label_18->setGeometry(QRect(630, 94, 40, 20));
-        label = new QLabel(FeuillePersonnage);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(220, 8, 351, 31));
->>>>>>> origin/master
+        FeuillePersonnage_3 = new QWidget();
+        FeuillePersonnage_3->setObjectName(QStringLiteral("FeuillePersonnage_3"));
+        verticalLayout = new QVBoxLayout(FeuillePersonnage_3);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        ImagePerosnnageLabel_3 = new QLabel(FeuillePersonnage_3);
+        ImagePerosnnageLabel_3->setObjectName(QStringLiteral("ImagePerosnnageLabel_3"));
+        ImagePerosnnageLabel_3->setMinimumSize(QSize(100, 100));
+        ImagePerosnnageLabel_3->setMaximumSize(QSize(300, 300));
+
+        horizontalLayout->addWidget(ImagePerosnnageLabel_3);
+
+        label_67 = new QLabel(FeuillePersonnage_3);
+        label_67->setObjectName(QStringLiteral("label_67"));
         QFont font;
         font.setPointSize(18);
-        label->setFont(font);
-        label->setAlignment(Qt::AlignCenter);
-<<<<<<< HEAD
+        label_67->setFont(font);
+        label_67->setAlignment(Qt::AlignCenter);
 
-        verticalLayout->addWidget(label);
+        horizontalLayout->addWidget(label_67, 0, Qt::AlignHCenter);
 
-        verticalLayout_2 = new QVBoxLayout();
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        verticalLayout_2->setContentsMargins(-1, 0, -1, -1);
-        informationsLayout = new QHBoxLayout();
-        informationsLayout->setObjectName(QStringLiteral("informationsLayout"));
-        informationsLayout->setContentsMargins(-1, 0, 0, -1);
-        label_9 = new QLabel(formNouveauPersonnage);
-        label_9->setObjectName(QStringLiteral("label_9"));
+        label_71 = new QLabel(FeuillePersonnage_3);
+        label_71->setObjectName(QStringLiteral("label_71"));
 
-        informationsLayout->addWidget(label_9);
+        horizontalLayout->addWidget(label_71);
 
-        prenom = new QLineEdit(formNouveauPersonnage);
-        prenom->setObjectName(QStringLiteral("prenom"));
+        joueurEdit = new QLineEdit(FeuillePersonnage_3);
+        joueurEdit->setObjectName(QStringLiteral("joueurEdit"));
 
-        informationsLayout->addWidget(prenom);
-
-        label_12 = new QLabel(formNouveauPersonnage);
-        label_12->setObjectName(QStringLiteral("label_12"));
-
-        informationsLayout->addWidget(label_12);
-
-        nom = new QLineEdit(formNouveauPersonnage);
-        nom->setObjectName(QStringLiteral("nom"));
-
-        informationsLayout->addWidget(nom);
-
-        label_23 = new QLabel(formNouveauPersonnage);
-        label_23->setObjectName(QStringLiteral("label_23"));
-
-        informationsLayout->addWidget(label_23);
-
-        age = new QLineEdit(formNouveauPersonnage);
-        age->setObjectName(QStringLiteral("age"));
-        age->setMaximumSize(QSize(50, 16777215));
-
-        informationsLayout->addWidget(age);
-
-        label_18 = new QLabel(formNouveauPersonnage);
-        label_18->setObjectName(QStringLiteral("label_18"));
-
-        informationsLayout->addWidget(label_18);
-
-        sexe = new QLineEdit(formNouveauPersonnage);
-        sexe->setObjectName(QStringLiteral("sexe"));
-
-        informationsLayout->addWidget(sexe);
+        horizontalLayout->addWidget(joueurEdit);
 
 
-        verticalLayout_2->addLayout(informationsLayout);
+        verticalLayout->addLayout(horizontalLayout);
 
-        line = new QFrame(formNouveauPersonnage);
-        line->setObjectName(QStringLiteral("line"));
-        line->setFrameShape(QFrame::HLine);
-        line->setFrameShadow(QFrame::Sunken);
+        information1Layout = new QHBoxLayout();
+        information1Layout->setObjectName(QStringLiteral("information1Layout"));
+        information1Layout->setContentsMargins(-1, 0, -1, -1);
+        label_68 = new QLabel(FeuillePersonnage_3);
+        label_68->setObjectName(QStringLiteral("label_68"));
 
-        verticalLayout_2->addWidget(line);
+        information1Layout->addWidget(label_68);
 
-        valeurLayout = new QHBoxLayout();
-        valeurLayout->setObjectName(QStringLiteral("valeurLayout"));
+        NomEdit_3 = new QLineEdit(FeuillePersonnage_3);
+        NomEdit_3->setObjectName(QStringLiteral("NomEdit_3"));
 
-        verticalLayout_2->addLayout(valeurLayout);
+        information1Layout->addWidget(NomEdit_3);
 
-        line_2 = new QFrame(formNouveauPersonnage);
+        label_69 = new QLabel(FeuillePersonnage_3);
+        label_69->setObjectName(QStringLiteral("label_69"));
+
+        information1Layout->addWidget(label_69);
+
+        PrenomPersonnageEdit_3 = new QLineEdit(FeuillePersonnage_3);
+        PrenomPersonnageEdit_3->setObjectName(QStringLiteral("PrenomPersonnageEdit_3"));
+
+        information1Layout->addWidget(PrenomPersonnageEdit_3);
+
+        label_70 = new QLabel(FeuillePersonnage_3);
+        label_70->setObjectName(QStringLiteral("label_70"));
+
+        information1Layout->addWidget(label_70);
+
+        AgeEdit_3 = new QLineEdit(FeuillePersonnage_3);
+        AgeEdit_3->setObjectName(QStringLiteral("AgeEdit_3"));
+        AgeEdit_3->setMaximumSize(QSize(50, 16777215));
+
+        information1Layout->addWidget(AgeEdit_3);
+
+        label_72 = new QLabel(FeuillePersonnage_3);
+        label_72->setObjectName(QStringLiteral("label_72"));
+
+        information1Layout->addWidget(label_72);
+
+        SexeEdit_3 = new QLineEdit(FeuillePersonnage_3);
+        SexeEdit_3->setObjectName(QStringLiteral("SexeEdit_3"));
+
+        information1Layout->addWidget(SexeEdit_3);
+
+
+        verticalLayout->addLayout(information1Layout);
+
+        information2Layout = new QHBoxLayout();
+        information2Layout->setObjectName(QStringLiteral("information2Layout"));
+        information2Layout->setContentsMargins(-1, 0, -1, -1);
+        label_73 = new QLabel(FeuillePersonnage_3);
+        label_73->setObjectName(QStringLiteral("label_73"));
+
+        information2Layout->addWidget(label_73);
+
+        RaceEdit_3 = new QLineEdit(FeuillePersonnage_3);
+        RaceEdit_3->setObjectName(QStringLiteral("RaceEdit_3"));
+
+        information2Layout->addWidget(RaceEdit_3);
+
+        label_74 = new QLabel(FeuillePersonnage_3);
+        label_74->setObjectName(QStringLiteral("label_74"));
+
+        information2Layout->addWidget(label_74);
+
+        NiveauEdit_3 = new QLineEdit(FeuillePersonnage_3);
+        NiveauEdit_3->setObjectName(QStringLiteral("NiveauEdit_3"));
+
+        information2Layout->addWidget(NiveauEdit_3);
+
+        label_75 = new QLabel(FeuillePersonnage_3);
+        label_75->setObjectName(QStringLiteral("label_75"));
+
+        information2Layout->addWidget(label_75);
+
+        ClasseEdit_3 = new QLineEdit(FeuillePersonnage_3);
+        ClasseEdit_3->setObjectName(QStringLiteral("ClasseEdit_3"));
+
+        information2Layout->addWidget(ClasseEdit_3);
+
+
+        verticalLayout->addLayout(information2Layout);
+
+        line_2 = new QFrame(FeuillePersonnage_3);
         line_2->setObjectName(QStringLiteral("line_2"));
         line_2->setFrameShape(QFrame::HLine);
         line_2->setFrameShadow(QFrame::Sunken);
 
-        verticalLayout_2->addWidget(line_2);
+        verticalLayout->addWidget(line_2);
+
+        label_76 = new QLabel(FeuillePersonnage_3);
+        label_76->setObjectName(QStringLiteral("label_76"));
+
+        verticalLayout->addWidget(label_76);
+
+        valeurLayout = new QHBoxLayout();
+        valeurLayout->setObjectName(QStringLiteral("valeurLayout"));
+
+        verticalLayout->addLayout(valeurLayout);
+
+        line = new QFrame(FeuillePersonnage_3);
+        line->setObjectName(QStringLiteral("line"));
+        line->setFrameShape(QFrame::HLine);
+        line->setFrameShadow(QFrame::Sunken);
+
+        verticalLayout->addWidget(line);
+
+        label_77 = new QLabel(FeuillePersonnage_3);
+        label_77->setObjectName(QStringLiteral("label_77"));
+
+        verticalLayout->addWidget(label_77);
 
         attributLayout = new QHBoxLayout();
         attributLayout->setObjectName(QStringLiteral("attributLayout"));
-        attributLayout->setContentsMargins(-1, 0, -1, -1);
 
-        verticalLayout_2->addLayout(attributLayout);
+        verticalLayout->addLayout(attributLayout);
 
-
-        verticalLayout->addLayout(verticalLayout_2);
-
-        line_3 = new QFrame(formNouveauPersonnage);
+        line_3 = new QFrame(FeuillePersonnage_3);
         line_3->setObjectName(QStringLiteral("line_3"));
         line_3->setFrameShape(QFrame::HLine);
         line_3->setFrameShadow(QFrame::Sunken);
 
         verticalLayout->addWidget(line_3);
 
+        label_78 = new QLabel(FeuillePersonnage_3);
+        label_78->setObjectName(QStringLiteral("label_78"));
+
+        verticalLayout->addWidget(label_78);
+
         competenceLayout = new QGridLayout();
         competenceLayout->setObjectName(QStringLiteral("competenceLayout"));
 
         verticalLayout->addLayout(competenceLayout);
 
-        textLayout = new QVBoxLayout();
-        textLayout->setObjectName(QStringLiteral("textLayout"));
+        line_4 = new QFrame(FeuillePersonnage_3);
+        line_4->setObjectName(QStringLiteral("line_4"));
+        line_4->setFrameShape(QFrame::HLine);
+        line_4->setFrameShadow(QFrame::Sunken);
 
-        verticalLayout->addLayout(textLayout);
+        verticalLayout->addWidget(line_4);
 
-        horizontalLayout_3 = new QHBoxLayout();
-        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        creerButton = new QPushButton(formNouveauPersonnage);
-        creerButton->setObjectName(QStringLiteral("creerButton"));
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        verticalLayout_2->setContentsMargins(-1, 0, -1, -1);
+        label_79 = new QLabel(FeuillePersonnage_3);
+        label_79->setObjectName(QStringLiteral("label_79"));
 
-        horizontalLayout_3->addWidget(creerButton);
+        verticalLayout_2->addWidget(label_79);
 
-        retourButton = new QPushButton(formNouveauPersonnage);
-        retourButton->setObjectName(QStringLiteral("retourButton"));
+        descirptionEdit = new QTextEdit(FeuillePersonnage_3);
+        descirptionEdit->setObjectName(QStringLiteral("descirptionEdit"));
 
-        horizontalLayout_3->addWidget(retourButton);
+        verticalLayout_2->addWidget(descirptionEdit);
 
 
-        verticalLayout->addLayout(horizontalLayout_3);
+        verticalLayout->addLayout(verticalLayout_2);
 
-=======
-        label_24 = new QLabel(FeuillePersonnage);
-        label_24->setObjectName(QStringLiteral("label_24"));
-        label_24->setGeometry(QRect(-1, 115, 759, 13));
-        label_24->setAlignment(Qt::AlignCenter);
-        CompetenceList = new QListWidget(FeuillePersonnage);
-        CompetenceList->setObjectName(QStringLiteral("CompetenceList"));
-        CompetenceList->setGeometry(QRect(525, 160, 233, 73));
-        SexeEdit = new QLineEdit(FeuillePersonnage);
-        SexeEdit->setObjectName(QStringLiteral("SexeEdit"));
-        SexeEdit->setGeometry(QRect(676, 96, 91, 20));
-        label_7 = new QLabel(FeuillePersonnage);
-        label_7->setObjectName(QStringLiteral("label_7"));
-        label_7->setGeometry(QRect(400, 38, 201, 20));
-        Attribut_1Label = new QLabel(FeuillePersonnage);
-        Attribut_1Label->setObjectName(QStringLiteral("Attribut_1Label"));
-        Attribut_1Label->setGeometry(QRect(-1, 160, 83, 20));
-        AgeEdit = new QLineEdit(FeuillePersonnage);
-        AgeEdit->setObjectName(QStringLiteral("AgeEdit"));
-        AgeEdit->setGeometry(QRect(676, 44, 91, 20));
-        stackedWidget->addWidget(FeuillePersonnage);
-        Inventaire = new QWidget();
-        Inventaire->setObjectName(QStringLiteral("Inventaire"));
-        label_2 = new QLabel(Inventaire);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(480, 50, 91, 21));
-        label_3 = new QLabel(Inventaire);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(10, 50, 71, 21));
-        label_4 = new QLabel(Inventaire);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(20, 20, 71, 21));
-        ArgentEdit = new QLineEdit(Inventaire);
-        ArgentEdit->setObjectName(QStringLiteral("ArgentEdit"));
-        ArgentEdit->setGeometry(QRect(70, 20, 113, 20));
-        label_5 = new QLabel(Inventaire);
-        label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setGeometry(QRect(310, 10, 111, 31));
-        EncombrementValeurEdit = new QLineEdit(Inventaire);
-        EncombrementValeurEdit->setObjectName(QStringLiteral("EncombrementValeurEdit"));
-        EncombrementValeurEdit->setGeometry(QRect(430, 20, 61, 20));
-        label_6 = new QLabel(Inventaire);
-        label_6->setObjectName(QStringLiteral("label_6"));
-        label_6->setGeometry(QRect(500, 20, 16, 16));
-        EncombrementSeuilEdit = new QLineEdit(Inventaire);
-        EncombrementSeuilEdit->setObjectName(QStringLiteral("EncombrementSeuilEdit"));
-        EncombrementSeuilEdit->setGeometry(QRect(510, 20, 61, 20));
-        label_10 = new QLabel(Inventaire);
-        label_10->setObjectName(QStringLiteral("label_10"));
-        label_10->setGeometry(QRect(10, 210, 61, 21));
-        ArmeTable = new QTableView(Inventaire);
-        ArmeTable->setObjectName(QStringLiteral("ArmeTable"));
-        ArmeTable->setGeometry(QRect(10, 90, 451, 111));
-        label_13 = new QLabel(Inventaire);
-        label_13->setObjectName(QStringLiteral("label_13"));
-        label_13->setGeometry(QRect(10, 70, 47, 13));
-        label_14 = new QLabel(Inventaire);
-        label_14->setObjectName(QStringLiteral("label_14"));
-        label_14->setGeometry(QRect(190, 70, 47, 13));
-        label_15 = new QLabel(Inventaire);
-        label_15->setObjectName(QStringLiteral("label_15"));
-        label_15->setGeometry(QRect(300, 70, 47, 13));
-        label_17 = new QLabel(Inventaire);
-        label_17->setObjectName(QStringLiteral("label_17"));
-        label_17->setGeometry(QRect(390, 70, 47, 13));
-        ArmureTable = new QTableView(Inventaire);
-        ArmureTable->setObjectName(QStringLiteral("ArmureTable"));
-        ArmureTable->setGeometry(QRect(10, 260, 451, 141));
-        label_21 = new QLabel(Inventaire);
-        label_21->setObjectName(QStringLiteral("label_21"));
-        label_21->setGeometry(QRect(10, 240, 47, 13));
-        label_25 = new QLabel(Inventaire);
-        label_25->setObjectName(QStringLiteral("label_25"));
-        label_25->setGeometry(QRect(180, 240, 61, 16));
-        label_26 = new QLabel(Inventaire);
-        label_26->setObjectName(QStringLiteral("label_26"));
-        label_26->setGeometry(QRect(290, 240, 47, 13));
-        label_27 = new QLabel(Inventaire);
-        label_27->setObjectName(QStringLiteral("label_27"));
-        label_27->setGeometry(QRect(380, 240, 47, 13));
-        ObjetTable = new QTableView(Inventaire);
-        ObjetTable->setObjectName(QStringLiteral("ObjetTable"));
-        ObjetTable->setGeometry(QRect(480, 90, 291, 291));
-        label_28 = new QLabel(Inventaire);
-        label_28->setObjectName(QStringLiteral("label_28"));
-        label_28->setGeometry(QRect(490, 70, 47, 13));
-        label_29 = new QLabel(Inventaire);
-        label_29->setObjectName(QStringLiteral("label_29"));
-        label_29->setGeometry(QRect(550, 70, 47, 13));
-        label_30 = new QLabel(Inventaire);
-        label_30->setObjectName(QStringLiteral("label_30"));
-        label_30->setGeometry(QRect(600, 70, 47, 13));
-        label_31 = new QLabel(Inventaire);
-        label_31->setObjectName(QStringLiteral("label_31"));
-        label_31->setGeometry(QRect(650, 70, 47, 13));
-        label_32 = new QLabel(Inventaire);
-        label_32->setObjectName(QStringLiteral("label_32"));
-        label_32->setGeometry(QRect(720, 70, 47, 13));
-        label_33 = new QLabel(Inventaire);
-        label_33->setObjectName(QStringLiteral("label_33"));
-        label_33->setGeometry(QRect(620, 20, 131, 41));
+        InventaireButton_3 = new QPushButton(FeuillePersonnage_3);
+        InventaireButton_3->setObjectName(QStringLiteral("InventaireButton_3"));
+
+        verticalLayout->addWidget(InventaireButton_3);
+
+        retourButton_3 = new QPushButton(FeuillePersonnage_3);
+        retourButton_3->setObjectName(QStringLiteral("retourButton_3"));
+
+        verticalLayout->addWidget(retourButton_3);
+
+        stackedWidget->addWidget(FeuillePersonnage_3);
+        Inventaire_3 = new QWidget();
+        Inventaire_3->setObjectName(QStringLiteral("Inventaire_3"));
+        label_80 = new QLabel(Inventaire_3);
+        label_80->setObjectName(QStringLiteral("label_80"));
+        label_80->setGeometry(QRect(490, 40, 91, 21));
+        label_81 = new QLabel(Inventaire_3);
+        label_81->setObjectName(QStringLiteral("label_81"));
+        label_81->setGeometry(QRect(310, 10, 111, 31));
+        ArgentLineEdit_3 = new QLineEdit(Inventaire_3);
+        ArgentLineEdit_3->setObjectName(QStringLiteral("ArgentLineEdit_3"));
+        ArgentLineEdit_3->setGeometry(QRect(70, 20, 113, 20));
+        ObjetTable_3 = new QTableView(Inventaire_3);
+        ObjetTable_3->setObjectName(QStringLiteral("ObjetTable_3"));
+        ObjetTable_3->setGeometry(QRect(480, 90, 291, 291));
+        EncombrementValeurEdit_3 = new QLineEdit(Inventaire_3);
+        EncombrementValeurEdit_3->setObjectName(QStringLiteral("EncombrementValeurEdit_3"));
+        EncombrementValeurEdit_3->setGeometry(QRect(430, 20, 61, 20));
+        label_82 = new QLabel(Inventaire_3);
+        label_82->setObjectName(QStringLiteral("label_82"));
+        label_82->setGeometry(QRect(380, 240, 47, 13));
+        label_83 = new QLabel(Inventaire_3);
+        label_83->setObjectName(QStringLiteral("label_83"));
+        label_83->setGeometry(QRect(190, 70, 47, 13));
+        label_84 = new QLabel(Inventaire_3);
+        label_84->setObjectName(QStringLiteral("label_84"));
+        label_84->setGeometry(QRect(720, 70, 47, 13));
+        EncombrementSeuilEdit_3 = new QLineEdit(Inventaire_3);
+        EncombrementSeuilEdit_3->setObjectName(QStringLiteral("EncombrementSeuilEdit_3"));
+        EncombrementSeuilEdit_3->setGeometry(QRect(510, 20, 61, 20));
+        label_85 = new QLabel(Inventaire_3);
+        label_85->setObjectName(QStringLiteral("label_85"));
+        label_85->setGeometry(QRect(300, 70, 47, 13));
+        label_86 = new QLabel(Inventaire_3);
+        label_86->setObjectName(QStringLiteral("label_86"));
+        label_86->setGeometry(QRect(290, 240, 47, 13));
+        label_87 = new QLabel(Inventaire_3);
+        label_87->setObjectName(QStringLiteral("label_87"));
+        label_87->setGeometry(QRect(10, 50, 71, 21));
+        label_88 = new QLabel(Inventaire_3);
+        label_88->setObjectName(QStringLiteral("label_88"));
+        label_88->setGeometry(QRect(10, 70, 47, 13));
+        ArmesTable_3 = new QTableView(Inventaire_3);
+        ArmesTable_3->setObjectName(QStringLiteral("ArmesTable_3"));
+        ArmesTable_3->setGeometry(QRect(10, 90, 451, 111));
+        label_89 = new QLabel(Inventaire_3);
+        label_89->setObjectName(QStringLiteral("label_89"));
+        label_89->setGeometry(QRect(500, 20, 16, 16));
+        label_90 = new QLabel(Inventaire_3);
+        label_90->setObjectName(QStringLiteral("label_90"));
+        label_90->setGeometry(QRect(180, 240, 61, 16));
+        label_91 = new QLabel(Inventaire_3);
+        label_91->setObjectName(QStringLiteral("label_91"));
+        label_91->setGeometry(QRect(550, 70, 47, 13));
+        label_92 = new QLabel(Inventaire_3);
+        label_92->setObjectName(QStringLiteral("label_92"));
+        label_92->setGeometry(QRect(10, 210, 61, 21));
+        label_93 = new QLabel(Inventaire_3);
+        label_93->setObjectName(QStringLiteral("label_93"));
+        label_93->setGeometry(QRect(650, 70, 47, 13));
+        label_94 = new QLabel(Inventaire_3);
+        label_94->setObjectName(QStringLiteral("label_94"));
+        label_94->setGeometry(QRect(20, 20, 71, 21));
+        label_95 = new QLabel(Inventaire_3);
+        label_95->setObjectName(QStringLiteral("label_95"));
+        label_95->setGeometry(QRect(600, 70, 47, 13));
+        label_96 = new QLabel(Inventaire_3);
+        label_96->setObjectName(QStringLiteral("label_96"));
+        label_96->setGeometry(QRect(10, 240, 47, 13));
+        label_97 = new QLabel(Inventaire_3);
+        label_97->setObjectName(QStringLiteral("label_97"));
+        label_97->setGeometry(QRect(490, 70, 47, 13));
+        label_98 = new QLabel(Inventaire_3);
+        label_98->setObjectName(QStringLiteral("label_98"));
+        label_98->setGeometry(QRect(390, 70, 47, 13));
+        ArmureTable_3 = new QTableView(Inventaire_3);
+        ArmureTable_3->setObjectName(QStringLiteral("ArmureTable_3"));
+        ArmureTable_3->setGeometry(QRect(10, 260, 451, 141));
+        label_99 = new QLabel(Inventaire_3);
+        label_99->setObjectName(QStringLiteral("label_99"));
+        label_99->setGeometry(QRect(630, 10, 131, 41));
         QFont font1;
         font1.setPointSize(18);
         font1.setBold(false);
         font1.setWeight(50);
-        label_33->setFont(font1);
-        label_33->setAlignment(Qt::AlignCenter);
-        RetourButton = new QPushButton(Inventaire);
-        RetourButton->setObjectName(QStringLiteral("RetourButton"));
-        RetourButton->setGeometry(QRect(560, 390, 141, 31));
-        stackedWidget->addWidget(Inventaire);
->>>>>>> origin/master
+        label_99->setFont(font1);
+        label_99->setAlignment(Qt::AlignCenter);
+        RetourButton_3 = new QPushButton(Inventaire_3);
+        RetourButton_3->setObjectName(QStringLiteral("RetourButton_3"));
+        RetourButton_3->setGeometry(QRect(600, 390, 141, 31));
+        stackedWidget->addWidget(Inventaire_3);
+
+        verticalLayout_3->addWidget(stackedWidget);
+
 
         retranslateUi(formNouveauPersonnage);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(formNouveauPersonnage);
@@ -493,62 +417,44 @@ public:
 
     void retranslateUi(QDialog *formNouveauPersonnage)
     {
-<<<<<<< HEAD
         formNouveauPersonnage->setWindowTitle(QApplication::translate("formNouveauPersonnage", "Dialog", 0));
-        label->setText(QApplication::translate("formNouveauPersonnage", "Feuille de Personnage :", 0));
-        label_9->setText(QApplication::translate("formNouveauPersonnage", "Pr\303\251nom :", 0));
-        label_12->setText(QApplication::translate("formNouveauPersonnage", "Nom :", 0));
-        label_23->setText(QApplication::translate("formNouveauPersonnage", "Age :", 0));
-        label_18->setText(QApplication::translate("formNouveauPersonnage", "Sexe :", 0));
-        creerButton->setText(QApplication::translate("formNouveauPersonnage", "Valider", 0));
-        retourButton->setText(QApplication::translate("formNouveauPersonnage", "Retour", 0));
-=======
-        formNouveauPersonnage->setWindowTitle(QApplication::translate("formNouveauPersonnage", "Dialog", Q_NULLPTR));
-        Attribut_2Label->setText(QApplication::translate("formNouveauPersonnage", "Attribut 2 ", Q_NULLPTR));
-        Attribut_4Label->setText(QApplication::translate("formNouveauPersonnage", "Attribut 4", Q_NULLPTR));
-        label_22->setText(QApplication::translate("formNouveauPersonnage", "Race :", Q_NULLPTR));
-        label_16->setText(QApplication::translate("formNouveauPersonnage", "/", Q_NULLPTR));
-        label_20->setText(QApplication::translate("formNouveauPersonnage", "Niveau :", Q_NULLPTR));
-        label_11->setText(QApplication::translate("formNouveauPersonnage", "Comp\303\251tences :", Q_NULLPTR));
-        retourButton->setText(QApplication::translate("formNouveauPersonnage", "Retour", Q_NULLPTR));
-        label_19->setText(QApplication::translate("formNouveauPersonnage", "Descriptif :", Q_NULLPTR));
-        label_23->setText(QApplication::translate("formNouveauPersonnage", "Age :", Q_NULLPTR));
-        Attribut_5Label->setText(QApplication::translate("formNouveauPersonnage", "Attribut 5", Q_NULLPTR));
-        Attribut_6Label->setText(QApplication::translate("formNouveauPersonnage", "Attribut 6", Q_NULLPTR));
-        label_12->setText(QApplication::translate("formNouveauPersonnage", "Nom :", Q_NULLPTR));
-        label_9->setText(QApplication::translate("formNouveauPersonnage", "Pr\303\251nom :", Q_NULLPTR));
-        ImagePerosnnageLabel->setText(QString());
-        Attribut_3Label->setText(QApplication::translate("formNouveauPersonnage", "Attribut 3", Q_NULLPTR));
-        SanteLabel->setText(QApplication::translate("formNouveauPersonnage", "PV :", Q_NULLPTR));
-        label_8->setText(QApplication::translate("formNouveauPersonnage", "Classe :", Q_NULLPTR));
-        InventaireButton->setText(QApplication::translate("formNouveauPersonnage", "Inventaire", Q_NULLPTR));
-        label_18->setText(QApplication::translate("formNouveauPersonnage", "Sexe :", Q_NULLPTR));
-        label->setText(QApplication::translate("formNouveauPersonnage", "Feuille de Personnage :", Q_NULLPTR));
-        label_24->setText(QApplication::translate("formNouveauPersonnage", "______________________________________________________________________________", Q_NULLPTR));
-        label_7->setText(QApplication::translate("formNouveauPersonnage", "Joueur :", Q_NULLPTR));
-        Attribut_1Label->setText(QApplication::translate("formNouveauPersonnage", "Attribut 1", Q_NULLPTR));
-        label_2->setText(QApplication::translate("formNouveauPersonnage", "Autres :", Q_NULLPTR));
-        label_3->setText(QApplication::translate("formNouveauPersonnage", "Armes :", Q_NULLPTR));
-        label_4->setText(QApplication::translate("formNouveauPersonnage", "Argent :", Q_NULLPTR));
-        label_5->setText(QApplication::translate("formNouveauPersonnage", "Encombrement :", Q_NULLPTR));
-        label_6->setText(QApplication::translate("formNouveauPersonnage", "/", Q_NULLPTR));
-        label_10->setText(QApplication::translate("formNouveauPersonnage", "Armures :", Q_NULLPTR));
-        label_13->setText(QApplication::translate("formNouveauPersonnage", "Nom", Q_NULLPTR));
-        label_14->setText(QApplication::translate("formNouveauPersonnage", "D\303\251gats", Q_NULLPTR));
-        label_15->setText(QApplication::translate("formNouveauPersonnage", "Usure", Q_NULLPTR));
-        label_17->setText(QApplication::translate("formNouveauPersonnage", "Poids", Q_NULLPTR));
-        label_21->setText(QApplication::translate("formNouveauPersonnage", "Nom ", Q_NULLPTR));
-        label_25->setText(QApplication::translate("formNouveauPersonnage", "Protection", Q_NULLPTR));
-        label_26->setText(QApplication::translate("formNouveauPersonnage", "Usure", Q_NULLPTR));
-        label_27->setText(QApplication::translate("formNouveauPersonnage", "Poids", Q_NULLPTR));
-        label_28->setText(QApplication::translate("formNouveauPersonnage", "Nom", Q_NULLPTR));
-        label_29->setText(QApplication::translate("formNouveauPersonnage", "Qt\303\251", Q_NULLPTR));
-        label_30->setText(QApplication::translate("formNouveauPersonnage", "Valeur", Q_NULLPTR));
-        label_31->setText(QApplication::translate("formNouveauPersonnage", "Usage", Q_NULLPTR));
-        label_32->setText(QApplication::translate("formNouveauPersonnage", "Poids", Q_NULLPTR));
-        label_33->setText(QApplication::translate("formNouveauPersonnage", "Inventaire", Q_NULLPTR));
-        RetourButton->setText(QApplication::translate("formNouveauPersonnage", "Retour", Q_NULLPTR));
->>>>>>> origin/master
+        ImagePerosnnageLabel_3->setText(QString());
+        label_67->setText(QApplication::translate("formNouveauPersonnage", "Feuille de Personnage :", 0));
+        label_71->setText(QApplication::translate("formNouveauPersonnage", "Joueur :", 0));
+        label_68->setText(QApplication::translate("formNouveauPersonnage", "Nom :", 0));
+        label_69->setText(QApplication::translate("formNouveauPersonnage", "Pr\303\251nom :", 0));
+        label_70->setText(QApplication::translate("formNouveauPersonnage", "Age :", 0));
+        label_72->setText(QApplication::translate("formNouveauPersonnage", "Sexe :", 0));
+        label_73->setText(QApplication::translate("formNouveauPersonnage", "Race :", 0));
+        label_74->setText(QApplication::translate("formNouveauPersonnage", "Niveau :", 0));
+        label_75->setText(QApplication::translate("formNouveauPersonnage", "Classe :", 0));
+        label_76->setText(QApplication::translate("formNouveauPersonnage", "Valeurs", 0));
+        label_77->setText(QApplication::translate("formNouveauPersonnage", "Attributs", 0));
+        label_78->setText(QApplication::translate("formNouveauPersonnage", "Comp\303\251tences :", 0));
+        label_79->setText(QApplication::translate("formNouveauPersonnage", "Description / Background :", 0));
+        InventaireButton_3->setText(QApplication::translate("formNouveauPersonnage", "Inventaire", 0));
+        retourButton_3->setText(QApplication::translate("formNouveauPersonnage", "Retour", 0));
+        label_80->setText(QApplication::translate("formNouveauPersonnage", "Autres :", 0));
+        label_81->setText(QApplication::translate("formNouveauPersonnage", "Encombrement :", 0));
+        label_82->setText(QApplication::translate("formNouveauPersonnage", "Poids", 0));
+        label_83->setText(QApplication::translate("formNouveauPersonnage", "D\303\251gats", 0));
+        label_84->setText(QApplication::translate("formNouveauPersonnage", "Poids", 0));
+        label_85->setText(QApplication::translate("formNouveauPersonnage", "Usure", 0));
+        label_86->setText(QApplication::translate("formNouveauPersonnage", "Usure", 0));
+        label_87->setText(QApplication::translate("formNouveauPersonnage", "Armes :", 0));
+        label_88->setText(QApplication::translate("formNouveauPersonnage", "Nom", 0));
+        label_89->setText(QApplication::translate("formNouveauPersonnage", "/", 0));
+        label_90->setText(QApplication::translate("formNouveauPersonnage", "Protection", 0));
+        label_91->setText(QApplication::translate("formNouveauPersonnage", "Qt\303\251", 0));
+        label_92->setText(QApplication::translate("formNouveauPersonnage", "Armures :", 0));
+        label_93->setText(QApplication::translate("formNouveauPersonnage", "Usage", 0));
+        label_94->setText(QApplication::translate("formNouveauPersonnage", "Argent :", 0));
+        label_95->setText(QApplication::translate("formNouveauPersonnage", "Valeur", 0));
+        label_96->setText(QApplication::translate("formNouveauPersonnage", "Nom ", 0));
+        label_97->setText(QApplication::translate("formNouveauPersonnage", "Nom", 0));
+        label_98->setText(QApplication::translate("formNouveauPersonnage", "Poids", 0));
+        label_99->setText(QApplication::translate("formNouveauPersonnage", "Inventaire", 0));
+        RetourButton_3->setText(QApplication::translate("formNouveauPersonnage", "Retour", 0));
     } // retranslateUi
 
 };

@@ -4,6 +4,8 @@
 #define LISTE 3
 
 #include <QDebug>
+#include <Qlabel>
+#include <QLineEdit>
 
 #include "formNouveauPersonnage.h"
 #include "ui_formNouveauPersonnage.h"
@@ -46,7 +48,7 @@ formNouveauPersonnage::formNouveauPersonnage(QWidget *parent) :
             QLabel *label2 = new QLabel;
             label->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Minimum);
             label->setWordWrap(true);
-            label->setText("/");
+            label2->setText("/");
             QLineEdit *edit2= new QLineEdit;
             ui->valeurLayout->addWidget(label);
             ui->valeurLayout->addWidget(edit1);
