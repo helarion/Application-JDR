@@ -233,3 +233,8 @@ void MainWindow::on_selectionnerPartieButton_clicked()
 {
 
 }
+
+void MainWindow::on_autreButton_clicked()
+{
+    QMessageBox::information(this,tr("Prochainement !"),tr("Des nouveautés à venir !") );
+}

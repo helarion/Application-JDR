@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -575,7 +575,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 795, 25));
+        menuBar->setGeometry(QRect(0, 0, 795, 21));
         MainWindow->setMenuBar(menuBar);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
@@ -583,7 +583,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        contentStack->setCurrentIndex(3);
+        contentStack->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -591,46 +591,46 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
-        retourButton->setText(QApplication::translate("MainWindow", "Retour", 0));
-        jeuButton->setText(QApplication::translate("MainWindow", "Jeux", 0));
-        autreButton->setText(QApplication::translate("MainWindow", "Autre", 0));
-        label->setText(QApplication::translate("MainWindow", "Gestionnaire de jeu de r\303\264le ", 0));
-        selectionnerJeuButton->setText(QApplication::translate("MainWindow", "Selectionner", 0));
-        modifierJeuButton->setText(QApplication::translate("MainWindow", "Modifier", 0));
-        nouveauJeuButton->setText(QApplication::translate("MainWindow", "Nouveau", 0));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
+        retourButton->setText(QApplication::translate("MainWindow", "Retour", Q_NULLPTR));
+        jeuButton->setText(QApplication::translate("MainWindow", "Jeux", Q_NULLPTR));
+        autreButton->setText(QApplication::translate("MainWindow", "Autre", Q_NULLPTR));
+        label->setText(QApplication::translate("MainWindow", "Gestionnaire de jeu de r\303\264le ", Q_NULLPTR));
+        selectionnerJeuButton->setText(QApplication::translate("MainWindow", "Selectionner", Q_NULLPTR));
+        modifierJeuButton->setText(QApplication::translate("MainWindow", "Modifier", Q_NULLPTR));
+        nouveauJeuButton->setText(QApplication::translate("MainWindow", "Nouveau", Q_NULLPTR));
         themeJeu->setText(QString());
-        label_2->setText(QApplication::translate("MainWindow", "S\303\251lectionner un jeu existant :", 0));
-        label_3->setText(QApplication::translate("MainWindow", "Campagne", 0));
-        selectionnerCampagneButton->setText(QApplication::translate("MainWindow", "Selectionner", 0));
-        modifierCampagneButton->setText(QApplication::translate("MainWindow", "Modifier", 0));
-        nouveauCampagneButton->setText(QApplication::translate("MainWindow", "Nouveau", 0));
-        label_4->setText(QApplication::translate("MainWindow", "Parties :", 0));
-        label_6->setText(QApplication::translate("MainWindow", "Liste :", 0));
-        selectionnerPartieButton->setText(QApplication::translate("MainWindow", "Selectionner", 0));
-        modifierPartieButton->setText(QApplication::translate("MainWindow", "Modifier", 0));
-        ajouterPartieButton->setText(QApplication::translate("MainWindow", "Ajouter", 0));
-        label_5->setText(QApplication::translate("MainWindow", "Resum\303\251 :", 0));
-        label_7->setText(QApplication::translate("MainWindow", "Joueur :", 0));
-        label_23->setText(QApplication::translate("MainWindow", "Age :", 0));
-        label_9->setText(QApplication::translate("MainWindow", "Pr\303\251nom :", 0));
-        label_22->setText(QApplication::translate("MainWindow", "Race :", 0));
-        label_20->setText(QApplication::translate("MainWindow", "Niveau :", 0));
-        label_12->setText(QApplication::translate("MainWindow", "Nom :", 0));
-        label_8->setText(QApplication::translate("MainWindow", "Classe :", 0));
-        label_18->setText(QApplication::translate("MainWindow", "Sexe :", 0));
-        label_24->setText(QApplication::translate("MainWindow", "______________________________________________________________________________", 0));
-        SanteLabel->setText(QApplication::translate("MainWindow", "PV :", 0));
-        label_16->setText(QApplication::translate("MainWindow", "/", 0));
-        label_11->setText(QApplication::translate("MainWindow", "Comp\303\251tences :", 0));
-        Attribut_1Label->setText(QApplication::translate("MainWindow", "Attribut 1", 0));
-        Attribut_4Label->setText(QApplication::translate("MainWindow", "Attribut 4", 0));
-        Attribut_2Label->setText(QApplication::translate("MainWindow", "Attribut 2 ", 0));
-        Attribut_5Label->setText(QApplication::translate("MainWindow", "Attribut 5", 0));
-        Attribut_3Label->setText(QApplication::translate("MainWindow", "Attribut 3", 0));
-        Attribut_6Label->setText(QApplication::translate("MainWindow", "Attribut 6", 0));
-        label_19->setText(QApplication::translate("MainWindow", "Descriptif :", 0));
-        InventaireButton->setText(QApplication::translate("MainWindow", "Inventaire", 0));
+        label_2->setText(QApplication::translate("MainWindow", "S\303\251lectionner un jeu existant :", Q_NULLPTR));
+        label_3->setText(QApplication::translate("MainWindow", "Campagne", Q_NULLPTR));
+        selectionnerCampagneButton->setText(QApplication::translate("MainWindow", "Selectionner", Q_NULLPTR));
+        modifierCampagneButton->setText(QApplication::translate("MainWindow", "Modifier", Q_NULLPTR));
+        nouveauCampagneButton->setText(QApplication::translate("MainWindow", "Nouveau", Q_NULLPTR));
+        label_4->setText(QApplication::translate("MainWindow", "Parties :", Q_NULLPTR));
+        label_6->setText(QApplication::translate("MainWindow", "Liste :", Q_NULLPTR));
+        selectionnerPartieButton->setText(QApplication::translate("MainWindow", "Selectionner", Q_NULLPTR));
+        modifierPartieButton->setText(QApplication::translate("MainWindow", "Modifier", Q_NULLPTR));
+        ajouterPartieButton->setText(QApplication::translate("MainWindow", "Ajouter", Q_NULLPTR));
+        label_5->setText(QApplication::translate("MainWindow", "Resum\303\251 :", Q_NULLPTR));
+        label_7->setText(QApplication::translate("MainWindow", "Joueur :", Q_NULLPTR));
+        label_23->setText(QApplication::translate("MainWindow", "Age :", Q_NULLPTR));
+        label_9->setText(QApplication::translate("MainWindow", "Pr\303\251nom :", Q_NULLPTR));
+        label_22->setText(QApplication::translate("MainWindow", "Race :", Q_NULLPTR));
+        label_20->setText(QApplication::translate("MainWindow", "Niveau :", Q_NULLPTR));
+        label_12->setText(QApplication::translate("MainWindow", "Nom :", Q_NULLPTR));
+        label_8->setText(QApplication::translate("MainWindow", "Classe :", Q_NULLPTR));
+        label_18->setText(QApplication::translate("MainWindow", "Sexe :", Q_NULLPTR));
+        label_24->setText(QApplication::translate("MainWindow", "______________________________________________________________________________", Q_NULLPTR));
+        SanteLabel->setText(QApplication::translate("MainWindow", "PV :", Q_NULLPTR));
+        label_16->setText(QApplication::translate("MainWindow", "/", Q_NULLPTR));
+        label_11->setText(QApplication::translate("MainWindow", "Comp\303\251tences :", Q_NULLPTR));
+        Attribut_1Label->setText(QApplication::translate("MainWindow", "Attribut 1", Q_NULLPTR));
+        Attribut_4Label->setText(QApplication::translate("MainWindow", "Attribut 4", Q_NULLPTR));
+        Attribut_2Label->setText(QApplication::translate("MainWindow", "Attribut 2 ", Q_NULLPTR));
+        Attribut_5Label->setText(QApplication::translate("MainWindow", "Attribut 5", Q_NULLPTR));
+        Attribut_3Label->setText(QApplication::translate("MainWindow", "Attribut 3", Q_NULLPTR));
+        Attribut_6Label->setText(QApplication::translate("MainWindow", "Attribut 6", Q_NULLPTR));
+        label_19->setText(QApplication::translate("MainWindow", "Descriptif :", Q_NULLPTR));
+        InventaireButton->setText(QApplication::translate("MainWindow", "Inventaire", Q_NULLPTR));
     } // retranslateUi
 
 };
