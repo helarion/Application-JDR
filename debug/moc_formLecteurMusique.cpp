@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_formLecteurMusique_t {
-    QByteArrayData data[17];
-    char stringdata0[336];
+    QByteArrayData data[18];
+    char stringdata0[351];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -39,20 +39,22 @@ QT_MOC_LITERAL(6, 92, 29), // "on_ProgressSlider_sliderMoved"
 QT_MOC_LITERAL(7, 122, 8), // "position"
 QT_MOC_LITERAL(8, 131, 18), // "on_DurationChanged"
 QT_MOC_LITERAL(9, 150, 18), // "on_positionChanged"
-QT_MOC_LITERAL(10, 169, 29), // "on_verticalSlider_sliderMoved"
-QT_MOC_LITERAL(11, 199, 25), // "on_PreviousButton_clicked"
-QT_MOC_LITERAL(12, 225, 21), // "on_NextButton_clicked"
-QT_MOC_LITERAL(13, 247, 33), // "on_listPlaylist_itemDoubleCli..."
-QT_MOC_LITERAL(14, 281, 16), // "QListWidgetItem*"
-QT_MOC_LITERAL(15, 298, 4), // "item"
-QT_MOC_LITERAL(16, 303, 32) // "on_ajouterPlaylistButton_clicked"
+QT_MOC_LITERAL(10, 169, 14), // "on_SongChanged"
+QT_MOC_LITERAL(11, 184, 29), // "on_verticalSlider_sliderMoved"
+QT_MOC_LITERAL(12, 214, 25), // "on_PreviousButton_clicked"
+QT_MOC_LITERAL(13, 240, 21), // "on_NextButton_clicked"
+QT_MOC_LITERAL(14, 262, 33), // "on_listPlaylist_itemDoubleCli..."
+QT_MOC_LITERAL(15, 296, 16), // "QListWidgetItem*"
+QT_MOC_LITERAL(16, 313, 4), // "item"
+QT_MOC_LITERAL(17, 318, 32) // "on_ajouterPlaylistButton_clicked"
 
     },
     "formLecteurMusique\0on_PauseButton_clicked\0"
     "\0on_PlayButton_clicked\0on_StopButton_clicked\0"
     "Load\0on_ProgressSlider_sliderMoved\0"
     "position\0on_DurationChanged\0"
-    "on_positionChanged\0on_verticalSlider_sliderMoved\0"
+    "on_positionChanged\0on_SongChanged\0"
+    "on_verticalSlider_sliderMoved\0"
     "on_PreviousButton_clicked\0"
     "on_NextButton_clicked\0"
     "on_listPlaylist_itemDoubleClicked\0"
@@ -67,7 +69,7 @@ static const uint qt_meta_data_formLecteurMusique[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      12,   14, // methods
+      13,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -75,18 +77,19 @@ static const uint qt_meta_data_formLecteurMusique[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   74,    2, 0x08 /* Private */,
-       3,    0,   75,    2, 0x08 /* Private */,
-       4,    0,   76,    2, 0x08 /* Private */,
-       5,    0,   77,    2, 0x08 /* Private */,
-       6,    1,   78,    2, 0x08 /* Private */,
-       8,    0,   81,    2, 0x08 /* Private */,
-       9,    1,   82,    2, 0x08 /* Private */,
-      10,    1,   85,    2, 0x08 /* Private */,
-      11,    0,   88,    2, 0x08 /* Private */,
-      12,    0,   89,    2, 0x08 /* Private */,
-      13,    1,   90,    2, 0x08 /* Private */,
-      16,    0,   93,    2, 0x08 /* Private */,
+       1,    0,   79,    2, 0x08 /* Private */,
+       3,    0,   80,    2, 0x08 /* Private */,
+       4,    0,   81,    2, 0x08 /* Private */,
+       5,    0,   82,    2, 0x08 /* Private */,
+       6,    1,   83,    2, 0x08 /* Private */,
+       8,    0,   86,    2, 0x08 /* Private */,
+       9,    1,   87,    2, 0x08 /* Private */,
+      10,    0,   90,    2, 0x08 /* Private */,
+      11,    1,   91,    2, 0x08 /* Private */,
+      12,    0,   94,    2, 0x08 /* Private */,
+      13,    0,   95,    2, 0x08 /* Private */,
+      14,    1,   96,    2, 0x08 /* Private */,
+      17,    0,   99,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -96,10 +99,11 @@ static const uint qt_meta_data_formLecteurMusique[] = {
     QMetaType::Void, QMetaType::Int,    7,
     QMetaType::Void,
     QMetaType::Void, QMetaType::LongLong,    7,
+    QMetaType::Void,
     QMetaType::Void, QMetaType::Int,    7,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 14,   15,
+    QMetaType::Void, 0x80000000 | 15,   16,
     QMetaType::Void,
 
        0        // eod
@@ -118,11 +122,12 @@ void formLecteurMusique::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         case 4: _t->on_ProgressSlider_sliderMoved((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 5: _t->on_DurationChanged(); break;
         case 6: _t->on_positionChanged((*reinterpret_cast< qint64(*)>(_a[1]))); break;
-        case 7: _t->on_verticalSlider_sliderMoved((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 8: _t->on_PreviousButton_clicked(); break;
-        case 9: _t->on_NextButton_clicked(); break;
-        case 10: _t->on_listPlaylist_itemDoubleClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
-        case 11: _t->on_ajouterPlaylistButton_clicked(); break;
+        case 7: _t->on_SongChanged(); break;
+        case 8: _t->on_verticalSlider_sliderMoved((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 9: _t->on_PreviousButton_clicked(); break;
+        case 10: _t->on_NextButton_clicked(); break;
+        case 11: _t->on_listPlaylist_itemDoubleClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
+        case 12: _t->on_ajouterPlaylistButton_clicked(); break;
         default: ;
         }
     }
@@ -153,13 +158,13 @@ int formLecteurMusique::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 12)
+        if (_id < 13)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 12;
+        _id -= 13;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 12)
+        if (_id < 13)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 12;
+        _id -= 13;
     }
     return _id;
 }

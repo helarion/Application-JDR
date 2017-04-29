@@ -11,13 +11,13 @@ MAKEFILE      = Makefile.Release
 
 CC            = cl
 CXX           = cl
-DEFINES       = -DUNICODE -DWIN32 -DWIN64 -DQT_QML_DEBUG -DQT_NO_DEBUG -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DNDEBUG
+DEFINES       = -DUNICODE -DWIN32 -DWIN64 -DQT_QML_DEBUG -DQT_NO_DEBUG -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_TESTLIB_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR="\"C:/Users/Axel/Documents/GitHub/Projet-S6\"" -DNDEBUG
 CFLAGS        = -nologo -Zc:wchar_t -FS -Zc:strictStrings -O2 -MD -W3 -w44456 -w44457 -w44458 $(DEFINES)
 CXXFLAGS      = -nologo -Zc:wchar_t -FS -Zc:strictStrings -Zc:throwingNew -O2 -MD -GR -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -EHsc $(DEFINES)
-INCPATH       = -I. -IC:\Qt\5.7\msvc2015_64\include -IC:\Qt\5.7\msvc2015_64\include\QtMultimedia -IC:\Qt\5.7\msvc2015_64\include\QtWidgets -IC:\Qt\5.7\msvc2015_64\include\QtGui -IC:\Qt\5.7\msvc2015_64\include\QtANGLE -IC:\Qt\5.7\msvc2015_64\include\QtNetwork -IC:\Qt\5.7\msvc2015_64\include\QtCore -Irelease -I. -IC:\Qt\5.7\msvc2015_64\mkspecs\win32-msvc2015 
+INCPATH       = -I. -IC:\Qt\5.7\msvc2015_64\include -IC:\Qt\5.7\msvc2015_64\include\QtMultimedia -IC:\Qt\5.7\msvc2015_64\include\QtWidgets -IC:\Qt\5.7\msvc2015_64\include\QtGui -IC:\Qt\5.7\msvc2015_64\include\QtANGLE -IC:\Qt\5.7\msvc2015_64\include\QtNetwork -IC:\Qt\5.7\msvc2015_64\include\QtTest -IC:\Qt\5.7\msvc2015_64\include\QtCore -Irelease -I. -IC:\Qt\5.7\msvc2015_64\mkspecs\win32-msvc2015 
 LINKER        = link
-LFLAGS        = /NOLOGO /DYNAMICBASE /NXCOMPAT /INCREMENTAL:NO /SUBSYSTEM:WINDOWS "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'"
-LIBS          = /LIBPATH:C:\Qt\5.7\msvc2015_64\lib C:\Qt\5.7\msvc2015_64\lib\qtmain.lib /LIBPATH:C:\utils\postgresql\pgsql\lib /LIBPATH:C:\utils\my_sql\my_sql\lib shell32.lib C:\Qt\5.7\msvc2015_64\lib\Qt5Multimedia.lib C:\Qt\5.7\msvc2015_64\lib\Qt5Widgets.lib C:\Qt\5.7\msvc2015_64\lib\Qt5Gui.lib C:\Qt\5.7\msvc2015_64\lib\Qt5Network.lib C:\Qt\5.7\msvc2015_64\lib\Qt5Core.lib release\jdr.res 
+LFLAGS        = /NOLOGO /DYNAMICBASE /NXCOMPAT /INCREMENTAL:NO /SUBSYSTEM:CONSOLE "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'"
+LIBS          = /LIBPATH:C:\Qt\5.7\msvc2015_64\lib C:\Qt\5.7\msvc2015_64\lib\Qt5Multimedia.lib C:\Qt\5.7\msvc2015_64\lib\Qt5Widgets.lib C:\Qt\5.7\msvc2015_64\lib\Qt5Gui.lib C:\Qt\5.7\msvc2015_64\lib\Qt5Network.lib C:\Qt\5.7\msvc2015_64\lib\Qt5Test.lib C:\Qt\5.7\msvc2015_64\lib\Qt5Core.lib release\jdr.res 
 QMAKE         = C:\Qt\5.7\msvc2015_64\bin\qmake.exe
 IDC           = idc
 IDL           = midl
@@ -307,7 +307,7 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) Jeu_de_role.zip $(SOURCES) $(DIST) Jeu_de_role.pro C:\Qt\5.7\msvc2015_64\mkspecs\features\spec_pre.prf C:\Qt\5.7\msvc2015_64\mkspecs\common\angle.conf C:\Qt\5.7\msvc2015_64\mkspecs\common\msvc-base.conf C:\Qt\5.7\msvc2015_64\mkspecs\common\msvc-desktop.conf C:\Qt\5.7\msvc2015_64\mkspecs\qconfig.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dcore.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dcore_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dextras.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dextras_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dinput.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dinput_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dlogic.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dlogic_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dquick.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dquick_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dquickextras.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dquickextras_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dquickinput.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dquickinput_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dquickrender.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dquickrender_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3drender.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3drender_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_axbase.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_axserver.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_clucene_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_core.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_designer.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_gamepad.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_gamepad_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_gui.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_help.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_location.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_location_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_network.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_nfc.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_platformsupport_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_positioning.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_purchasing.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_purchasing_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_qml.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_quick.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_script.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_script_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_scripttools.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_scripttools_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_scxml.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_scxml_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_sensors.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_serialbus.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_serialbus_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_serialport.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_sql.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_svg.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_webchannel.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_webengine.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_webengine_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_webenginecore.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_webenginecore_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_webenginecoreheaders_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_webenginewidgets.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_webenginewidgets_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_websockets.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_webview.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_webview_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_winextras.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_xml.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_zlib_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\features\qt_functions.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\qt_config.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\win32\qt_config.prf C:\Qt\5.7\msvc2015_64\mkspecs\win32-msvc2015\qmake.conf C:\Qt\5.7\msvc2015_64\mkspecs\features\spec_post.prf .qmake.stash C:\Qt\5.7\msvc2015_64\mkspecs\features\exclusive_builds.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\default_pre.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\win32\default_pre.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\resolve_config.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\exclusive_builds_post.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\default_post.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\build_pass.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\qml_debug.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\win32\rtti.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\precompile_header.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\warn_on.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\qt.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\resources.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\moc.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\win32\opengl.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\uic.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\file_copies.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\win32\windows.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\testcase_targets.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\exceptions.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\yacc.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\lex.prf Jeu_de_role.pro C:\Qt\5.7\msvc2015_64\lib\qtmain.prl C:\Qt\5.7\msvc2015_64\lib\Qt5Multimedia.prl C:\Qt\5.7\msvc2015_64\lib\Qt5Widgets.prl C:\Qt\5.7\msvc2015_64\lib\Qt5Gui.prl C:\Qt\5.7\msvc2015_64\lib\Qt5Network.prl C:\Qt\5.7\msvc2015_64\lib\Qt5Core.prl  NO_PCH_SOURCES RESOURCES HEADERS SOURCES OBJECTIVE_SOURCES FORMS YACCSOURCES YACCSOURCES LEXSOURCES 
+	$(ZIP) Jeu_de_role.zip $(SOURCES) $(DIST) Jeu_de_role.pro C:\Qt\5.7\msvc2015_64\mkspecs\features\spec_pre.prf C:\Qt\5.7\msvc2015_64\mkspecs\common\angle.conf C:\Qt\5.7\msvc2015_64\mkspecs\common\msvc-base.conf C:\Qt\5.7\msvc2015_64\mkspecs\common\msvc-desktop.conf C:\Qt\5.7\msvc2015_64\mkspecs\qconfig.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dcore.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dcore_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dextras.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dextras_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dinput.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dinput_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dlogic.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dlogic_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dquick.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dquick_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dquickextras.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dquickextras_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dquickinput.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dquickinput_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dquickrender.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3dquickrender_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3drender.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_3drender_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_axbase.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_axserver.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_clucene_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_core.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_designer.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_gamepad.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_gamepad_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_gui.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_help.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_location.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_location_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_network.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_nfc.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_platformsupport_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_positioning.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_purchasing.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_purchasing_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_qml.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_quick.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_script.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_script_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_scripttools.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_scripttools_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_scxml.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_scxml_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_sensors.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_serialbus.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_serialbus_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_serialport.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_sql.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_svg.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_webchannel.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_webengine.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_webengine_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_webenginecore.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_webenginecore_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_webenginecoreheaders_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_webenginewidgets.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_webenginewidgets_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_websockets.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_webview.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_webview_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_winextras.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_xml.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\modules\qt_lib_zlib_private.pri C:\Qt\5.7\msvc2015_64\mkspecs\features\qt_functions.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\qt_config.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\win32\qt_config.prf C:\Qt\5.7\msvc2015_64\mkspecs\win32-msvc2015\qmake.conf C:\Qt\5.7\msvc2015_64\mkspecs\features\spec_post.prf .qmake.stash C:\Qt\5.7\msvc2015_64\mkspecs\features\exclusive_builds.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\default_pre.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\win32\default_pre.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\resolve_config.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\exclusive_builds_post.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\default_post.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\build_pass.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\qml_debug.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\win32\rtti.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\precompile_header.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\warn_on.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\qt.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\resources.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\moc.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\testlib_defines.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\win32\console.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\win32\opengl.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\uic.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\file_copies.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\testcase_targets.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\exceptions.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\yacc.prf C:\Qt\5.7\msvc2015_64\mkspecs\features\lex.prf Jeu_de_role.pro C:\Qt\5.7\msvc2015_64\lib\Qt5Multimedia.prl C:\Qt\5.7\msvc2015_64\lib\Qt5Widgets.prl C:\Qt\5.7\msvc2015_64\lib\Qt5Gui.prl C:\Qt\5.7\msvc2015_64\lib\Qt5Network.prl C:\Qt\5.7\msvc2015_64\lib\Qt5Test.prl C:\Qt\5.7\msvc2015_64\lib\Qt5Core.prl  NO_PCH_SOURCES RESOURCES HEADERS SOURCES OBJECTIVE_SOURCES FORMS YACCSOURCES YACCSOURCES LEXSOURCES 
 
 clean: compiler_clean 
 	-$(DEL_FILE) release\main.obj release\mainwindow.obj release\attribut.obj release\attributObjet.obj release\campagne.obj release\grouper.obj release\jeu.obj release\jeuElement.obj release\joueur.obj release\objetCol.obj release\objetLig.obj release\partie.obj release\personnage.obj release\typeattribut.obj release\valeurAttribut.obj release\valeurAttributLong.obj release\valeurObjet.obj release\formModifierAttribut.obj release\formModifierCampagne.obj release\formModifierJeu.obj release\formNouveauAttribut.obj release\formNouveauJeu.obj release\formNouvelleCampagne.obj release\formNouvellePartie.obj release\collections.obj release\formModifierPartie.obj release\formNouveauPersonnage.obj release\formModifierPersonnage.obj release\formLecteurMusique.obj release\playlist.obj release\moc_mainwindow.obj release\moc_formCampagne.obj release\moc_formInventaire.obj release\moc_formModifierAttribut.obj release\moc_formModifierCampagne.obj release\moc_formModifierJeu.obj release\moc_formNouveauAttribut.obj release\moc_formNouveauJeu.obj release\moc_formNouvelleCampagne.obj release\moc_formNouvellePartie.obj release\moc_formModifierPartie.obj release\moc_formNouveauPersonnage.obj release\moc_formModifierPersonnage.obj release\moc_formLecteurMusique.obj
@@ -454,7 +454,7 @@ release\moc_mainwindow.cpp: C:\Qt\5.7\msvc2015_64\include\QtWidgets\QMainWindow 
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
 		mainwindow.h \
 		C:\Qt\5.7\msvc2015_64\bin\moc.exe
-	C:\Qt\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Users/Axel/Documents/GitHub/Projet-S6 -IC:/Qt/5.7/msvc2015_64/include -IC:/Qt/5.7/msvc2015_64/include/QtMultimedia -IC:/Qt/5.7/msvc2015_64/include/QtWidgets -IC:/Qt/5.7/msvc2015_64/include/QtGui -IC:/Qt/5.7/msvc2015_64/include/QtANGLE -IC:/Qt/5.7/msvc2015_64/include/QtNetwork -IC:/Qt/5.7/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\shared" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\winrt" mainwindow.h -o release\moc_mainwindow.cpp
+	C:\Qt\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Users/Axel/Documents/GitHub/Projet-S6 -IC:/Qt/5.7/msvc2015_64/include -IC:/Qt/5.7/msvc2015_64/include/QtMultimedia -IC:/Qt/5.7/msvc2015_64/include/QtWidgets -IC:/Qt/5.7/msvc2015_64/include/QtGui -IC:/Qt/5.7/msvc2015_64/include/QtANGLE -IC:/Qt/5.7/msvc2015_64/include/QtNetwork -IC:/Qt/5.7/msvc2015_64/include/QtTest -IC:/Qt/5.7/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\shared" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\winrt" mainwindow.h -o release\moc_mainwindow.cpp
 
 release\moc_formCampagne.cpp: C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdialog.h \
@@ -556,7 +556,7 @@ release\moc_formCampagne.cpp: C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qtouchdevice.h \
 		fenetre\formCampagne.h \
 		C:\Qt\5.7\msvc2015_64\bin\moc.exe
-	C:\Qt\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Users/Axel/Documents/GitHub/Projet-S6 -IC:/Qt/5.7/msvc2015_64/include -IC:/Qt/5.7/msvc2015_64/include/QtMultimedia -IC:/Qt/5.7/msvc2015_64/include/QtWidgets -IC:/Qt/5.7/msvc2015_64/include/QtGui -IC:/Qt/5.7/msvc2015_64/include/QtANGLE -IC:/Qt/5.7/msvc2015_64/include/QtNetwork -IC:/Qt/5.7/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\shared" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\winrt" fenetre\formCampagne.h -o release\moc_formCampagne.cpp
+	C:\Qt\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Users/Axel/Documents/GitHub/Projet-S6 -IC:/Qt/5.7/msvc2015_64/include -IC:/Qt/5.7/msvc2015_64/include/QtMultimedia -IC:/Qt/5.7/msvc2015_64/include/QtWidgets -IC:/Qt/5.7/msvc2015_64/include/QtGui -IC:/Qt/5.7/msvc2015_64/include/QtANGLE -IC:/Qt/5.7/msvc2015_64/include/QtNetwork -IC:/Qt/5.7/msvc2015_64/include/QtTest -IC:/Qt/5.7/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\shared" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\winrt" fenetre\formCampagne.h -o release\moc_formCampagne.cpp
 
 release\moc_formInventaire.cpp: C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdialog.h \
@@ -658,7 +658,7 @@ release\moc_formInventaire.cpp: C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog 
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qtouchdevice.h \
 		fenetre\formInventaire.h \
 		C:\Qt\5.7\msvc2015_64\bin\moc.exe
-	C:\Qt\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Users/Axel/Documents/GitHub/Projet-S6 -IC:/Qt/5.7/msvc2015_64/include -IC:/Qt/5.7/msvc2015_64/include/QtMultimedia -IC:/Qt/5.7/msvc2015_64/include/QtWidgets -IC:/Qt/5.7/msvc2015_64/include/QtGui -IC:/Qt/5.7/msvc2015_64/include/QtANGLE -IC:/Qt/5.7/msvc2015_64/include/QtNetwork -IC:/Qt/5.7/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\shared" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\winrt" fenetre\formInventaire.h -o release\moc_formInventaire.cpp
+	C:\Qt\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Users/Axel/Documents/GitHub/Projet-S6 -IC:/Qt/5.7/msvc2015_64/include -IC:/Qt/5.7/msvc2015_64/include/QtMultimedia -IC:/Qt/5.7/msvc2015_64/include/QtWidgets -IC:/Qt/5.7/msvc2015_64/include/QtGui -IC:/Qt/5.7/msvc2015_64/include/QtANGLE -IC:/Qt/5.7/msvc2015_64/include/QtNetwork -IC:/Qt/5.7/msvc2015_64/include/QtTest -IC:/Qt/5.7/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\shared" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\winrt" fenetre\formInventaire.h -o release\moc_formInventaire.cpp
 
 release\moc_formModifierAttribut.cpp: C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdialog.h \
@@ -760,7 +760,7 @@ release\moc_formModifierAttribut.cpp: C:\Qt\5.7\msvc2015_64\include\QtWidgets\QD
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qtouchdevice.h \
 		fenetre\formModifierAttribut.h \
 		C:\Qt\5.7\msvc2015_64\bin\moc.exe
-	C:\Qt\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Users/Axel/Documents/GitHub/Projet-S6 -IC:/Qt/5.7/msvc2015_64/include -IC:/Qt/5.7/msvc2015_64/include/QtMultimedia -IC:/Qt/5.7/msvc2015_64/include/QtWidgets -IC:/Qt/5.7/msvc2015_64/include/QtGui -IC:/Qt/5.7/msvc2015_64/include/QtANGLE -IC:/Qt/5.7/msvc2015_64/include/QtNetwork -IC:/Qt/5.7/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\shared" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\winrt" fenetre\formModifierAttribut.h -o release\moc_formModifierAttribut.cpp
+	C:\Qt\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Users/Axel/Documents/GitHub/Projet-S6 -IC:/Qt/5.7/msvc2015_64/include -IC:/Qt/5.7/msvc2015_64/include/QtMultimedia -IC:/Qt/5.7/msvc2015_64/include/QtWidgets -IC:/Qt/5.7/msvc2015_64/include/QtGui -IC:/Qt/5.7/msvc2015_64/include/QtANGLE -IC:/Qt/5.7/msvc2015_64/include/QtNetwork -IC:/Qt/5.7/msvc2015_64/include/QtTest -IC:/Qt/5.7/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\shared" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\winrt" fenetre\formModifierAttribut.h -o release\moc_formModifierAttribut.cpp
 
 release\moc_formModifierCampagne.cpp: C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdialog.h \
@@ -862,7 +862,7 @@ release\moc_formModifierCampagne.cpp: C:\Qt\5.7\msvc2015_64\include\QtWidgets\QD
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qtouchdevice.h \
 		fenetre\formModifierCampagne.h \
 		C:\Qt\5.7\msvc2015_64\bin\moc.exe
-	C:\Qt\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Users/Axel/Documents/GitHub/Projet-S6 -IC:/Qt/5.7/msvc2015_64/include -IC:/Qt/5.7/msvc2015_64/include/QtMultimedia -IC:/Qt/5.7/msvc2015_64/include/QtWidgets -IC:/Qt/5.7/msvc2015_64/include/QtGui -IC:/Qt/5.7/msvc2015_64/include/QtANGLE -IC:/Qt/5.7/msvc2015_64/include/QtNetwork -IC:/Qt/5.7/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\shared" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\winrt" fenetre\formModifierCampagne.h -o release\moc_formModifierCampagne.cpp
+	C:\Qt\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Users/Axel/Documents/GitHub/Projet-S6 -IC:/Qt/5.7/msvc2015_64/include -IC:/Qt/5.7/msvc2015_64/include/QtMultimedia -IC:/Qt/5.7/msvc2015_64/include/QtWidgets -IC:/Qt/5.7/msvc2015_64/include/QtGui -IC:/Qt/5.7/msvc2015_64/include/QtANGLE -IC:/Qt/5.7/msvc2015_64/include/QtNetwork -IC:/Qt/5.7/msvc2015_64/include/QtTest -IC:/Qt/5.7/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\shared" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\winrt" fenetre\formModifierCampagne.h -o release\moc_formModifierCampagne.cpp
 
 release\moc_formModifierJeu.cpp: C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdialog.h \
@@ -964,7 +964,7 @@ release\moc_formModifierJeu.cpp: C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qtouchdevice.h \
 		fenetre\formModifierJeu.h \
 		C:\Qt\5.7\msvc2015_64\bin\moc.exe
-	C:\Qt\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Users/Axel/Documents/GitHub/Projet-S6 -IC:/Qt/5.7/msvc2015_64/include -IC:/Qt/5.7/msvc2015_64/include/QtMultimedia -IC:/Qt/5.7/msvc2015_64/include/QtWidgets -IC:/Qt/5.7/msvc2015_64/include/QtGui -IC:/Qt/5.7/msvc2015_64/include/QtANGLE -IC:/Qt/5.7/msvc2015_64/include/QtNetwork -IC:/Qt/5.7/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\shared" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\winrt" fenetre\formModifierJeu.h -o release\moc_formModifierJeu.cpp
+	C:\Qt\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Users/Axel/Documents/GitHub/Projet-S6 -IC:/Qt/5.7/msvc2015_64/include -IC:/Qt/5.7/msvc2015_64/include/QtMultimedia -IC:/Qt/5.7/msvc2015_64/include/QtWidgets -IC:/Qt/5.7/msvc2015_64/include/QtGui -IC:/Qt/5.7/msvc2015_64/include/QtANGLE -IC:/Qt/5.7/msvc2015_64/include/QtNetwork -IC:/Qt/5.7/msvc2015_64/include/QtTest -IC:/Qt/5.7/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\shared" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\winrt" fenetre\formModifierJeu.h -o release\moc_formModifierJeu.cpp
 
 release\moc_formNouveauAttribut.cpp: C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdialog.h \
@@ -1066,7 +1066,7 @@ release\moc_formNouveauAttribut.cpp: C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDi
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qtouchdevice.h \
 		fenetre\formNouveauAttribut.h \
 		C:\Qt\5.7\msvc2015_64\bin\moc.exe
-	C:\Qt\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Users/Axel/Documents/GitHub/Projet-S6 -IC:/Qt/5.7/msvc2015_64/include -IC:/Qt/5.7/msvc2015_64/include/QtMultimedia -IC:/Qt/5.7/msvc2015_64/include/QtWidgets -IC:/Qt/5.7/msvc2015_64/include/QtGui -IC:/Qt/5.7/msvc2015_64/include/QtANGLE -IC:/Qt/5.7/msvc2015_64/include/QtNetwork -IC:/Qt/5.7/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\shared" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\winrt" fenetre\formNouveauAttribut.h -o release\moc_formNouveauAttribut.cpp
+	C:\Qt\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Users/Axel/Documents/GitHub/Projet-S6 -IC:/Qt/5.7/msvc2015_64/include -IC:/Qt/5.7/msvc2015_64/include/QtMultimedia -IC:/Qt/5.7/msvc2015_64/include/QtWidgets -IC:/Qt/5.7/msvc2015_64/include/QtGui -IC:/Qt/5.7/msvc2015_64/include/QtANGLE -IC:/Qt/5.7/msvc2015_64/include/QtNetwork -IC:/Qt/5.7/msvc2015_64/include/QtTest -IC:/Qt/5.7/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\shared" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\winrt" fenetre\formNouveauAttribut.h -o release\moc_formNouveauAttribut.cpp
 
 release\moc_formNouveauJeu.cpp: C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdialog.h \
@@ -1168,7 +1168,7 @@ release\moc_formNouveauJeu.cpp: C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog 
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qtouchdevice.h \
 		fenetre\formNouveauJeu.h \
 		C:\Qt\5.7\msvc2015_64\bin\moc.exe
-	C:\Qt\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Users/Axel/Documents/GitHub/Projet-S6 -IC:/Qt/5.7/msvc2015_64/include -IC:/Qt/5.7/msvc2015_64/include/QtMultimedia -IC:/Qt/5.7/msvc2015_64/include/QtWidgets -IC:/Qt/5.7/msvc2015_64/include/QtGui -IC:/Qt/5.7/msvc2015_64/include/QtANGLE -IC:/Qt/5.7/msvc2015_64/include/QtNetwork -IC:/Qt/5.7/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\shared" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\winrt" fenetre\formNouveauJeu.h -o release\moc_formNouveauJeu.cpp
+	C:\Qt\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Users/Axel/Documents/GitHub/Projet-S6 -IC:/Qt/5.7/msvc2015_64/include -IC:/Qt/5.7/msvc2015_64/include/QtMultimedia -IC:/Qt/5.7/msvc2015_64/include/QtWidgets -IC:/Qt/5.7/msvc2015_64/include/QtGui -IC:/Qt/5.7/msvc2015_64/include/QtANGLE -IC:/Qt/5.7/msvc2015_64/include/QtNetwork -IC:/Qt/5.7/msvc2015_64/include/QtTest -IC:/Qt/5.7/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\shared" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\winrt" fenetre\formNouveauJeu.h -o release\moc_formNouveauJeu.cpp
 
 release\moc_formNouvelleCampagne.cpp: C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdialog.h \
@@ -1270,7 +1270,7 @@ release\moc_formNouvelleCampagne.cpp: C:\Qt\5.7\msvc2015_64\include\QtWidgets\QD
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qtouchdevice.h \
 		fenetre\formNouvelleCampagne.h \
 		C:\Qt\5.7\msvc2015_64\bin\moc.exe
-	C:\Qt\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Users/Axel/Documents/GitHub/Projet-S6 -IC:/Qt/5.7/msvc2015_64/include -IC:/Qt/5.7/msvc2015_64/include/QtMultimedia -IC:/Qt/5.7/msvc2015_64/include/QtWidgets -IC:/Qt/5.7/msvc2015_64/include/QtGui -IC:/Qt/5.7/msvc2015_64/include/QtANGLE -IC:/Qt/5.7/msvc2015_64/include/QtNetwork -IC:/Qt/5.7/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\shared" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\winrt" fenetre\formNouvelleCampagne.h -o release\moc_formNouvelleCampagne.cpp
+	C:\Qt\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Users/Axel/Documents/GitHub/Projet-S6 -IC:/Qt/5.7/msvc2015_64/include -IC:/Qt/5.7/msvc2015_64/include/QtMultimedia -IC:/Qt/5.7/msvc2015_64/include/QtWidgets -IC:/Qt/5.7/msvc2015_64/include/QtGui -IC:/Qt/5.7/msvc2015_64/include/QtANGLE -IC:/Qt/5.7/msvc2015_64/include/QtNetwork -IC:/Qt/5.7/msvc2015_64/include/QtTest -IC:/Qt/5.7/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\shared" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\winrt" fenetre\formNouvelleCampagne.h -o release\moc_formNouvelleCampagne.cpp
 
 release\moc_formNouvellePartie.cpp: C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdialog.h \
@@ -1372,7 +1372,7 @@ release\moc_formNouvellePartie.cpp: C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDia
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qtouchdevice.h \
 		fenetre\formNouvellePartie.h \
 		C:\Qt\5.7\msvc2015_64\bin\moc.exe
-	C:\Qt\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Users/Axel/Documents/GitHub/Projet-S6 -IC:/Qt/5.7/msvc2015_64/include -IC:/Qt/5.7/msvc2015_64/include/QtMultimedia -IC:/Qt/5.7/msvc2015_64/include/QtWidgets -IC:/Qt/5.7/msvc2015_64/include/QtGui -IC:/Qt/5.7/msvc2015_64/include/QtANGLE -IC:/Qt/5.7/msvc2015_64/include/QtNetwork -IC:/Qt/5.7/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\shared" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\winrt" fenetre\formNouvellePartie.h -o release\moc_formNouvellePartie.cpp
+	C:\Qt\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Users/Axel/Documents/GitHub/Projet-S6 -IC:/Qt/5.7/msvc2015_64/include -IC:/Qt/5.7/msvc2015_64/include/QtMultimedia -IC:/Qt/5.7/msvc2015_64/include/QtWidgets -IC:/Qt/5.7/msvc2015_64/include/QtGui -IC:/Qt/5.7/msvc2015_64/include/QtANGLE -IC:/Qt/5.7/msvc2015_64/include/QtNetwork -IC:/Qt/5.7/msvc2015_64/include/QtTest -IC:/Qt/5.7/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\shared" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\winrt" fenetre\formNouvellePartie.h -o release\moc_formNouvellePartie.cpp
 
 release\moc_formModifierPartie.cpp: C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdialog.h \
@@ -1474,7 +1474,7 @@ release\moc_formModifierPartie.cpp: C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDia
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qtouchdevice.h \
 		fenetre\formModifierPartie.h \
 		C:\Qt\5.7\msvc2015_64\bin\moc.exe
-	C:\Qt\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Users/Axel/Documents/GitHub/Projet-S6 -IC:/Qt/5.7/msvc2015_64/include -IC:/Qt/5.7/msvc2015_64/include/QtMultimedia -IC:/Qt/5.7/msvc2015_64/include/QtWidgets -IC:/Qt/5.7/msvc2015_64/include/QtGui -IC:/Qt/5.7/msvc2015_64/include/QtANGLE -IC:/Qt/5.7/msvc2015_64/include/QtNetwork -IC:/Qt/5.7/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\shared" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\winrt" fenetre\formModifierPartie.h -o release\moc_formModifierPartie.cpp
+	C:\Qt\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Users/Axel/Documents/GitHub/Projet-S6 -IC:/Qt/5.7/msvc2015_64/include -IC:/Qt/5.7/msvc2015_64/include/QtMultimedia -IC:/Qt/5.7/msvc2015_64/include/QtWidgets -IC:/Qt/5.7/msvc2015_64/include/QtGui -IC:/Qt/5.7/msvc2015_64/include/QtANGLE -IC:/Qt/5.7/msvc2015_64/include/QtNetwork -IC:/Qt/5.7/msvc2015_64/include/QtTest -IC:/Qt/5.7/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\shared" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\winrt" fenetre\formModifierPartie.h -o release\moc_formModifierPartie.cpp
 
 release\moc_formNouveauPersonnage.cpp: C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdialog.h \
@@ -1576,7 +1576,7 @@ release\moc_formNouveauPersonnage.cpp: C:\Qt\5.7\msvc2015_64\include\QtWidgets\Q
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qtouchdevice.h \
 		fenetre\formNouveauPersonnage.h \
 		C:\Qt\5.7\msvc2015_64\bin\moc.exe
-	C:\Qt\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Users/Axel/Documents/GitHub/Projet-S6 -IC:/Qt/5.7/msvc2015_64/include -IC:/Qt/5.7/msvc2015_64/include/QtMultimedia -IC:/Qt/5.7/msvc2015_64/include/QtWidgets -IC:/Qt/5.7/msvc2015_64/include/QtGui -IC:/Qt/5.7/msvc2015_64/include/QtANGLE -IC:/Qt/5.7/msvc2015_64/include/QtNetwork -IC:/Qt/5.7/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\shared" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\winrt" fenetre\formNouveauPersonnage.h -o release\moc_formNouveauPersonnage.cpp
+	C:\Qt\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Users/Axel/Documents/GitHub/Projet-S6 -IC:/Qt/5.7/msvc2015_64/include -IC:/Qt/5.7/msvc2015_64/include/QtMultimedia -IC:/Qt/5.7/msvc2015_64/include/QtWidgets -IC:/Qt/5.7/msvc2015_64/include/QtGui -IC:/Qt/5.7/msvc2015_64/include/QtANGLE -IC:/Qt/5.7/msvc2015_64/include/QtNetwork -IC:/Qt/5.7/msvc2015_64/include/QtTest -IC:/Qt/5.7/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\shared" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\winrt" fenetre\formNouveauPersonnage.h -o release\moc_formNouveauPersonnage.cpp
 
 release\moc_formModifierPersonnage.cpp: C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdialog.h \
@@ -1678,7 +1678,7 @@ release\moc_formModifierPersonnage.cpp: C:\Qt\5.7\msvc2015_64\include\QtWidgets\
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qtouchdevice.h \
 		fenetre\formModifierPersonnage.h \
 		C:\Qt\5.7\msvc2015_64\bin\moc.exe
-	C:\Qt\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Users/Axel/Documents/GitHub/Projet-S6 -IC:/Qt/5.7/msvc2015_64/include -IC:/Qt/5.7/msvc2015_64/include/QtMultimedia -IC:/Qt/5.7/msvc2015_64/include/QtWidgets -IC:/Qt/5.7/msvc2015_64/include/QtGui -IC:/Qt/5.7/msvc2015_64/include/QtANGLE -IC:/Qt/5.7/msvc2015_64/include/QtNetwork -IC:/Qt/5.7/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\shared" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\winrt" fenetre\formModifierPersonnage.h -o release\moc_formModifierPersonnage.cpp
+	C:\Qt\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Users/Axel/Documents/GitHub/Projet-S6 -IC:/Qt/5.7/msvc2015_64/include -IC:/Qt/5.7/msvc2015_64/include/QtMultimedia -IC:/Qt/5.7/msvc2015_64/include/QtWidgets -IC:/Qt/5.7/msvc2015_64/include/QtGui -IC:/Qt/5.7/msvc2015_64/include/QtANGLE -IC:/Qt/5.7/msvc2015_64/include/QtNetwork -IC:/Qt/5.7/msvc2015_64/include/QtTest -IC:/Qt/5.7/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\shared" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\winrt" fenetre\formModifierPersonnage.h -o release\moc_formModifierPersonnage.cpp
 
 release\moc_formLecteurMusique.cpp: C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdialog.h \
@@ -1794,9 +1794,29 @@ release\moc_formLecteurMusique.cpp: C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDia
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qmetaobject.h \
 		C:\Qt\5.7\msvc2015_64\include\QtMultimedia\qaudio.h \
 		C:\Qt\5.7\msvc2015_64\include\QtNetwork\qnetworkconfiguration.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QListWidgetItem \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlistwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlistview.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qframe.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qvalidator.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qregularexpression.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qicon.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qslider.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
 		fenetre\formLecteurMusique.h \
 		C:\Qt\5.7\msvc2015_64\bin\moc.exe
-	C:\Qt\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Users/Axel/Documents/GitHub/Projet-S6 -IC:/Qt/5.7/msvc2015_64/include -IC:/Qt/5.7/msvc2015_64/include/QtMultimedia -IC:/Qt/5.7/msvc2015_64/include/QtWidgets -IC:/Qt/5.7/msvc2015_64/include/QtGui -IC:/Qt/5.7/msvc2015_64/include/QtANGLE -IC:/Qt/5.7/msvc2015_64/include/QtNetwork -IC:/Qt/5.7/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\shared" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\winrt" fenetre\formLecteurMusique.h -o release\moc_formLecteurMusique.cpp
+	C:\Qt\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Users/Axel/Documents/GitHub/Projet-S6 -IC:/Qt/5.7/msvc2015_64/include -IC:/Qt/5.7/msvc2015_64/include/QtMultimedia -IC:/Qt/5.7/msvc2015_64/include/QtWidgets -IC:/Qt/5.7/msvc2015_64/include/QtGui -IC:/Qt/5.7/msvc2015_64/include/QtANGLE -IC:/Qt/5.7/msvc2015_64/include/QtNetwork -IC:/Qt/5.7/msvc2015_64/include/QtTest -IC:/Qt/5.7/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\shared" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\um" -I"C:\Program Files (x86)\Windows Kits\8.1\include\\winrt" fenetre\formLecteurMusique.h -o release\moc_formLecteurMusique.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -2478,6 +2498,7 @@ release\mainwindow.obj: mainwindow.cpp C:\Qt\5.7\msvc2015_64\include\QtWidgets\Q
 		C:\Qt\5.7\msvc2015_64\include\QtMultimedia\qmediaenumdebug.h \
 		C:\Qt\5.7\msvc2015_64\include\QtMultimedia\qaudio.h \
 		C:\Qt\5.7\msvc2015_64\include\QtNetwork\qnetworkconfiguration.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QListWidgetItem \
 		BD/jeu.h \
 		BD/attribut.h \
 		BD/campagne.h \
@@ -2485,7 +2506,8 @@ release\mainwindow.obj: mainwindow.cpp C:\Qt\5.7\msvc2015_64\include\QtWidgets\Q
 		BD/partie.h \
 		BD\Campagne.h \
 		BD/personnage.h \
-		BD/collections.h
+		BD/collections.h \
+		BD/playlist.h
 
 release\attribut.obj: BD\attribut.cpp C:\Qt\5.7\msvc2015_64\include\QtCore\QDataStream \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qdatastream.h \
@@ -2715,7 +2737,8 @@ release\jeu.obj: BD\jeu.cpp C:\Qt\5.7\msvc2015_64\include\QtCore\QDataStream \
 		BD\Campagne.h \
 		BD\Jeu.h \
 		BD/personnage.h \
-		BD/campagne.h
+		BD/campagne.h \
+		BD/playlist.h
 
 release\jeuElement.obj: BD\jeuElement.cpp 
 
@@ -3180,7 +3203,8 @@ release\formModifierAttribut.obj: fenetre\formModifierAttribut.cpp C:\Qt\5.7\msv
 		BD\Campagne.h \
 		BD\Jeu.h \
 		BD/personnage.h \
-		BD/campagne.h
+		BD/campagne.h \
+		BD/playlist.h
 
 release\formModifierCampagne.obj: fenetre\formModifierCampagne.cpp C:\Qt\5.7\msvc2015_64\include\QtWidgets\QMessageBox \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qmessagebox.h \
@@ -3346,7 +3370,8 @@ release\formModifierCampagne.obj: fenetre\formModifierCampagne.cpp C:\Qt\5.7\msv
 		BD\Campagne.h \
 		BD\Jeu.h \
 		BD/personnage.h \
-		BD/campagne.h
+		BD/campagne.h \
+		BD/playlist.h
 
 release\formModifierJeu.obj: fenetre\formModifierJeu.cpp C:\Qt\5.7\msvc2015_64\include\QtCore\qDebug \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qdebug.h \
@@ -3526,7 +3551,8 @@ release\formModifierJeu.obj: fenetre\formModifierJeu.cpp C:\Qt\5.7\msvc2015_64\i
 		BD\Campagne.h \
 		BD\Jeu.h \
 		BD/personnage.h \
-		BD/campagne.h
+		BD/campagne.h \
+		BD/playlist.h
 
 release\formNouveauAttribut.obj: fenetre\formNouveauAttribut.cpp fenetre/formNouveauAttribut.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog \
@@ -3866,7 +3892,8 @@ release\formNouveauJeu.obj: fenetre\formNouveauJeu.cpp C:\Qt\5.7\msvc2015_64\inc
 		BD\Campagne.h \
 		BD\Jeu.h \
 		BD/personnage.h \
-		BD/campagne.h
+		BD/campagne.h \
+		BD/playlist.h
 
 release\formNouvelleCampagne.obj: fenetre\formNouvelleCampagne.cpp fenetre/formNouvelleCampagne.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog \
@@ -4029,7 +4056,8 @@ release\formNouvelleCampagne.obj: fenetre\formNouvelleCampagne.cpp fenetre/formN
 		BD\Campagne.h \
 		BD\Jeu.h \
 		BD/personnage.h \
-		BD/campagne.h
+		BD/campagne.h \
+		BD/playlist.h
 
 release\formNouvellePartie.obj: fenetre\formNouvellePartie.cpp fenetre/formNouvellePartie.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog \
@@ -4200,7 +4228,8 @@ release\formNouvellePartie.obj: fenetre\formNouvellePartie.cpp fenetre/formNouve
 		BD/partie.h \
 		BD\Campagne.h \
 		BD/collections.h \
-		BD/jeu.h
+		BD/jeu.h \
+		BD/playlist.h
 
 release\collections.obj: BD\collections.cpp C:\Qt\5.7\msvc2015_64\include\QtCore\QDir \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qdir.h \
@@ -4279,7 +4308,8 @@ release\collections.obj: BD\collections.cpp C:\Qt\5.7\msvc2015_64\include\QtCore
 		BD\Campagne.h \
 		BD\Jeu.h \
 		BD/personnage.h \
-		BD/campagne.h
+		BD/campagne.h \
+		BD/playlist.h
 
 release\formModifierPartie.obj: fenetre\formModifierPartie.cpp fenetre/formModifierPartie.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog \
@@ -4449,7 +4479,8 @@ release\formModifierPartie.obj: fenetre\formModifierPartie.cpp fenetre/formModif
 		BD\Campagne.h \
 		BD\Jeu.h \
 		BD/personnage.h \
-		BD/campagne.h
+		BD/campagne.h \
+		BD/playlist.h
 
 release\formNouveauPersonnage.obj: fenetre\formNouveauPersonnage.cpp C:\Qt\5.7\msvc2015_64\include\QtCore\QDebug \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qdebug.h \
@@ -4622,7 +4653,8 @@ release\formNouveauPersonnage.obj: fenetre\formNouveauPersonnage.cpp C:\Qt\5.7\m
 		BD\Campagne.h \
 		BD\Jeu.h \
 		BD/personnage.h \
-		BD/campagne.h
+		BD/campagne.h \
+		BD/playlist.h
 
 release\formModifierPersonnage.obj: fenetre\formModifierPersonnage.cpp fenetre/formModifierPersonnage.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog \
@@ -4898,27 +4930,9 @@ release\formLecteurMusique.obj: fenetre\formLecteurMusique.cpp fenetre/formLecte
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qmetaobject.h \
 		C:\Qt\5.7\msvc2015_64\include\QtMultimedia\qaudio.h \
 		C:\Qt\5.7\msvc2015_64\include\QtNetwork\qnetworkconfiguration.h \
-		ui_formLecteurMusique.h \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QAction \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qaction.h \
-		C:\Qt\5.7\msvc2015_64\include\QtGui\qicon.h \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QApplication \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qcoreapplication.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qeventloop.h \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
-		C:\Qt\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QButtonGroup \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qbuttongroup.h \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHBoxLayout \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QListWidgetItem \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlistwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlistview.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qframe.h \
@@ -4929,18 +4943,43 @@ release\formLecteurMusique.obj: fenetre\formLecteurMusique.cpp fenetre/formLecte
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qvalidator.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qregularexpression.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qicon.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qslider.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
+		ui_formLecteurMusique.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QAction \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qaction.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QApplication \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qeventloop.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QButtonGroup \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QCheckBox \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qcheckbox.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHBoxLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QLabel \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlabel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QListWidget \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QPushButton \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QSlider \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QWidget \
 		C:\Qt\5.7\msvc2015_64\include\QtMultimedia\QSound \
 		C:\Qt\5.7\msvc2015_64\include\QtMultimedia\qsound.h \
@@ -4954,8 +4993,50 @@ release\formLecteurMusique.obj: fenetre\formLecteurMusique.cpp fenetre/formLecte
 		C:\Qt\5.7\msvc2015_64\include\QtMultimedia\QMediaPlaylist \
 		C:\Qt\5.7\msvc2015_64\include\QtMultimedia\qmediaplaylist.h \
 		C:\Qt\5.7\msvc2015_64\include\QtMultimedia\qmediabindableinterface.h \
+		C:\Qt\5.7\msvc2015_64\include\QtTest\QTest \
+		C:\Qt\5.7\msvc2015_64\include\QtTest\qtest.h \
+		C:\Qt\5.7\msvc2015_64\include\QtTest\qtest_global.h \
+		C:\Qt\5.7\msvc2015_64\include\QtTest\qtestcase.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qtemporarydir.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\QScopedPointer \
+		C:\Qt\5.7\msvc2015_64\include\QtTest\qtestdata.h \
+		C:\Qt\5.7\msvc2015_64\include\QtTest\qbenchmark.h \
+		C:\Qt\5.7\msvc2015_64\include\QtTest\qbenchmarkmetric.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qdatetime.h \
+		C:\Qt\5.7\msvc2015_64\include\QtNetwork\qhostaddress.h \
+		C:\Qt\5.7\msvc2015_64\include\QtNetwork\qabstractsocket.h \
+		C:\Qt\5.7\msvc2015_64\include\QtTest\qtestsystem.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qelapsedtimer.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\QWindow \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qwindow.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\QObject \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\QEvent \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\QMargins \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\QRect \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qsurface.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qsurfaceformat.h \
+		C:\Qt\5.7\msvc2015_64\include\QtTest\qtest_widgets.h \
+		C:\Qt\5.7\msvc2015_64\include\QtTest\qtest_gui.h \
+		C:\Qt\5.7\msvc2015_64\include\QtTest\qtestassert.h \
+		C:\Qt\5.7\msvc2015_64\include\QtTest\qtestevent.h \
+		C:\Qt\5.7\msvc2015_64\include\QtTest\qtestkeyboard.h \
+		C:\Qt\5.7\msvc2015_64\include\QtTest\qtestspontaneevent.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qpointer.h \
+		C:\Qt\5.7\msvc2015_64\include\QtTest\qtestmouse.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\QDebug \
+		C:\Qt\5.7\msvc2015_64\include\QtTest\qtesttouch.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QSizePolicy \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\QMetaEnum \
 		BD/playlist.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\QVector
+		C:\Qt\5.7\msvc2015_64\include\QtCore\QVector \
+		BD/collections.h \
+		BD/jeu.h \
+		BD/attribut.h \
+		BD/partie.h \
+		BD\Campagne.h \
+		BD\Jeu.h \
+		BD/personnage.h \
+		BD/campagne.h
 
 release\playlist.obj: BD\playlist.cpp C:\Qt\5.7\msvc2015_64\include\QtCore\QDataStream \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qdatastream.h \

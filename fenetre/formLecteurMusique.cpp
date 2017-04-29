@@ -6,6 +6,8 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QMediaPlaylist>
+#include <random>
+#include <QTest>
 
 #include "BD/playlist.h"
 #include "BD/collections.h"
@@ -21,6 +23,7 @@ formLecteurMusique::formLecteurMusique(QWidget *parent) :
     connect(player,&QMediaPlayer::positionChanged,this, &formLecteurMusique::on_DurationChanged);
 
     Load();
+    connect(playlist,&QMediaPlaylist::currentMediaChanged,this,&formLecteurMusique::on_SongChanged);
 }
 
 formLecteurMusique::~formLecteurMusique()
@@ -70,6 +73,23 @@ void formLecteurMusique::on_DurationChanged()
 void formLecteurMusique::on_positionChanged(qint64 position)
 {
     ui->ProgressSlider->setValue(position);
+}
+
+void formLecteurMusique::on_SongChanged()
+{
+    //qDebug() << "chanson changée";
+
+  if(ui->RandomCheckBox->isChecked()){
+      int rand=(int)(qrand()%(playlist->mediaCount()));
+      qDebug() << rand;
+      QTest::qSleep(100);
+      qDebug() << "pause";
+      player->stop();
+      playlist->setCurrentIndex(rand);
+      player->play();
+
+   }
+
 }
 
 void formLecteurMusique::on_verticalSlider_sliderMoved(int position)

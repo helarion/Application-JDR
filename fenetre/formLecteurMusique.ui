@@ -33,9 +33,6 @@
     <widget class="QListWidget" name="listPlaylist"/>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="listePlaylistLayout"/>
-   </item>
-   <item>
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <property name="topMargin">
       <number>0</number>
@@ -79,6 +76,13 @@
        </item>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QCheckBox" name="RandomCheckBox">
+           <property name="text">
+            <string>Aléatoire</string>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QPushButton" name="PreviousButton">
            <property name="text">

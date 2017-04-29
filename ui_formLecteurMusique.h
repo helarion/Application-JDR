@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
@@ -30,7 +31,6 @@ public:
     QVBoxLayout *verticalLayout;
     QLabel *label;
     QListWidget *listPlaylist;
-    QHBoxLayout *listePlaylistLayout;
     QHBoxLayout *horizontalLayout_3;
     QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout;
@@ -39,6 +39,7 @@ public:
     QPushButton *StopButton;
     QSlider *ProgressSlider;
     QHBoxLayout *horizontalLayout_2;
+    QCheckBox *RandomCheckBox;
     QPushButton *PreviousButton;
     QPushButton *NextButton;
     QSlider *verticalSlider;
@@ -64,11 +65,6 @@ public:
         listPlaylist->setObjectName(QStringLiteral("listPlaylist"));
 
         verticalLayout->addWidget(listPlaylist);
-
-        listePlaylistLayout = new QHBoxLayout();
-        listePlaylistLayout->setObjectName(QStringLiteral("listePlaylistLayout"));
-
-        verticalLayout->addLayout(listePlaylistLayout);
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
@@ -104,6 +100,11 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        RandomCheckBox = new QCheckBox(formLecteurMusique);
+        RandomCheckBox->setObjectName(QStringLiteral("RandomCheckBox"));
+
+        horizontalLayout_2->addWidget(RandomCheckBox);
+
         PreviousButton = new QPushButton(formLecteurMusique);
         PreviousButton->setObjectName(QStringLiteral("PreviousButton"));
 
@@ -148,6 +149,7 @@ public:
         PlayButton->setText(QApplication::translate("formLecteurMusique", "Play", 0));
         PauseButton->setText(QApplication::translate("formLecteurMusique", "Pause", 0));
         StopButton->setText(QApplication::translate("formLecteurMusique", "Stop", 0));
+        RandomCheckBox->setText(QApplication::translate("formLecteurMusique", "Al\303\251atoire", 0));
         PreviousButton->setText(QApplication::translate("formLecteurMusique", "<--", 0));
         NextButton->setText(QApplication::translate("formLecteurMusique", "-->", 0));
         ajouterPlaylistButton->setText(QApplication::translate("formLecteurMusique", "Ajouiter Playlist", 0));
