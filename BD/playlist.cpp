@@ -94,7 +94,7 @@ void Playlist::Save()
 
     QDataStream out(&file);
 
-    out << nom << titre << type << preset;
+    out << nom << titre << liste;
 
     file.flush();
     file.close();
@@ -119,8 +119,7 @@ void Playlist::Load(QString nomFichier)
 
     in >> nom;
     in >> titre;
-    in >> type;
-    in >> preset;
+    in >> liste;
 
     //qDebug() << titre << " Récupéré.";
 
