@@ -24,6 +24,8 @@ formLecteurMusique::formLecteurMusique(QWidget *parent) :
 
     Load();
     connect(playlist,&QMediaPlaylist::currentMediaChanged,this,&formLecteurMusique::on_SongChanged);
+
+    compteur=0;
 }
 
 formLecteurMusique::~formLecteurMusique()
@@ -77,18 +79,16 @@ void formLecteurMusique::on_positionChanged(qint64 position)
 
 void formLecteurMusique::on_SongChanged()
 {
-    //qDebug() << "chanson changée";
 
-  if(ui->RandomCheckBox->isChecked()){
-      int rand=(int)(qrand()%(playlist->mediaCount()));
-      qDebug() << rand;
-      QTest::qSleep(100);
-      qDebug() << "pause";
-      player->stop();
-      playlist->setCurrentIndex(rand);
-      player->play();
+    if(ui->RandomCheckBox->isChecked()){
+        compteur++;
+        if(compteur%2==0){
+        int rand=(int)(qrand()%(playlist->mediaCount()));
+        //qDebug() << rand;
+        playlist->setCurrentIndex(rand);
+        }
+     }
 
-   }
 
 }
 

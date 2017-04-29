@@ -49,7 +49,7 @@ private:
     Ui::formLecteurMusique *ui;
     QMediaPlayer* player;
     QMediaPlaylist* playlist;
-    const int timer=0;
+    int compteur;
 };
 
 #endif // FORMLECTEURMUSIQUE_H
