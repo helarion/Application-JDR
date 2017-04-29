@@ -8,8 +8,6 @@
 Playlist::Playlist ()
 {
     nom="";
-    type=-1;
-    preset=false;
     titre="";
 }
 

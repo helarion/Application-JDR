@@ -8,6 +8,7 @@
 #include <QMediaPlaylist>
 
 #include "BD/playlist.h"
+#include "BD/collections.h"
 
 formLecteurMusique::formLecteurMusique(QWidget *parent) :
     QDialog(parent),
@@ -49,13 +50,15 @@ void formLecteurMusique::on_OuvrirButton_clicked()
     QDir dir(directory);
     QStringList files = dir.entryList(QStringList() << "*.mp3",QDir::Files);
 
+    QVector<QString> liste;
     foreach(QString itm, files){
-
+        liste.append(QUrl(dir.path()+"/"+itm).toString());
         //qDebug() << QUrl(dir.path()+"/"+itm);
         playlist->addMedia(QUrl(dir.path()+"/"+itm));
         player->setMedia(playlist);
     }
-
+    Playlist p("test",liste);
+    p.Save();
 }
 
 void formLecteurMusique::on_StopButton_clicked()

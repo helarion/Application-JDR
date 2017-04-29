@@ -8,6 +8,7 @@ QVector<Attribut> listAttribut;
 QVector<Campagne> listCampagne;
 QVector<Partie> listPartie;
 QVector<Personnage> listPersonnage;
+QVector<Playlist> listPlaylist;
 
 quint8 indexStack=0;
 
@@ -15,12 +16,14 @@ int jeuSelect=-1;
 int campagneSelect=-1;
 int partieSelect=-1;
 int attributSelect=-1;
+int playlistSelect=-1;
 
 void addJeu(Jeu j) { listJeu.prepend(j); }
 void addAttribut(Attribut a) { listAttribut.prepend(a); }
 void addCampagne(Campagne c) { listCampagne.prepend(c); }
 void addPartie(Partie p) { listPartie.prepend(p); }
 void addPersonnage(Personnage p) { listPersonnage.prepend(p); }
+void addPlaylist(Playlist p) { listPlaylist.prepend(p); }
 
 void updateJeu(QString prec, QString suiv)
 {
@@ -88,6 +91,15 @@ extern void deletePersonnage(int index)
     listPersonnage.remove(index);
 }
 
+extern void deletePlaylist(int index)
+{
+    QString titre=listPlaylist[index].getTitre();
+    QString path="data/Playlist/"+titre+".data";
+    QDir d;
+    d.remove(path);
+    listPlaylist.remove(index);
+}
+
 void afficherJeu()
 {
     for(int i=0; i<listJeu.size(); i++)
@@ -128,6 +140,13 @@ void afficherPersonnage()
     }
 }
 
+void afficherPlaylist()
+{
+    for(int i=0; i<listPlaylist.size(); i++)
+    {
+        listPlaylist[i].afficher();
+    }
+}
 
 void remplirListJeu()
 {
@@ -213,6 +232,23 @@ void remplirListPersonnage()
             nom=list.at(0);
             Personnage p(nom);
             listPersonnage.append(p);
+        }
+    }
+}
+
+void remplirListPlaylist()
+{
+    QString nom;
+    QStringList list;
+    QString path="data/Playlist";
+    QDir dir(path);
+    QFileInfoList files = dir.entryInfoList();
+    foreach (QFileInfo file, files){
+        if (!file.isDir()){
+            list=file.fileName().split(".data");
+            nom=list.at(0);
+            Playlist p(nom);
+            listPlaylist.append(p);
         }
     }
 }
