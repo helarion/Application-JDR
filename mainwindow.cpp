@@ -138,28 +138,34 @@ void MainWindow::on_nouveauJeuButton_clicked()
 
 void MainWindow::on_modifierJeuButton_clicked()
 {
-    formModifierJeu formModifierJeu;
-    QObject::connect(&formModifierJeu, SIGNAL(listJeuChanged()),this, SLOT(changementJeu()));
-    formModifierJeu.setModal(true);
-    formModifierJeu.exec();
+    if(ui->listJeu->currentItem()!=NULL)
+    {
+        formModifierJeu formModifierJeu;
+        QObject::connect(&formModifierJeu, SIGNAL(listJeuChanged()),this, SLOT(changementJeu()));
+        formModifierJeu.setModal(true);
+        formModifierJeu.exec();
+    }
 }
 
 void MainWindow::on_selectionnerJeuButton_clicked()
 {
-    indexStack=2;
-    ui->contentStack->setCurrentIndex(indexStack);
-    remplirListCampagne();
-    ui->listCampagne->clear();
-    for(int i=0;i<listCampagne.size();i++)
+    if(ui->listJeu->currentItem()!=NULL)
     {
-        if(listCampagne[i].getJeu().compare(listJeu[jeuSelect]))
+        indexStack=2;
+        ui->contentStack->setCurrentIndex(indexStack);
+        remplirListCampagne();
+        ui->listCampagne->clear();
+        for(int i=0;i<listCampagne.size();i++)
         {
-            QListWidgetItem *newItem = new QListWidgetItem;
-            // on met le titre de l'objet comme donnée
-            newItem->setData(Qt::UserRole,listCampagne[i].getTitre());
-            // le nom de l'objet comme text affiché
-            newItem->setText(listCampagne[i].getNom());
-            ui->listCampagne->addItem(newItem);
+            if(listCampagne[i].getJeu().compare(listJeu[jeuSelect]))
+            {
+                QListWidgetItem *newItem = new QListWidgetItem;
+                // on met le titre de l'objet comme donnée
+                newItem->setData(Qt::UserRole,listCampagne[i].getTitre());
+                // le nom de l'objet comme text affiché
+                newItem->setText(listCampagne[i].getNom());
+                ui->listCampagne->addItem(newItem);
+            }
         }
     }
 }
@@ -174,28 +180,34 @@ void MainWindow::on_nouveauCampagneButton_clicked()
 
 void MainWindow::on_modifierCampagneButton_clicked()
 {
-    formModifierCampagne formModifierCampagne;
-    formModifierCampagne.setModal(true);
-    QObject::connect(&formModifierCampagne, SIGNAL(listCampagneChanged()),this, SLOT(changementCampagne()));
-    formModifierCampagne.exec();
+    if(ui->listCampagne->currentItem()!=NULL)
+    {
+        formModifierCampagne formModifierCampagne;
+        formModifierCampagne.setModal(true);
+        QObject::connect(&formModifierCampagne, SIGNAL(listCampagneChanged()),this, SLOT(changementCampagne()));
+        formModifierCampagne.exec();
+    }
 }
 
 void MainWindow::on_selectionnerCampagneButton_clicked()
 {
-    indexStack=3;
-    ui->contentStack->setCurrentIndex(indexStack);
-    remplirListPartie();
-    ui->listPartie->clear();
-    for(int i=0;i<listPartie.size();i++)
+    if(ui->listCampagne->currentItem()!=NULL)
     {
-        if(listPartie[i].getCampagne().compare(listCampagne[campagneSelect]))
+        indexStack=3;
+        ui->contentStack->setCurrentIndex(indexStack);
+        remplirListPartie();
+        ui->listPartie->clear();
+        for(int i=0;i<listPartie.size();i++)
         {
-            QListWidgetItem *newItem = new QListWidgetItem;
-            // on met le titre de l'objet comme donnée
-            newItem->setData(Qt::UserRole,listPartie[i].getTitre());
-            // le nom de l'objet comme text affiché
-            newItem->setText(listPartie[i].getNom());
-            ui->listPartie->addItem(newItem);
+            if(listPartie[i].getCampagne().compare(listCampagne[campagneSelect]))
+            {
+                QListWidgetItem *newItem = new QListWidgetItem;
+                // on met le titre de l'objet comme donnée
+                newItem->setData(Qt::UserRole,listPartie[i].getTitre());
+                // le nom de l'objet comme text affiché
+                newItem->setText(listPartie[i].getNom());
+                ui->listPartie->addItem(newItem);
+            }
         }
     }
 }
@@ -203,9 +215,10 @@ void MainWindow::on_selectionnerCampagneButton_clicked()
 void MainWindow::on_listJeu_itemSelectionChanged()
 {
     jeuSelect=chercheTitreJeu(ui->listJeu->currentItem()->data(Qt::UserRole).toString());
-    ui->themeJeu->setPixmap(QPixmap(listJeu[jeuSelect].getTheme()));
-    ui->themeJeu->adjustSize();
-    ui->themeJeu->setScaledContents(true);
+    QPixmap p(listJeu[jeuSelect].getTheme());
+    int w = ui->themeJeu->width();
+    int h = ui->themeJeu->height();
+    ui->themeJeu->setPixmap(p.scaled(w,h,Qt::KeepAspectRatio));
 }
 
 void MainWindow::on_listCampagne_itemSelectionChanged()
@@ -223,10 +236,13 @@ void MainWindow::on_ajouterPartieButton_clicked()
 
 void MainWindow::on_modifierPartieButton_clicked()
 {
-    formModifierPartie formModifierPartie;
-    QObject::connect(&formModifierPartie, SIGNAL(listPartieChanged()),this, SLOT(changementPartie()));
-    formModifierPartie.setModal(true);
-    formModifierPartie.exec();
+    if(ui->listPartie->currentItem()!=NULL)
+    {
+        formModifierPartie formModifierPartie;
+        QObject::connect(&formModifierPartie, SIGNAL(listPartieChanged()),this, SLOT(changementPartie()));
+        formModifierPartie.setModal(true);
+        formModifierPartie.exec();
+    }
 }
 
 void MainWindow::on_selectionnerPartieButton_clicked()

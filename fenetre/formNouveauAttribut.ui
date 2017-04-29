@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Création d'attribut</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../d20.ico</normaloff>../d20.ico</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="2" column="0">

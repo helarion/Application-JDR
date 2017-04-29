@@ -46,6 +46,9 @@ public:
         if (formNouveauAttribut->objectName().isEmpty())
             formNouveauAttribut->setObjectName(QStringLiteral("formNouveauAttribut"));
         formNouveauAttribut->resize(400, 300);
+        QIcon icon;
+        icon.addFile(QStringLiteral("../d20.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        formNouveauAttribut->setWindowIcon(icon);
         gridLayout = new QGridLayout(formNouveauAttribut);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         horizontalLayout = new QHBoxLayout();
@@ -111,7 +114,7 @@ public:
 
     void retranslateUi(QDialog *formNouveauAttribut)
     {
-        formNouveauAttribut->setWindowTitle(QApplication::translate("formNouveauAttribut", "Dialog", 0));
+        formNouveauAttribut->setWindowTitle(QApplication::translate("formNouveauAttribut", "Cr\303\251ation d'attribut", 0));
         creerAttributButton->setText(QApplication::translate("formNouveauAttribut", "Valider", 0));
         retourButton->setText(QApplication::translate("formNouveauAttribut", "Annuler", 0));
         label->setText(QApplication::translate("formNouveauAttribut", "Nom :", 0));

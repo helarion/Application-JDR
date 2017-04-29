@@ -57,6 +57,9 @@ public:
         if (formNouveauJeu->objectName().isEmpty())
             formNouveauJeu->setObjectName(QStringLiteral("formNouveauJeu"));
         formNouveauJeu->resize(704, 475);
+        QIcon icon;
+        icon.addFile(QStringLiteral("../d20.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        formNouveauJeu->setWindowIcon(icon);
         gridLayout = new QGridLayout(formNouveauJeu);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         horizontalLayout_3 = new QHBoxLayout();
@@ -77,7 +80,7 @@ public:
         label_3 = new QLabel(formNouveauJeu);
         label_3->setObjectName(QStringLiteral("label_3"));
         QFont font;
-        font.setPointSize(14);
+        font.setPointSize(20);
         label_3->setFont(font);
         label_3->setAlignment(Qt::AlignCenter);
 
@@ -183,7 +186,7 @@ public:
 
     void retranslateUi(QDialog *formNouveauJeu)
     {
-        formNouveauJeu->setWindowTitle(QApplication::translate("formNouveauJeu", "Dialog", 0));
+        formNouveauJeu->setWindowTitle(QApplication::translate("formNouveauJeu", "Cr\303\251ation de jeu", 0));
         CreerJeu->setText(QApplication::translate("formNouveauJeu", "Creer", 0));
         AnnulerJeu->setText(QApplication::translate("formNouveauJeu", "Annuler", 0));
         label_3->setText(QApplication::translate("formNouveauJeu", "Nouveau Jeu :", 0));

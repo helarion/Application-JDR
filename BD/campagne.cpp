@@ -146,7 +146,7 @@ void Campagne::Load(QString fichier)
 
     jeu.Load(titreJeu);
 
-    qDebug() << titre << " Récupéré.";
+    //qDebug() << titre << " Récupéré.";
 
     file.close();
 }

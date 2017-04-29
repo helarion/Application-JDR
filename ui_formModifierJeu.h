@@ -58,6 +58,9 @@ public:
         if (formModifierJeu->objectName().isEmpty())
             formModifierJeu->setObjectName(QStringLiteral("formModifierJeu"));
         formModifierJeu->resize(763, 418);
+        QIcon icon;
+        icon.addFile(QStringLiteral("../d20.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        formModifierJeu->setWindowIcon(icon);
         verticalLayout_2 = new QVBoxLayout(formModifierJeu);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         label = new QLabel(formModifierJeu);

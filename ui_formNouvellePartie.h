@@ -162,7 +162,7 @@ public:
 
     void retranslateUi(QDialog *formNouvellePartie)
     {
-        formNouvellePartie->setWindowTitle(QApplication::translate("formNouvellePartie", "Dialog", 0));
+        formNouvellePartie->setWindowTitle(QApplication::translate("formNouvellePartie", "Cr\303\251ation de partie", 0));
         label->setText(QApplication::translate("formNouvellePartie", "Nouvelle Partie :", 0));
         label_3->setText(QApplication::translate("formNouvellePartie", "Nom :", 0));
         label_4->setText(QApplication::translate("formNouvellePartie", "Resum\303\251:", 0));

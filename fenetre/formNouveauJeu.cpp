@@ -87,9 +87,11 @@ void formNouveauJeu::on_parcourirButton_clicked()
 {
     QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"),"",tr("Images (*.png *.bmp *.jpg)"));
     ui->theme->setText(fileName);
-    ui->themeImage->setPixmap(fileName);
-    ui->themeImage->adjustSize();
-    ui->themeImage->setScaledContents(true);
+
+    QPixmap p(fileName);
+    int w = ui->themeImage->width();
+    int h = ui->themeImage->height();
+    ui->themeImage->setPixmap(p.scaled(w,h,Qt::KeepAspectRatio));
 }
 
 void formNouveauJeu::on_nouveauAttributButton_clicked()

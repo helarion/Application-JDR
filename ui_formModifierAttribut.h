@@ -47,6 +47,9 @@ public:
         if (formModifierAttribut->objectName().isEmpty())
             formModifierAttribut->setObjectName(QStringLiteral("formModifierAttribut"));
         formModifierAttribut->resize(400, 300);
+        QIcon icon;
+        icon.addFile(QStringLiteral("../d20.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        formModifierAttribut->setWindowIcon(icon);
         verticalLayout = new QVBoxLayout(formModifierAttribut);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         label_3 = new QLabel(formModifierAttribut);
@@ -117,7 +120,7 @@ public:
 
     void retranslateUi(QDialog *formModifierAttribut)
     {
-        formModifierAttribut->setWindowTitle(QApplication::translate("formModifierAttribut", "Dialog", 0));
+        formModifierAttribut->setWindowTitle(QApplication::translate("formModifierAttribut", "Modification d'attribut", 0));
         label_3->setText(QApplication::translate("formModifierAttribut", "Attributs", 0));
         label->setText(QApplication::translate("formModifierAttribut", "Nom :", 0));
         label_2->setText(QApplication::translate("formModifierAttribut", "Type d'attribut :", 0));

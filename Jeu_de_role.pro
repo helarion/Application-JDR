@@ -15,6 +15,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = Jeu_de_role
 DESTDIR = $$PWD
 
+RC_FILE = jdr.rc
+
 HEADERS += \
     ui_formModifierAttribut.h \
     ui_formModifierCampagne.h \

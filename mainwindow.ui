@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Jeu de role</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>d20.ico</normaloff>d20.ico</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_12">
@@ -25,7 +29,7 @@
     <item row="0" column="0">
      <widget class="QStackedWidget" name="contentStack">
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="MenuPrincipal">
        <layout class="QGridLayout" name="gridLayout_9">
@@ -90,61 +94,8 @@
        <layout class="QGridLayout" name="gridLayout_11">
         <item row="0" column="0">
          <widget class="QWidget" name="Jeu" native="true">
-          <layout class="QGridLayout" name="gridLayout_4">
-           <item row="2" column="1">
-            <layout class="QVBoxLayout" name="verticalLayout_2">
-             <item>
-              <widget class="QPushButton" name="selectionnerJeuButton">
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="text">
-                <string>Selectionner</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="modifierJeuButton">
-               <property name="text">
-                <string>Modifier</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="nouveauJeuButton">
-               <property name="text">
-                <string>Nouveau</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item row="2" column="0">
-            <widget class="QListWidget" name="listJeu"/>
-           </item>
-           <item row="2" column="2">
-            <widget class="QLabel" name="themeJeu">
-             <property name="minimumSize">
-              <size>
-               <width>300</width>
-               <height>300</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>300</width>
-               <height>300</height>
-              </size>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="0" colspan="2">
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
             <widget class="QLabel" name="label_2">
              <property name="font">
               <font>
@@ -159,6 +110,79 @@
              </property>
             </widget>
            </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QListWidget" name="listJeu">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>200</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>500</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_2">
+               <item>
+                <widget class="QLabel" name="themeJeu">
+                 <property name="minimumSize">
+                  <size>
+                   <width>300</width>
+                   <height>300</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>300</width>
+                   <height>300</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="selectionnerJeuButton">
+                 <property name="font">
+                  <font>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Selectionner</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="modifierJeuButton">
+                 <property name="text">
+                  <string>Modifier</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="nouveauJeuButton">
+                 <property name="text">
+                  <string>Nouveau</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
           </layout>
          </widget>
         </item>
@@ -170,13 +194,20 @@
          <widget class="QWidget" name="Campagne" native="true">
           <layout class="QGridLayout" name="test">
            <item row="2" column="0">
-            <widget class="QListWidget" name="listCampagne"/>
+            <widget class="QListWidget" name="listCampagne">
+             <property name="maximumSize">
+              <size>
+               <width>500</width>
+               <height>16777215</height>
+              </size>
+             </property>
+            </widget>
            </item>
            <item row="1" column="0" colspan="2">
             <widget class="QLabel" name="label_3">
              <property name="font">
               <font>
-               <pointsize>14</pointsize>
+               <pointsize>20</pointsize>
               </font>
              </property>
              <property name="text">
@@ -252,7 +283,14 @@
              </widget>
             </item>
             <item>
-             <widget class="QListWidget" name="listPartie"/>
+             <widget class="QListWidget" name="listPartie">
+              <property name="maximumSize">
+               <size>
+                <width>500</width>
+                <height>16777215</height>
+               </size>
+              </property>
+             </widget>
             </item>
             <item>
              <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -292,7 +330,14 @@
            </widget>
           </item>
           <item>
-           <widget class="QTextEdit" name="resumePartie"/>
+           <widget class="QTextEdit" name="resumePartie">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>300</height>
+             </size>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
@@ -507,7 +552,7 @@
      <x>0</x>
      <y>0</y>
      <width>795</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

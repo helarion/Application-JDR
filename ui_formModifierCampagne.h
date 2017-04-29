@@ -45,6 +45,9 @@ public:
         if (formModifierCampagne->objectName().isEmpty())
             formModifierCampagne->setObjectName(QStringLiteral("formModifierCampagne"));
         formModifierCampagne->resize(502, 397);
+        QIcon icon;
+        icon.addFile(QStringLiteral("../d20.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        formModifierCampagne->setWindowIcon(icon);
         verticalLayout_2 = new QVBoxLayout(formModifierCampagne);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         label = new QLabel(formModifierCampagne);
@@ -110,7 +113,7 @@ public:
 
     void retranslateUi(QDialog *formModifierCampagne)
     {
-        formModifierCampagne->setWindowTitle(QApplication::translate("formModifierCampagne", "Dialog", 0));
+        formModifierCampagne->setWindowTitle(QApplication::translate("formModifierCampagne", "Modification de campagne", 0));
         label->setText(QApplication::translate("formModifierCampagne", "Modifier Campagne:", 0));
         label_4->setText(QApplication::translate("formModifierCampagne", "Scenario:", 0));
         label_3->setText(QApplication::translate("formModifierCampagne", "Nom :", 0));

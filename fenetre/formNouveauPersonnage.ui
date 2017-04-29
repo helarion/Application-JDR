@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Création de personnage</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../d20.ico</normaloff>../d20.ico</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
@@ -209,7 +213,14 @@
         </widget>
        </item>
        <item>
-        <layout class="QGridLayout" name="competenceLayout"/>
+        <layout class="QGridLayout" name="competenceLayout">
+         <property name="sizeConstraint">
+          <enum>QLayout::SetMaximumSize</enum>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+        </layout>
        </item>
        <item>
         <widget class="Line" name="line_4">

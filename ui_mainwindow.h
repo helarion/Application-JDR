@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.1
+** Created by: Qt User Interface Compiler version 5.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -48,14 +48,15 @@ public:
     QWidget *Jeux;
     QGridLayout *gridLayout_11;
     QWidget *Jeu;
-    QGridLayout *gridLayout_4;
+    QVBoxLayout *verticalLayout_5;
+    QLabel *label_2;
+    QHBoxLayout *horizontalLayout_3;
+    QListWidget *listJeu;
     QVBoxLayout *verticalLayout_2;
+    QLabel *themeJeu;
     QPushButton *selectionnerJeuButton;
     QPushButton *modifierJeuButton;
     QPushButton *nouveauJeuButton;
-    QListWidget *listJeu;
-    QLabel *themeJeu;
-    QLabel *label_2;
     QWidget *Campagnes;
     QGridLayout *gridLayout_10;
     QWidget *Campagne;
@@ -127,6 +128,9 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(795, 492);
+        QIcon icon;
+        icon.addFile(QStringLiteral("d20.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        MainWindow->setWindowIcon(icon);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         gridLayout_12 = new QGridLayout(centralWidget);
@@ -199,19 +203,46 @@ public:
         gridLayout_11->setObjectName(QStringLiteral("gridLayout_11"));
         Jeu = new QWidget(Jeux);
         Jeu->setObjectName(QStringLiteral("Jeu"));
-        gridLayout_4 = new QGridLayout(Jeu);
-        gridLayout_4->setSpacing(6);
-        gridLayout_4->setContentsMargins(11, 11, 11, 11);
-        gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
+        verticalLayout_5 = new QVBoxLayout(Jeu);
+        verticalLayout_5->setSpacing(6);
+        verticalLayout_5->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
+        label_2 = new QLabel(Jeu);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        QFont font2;
+        font2.setPointSize(20);
+        label_2->setFont(font2);
+        label_2->setAlignment(Qt::AlignCenter);
+
+        verticalLayout_5->addWidget(label_2);
+
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setSpacing(6);
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        horizontalLayout_3->setContentsMargins(-1, 0, -1, -1);
+        listJeu = new QListWidget(Jeu);
+        listJeu->setObjectName(QStringLiteral("listJeu"));
+        listJeu->setMinimumSize(QSize(0, 200));
+        listJeu->setMaximumSize(QSize(500, 16777215));
+
+        horizontalLayout_3->addWidget(listJeu);
+
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        themeJeu = new QLabel(Jeu);
+        themeJeu->setObjectName(QStringLiteral("themeJeu"));
+        themeJeu->setMinimumSize(QSize(300, 300));
+        themeJeu->setMaximumSize(QSize(300, 300));
+
+        verticalLayout_2->addWidget(themeJeu);
+
         selectionnerJeuButton = new QPushButton(Jeu);
         selectionnerJeuButton->setObjectName(QStringLiteral("selectionnerJeuButton"));
-        QFont font2;
-        font2.setBold(true);
-        font2.setWeight(75);
-        selectionnerJeuButton->setFont(font2);
+        QFont font3;
+        font3.setBold(true);
+        font3.setWeight(75);
+        selectionnerJeuButton->setFont(font3);
 
         verticalLayout_2->addWidget(selectionnerJeuButton);
 
@@ -226,28 +257,10 @@ public:
         verticalLayout_2->addWidget(nouveauJeuButton);
 
 
-        gridLayout_4->addLayout(verticalLayout_2, 2, 1, 1, 1);
+        horizontalLayout_3->addLayout(verticalLayout_2);
 
-        listJeu = new QListWidget(Jeu);
-        listJeu->setObjectName(QStringLiteral("listJeu"));
 
-        gridLayout_4->addWidget(listJeu, 2, 0, 1, 1);
-
-        themeJeu = new QLabel(Jeu);
-        themeJeu->setObjectName(QStringLiteral("themeJeu"));
-        themeJeu->setMinimumSize(QSize(300, 300));
-        themeJeu->setMaximumSize(QSize(300, 300));
-
-        gridLayout_4->addWidget(themeJeu, 2, 2, 1, 1);
-
-        label_2 = new QLabel(Jeu);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        QFont font3;
-        font3.setPointSize(20);
-        label_2->setFont(font3);
-        label_2->setAlignment(Qt::AlignCenter);
-
-        gridLayout_4->addWidget(label_2, 0, 0, 1, 2);
+        verticalLayout_5->addLayout(horizontalLayout_3);
 
 
         gridLayout_11->addWidget(Jeu, 0, 0, 1, 1);
@@ -267,14 +280,13 @@ public:
         test->setObjectName(QStringLiteral("test"));
         listCampagne = new QListWidget(Campagne);
         listCampagne->setObjectName(QStringLiteral("listCampagne"));
+        listCampagne->setMaximumSize(QSize(500, 16777215));
 
         test->addWidget(listCampagne, 2, 0, 1, 1);
 
         label_3 = new QLabel(Campagne);
         label_3->setObjectName(QStringLiteral("label_3"));
-        QFont font4;
-        font4.setPointSize(14);
-        label_3->setFont(font4);
+        label_3->setFont(font2);
         label_3->setAlignment(Qt::AlignCenter);
 
         test->addWidget(label_3, 1, 0, 1, 2);
@@ -316,7 +328,7 @@ public:
         verticalLayout->setContentsMargins(-1, 0, -1, -1);
         label_4 = new QLabel(Parties);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setFont(font3);
+        label_4->setFont(font2);
 
         verticalLayout->addWidget(label_4, 0, Qt::AlignHCenter);
 
@@ -331,6 +343,7 @@ public:
 
         listPartie = new QListWidget(Parties);
         listPartie->setObjectName(QStringLiteral("listPartie"));
+        listPartie->setMaximumSize(QSize(500, 16777215));
 
         horizontalLayout_2->addWidget(listPartie);
 
@@ -366,6 +379,7 @@ public:
 
         resumePartie = new QTextEdit(Parties);
         resumePartie->setObjectName(QStringLiteral("resumePartie"));
+        resumePartie->setMinimumSize(QSize(0, 300));
 
         verticalLayout->addWidget(resumePartie);
 
@@ -575,7 +589,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 795, 21));
+        menuBar->setGeometry(QRect(0, 0, 795, 25));
         MainWindow->setMenuBar(menuBar);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
@@ -583,7 +597,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        contentStack->setCurrentIndex(0);
+        contentStack->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -591,46 +605,46 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
-        retourButton->setText(QApplication::translate("MainWindow", "Retour", Q_NULLPTR));
-        jeuButton->setText(QApplication::translate("MainWindow", "Jeux", Q_NULLPTR));
-        autreButton->setText(QApplication::translate("MainWindow", "Autre", Q_NULLPTR));
-        label->setText(QApplication::translate("MainWindow", "Gestionnaire de jeu de r\303\264le ", Q_NULLPTR));
-        selectionnerJeuButton->setText(QApplication::translate("MainWindow", "Selectionner", Q_NULLPTR));
-        modifierJeuButton->setText(QApplication::translate("MainWindow", "Modifier", Q_NULLPTR));
-        nouveauJeuButton->setText(QApplication::translate("MainWindow", "Nouveau", Q_NULLPTR));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Jeu de role", 0));
+        retourButton->setText(QApplication::translate("MainWindow", "Retour", 0));
+        jeuButton->setText(QApplication::translate("MainWindow", "Jeux", 0));
+        autreButton->setText(QApplication::translate("MainWindow", "Autre", 0));
+        label->setText(QApplication::translate("MainWindow", "Gestionnaire de jeu de r\303\264le ", 0));
+        label_2->setText(QApplication::translate("MainWindow", "S\303\251lectionner un jeu existant :", 0));
         themeJeu->setText(QString());
-        label_2->setText(QApplication::translate("MainWindow", "S\303\251lectionner un jeu existant :", Q_NULLPTR));
-        label_3->setText(QApplication::translate("MainWindow", "Campagne", Q_NULLPTR));
-        selectionnerCampagneButton->setText(QApplication::translate("MainWindow", "Selectionner", Q_NULLPTR));
-        modifierCampagneButton->setText(QApplication::translate("MainWindow", "Modifier", Q_NULLPTR));
-        nouveauCampagneButton->setText(QApplication::translate("MainWindow", "Nouveau", Q_NULLPTR));
-        label_4->setText(QApplication::translate("MainWindow", "Parties :", Q_NULLPTR));
-        label_6->setText(QApplication::translate("MainWindow", "Liste :", Q_NULLPTR));
-        selectionnerPartieButton->setText(QApplication::translate("MainWindow", "Selectionner", Q_NULLPTR));
-        modifierPartieButton->setText(QApplication::translate("MainWindow", "Modifier", Q_NULLPTR));
-        ajouterPartieButton->setText(QApplication::translate("MainWindow", "Ajouter", Q_NULLPTR));
-        label_5->setText(QApplication::translate("MainWindow", "Resum\303\251 :", Q_NULLPTR));
-        label_7->setText(QApplication::translate("MainWindow", "Joueur :", Q_NULLPTR));
-        label_23->setText(QApplication::translate("MainWindow", "Age :", Q_NULLPTR));
-        label_9->setText(QApplication::translate("MainWindow", "Pr\303\251nom :", Q_NULLPTR));
-        label_22->setText(QApplication::translate("MainWindow", "Race :", Q_NULLPTR));
-        label_20->setText(QApplication::translate("MainWindow", "Niveau :", Q_NULLPTR));
-        label_12->setText(QApplication::translate("MainWindow", "Nom :", Q_NULLPTR));
-        label_8->setText(QApplication::translate("MainWindow", "Classe :", Q_NULLPTR));
-        label_18->setText(QApplication::translate("MainWindow", "Sexe :", Q_NULLPTR));
-        label_24->setText(QApplication::translate("MainWindow", "______________________________________________________________________________", Q_NULLPTR));
-        SanteLabel->setText(QApplication::translate("MainWindow", "PV :", Q_NULLPTR));
-        label_16->setText(QApplication::translate("MainWindow", "/", Q_NULLPTR));
-        label_11->setText(QApplication::translate("MainWindow", "Comp\303\251tences :", Q_NULLPTR));
-        Attribut_1Label->setText(QApplication::translate("MainWindow", "Attribut 1", Q_NULLPTR));
-        Attribut_4Label->setText(QApplication::translate("MainWindow", "Attribut 4", Q_NULLPTR));
-        Attribut_2Label->setText(QApplication::translate("MainWindow", "Attribut 2 ", Q_NULLPTR));
-        Attribut_5Label->setText(QApplication::translate("MainWindow", "Attribut 5", Q_NULLPTR));
-        Attribut_3Label->setText(QApplication::translate("MainWindow", "Attribut 3", Q_NULLPTR));
-        Attribut_6Label->setText(QApplication::translate("MainWindow", "Attribut 6", Q_NULLPTR));
-        label_19->setText(QApplication::translate("MainWindow", "Descriptif :", Q_NULLPTR));
-        InventaireButton->setText(QApplication::translate("MainWindow", "Inventaire", Q_NULLPTR));
+        selectionnerJeuButton->setText(QApplication::translate("MainWindow", "Selectionner", 0));
+        modifierJeuButton->setText(QApplication::translate("MainWindow", "Modifier", 0));
+        nouveauJeuButton->setText(QApplication::translate("MainWindow", "Nouveau", 0));
+        label_3->setText(QApplication::translate("MainWindow", "Campagne", 0));
+        selectionnerCampagneButton->setText(QApplication::translate("MainWindow", "Selectionner", 0));
+        modifierCampagneButton->setText(QApplication::translate("MainWindow", "Modifier", 0));
+        nouveauCampagneButton->setText(QApplication::translate("MainWindow", "Nouveau", 0));
+        label_4->setText(QApplication::translate("MainWindow", "Parties :", 0));
+        label_6->setText(QApplication::translate("MainWindow", "Liste :", 0));
+        selectionnerPartieButton->setText(QApplication::translate("MainWindow", "Selectionner", 0));
+        modifierPartieButton->setText(QApplication::translate("MainWindow", "Modifier", 0));
+        ajouterPartieButton->setText(QApplication::translate("MainWindow", "Ajouter", 0));
+        label_5->setText(QApplication::translate("MainWindow", "Resum\303\251 :", 0));
+        label_7->setText(QApplication::translate("MainWindow", "Joueur :", 0));
+        label_23->setText(QApplication::translate("MainWindow", "Age :", 0));
+        label_9->setText(QApplication::translate("MainWindow", "Pr\303\251nom :", 0));
+        label_22->setText(QApplication::translate("MainWindow", "Race :", 0));
+        label_20->setText(QApplication::translate("MainWindow", "Niveau :", 0));
+        label_12->setText(QApplication::translate("MainWindow", "Nom :", 0));
+        label_8->setText(QApplication::translate("MainWindow", "Classe :", 0));
+        label_18->setText(QApplication::translate("MainWindow", "Sexe :", 0));
+        label_24->setText(QApplication::translate("MainWindow", "______________________________________________________________________________", 0));
+        SanteLabel->setText(QApplication::translate("MainWindow", "PV :", 0));
+        label_16->setText(QApplication::translate("MainWindow", "/", 0));
+        label_11->setText(QApplication::translate("MainWindow", "Comp\303\251tences :", 0));
+        Attribut_1Label->setText(QApplication::translate("MainWindow", "Attribut 1", 0));
+        Attribut_4Label->setText(QApplication::translate("MainWindow", "Attribut 4", 0));
+        Attribut_2Label->setText(QApplication::translate("MainWindow", "Attribut 2 ", 0));
+        Attribut_5Label->setText(QApplication::translate("MainWindow", "Attribut 5", 0));
+        Attribut_3Label->setText(QApplication::translate("MainWindow", "Attribut 3", 0));
+        Attribut_6Label->setText(QApplication::translate("MainWindow", "Attribut 6", 0));
+        label_19->setText(QApplication::translate("MainWindow", "Descriptif :", 0));
+        InventaireButton->setText(QApplication::translate("MainWindow", "Inventaire", 0));
     } // retranslateUi
 
 };

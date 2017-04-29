@@ -62,9 +62,10 @@ formModifierJeu::formModifierJeu(QWidget *parent) :
             ui->listAttributDisp->addItem(newItem);
         }
     }
-    ui->themeImage->setPixmap(QPixmap(listJeu[jeuSelect].getTheme()));
-    ui->themeImage->adjustSize();
-    ui->themeImage->setScaledContents(true);
+    QPixmap p(listJeu[jeuSelect].getTheme());
+    int w = ui->themeImage->width();
+    int h = ui->themeImage->height();
+    ui->themeImage->setPixmap(p.scaled(w,h,Qt::KeepAspectRatio));
 }
 
 formModifierJeu::~formModifierJeu()
@@ -139,9 +140,11 @@ void formModifierJeu::on_parcourirButton_clicked()
 {
     QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"),"",tr("Images (*.png *.bmp *.jpg)"));
     ui->theme->setText(fileName);
-    ui->themeImage->setPixmap(fileName);
-    ui->themeImage->adjustSize();
-    ui->themeImage->setScaledContents(true);
+
+    QPixmap p(fileName);
+    int w = ui->themeImage->width();
+    int h = ui->themeImage->height();
+    ui->themeImage->setPixmap(p.scaled(w,h,Qt::KeepAspectRatio));
 }
 
 void formModifierJeu::on_nouveauAttribut_clicked()

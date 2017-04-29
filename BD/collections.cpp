@@ -161,7 +161,6 @@ void remplirListAttribut()
             nom=list.at(0);
             Attribut a(nom);
             listAttribut.append(a);
-            //qDebug() << "FILE: " <<nom;
         }
     }
 }
@@ -180,7 +179,6 @@ void remplirListCampagne()
             nom=list.at(0);
             Campagne c(nom);
             listCampagne.append(c);
-            //qDebug() << "FILE: " <<nom;
         }
     }
 }
@@ -198,7 +196,6 @@ void remplirListPartie()
             nom=list.at(0);
             Partie p(nom);
             listPartie.append(p);
-            //qDebug() << "FILE: " <<nom;
         }
     }
 }

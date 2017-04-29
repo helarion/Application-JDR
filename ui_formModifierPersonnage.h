@@ -104,6 +104,9 @@ public:
         if (formModifierPersonnage->objectName().isEmpty())
             formModifierPersonnage->setObjectName(QStringLiteral("formModifierPersonnage"));
         formModifierPersonnage->resize(919, 548);
+        QIcon icon;
+        icon.addFile(QStringLiteral("../d20.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        formModifierPersonnage->setWindowIcon(icon);
         verticalLayout_3 = new QVBoxLayout(formModifierPersonnage);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         stackedWidget = new QStackedWidget(formModifierPersonnage);
@@ -407,7 +410,7 @@ public:
 
     void retranslateUi(QDialog *formModifierPersonnage)
     {
-        formModifierPersonnage->setWindowTitle(QApplication::translate("formModifierPersonnage", "Dialog", 0));
+        formModifierPersonnage->setWindowTitle(QApplication::translate("formModifierPersonnage", "Modification de personnage", 0));
         ImagePerosnnageLabel->setText(QString());
         label->setText(QApplication::translate("formModifierPersonnage", "Feuille de Personnage :", 0));
         label_12->setText(QApplication::translate("formModifierPersonnage", "Nom :", 0));

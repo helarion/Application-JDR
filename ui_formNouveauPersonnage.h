@@ -21,6 +21,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QTableView>
 #include <QtWidgets/QTextEdit>
@@ -65,6 +66,8 @@ public:
     QHBoxLayout *attributLayout;
     QFrame *line_3;
     QLabel *label_78;
+    QScrollArea *scrollArea;
+    QWidget *scrollAreaWidgetContents;
     QGridLayout *competenceLayout;
     QFrame *line_4;
     QVBoxLayout *verticalLayout_2;
@@ -106,6 +109,9 @@ public:
         if (formNouveauPersonnage->objectName().isEmpty())
             formNouveauPersonnage->setObjectName(QStringLiteral("formNouveauPersonnage"));
         formNouveauPersonnage->resize(756, 529);
+        QIcon icon;
+        icon.addFile(QStringLiteral("../d20.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        formNouveauPersonnage->setWindowIcon(icon);
         verticalLayout_3 = new QVBoxLayout(formNouveauPersonnage);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         stackedWidget = new QStackedWidget(formNouveauPersonnage);
@@ -274,8 +280,20 @@ public:
 
         verticalLayout->addWidget(label_78);
 
+        scrollArea = new QScrollArea(FeuillePersonnage_3);
+        scrollArea->setObjectName(QStringLiteral("scrollArea"));
+        scrollArea->setWidgetResizable(true);
+        scrollAreaWidgetContents = new QWidget();
+        scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 710, 66));
+        scrollArea->setWidget(scrollAreaWidgetContents);
+
+        verticalLayout->addWidget(scrollArea);
+
         competenceLayout = new QGridLayout();
         competenceLayout->setObjectName(QStringLiteral("competenceLayout"));
+        competenceLayout->setSizeConstraint(QLayout::SetMaximumSize);
+        competenceLayout->setContentsMargins(-1, 0, -1, -1);
 
         verticalLayout->addLayout(competenceLayout);
 
@@ -417,7 +435,7 @@ public:
 
     void retranslateUi(QDialog *formNouveauPersonnage)
     {
-        formNouveauPersonnage->setWindowTitle(QApplication::translate("formNouveauPersonnage", "Dialog", 0));
+        formNouveauPersonnage->setWindowTitle(QApplication::translate("formNouveauPersonnage", "Cr\303\251ation de personnage", 0));
         ImagePerosnnageLabel_3->setText(QString());
         label_67->setText(QApplication::translate("formNouveauPersonnage", "Feuille de Personnage :", 0));
         label_71->setText(QApplication::translate("formNouveauPersonnage", "Joueur :", 0));

@@ -23,12 +23,11 @@ formNouveauPersonnage::formNouveauPersonnage(QWidget *parent) :
 {
     ui->setupUi(this);
     Campagne ca=listCampagne[campagneSelect];
-    ca.afficher();
     Jeu je=ca.getJeu();
-    je.afficher();
     QVector<Attribut> attributs=je.getListAttribut();
-    //QVector<Attribut> attributs= listPartie[partieSelect].getCampagne().getJeu().getListAttribut();
-    qDebug() << "taille=" << attributs.size();
+    QScrollArea *scroll= new QScrollArea();
+    scroll->setWidget(this);
+    scroll->show();
     for(int i=0;i<attributs.size();i++)
     {
         QLabel *label = new QLabel;
@@ -57,7 +56,10 @@ formNouveauPersonnage::formNouveauPersonnage(QWidget *parent) :
         }
         else if(attributs[i].getType()==COMPETENCE) // Compétence
         {
+            int hauteur=height();
+            qDebug() << "hauteur" << hauteur;
             QLineEdit *edit= new QLineEdit;
+            edit->setMaximumWidth(50);
             ui->competenceLayout->addWidget(label);
             ui->competenceLayout->addWidget(edit);
         }
