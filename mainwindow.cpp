@@ -17,6 +17,7 @@
 #include "fenetre/formModifierAttribut.h"
 #include "fenetre/formNouvellePartie.h"
 #include "fenetre/formModifierPartie.h"
+#include "fenetre/formLecteurMusique.h"
 
 // Database
 #include "BD/jeu.h"
@@ -252,5 +253,8 @@ void MainWindow::on_selectionnerPartieButton_clicked()
 
 void MainWindow::on_autreButton_clicked()
 {
-    QMessageBox::information(this,tr("Prochainement !"),tr("Des nouveautés à venir !") );
+    //QMessageBox::information(this,tr("Prochainement !"),tr("Des nouveautés à venir !") );
+    formLecteurMusique formLecteurMusique;
+    formLecteurMusique.setModal(true);
+    formLecteurMusique.exec();
 }

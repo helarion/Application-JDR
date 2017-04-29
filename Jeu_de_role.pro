@@ -9,6 +9,7 @@ TEMPLATE = app
 QT += core gui
       core
       uitools
+QT += multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -54,7 +55,8 @@ HEADERS += \
     ui_formModifierJeu.h \
     fenetre/formModifierPartie.h \
     fenetre/formNouveauPersonnage.h \
-    fenetre/formModifierPersonnage.h
+    fenetre/formModifierPersonnage.h \
+    fenetre/formLecteurMusique.h
 
 FORMS += \
     mainwindow.ui \
@@ -67,7 +69,8 @@ FORMS += \
     fenetre/formModifierJeu.ui \
     fenetre/formModifierPartie.ui \
     fenetre/formNouveauPersonnage.ui \
-    fenetre/formModifierPersonnage.ui
+    fenetre/formModifierPersonnage.ui \
+    fenetre/formLecteurMusique.ui
 
 SOURCES += \
     main.cpp \
@@ -97,5 +100,6 @@ SOURCES += \
     BD/collections.cpp \
     fenetre/formModifierPartie.cpp \
     fenetre/formNouveauPersonnage.cpp \
-    fenetre/formModifierPersonnage.cpp
+    fenetre/formModifierPersonnage.cpp \
+    fenetre/formLecteurMusique.cpp
 
