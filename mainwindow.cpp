@@ -254,7 +254,8 @@ void MainWindow::on_selectionnerPartieButton_clicked()
 void MainWindow::on_autreButton_clicked()
 {
     //QMessageBox::information(this,tr("Prochainement !"),tr("Des nouveautés à venir !") );
-    formLecteurMusique formLecteurMusique;
-    formLecteurMusique.setModal(true);
-    formLecteurMusique.exec();
+    formLecteurMusique *form = new formLecteurMusique();
+    form->setAttribute(Qt::WA_DeleteOnClose);//we don't want memory leak
+    form->setModal(Qt::NonModal);
+    form->show();
 }

@@ -17,11 +17,12 @@ formLecteurMusique::formLecteurMusique(QWidget *parent) :
     ui(new Ui::formLecteurMusique)
 {
     ui->setupUi(this);
+    ui->listPlaylist->clear();
     player = new QMediaPlayer(this);
     playlist = new QMediaPlaylist;
+    playlist->setPlaybackMode(QMediaPlaylist::QMediaPlaylist::Random);
     connect(player,&QMediaPlayer::positionChanged,this, &formLecteurMusique::on_positionChanged);
     connect(player,&QMediaPlayer::positionChanged,this, &formLecteurMusique::on_DurationChanged);
-
     Load();
     connect(playlist,&QMediaPlaylist::currentMediaChanged,this,&formLecteurMusique::on_SongChanged);
 
@@ -35,6 +36,7 @@ formLecteurMusique::~formLecteurMusique()
 
 void formLecteurMusique::Load()
 {
+    ui->listPlaylist->clear();
     remplirListPlaylist();
     for(int i=0;i<listPlaylist.size();i++)
     {
@@ -88,8 +90,6 @@ void formLecteurMusique::on_SongChanged()
         playlist->setCurrentIndex(rand);
         }
      }
-
-
 }
 
 void formLecteurMusique::on_verticalSlider_sliderMoved(int position)
@@ -122,6 +122,7 @@ void formLecteurMusique::on_listPlaylist_itemDoubleClicked(QListWidgetItem *item
     {
         playlist->addMedia(QUrl(l[i]));
     }
+    playlist->setPlaybackMode(QMediaPlaylist::QMediaPlaylist::Random);
     player->setMedia(playlist);
     player->play();
 }
@@ -144,4 +145,5 @@ void formLecteurMusique::on_ajouterPlaylistButton_clicked()
     }
     Playlist p(nom,liste);
     p.Save();
+    Load();
 }

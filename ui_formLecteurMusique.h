@@ -63,6 +63,7 @@ public:
 
         listPlaylist = new QListWidget(formLecteurMusique);
         listPlaylist->setObjectName(QStringLiteral("listPlaylist"));
+        listPlaylist->setFont(font);
 
         verticalLayout->addWidget(listPlaylist);
 
