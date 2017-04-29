@@ -32,11 +32,25 @@ private slots:
 
     void on_modifierAttribut_clicked();
 
+    void on_listAttributSelect_itemSelectionChanged();
+
+    void on_listAttributDisp_itemSelectionChanged();
+
+    void on_listValeurSelect_itemSelectionChanged();
+
+    void on_listValeurDisp_itemSelectionChanged();
+
+    void on_listCompetenceSelect_itemSelectionChanged();
+
+    void on_listCompetenceDisp_itemSelectionChanged();
+
 signals:
     void listJeuChanged();
 
 private:
     Ui::formModifierJeu *ui;
+
+    void Load();
 };
 
 #endif // FORMMODIFIERJEU_H

@@ -127,3 +127,13 @@ formNouveauPersonnage::~formNouveauPersonnage()
 {
     delete ui;
 }
+
+void formNouveauPersonnage::on_InventaireButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+void formNouveauPersonnage::on_RetourButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}

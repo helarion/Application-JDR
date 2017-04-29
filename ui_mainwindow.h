@@ -127,7 +127,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(795, 492);
+        MainWindow->resize(795, 595);
         QIcon icon;
         icon.addFile(QStringLiteral("d20.ico"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
@@ -597,7 +597,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        contentStack->setCurrentIndex(3);
+        contentStack->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
