@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'formModifierPartie.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -161,16 +161,16 @@ public:
 
     void retranslateUi(QDialog *formModifierPartie)
     {
-        formModifierPartie->setWindowTitle(QApplication::translate("formModifierPartie", "Dialog", 0));
-        label->setText(QApplication::translate("formModifierPartie", "Modifier Partie :", 0));
-        modifierButton->setText(QApplication::translate("formModifierPartie", "Modifier", 0));
-        retourButton->setText(QApplication::translate("formModifierPartie", "Annuler", 0));
-        label_6->setText(QApplication::translate("formModifierPartie", "Personnages :", 0));
-        ajouterPersonnageButton->setText(QApplication::translate("formModifierPartie", "Ajouter", 0));
-        modifierPersonnageButton->setText(QApplication::translate("formModifierPartie", "Modifier", 0));
-        label_7->setText(QApplication::translate("formModifierPartie", "Nom :", 0));
-        label_8->setText(QApplication::translate("formModifierPartie", "Description :", 0));
-        label_9->setText(QApplication::translate("formModifierPartie", "Date :", 0));
+        formModifierPartie->setWindowTitle(QApplication::translate("formModifierPartie", "Dialog", Q_NULLPTR));
+        label->setText(QApplication::translate("formModifierPartie", "Modifier Partie :", Q_NULLPTR));
+        modifierButton->setText(QApplication::translate("formModifierPartie", "Modifier", Q_NULLPTR));
+        retourButton->setText(QApplication::translate("formModifierPartie", "Annuler", Q_NULLPTR));
+        label_6->setText(QApplication::translate("formModifierPartie", "Personnages :", Q_NULLPTR));
+        ajouterPersonnageButton->setText(QApplication::translate("formModifierPartie", "Ajouter", Q_NULLPTR));
+        modifierPersonnageButton->setText(QApplication::translate("formModifierPartie", "Modifier", Q_NULLPTR));
+        label_7->setText(QApplication::translate("formModifierPartie", "Nom :", Q_NULLPTR));
+        label_8->setText(QApplication::translate("formModifierPartie", "Description :", Q_NULLPTR));
+        label_9->setText(QApplication::translate("formModifierPartie", "Date :", Q_NULLPTR));
     } // retranslateUi
 
 };

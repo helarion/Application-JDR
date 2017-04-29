@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'formNouveauJeu.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -183,19 +183,19 @@ public:
 
     void retranslateUi(QDialog *formNouveauJeu)
     {
-        formNouveauJeu->setWindowTitle(QApplication::translate("formNouveauJeu", "Dialog", 0));
-        CreerJeu->setText(QApplication::translate("formNouveauJeu", "Creer", 0));
-        AnnulerJeu->setText(QApplication::translate("formNouveauJeu", "Annuler", 0));
-        label_3->setText(QApplication::translate("formNouveauJeu", "Nouveau Jeu :", 0));
+        formNouveauJeu->setWindowTitle(QApplication::translate("formNouveauJeu", "Dialog", Q_NULLPTR));
+        CreerJeu->setText(QApplication::translate("formNouveauJeu", "Creer", Q_NULLPTR));
+        AnnulerJeu->setText(QApplication::translate("formNouveauJeu", "Annuler", Q_NULLPTR));
+        label_3->setText(QApplication::translate("formNouveauJeu", "Nouveau Jeu :", Q_NULLPTR));
         themeImage->setText(QString());
-        label->setText(QApplication::translate("formNouveauJeu", "Nom du nouveau Jeu :", 0));
-        label_2->setText(QApplication::translate("formNouveauJeu", "Image th\303\250me :", 0));
-        parcourirButton->setText(QApplication::translate("formNouveauJeu", "Parcourir", 0));
-        label_4->setText(QApplication::translate("formNouveauJeu", "Attributs", 0));
-        ajouterButton->setText(QApplication::translate("formNouveauJeu", "<--", 0));
-        retirerButton->setText(QApplication::translate("formNouveauJeu", "-->", 0));
-        nouveauAttributButton->setText(QApplication::translate("formNouveauJeu", "Nouveau", 0));
-        modifierAttributButton->setText(QApplication::translate("formNouveauJeu", "Modifier", 0));
+        label->setText(QApplication::translate("formNouveauJeu", "Nom du nouveau Jeu :", Q_NULLPTR));
+        label_2->setText(QApplication::translate("formNouveauJeu", "Image th\303\250me :", Q_NULLPTR));
+        parcourirButton->setText(QApplication::translate("formNouveauJeu", "Parcourir", Q_NULLPTR));
+        label_4->setText(QApplication::translate("formNouveauJeu", "Attributs", Q_NULLPTR));
+        ajouterButton->setText(QApplication::translate("formNouveauJeu", "<--", Q_NULLPTR));
+        retirerButton->setText(QApplication::translate("formNouveauJeu", "-->", Q_NULLPTR));
+        nouveauAttributButton->setText(QApplication::translate("formNouveauJeu", "Nouveau", Q_NULLPTR));
+        modifierAttributButton->setText(QApplication::translate("formNouveauJeu", "Modifier", Q_NULLPTR));
     } // retranslateUi
 
 };

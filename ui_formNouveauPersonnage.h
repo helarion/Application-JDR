@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'formNouveauPersonnage.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -417,44 +417,44 @@ public:
 
     void retranslateUi(QDialog *formNouveauPersonnage)
     {
-        formNouveauPersonnage->setWindowTitle(QApplication::translate("formNouveauPersonnage", "Dialog", 0));
+        formNouveauPersonnage->setWindowTitle(QApplication::translate("formNouveauPersonnage", "Dialog", Q_NULLPTR));
         ImagePerosnnageLabel_3->setText(QString());
-        label_67->setText(QApplication::translate("formNouveauPersonnage", "Feuille de Personnage :", 0));
-        label_71->setText(QApplication::translate("formNouveauPersonnage", "Joueur :", 0));
-        label_68->setText(QApplication::translate("formNouveauPersonnage", "Nom :", 0));
-        label_69->setText(QApplication::translate("formNouveauPersonnage", "Pr\303\251nom :", 0));
-        label_70->setText(QApplication::translate("formNouveauPersonnage", "Age :", 0));
-        label_72->setText(QApplication::translate("formNouveauPersonnage", "Sexe :", 0));
-        label_73->setText(QApplication::translate("formNouveauPersonnage", "Race :", 0));
-        label_74->setText(QApplication::translate("formNouveauPersonnage", "Niveau :", 0));
-        label_75->setText(QApplication::translate("formNouveauPersonnage", "Classe :", 0));
-        label_76->setText(QApplication::translate("formNouveauPersonnage", "Valeurs", 0));
-        label_77->setText(QApplication::translate("formNouveauPersonnage", "Attributs", 0));
-        label_78->setText(QApplication::translate("formNouveauPersonnage", "Comp\303\251tences :", 0));
-        label_79->setText(QApplication::translate("formNouveauPersonnage", "Description / Background :", 0));
-        InventaireButton_3->setText(QApplication::translate("formNouveauPersonnage", "Inventaire", 0));
-        retourButton_3->setText(QApplication::translate("formNouveauPersonnage", "Retour", 0));
-        label_80->setText(QApplication::translate("formNouveauPersonnage", "Autres :", 0));
-        label_81->setText(QApplication::translate("formNouveauPersonnage", "Encombrement :", 0));
-        label_82->setText(QApplication::translate("formNouveauPersonnage", "Poids", 0));
-        label_83->setText(QApplication::translate("formNouveauPersonnage", "D\303\251gats", 0));
-        label_84->setText(QApplication::translate("formNouveauPersonnage", "Poids", 0));
-        label_85->setText(QApplication::translate("formNouveauPersonnage", "Usure", 0));
-        label_86->setText(QApplication::translate("formNouveauPersonnage", "Usure", 0));
-        label_87->setText(QApplication::translate("formNouveauPersonnage", "Armes :", 0));
-        label_88->setText(QApplication::translate("formNouveauPersonnage", "Nom", 0));
-        label_89->setText(QApplication::translate("formNouveauPersonnage", "/", 0));
-        label_90->setText(QApplication::translate("formNouveauPersonnage", "Protection", 0));
-        label_91->setText(QApplication::translate("formNouveauPersonnage", "Qt\303\251", 0));
-        label_92->setText(QApplication::translate("formNouveauPersonnage", "Armures :", 0));
-        label_93->setText(QApplication::translate("formNouveauPersonnage", "Usage", 0));
-        label_94->setText(QApplication::translate("formNouveauPersonnage", "Argent :", 0));
-        label_95->setText(QApplication::translate("formNouveauPersonnage", "Valeur", 0));
-        label_96->setText(QApplication::translate("formNouveauPersonnage", "Nom ", 0));
-        label_97->setText(QApplication::translate("formNouveauPersonnage", "Nom", 0));
-        label_98->setText(QApplication::translate("formNouveauPersonnage", "Poids", 0));
-        label_99->setText(QApplication::translate("formNouveauPersonnage", "Inventaire", 0));
-        RetourButton_3->setText(QApplication::translate("formNouveauPersonnage", "Retour", 0));
+        label_67->setText(QApplication::translate("formNouveauPersonnage", "Feuille de Personnage :", Q_NULLPTR));
+        label_71->setText(QApplication::translate("formNouveauPersonnage", "Joueur :", Q_NULLPTR));
+        label_68->setText(QApplication::translate("formNouveauPersonnage", "Nom :", Q_NULLPTR));
+        label_69->setText(QApplication::translate("formNouveauPersonnage", "Pr\303\251nom :", Q_NULLPTR));
+        label_70->setText(QApplication::translate("formNouveauPersonnage", "Age :", Q_NULLPTR));
+        label_72->setText(QApplication::translate("formNouveauPersonnage", "Sexe :", Q_NULLPTR));
+        label_73->setText(QApplication::translate("formNouveauPersonnage", "Race :", Q_NULLPTR));
+        label_74->setText(QApplication::translate("formNouveauPersonnage", "Niveau :", Q_NULLPTR));
+        label_75->setText(QApplication::translate("formNouveauPersonnage", "Classe :", Q_NULLPTR));
+        label_76->setText(QApplication::translate("formNouveauPersonnage", "Valeurs", Q_NULLPTR));
+        label_77->setText(QApplication::translate("formNouveauPersonnage", "Attributs", Q_NULLPTR));
+        label_78->setText(QApplication::translate("formNouveauPersonnage", "Comp\303\251tences :", Q_NULLPTR));
+        label_79->setText(QApplication::translate("formNouveauPersonnage", "Description / Background :", Q_NULLPTR));
+        InventaireButton_3->setText(QApplication::translate("formNouveauPersonnage", "Inventaire", Q_NULLPTR));
+        retourButton_3->setText(QApplication::translate("formNouveauPersonnage", "Retour", Q_NULLPTR));
+        label_80->setText(QApplication::translate("formNouveauPersonnage", "Autres :", Q_NULLPTR));
+        label_81->setText(QApplication::translate("formNouveauPersonnage", "Encombrement :", Q_NULLPTR));
+        label_82->setText(QApplication::translate("formNouveauPersonnage", "Poids", Q_NULLPTR));
+        label_83->setText(QApplication::translate("formNouveauPersonnage", "D\303\251gats", Q_NULLPTR));
+        label_84->setText(QApplication::translate("formNouveauPersonnage", "Poids", Q_NULLPTR));
+        label_85->setText(QApplication::translate("formNouveauPersonnage", "Usure", Q_NULLPTR));
+        label_86->setText(QApplication::translate("formNouveauPersonnage", "Usure", Q_NULLPTR));
+        label_87->setText(QApplication::translate("formNouveauPersonnage", "Armes :", Q_NULLPTR));
+        label_88->setText(QApplication::translate("formNouveauPersonnage", "Nom", Q_NULLPTR));
+        label_89->setText(QApplication::translate("formNouveauPersonnage", "/", Q_NULLPTR));
+        label_90->setText(QApplication::translate("formNouveauPersonnage", "Protection", Q_NULLPTR));
+        label_91->setText(QApplication::translate("formNouveauPersonnage", "Qt\303\251", Q_NULLPTR));
+        label_92->setText(QApplication::translate("formNouveauPersonnage", "Armures :", Q_NULLPTR));
+        label_93->setText(QApplication::translate("formNouveauPersonnage", "Usage", Q_NULLPTR));
+        label_94->setText(QApplication::translate("formNouveauPersonnage", "Argent :", Q_NULLPTR));
+        label_95->setText(QApplication::translate("formNouveauPersonnage", "Valeur", Q_NULLPTR));
+        label_96->setText(QApplication::translate("formNouveauPersonnage", "Nom ", Q_NULLPTR));
+        label_97->setText(QApplication::translate("formNouveauPersonnage", "Nom", Q_NULLPTR));
+        label_98->setText(QApplication::translate("formNouveauPersonnage", "Poids", Q_NULLPTR));
+        label_99->setText(QApplication::translate("formNouveauPersonnage", "Inventaire", Q_NULLPTR));
+        RetourButton_3->setText(QApplication::translate("formNouveauPersonnage", "Retour", Q_NULLPTR));
     } // retranslateUi
 
 };

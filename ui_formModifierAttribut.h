@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'formModifierAttribut.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -117,14 +117,14 @@ public:
 
     void retranslateUi(QDialog *formModifierAttribut)
     {
-        formModifierAttribut->setWindowTitle(QApplication::translate("formModifierAttribut", "Dialog", 0));
-        label_3->setText(QApplication::translate("formModifierAttribut", "Attributs", 0));
-        label->setText(QApplication::translate("formModifierAttribut", "Nom :", 0));
-        label_2->setText(QApplication::translate("formModifierAttribut", "Type d'attribut :", 0));
-        presetCheck->setText(QApplication::translate("formModifierAttribut", "Preset", 0));
-        modifierAttributButton->setText(QApplication::translate("formModifierAttribut", "Modifier", 0));
-        supprimerButton->setText(QApplication::translate("formModifierAttribut", "Supprimer", 0));
-        retourButton->setText(QApplication::translate("formModifierAttribut", "Annuler", 0));
+        formModifierAttribut->setWindowTitle(QApplication::translate("formModifierAttribut", "Dialog", Q_NULLPTR));
+        label_3->setText(QApplication::translate("formModifierAttribut", "Attributs", Q_NULLPTR));
+        label->setText(QApplication::translate("formModifierAttribut", "Nom :", Q_NULLPTR));
+        label_2->setText(QApplication::translate("formModifierAttribut", "Type d'attribut :", Q_NULLPTR));
+        presetCheck->setText(QApplication::translate("formModifierAttribut", "Preset", Q_NULLPTR));
+        modifierAttributButton->setText(QApplication::translate("formModifierAttribut", "Modifier", Q_NULLPTR));
+        supprimerButton->setText(QApplication::translate("formModifierAttribut", "Supprimer", Q_NULLPTR));
+        retourButton->setText(QApplication::translate("formModifierAttribut", "Annuler", Q_NULLPTR));
     } // retranslateUi
 
 };
