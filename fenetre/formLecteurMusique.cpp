@@ -1,11 +1,13 @@
 #include "formLecteurMusique.h"
 #include "ui_formLecteurMusique.h"
+
 #include <QSound>
 #include <QMediaPlayer.h>
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QMediaPlaylist>
 
+#include "BD/playlist.h"
 
 formLecteurMusique::formLecteurMusique(QWidget *parent) :
     QDialog(parent),
@@ -52,16 +54,13 @@ void formLecteurMusique::on_OuvrirButton_clicked()
     QList<QMediaContent> content;
     for(const QString& f:files)
     {
-    content.push_back(QUrl::fromLocalFile(dir.path()+"/" + f));
-    QFileInfo fi(f);
-    ui->listWidget->addItem(fi.fileName());
+        content.push_back(QUrl::fromLocalFile(dir.path()+"/" + f));
+        QFileInfo fi(f);
+        //ui->listWidget->addItem(fi.fileName());
     }
-    ui->listWidget->setCurrentRow(playlist->currentIndex() != -1? playlist->currentIndex():0);
+    //ui->listWidget->setCurrentRow(playlist->currentIndex() != -1? playlist->currentIndex():0);
     playlist->addMedia(content);
 }
-
-
-
 
 void formLecteurMusique::on_StopButton_clicked()
 {

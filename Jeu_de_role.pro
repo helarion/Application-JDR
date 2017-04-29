@@ -56,7 +56,8 @@ HEADERS += \
     fenetre/formModifierPartie.h \
     fenetre/formNouveauPersonnage.h \
     fenetre/formModifierPersonnage.h \
-    fenetre/formLecteurMusique.h
+    fenetre/formLecteurMusique.h \
+    BD/playlist.h
 
 FORMS += \
     mainwindow.ui \
@@ -101,5 +102,6 @@ SOURCES += \
     fenetre/formModifierPartie.cpp \
     fenetre/formNouveauPersonnage.cpp \
     fenetre/formModifierPersonnage.cpp \
-    fenetre/formLecteurMusique.cpp
+    fenetre/formLecteurMusique.cpp \
+    BD/playlist.cpp
 
