@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'formLecteurMusique.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.1
+** Created by: Qt User Interface Compiler version 5.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -91,12 +91,12 @@ public:
 
     void retranslateUi(QDialog *formLecteurMusique)
     {
-        formLecteurMusique->setWindowTitle(QApplication::translate("formLecteurMusique", "Dialog", Q_NULLPTR));
-        label->setText(QApplication::translate("formLecteurMusique", "Lecteur de son", Q_NULLPTR));
-        OuvrirButton->setText(QApplication::translate("formLecteurMusique", "Ouvrir", Q_NULLPTR));
-        PlayButton->setText(QApplication::translate("formLecteurMusique", "Play", Q_NULLPTR));
-        PauseButton->setText(QApplication::translate("formLecteurMusique", "Pause", Q_NULLPTR));
-        StopButton->setText(QApplication::translate("formLecteurMusique", "Stop", Q_NULLPTR));
+        formLecteurMusique->setWindowTitle(QApplication::translate("formLecteurMusique", "Dialog", 0));
+        label->setText(QApplication::translate("formLecteurMusique", "Lecteur de son", 0));
+        OuvrirButton->setText(QApplication::translate("formLecteurMusique", "Ouvrir", 0));
+        PlayButton->setText(QApplication::translate("formLecteurMusique", "Play", 0));
+        PauseButton->setText(QApplication::translate("formLecteurMusique", "Pause", 0));
+        StopButton->setText(QApplication::translate("formLecteurMusique", "Stop", 0));
     } // retranslateUi
 
 };

@@ -5,6 +5,7 @@
 
 #include <QDebug>
 #include <Qlabel>
+#include <QScrollArea>
 #include <QLineEdit>
 
 #include "formNouveauPersonnage.h"
@@ -25,9 +26,46 @@ formNouveauPersonnage::formNouveauPersonnage(QWidget *parent) :
     Campagne ca=listCampagne[campagneSelect];
     Jeu je=ca.getJeu();
     QVector<Attribut> attributs=je.getListAttribut();
-    QScrollArea *scroll= new QScrollArea();
-    scroll->setWidget(this);
-    scroll->show();
+
+    //comptage
+    int nbAttribut=0;
+    int nbValeur=0;
+    int nbCompetence=0;
+    for(int i=0;i<attributs.size();i++)
+    {
+        if(attributs[i].getType()==ATTRIBUT) // Attribut
+        {
+            nbAttribut++;
+        }
+        else if(attributs[i].getType()==VALEUR) // Valeur
+        {
+            nbValeur++;
+        }
+        else if(attributs[i].getType()==COMPETENCE) // Compétence
+        {
+            nbCompetence++;
+        }
+    }
+
+    QVBoxLayout *layout1 = new QVBoxLayout;
+    QVBoxLayout *layout2 = new QVBoxLayout;
+    QVBoxLayout *layout3 = new QVBoxLayout;
+    QVBoxLayout *layout4 = new QVBoxLayout;
+
+    int modulo = nbCompetence/4;
+
+    ui->competenceLayout->addLayout(layout1);
+    ui->competenceLayout->addLayout(layout2);
+    ui->competenceLayout->addLayout(layout3);
+    ui->competenceLayout->addLayout(layout4);
+
+    /*QScrollArea *scroll= new QScrollArea();
+    scroll->setWidgetResizable(true);
+    scroll->setWidget(ui->FeuillePersonnage);
+    scroll->setLayout(ui->competenceLayout);
+    scroll->show();*/
+
+    int indexCompetence=0;
     for(int i=0;i<attributs.size();i++)
     {
         QLabel *label = new QLabel;
@@ -49,6 +87,8 @@ formNouveauPersonnage::formNouveauPersonnage(QWidget *parent) :
             label->setWordWrap(true);
             label2->setText("/");
             QLineEdit *edit2= new QLineEdit;
+            edit1->setMaximumWidth(50);
+            edit2->setMaximumWidth(50);
             ui->valeurLayout->addWidget(label);
             ui->valeurLayout->addWidget(edit1);
             ui->valeurLayout->addWidget(label2);
@@ -56,12 +96,29 @@ formNouveauPersonnage::formNouveauPersonnage(QWidget *parent) :
         }
         else if(attributs[i].getType()==COMPETENCE) // Compétence
         {
-            int hauteur=height();
-            qDebug() << "hauteur" << hauteur;
             QLineEdit *edit= new QLineEdit;
             edit->setMaximumWidth(50);
-            ui->competenceLayout->addWidget(label);
-            ui->competenceLayout->addWidget(edit);
+            if(indexCompetence <= modulo*1)
+            {
+                layout1->addWidget(label);
+                layout1->addWidget(edit);
+            }
+            else if(indexCompetence > modulo*1 && indexCompetence <= modulo*2)
+            {
+                layout2->addWidget(label);
+                layout2->addWidget(edit);
+            }
+            else if(indexCompetence > modulo*2 && indexCompetence <= modulo*3)
+            {
+                layout3->addWidget(label);
+                layout3->addWidget(edit);
+            }
+            else if(indexCompetence > modulo*3 && indexCompetence <=  modulo*4)
+            {
+                layout4->addWidget(label);
+                layout4->addWidget(edit);
+            }
+            indexCompetence++;
         }
     }
 }
