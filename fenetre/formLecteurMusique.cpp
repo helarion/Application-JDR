@@ -146,4 +146,23 @@ void formLecteurMusique::on_ajouterPlaylistButton_clicked()
     Playlist p(nom,liste);
     p.Save();
     Load();
+
+    ///////////////Version sans BD ////////////////////////
+    /*
+    QString directory = QFileDialog::getExistingDirectory(this,tr("Selectionner un dossier :"));
+       if(directory.isEmpty()){
+           return;}
+
+       QDir dir(directory);
+       QStringList files = dir.entryList(QStringList() << "*.mp3",QDir::Files);
+
+       QVector<QString> liste;
+       foreach(QString itm, files){
+           liste.append(QUrl(dir.path()+"/"+itm).toString());
+           //qDebug() << QUrl(dir.path()+"/"+itm);
+           playlist->addMedia(QUrl(dir.path()+"/"+itm));
+           player->setMedia(playlist);
+       }
+        */
+       ////////////////////////////////////////////////////////
 }
