@@ -35,6 +35,10 @@ public:
     QPushButton *PlayButton;
     QPushButton *PauseButton;
     QPushButton *StopButton;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout_2;
+    QPushButton *PreviousButton;
+    QPushButton *NextButton;
 
     void setupUi(QDialog *formLecteurMusique)
     {
@@ -83,6 +87,22 @@ public:
 
         horizontalLayout->addWidget(StopButton);
 
+        widget = new QWidget(formLecteurMusique);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(140, 130, 158, 25));
+        horizontalLayout_2 = new QHBoxLayout(widget);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
+        PreviousButton = new QPushButton(widget);
+        PreviousButton->setObjectName(QStringLiteral("PreviousButton"));
+
+        horizontalLayout_2->addWidget(PreviousButton);
+
+        NextButton = new QPushButton(widget);
+        NextButton->setObjectName(QStringLiteral("NextButton"));
+
+        horizontalLayout_2->addWidget(NextButton);
+
 
         retranslateUi(formLecteurMusique);
 
@@ -97,6 +117,8 @@ public:
         PlayButton->setText(QApplication::translate("formLecteurMusique", "Play", Q_NULLPTR));
         PauseButton->setText(QApplication::translate("formLecteurMusique", "Pause", Q_NULLPTR));
         StopButton->setText(QApplication::translate("formLecteurMusique", "Stop", Q_NULLPTR));
+        PreviousButton->setText(QApplication::translate("formLecteurMusique", "<--", Q_NULLPTR));
+        NextButton->setText(QApplication::translate("formLecteurMusique", "-->", Q_NULLPTR));
     } // retranslateUi
 
 };

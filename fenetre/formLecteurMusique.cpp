@@ -41,9 +41,6 @@ void formLecteurMusique::on_PlayButton_clicked()
 
 void formLecteurMusique::on_OuvrirButton_clicked()
 {
-    /*QString fichier = QFileDialog::getOpenFileName(this,"Selectionner la musique :");
-    qDebug() << player->errorString();
-    player->setMedia(QUrl::fromLocalFile(fichier));*/
 
     QString directory = QFileDialog::getExistingDirectory(this,tr("Selectionner un dossier :"));
     if(directory.isEmpty()){
@@ -51,20 +48,20 @@ void formLecteurMusique::on_OuvrirButton_clicked()
 
     QDir dir(directory);
     QStringList files = dir.entryList(QStringList() << "*.mp3",QDir::Files);
-    QList<QMediaContent> content;
-    for(const QString& f:files)
-    {
-        content.push_back(QUrl::fromLocalFile(dir.path()+"/" + f));
-        QFileInfo fi(f);
-        //ui->listWidget->addItem(fi.fileName());
+
+    foreach(QString itm, files){
+
+        //qDebug() << QUrl(dir.path()+"/"+itm);
+        playlist->addMedia(QUrl(dir.path()+"/"+itm));
+        player->setMedia(playlist);
     }
-    //ui->listWidget->setCurrentRow(playlist->currentIndex() != -1? playlist->currentIndex():0);
-    playlist->addMedia(content);
+
 }
 
 void formLecteurMusique::on_StopButton_clicked()
 {
     player->stop();
+    playlist->setCurrentIndex(0);
 }
 
 void formLecteurMusique::on_ProgressSlider_sliderMoved(int position)
@@ -85,4 +82,18 @@ void formLecteurMusique::on_positionChanged(qint64 position)
 void formLecteurMusique::on_verticalSlider_sliderMoved(int position)
 {
     player->setVolume(position);
+}
+
+void formLecteurMusique::on_PreviousButton_clicked()
+{
+    playlist->previous();
+    player->stop();
+    player->play();
+}
+
+void formLecteurMusique::on_NextButton_clicked()
+{
+    playlist->next();
+    player->stop();
+    player->play();
 }

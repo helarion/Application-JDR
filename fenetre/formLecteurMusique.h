@@ -36,6 +36,10 @@ private slots:
 
     void on_verticalSlider_sliderMoved(int position);
 
+    void on_PreviousButton_clicked();
+
+    void on_NextButton_clicked();
+
 private:
     Ui::formLecteurMusique *ui;
     QMediaPlayer* player;
