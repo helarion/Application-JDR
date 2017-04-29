@@ -202,20 +202,21 @@ Makefile: Jeu_de_role.pro "C:\Program Files (x86)\Qt\5.7\msvc2015_64\mkspecs\win
 		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\mkspecs\features\qt.prf" \
 		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\mkspecs\features\resources.prf" \
 		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\mkspecs\features\moc.prf" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\mkspecs\features\testlib_defines.prf" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\mkspecs\features\win32\console.prf" \
 		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\mkspecs\features\win32\opengl.prf" \
 		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\mkspecs\features\uic.prf" \
 		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\mkspecs\features\file_copies.prf" \
-		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\mkspecs\features\win32\windows.prf" \
 		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\mkspecs\features\testcase_targets.prf" \
 		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\mkspecs\features\exceptions.prf" \
 		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\mkspecs\features\yacc.prf" \
 		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\mkspecs\features\lex.prf" \
 		Jeu_de_role.pro \
-		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\lib\qtmaind.prl" \
 		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\lib\Qt5Multimedia.prl" \
 		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\lib\Qt5Widgets.prl" \
 		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\lib\Qt5Gui.prl" \
 		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\lib\Qt5Network.prl" \
+		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\lib\Qt5Test.prl" \
 		"C:\Program Files (x86)\Qt\5.7\msvc2015_64\lib\Qt5Core.prl"
 	$(QMAKE) -spec win32-msvc2015 "CONFIG+=debug" "CONFIG+=qml_debug" -o Makefile Jeu_de_role.pro
 "C:\Program Files (x86)\Qt\5.7\msvc2015_64\mkspecs\features\spec_pre.prf":
@@ -347,20 +348,21 @@ Makefile: Jeu_de_role.pro "C:\Program Files (x86)\Qt\5.7\msvc2015_64\mkspecs\win
 "C:\Program Files (x86)\Qt\5.7\msvc2015_64\mkspecs\features\qt.prf":
 "C:\Program Files (x86)\Qt\5.7\msvc2015_64\mkspecs\features\resources.prf":
 "C:\Program Files (x86)\Qt\5.7\msvc2015_64\mkspecs\features\moc.prf":
+"C:\Program Files (x86)\Qt\5.7\msvc2015_64\mkspecs\features\testlib_defines.prf":
+"C:\Program Files (x86)\Qt\5.7\msvc2015_64\mkspecs\features\win32\console.prf":
 "C:\Program Files (x86)\Qt\5.7\msvc2015_64\mkspecs\features\win32\opengl.prf":
 "C:\Program Files (x86)\Qt\5.7\msvc2015_64\mkspecs\features\uic.prf":
 "C:\Program Files (x86)\Qt\5.7\msvc2015_64\mkspecs\features\file_copies.prf":
-"C:\Program Files (x86)\Qt\5.7\msvc2015_64\mkspecs\features\win32\windows.prf":
 "C:\Program Files (x86)\Qt\5.7\msvc2015_64\mkspecs\features\testcase_targets.prf":
 "C:\Program Files (x86)\Qt\5.7\msvc2015_64\mkspecs\features\exceptions.prf":
 "C:\Program Files (x86)\Qt\5.7\msvc2015_64\mkspecs\features\yacc.prf":
 "C:\Program Files (x86)\Qt\5.7\msvc2015_64\mkspecs\features\lex.prf":
 Jeu_de_role.pro:
-"C:\Program Files (x86)\Qt\5.7\msvc2015_64\lib\qtmaind.prl":
 "C:\Program Files (x86)\Qt\5.7\msvc2015_64\lib\Qt5Multimedia.prl":
 "C:\Program Files (x86)\Qt\5.7\msvc2015_64\lib\Qt5Widgets.prl":
 "C:\Program Files (x86)\Qt\5.7\msvc2015_64\lib\Qt5Gui.prl":
 "C:\Program Files (x86)\Qt\5.7\msvc2015_64\lib\Qt5Network.prl":
+"C:\Program Files (x86)\Qt\5.7\msvc2015_64\lib\Qt5Test.prl":
 "C:\Program Files (x86)\Qt\5.7\msvc2015_64\lib\Qt5Core.prl":
 qmake: FORCE
 	@$(QMAKE) -spec win32-msvc2015 "CONFIG+=debug" "CONFIG+=qml_debug" -o Makefile Jeu_de_role.pro
