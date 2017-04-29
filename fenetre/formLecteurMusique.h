@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QMediaPlayer>
+#include <QListWidgetItem>
 
 namespace Ui {
 class formLecteurMusique;
@@ -22,9 +23,9 @@ private slots:
 
     void on_PlayButton_clicked();
 
-    void on_OuvrirButton_clicked();
-
     void on_StopButton_clicked();
+
+    void Load();
 
     void on_ProgressSlider_sliderMoved(int position);
 
@@ -32,13 +33,15 @@ private slots:
 
     void on_positionChanged(qint64 position);
 
-
-
     void on_verticalSlider_sliderMoved(int position);
 
     void on_PreviousButton_clicked();
 
     void on_NextButton_clicked();
+
+    void on_listPlaylist_itemDoubleClicked(QListWidgetItem *item);
+
+    void on_ajouterPlaylistButton_clicked();
 
 private:
     Ui::formLecteurMusique *ui;

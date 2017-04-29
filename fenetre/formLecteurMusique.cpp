@@ -20,12 +20,25 @@ formLecteurMusique::formLecteurMusique(QWidget *parent) :
     connect(player,&QMediaPlayer::positionChanged,this, &formLecteurMusique::on_positionChanged);
     connect(player,&QMediaPlayer::positionChanged,this, &formLecteurMusique::on_DurationChanged);
 
-
+    Load();
 }
 
 formLecteurMusique::~formLecteurMusique()
 {
     delete ui;
+}
+
+void formLecteurMusique::Load()
+{
+    remplirListPlaylist();
+    for(int i=0;i<listPlaylist.size();i++)
+    {
+        QListWidgetItem *newItem = new QListWidgetItem;
+        newItem->setData(Qt::UserRole,i);
+        // le nom de l'objet comme text affiché
+        newItem->setText(listPlaylist[i].getNom());
+        ui->listPlaylist->addItem(newItem);
+    }
 }
 
 void formLecteurMusique::on_PauseButton_clicked()
@@ -36,29 +49,6 @@ void formLecteurMusique::on_PauseButton_clicked()
 void formLecteurMusique::on_PlayButton_clicked()
 {
     player->play();
-}
-
-
-
-void formLecteurMusique::on_OuvrirButton_clicked()
-{
-
-    QString directory = QFileDialog::getExistingDirectory(this,tr("Selectionner un dossier :"));
-    if(directory.isEmpty()){
-        return;}
-
-    QDir dir(directory);
-    QStringList files = dir.entryList(QStringList() << "*.mp3",QDir::Files);
-
-    QVector<QString> liste;
-    foreach(QString itm, files){
-        liste.append(QUrl(dir.path()+"/"+itm).toString());
-        //qDebug() << QUrl(dir.path()+"/"+itm);
-        playlist->addMedia(QUrl(dir.path()+"/"+itm));
-        player->setMedia(playlist);
-    }
-    Playlist p("test",liste);
-    p.Save();
 }
 
 void formLecteurMusique::on_StopButton_clicked()
@@ -99,4 +89,39 @@ void formLecteurMusique::on_NextButton_clicked()
     playlist->next();
     player->stop();
     player->play();
+}
+
+void formLecteurMusique::on_listPlaylist_itemDoubleClicked(QListWidgetItem *item)
+{
+    player->stop();
+    int index=item->data(Qt::UserRole).toInt();
+    qDebug() << "test";
+    playlist->clear();
+    QVector<QString> l=listPlaylist[index].getListe();
+    for(int i=0;i<l.size();i++)
+    {
+        playlist->addMedia(QUrl(l[i]));
+    }
+    player->setMedia(playlist);
+    player->play();
+}
+
+void formLecteurMusique::on_ajouterPlaylistButton_clicked()
+{
+    QString directory = QFileDialog::getExistingDirectory(this,tr("Selectionner un dossier :"));
+    if(directory.isEmpty()){
+        return;}
+
+    QDir dir(directory);
+    QStringList splitString = dir.absolutePath().split("/");
+    QString nom = splitString[splitString.size()-1];
+    QStringList files = dir.entryList(QStringList() << "*.mp3",QDir::Files);
+
+    QVector<QString> liste;
+    foreach(QString itm, files)
+    {
+        liste.append(dir.path()+"/"+itm);
+    }
+    Playlist p(nom,liste);
+    p.Save();
 }
