@@ -50,12 +50,14 @@ void formLecteurMusique::on_OuvrirButton_clicked()
     QDir dir(directory);
     QStringList files = dir.entryList(QStringList() << "*.mp3",QDir::Files);
     QList<QMediaContent> content;
+    
     for(const QString& f:files)
     {
     content.push_back(QUrl::fromLocalFile(dir.path()+"/" + f));
     QFileInfo fi(f);
     ui->listWidget->addItem(fi.fileName());
     }
+    
     ui->listWidget->setCurrentRow(playlist->currentIndex() != -1? playlist->currentIndex():0);
     playlist->addMedia(content);
 }

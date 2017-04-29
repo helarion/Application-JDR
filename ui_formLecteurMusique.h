@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'formLecteurMusique.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -29,7 +29,7 @@ public:
     QLabel *label;
     QSlider *ProgressSlider;
     QSlider *verticalSlider;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QPushButton *OuvrirButton;
     QPushButton *PlayButton;
@@ -57,28 +57,28 @@ public:
         verticalSlider->setGeometry(QRect(390, 40, 22, 81));
         verticalSlider->setValue(99);
         verticalSlider->setOrientation(Qt::Vertical);
-        widget = new QWidget(formLecteurMusique);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(50, 70, 320, 25));
-        horizontalLayout = new QHBoxLayout(widget);
+        layoutWidget = new QWidget(formLecteurMusique);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(50, 70, 320, 25));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        OuvrirButton = new QPushButton(widget);
+        OuvrirButton = new QPushButton(layoutWidget);
         OuvrirButton->setObjectName(QStringLiteral("OuvrirButton"));
 
         horizontalLayout->addWidget(OuvrirButton);
 
-        PlayButton = new QPushButton(widget);
+        PlayButton = new QPushButton(layoutWidget);
         PlayButton->setObjectName(QStringLiteral("PlayButton"));
 
         horizontalLayout->addWidget(PlayButton);
 
-        PauseButton = new QPushButton(widget);
+        PauseButton = new QPushButton(layoutWidget);
         PauseButton->setObjectName(QStringLiteral("PauseButton"));
 
         horizontalLayout->addWidget(PauseButton);
 
-        StopButton = new QPushButton(widget);
+        StopButton = new QPushButton(layoutWidget);
         StopButton->setObjectName(QStringLiteral("StopButton"));
 
         horizontalLayout->addWidget(StopButton);
@@ -91,12 +91,12 @@ public:
 
     void retranslateUi(QDialog *formLecteurMusique)
     {
-        formLecteurMusique->setWindowTitle(QApplication::translate("formLecteurMusique", "Dialog", 0));
-        label->setText(QApplication::translate("formLecteurMusique", "Lecteur de son", 0));
-        OuvrirButton->setText(QApplication::translate("formLecteurMusique", "Ouvrir", 0));
-        PlayButton->setText(QApplication::translate("formLecteurMusique", "Play", 0));
-        PauseButton->setText(QApplication::translate("formLecteurMusique", "Pause", 0));
-        StopButton->setText(QApplication::translate("formLecteurMusique", "Stop", 0));
+        formLecteurMusique->setWindowTitle(QApplication::translate("formLecteurMusique", "Dialog", Q_NULLPTR));
+        label->setText(QApplication::translate("formLecteurMusique", "Lecteur de son", Q_NULLPTR));
+        OuvrirButton->setText(QApplication::translate("formLecteurMusique", "Ouvrir", Q_NULLPTR));
+        PlayButton->setText(QApplication::translate("formLecteurMusique", "Play", Q_NULLPTR));
+        PauseButton->setText(QApplication::translate("formLecteurMusique", "Pause", Q_NULLPTR));
+        StopButton->setText(QApplication::translate("formLecteurMusique", "Stop", Q_NULLPTR));
     } // retranslateUi
 
 };
