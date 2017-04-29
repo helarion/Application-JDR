@@ -32,6 +32,7 @@ private slots:
 
     void on_positionChanged(qint64 position);
 
+    void on_SongChanged();
 
 
     void on_verticalSlider_sliderMoved(int position);

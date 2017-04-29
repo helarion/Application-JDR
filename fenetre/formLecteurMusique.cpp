@@ -20,7 +20,7 @@ formLecteurMusique::formLecteurMusique(QWidget *parent) :
     connect(player,&QMediaPlayer::positionChanged,this, &formLecteurMusique::on_positionChanged);
     connect(player,&QMediaPlayer::positionChanged,this, &formLecteurMusique::on_DurationChanged);
 
-
+    connect(player,&QMediaPlayer::mediaChanged,this,&formLecteurMusique::on_SongChanged);
 }
 
 formLecteurMusique::~formLecteurMusique()
@@ -80,6 +80,14 @@ void formLecteurMusique::on_DurationChanged()
 void formLecteurMusique::on_positionChanged(qint64 position)
 {
     ui->ProgressSlider->setValue(position);
+}
+
+void formLecteurMusique::on_SongChanged()
+{
+    qDebug() << "chanson changée";
+   /*if(ui->RandomCheckBox->isChecked()){
+       qDebug() << "aléatoire";
+   }*/
 }
 
 void formLecteurMusique::on_verticalSlider_sliderMoved(int position)

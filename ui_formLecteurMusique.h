@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
@@ -35,10 +36,11 @@ public:
     QPushButton *PlayButton;
     QPushButton *PauseButton;
     QPushButton *StopButton;
-    QWidget *widget;
+    QWidget *layoutWidget1;
     QHBoxLayout *horizontalLayout_2;
     QPushButton *PreviousButton;
     QPushButton *NextButton;
+    QCheckBox *RandomCheckBox;
 
     void setupUi(QDialog *formLecteurMusique)
     {
@@ -87,22 +89,25 @@ public:
 
         horizontalLayout->addWidget(StopButton);
 
-        widget = new QWidget(formLecteurMusique);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(140, 130, 158, 25));
-        horizontalLayout_2 = new QHBoxLayout(widget);
+        layoutWidget1 = new QWidget(formLecteurMusique);
+        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(140, 130, 158, 25));
+        horizontalLayout_2 = new QHBoxLayout(layoutWidget1);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        PreviousButton = new QPushButton(widget);
+        PreviousButton = new QPushButton(layoutWidget1);
         PreviousButton->setObjectName(QStringLiteral("PreviousButton"));
 
         horizontalLayout_2->addWidget(PreviousButton);
 
-        NextButton = new QPushButton(widget);
+        NextButton = new QPushButton(layoutWidget1);
         NextButton->setObjectName(QStringLiteral("NextButton"));
 
         horizontalLayout_2->addWidget(NextButton);
 
+        RandomCheckBox = new QCheckBox(formLecteurMusique);
+        RandomCheckBox->setObjectName(QStringLiteral("RandomCheckBox"));
+        RandomCheckBox->setGeometry(QRect(340, 140, 70, 17));
 
         retranslateUi(formLecteurMusique);
 
@@ -119,6 +124,7 @@ public:
         StopButton->setText(QApplication::translate("formLecteurMusique", "Stop", Q_NULLPTR));
         PreviousButton->setText(QApplication::translate("formLecteurMusique", "<--", Q_NULLPTR));
         NextButton->setText(QApplication::translate("formLecteurMusique", "-->", Q_NULLPTR));
+        RandomCheckBox->setText(QApplication::translate("formLecteurMusique", "Al\303\251atoire", Q_NULLPTR));
     } // retranslateUi
 
 };
