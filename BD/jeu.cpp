@@ -66,7 +66,10 @@ QString Jeu::getTheme()
     return adrTheme;
 }
 
-QVector<Attribut> Jeu::getListAttribut() {qDebug() << "get list attribut"; return this->listAttribut;}
+QVector<Attribut> Jeu::getListAttribut()
+{
+    return this->listAttribut;
+}
 
 void Jeu::setNom(QString s_nom)
 {

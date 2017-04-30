@@ -25,6 +25,7 @@ Playlist::Playlist (const Playlist & Copie)
     titre = Copie.titre;
 }
 Playlist::Playlist (QString titre){ Load(titre); }
+
 Playlist::~Playlist()
 {}
 

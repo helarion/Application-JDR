@@ -41,7 +41,6 @@ HEADERS += \
     BD/personnage.h \
     BD/typeattribut.h \
     BD/valeurAttribut.h \
-    BD/valeurAttributtLong.h \
     BD/valeurObjet.h \
     fenetre/formCampagne.h \
     fenetre/formInventaire.h \
@@ -90,7 +89,6 @@ SOURCES += \
     BD/personnage.cpp \
     BD/typeattribut.cpp \
     BD/valeurAttribut.cpp \
-    BD/valeurAttributLong.cpp \
     BD/valeurObjet.cpp \
     fenetre/formModifierAttribut.cpp \
     fenetre/formModifierCampagne.cpp \

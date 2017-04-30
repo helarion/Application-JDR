@@ -97,7 +97,7 @@ void Campagne::setTitreJeu(QString titreJeu)
 
 bool Campagne::compare(Campagne c)
 {
-    if(nom==c.getNom() && scenario==c.getScenario() && jeu.compare(c.getJeu())) return true;
+    if(nom==c.getNom() && scenario==c.getScenario() && titre==c.getTitre() && jeu.compare(c.getJeu())) return true;
     return false;
 }
 

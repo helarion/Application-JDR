@@ -34,6 +34,7 @@ void formNouvellePartie::on_validerButton_clicked()
         personnages.append(listPersonnage[index]);
     }
     Partie p(nom,resume,listCampagne[campagneSelect],personnages);
+    p.afficher();
     p.Save();
     emit listPartieChanged();
     this->close();

@@ -145,7 +145,7 @@ public:
 
     void retranslateUi(QDialog *formLecteurMusique)
     {
-        formLecteurMusique->setWindowTitle(QApplication::translate("formLecteurMusique", "Dialog", 0));
+        formLecteurMusique->setWindowTitle(QApplication::translate("formLecteurMusique", "Lecteur playlist", 0));
         label->setText(QApplication::translate("formLecteurMusique", "Lecteur de son", 0));
         PlayButton->setText(QApplication::translate("formLecteurMusique", "Play", 0));
         PauseButton->setText(QApplication::translate("formLecteurMusique", "Pause", 0));

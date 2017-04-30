@@ -29,7 +29,7 @@
     <item row="0" column="0">
      <widget class="QStackedWidget" name="contentStack">
       <property name="currentIndex">
-       <number>1</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="MenuPrincipal">
        <layout class="QGridLayout" name="gridLayout_9">

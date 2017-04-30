@@ -2,6 +2,7 @@
 #define VALEUR 1
 #define COMPETENCE 2
 #define LISTE 3
+#define INFORMATION 4
 
 #include <QDebug>
 #include <Qlabel>
@@ -78,13 +79,14 @@ formNouveauPersonnage::formNouveauPersonnage(QWidget *parent) :
             QLineEdit *edit= new QLineEdit;
             ui->attributLayout->addWidget(label);
             ui->attributLayout->addWidget(edit);
+            listEdit.append(edit);
         }
         else if(attributs[i].getType()==VALEUR) // Valeur
         {
             QLineEdit *edit1= new QLineEdit;
             QLabel *label2 = new QLabel;
-            label->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Minimum);
-            label->setWordWrap(true);
+            label2->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Minimum);
+            label2->setWordWrap(true);
             label2->setText("/");
             QLineEdit *edit2= new QLineEdit;
             edit1->setMaximumWidth(50);
@@ -93,6 +95,8 @@ formNouveauPersonnage::formNouveauPersonnage(QWidget *parent) :
             ui->valeurLayout->addWidget(edit1);
             ui->valeurLayout->addWidget(label2);
             ui->valeurLayout->addWidget(edit2);
+            listEdit.append(edit1);
+            listEdit.append(edit2);
         }
         else if(attributs[i].getType()==COMPETENCE) // Compétence
         {
@@ -118,7 +122,18 @@ formNouveauPersonnage::formNouveauPersonnage(QWidget *parent) :
                 layout4->addWidget(label);
                 layout4->addWidget(edit);
             }
+            listEdit.append(edit);
             indexCompetence++;
+        }
+        else if(attributs[i].getType()==INFORMATION) // Valeur
+        {
+            QLineEdit *edit= new QLineEdit;
+            label->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Minimum);
+            label->setWordWrap(true);
+            //edit->setMaximumWidth(50);
+            ui->valeurLayout->addWidget(label);
+            ui->valeurLayout->addWidget(edit);
+            listEdit.append(edit);
         }
     }
 }
@@ -136,4 +151,30 @@ void formNouveauPersonnage::on_InventaireButton_clicked()
 void formNouveauPersonnage::on_RetourButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
+}
+
+void formNouveauPersonnage::on_ajouterButton_clicked()
+{
+    QString nom=ui->NomEdit->text();
+    QString prenom=ui->PrenomPersonnageEdit->text();
+    int age=ui->AgeEdit->text().toInt();
+    QString description=ui->descirptionEdit->toPlainText();
+    QString sexe=ui->SexeEdit->text();
+    Campagne c=listCampagne[campagneSelect];
+    QVector<QString> valeurA;
+    for(int i=0;i<listEdit.size();i++)
+    {
+        if( QLineEdit* lineEdit = dynamic_cast<QLineEdit*>(listEdit[i]) )
+        {
+            valeurA.append(lineEdit->text());
+        }
+        else if( QTextEdit* textEdit = dynamic_cast<QTextEdit*>(listEdit[i]) )
+        {
+            valeurA.append(textEdit->toPlainText());
+        }
+    }
+    Personnage p(nom,prenom,age,description,sexe,c,valeurA);
+    p.Save();
+    emit listPersonnageChanged();
+    this->close();
 }

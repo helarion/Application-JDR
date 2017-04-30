@@ -10,14 +10,21 @@ Personnage::Personnage()
 
 }
 
-Personnage::Personnage(QString s_nom, QString s_prenom, int s_age, QString s_description, QString s_sexe)
+Personnage::Personnage(QString s_nom, QString s_prenom,
+                       int s_age, QString s_description,
+                       QString s_sexe, Campagne s_campagne,
+                       QVector<QString> s_valeurAttribut)
 {
     nom=s_nom;
     prenom=s_prenom;
     age=s_age;
     description=s_description;
     sexe=s_sexe;
+    campagne=s_campagne;
+    valeurAttribut=s_valeurAttribut;
+    titreCampagne=campagne.getTitre();
     titre=nom.toLower();
+    titre+=prenom.toLower();
     titre.replace( " ", "_" );
 }
 
@@ -36,7 +43,12 @@ QString Personnage::getNom()
     return nom;
 }
 
-QString Personnage::getAge()
+QString Personnage::getPrenom()
+{
+    return prenom;
+}
+
+int Personnage::getAge()
 {
     return age;
 }
@@ -88,7 +100,7 @@ void Personnage::afficher()
 void Personnage::Save()
 {
     QString filename = "data/Personnage/";
-    filename+=titre;
+    filename+=titreCampagne+"_"+titre;
     filename+=".data";
     qDebug() << filename;
     QFile file(filename);
@@ -101,7 +113,7 @@ void Personnage::Save()
 
     QDataStream out(&file);
 
-    out << nom << prenom << age << description << sexe << titre;
+    out << nom << prenom << age << description << sexe << titre << titreCampagne;
 
     file.flush();
     file.close();
@@ -129,7 +141,9 @@ void Personnage::Load(QString nomFichier)
     in >> description;
     in >> sexe;
     in >> titre;
+    in >> titreCampagne;
 
+    campagne.Load(titreCampagne);
     file.close();
 
 }

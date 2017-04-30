@@ -86,21 +86,20 @@ void MainWindow::changementCampagne()
 void MainWindow::changementPartie()
 {
     remplirListPartie();
-    qDebug() << "remplit le vector";
     ui->listPartie->clear();
     qDebug() << "vide la liste";
     for(int i=0;i<listPartie.size();i++)
     {
-        qDebug() << "fait un item";
-        QListWidgetItem *newItem = new QListWidgetItem;
-        // on met le titre de l'objet comme donnée
-        newItem->setData(Qt::UserRole,listPartie[i].getTitre());
-        // le nom de l'objet comme text affiché
-        newItem->setText(listPartie[i].getNom());
-        ui->listPartie->addItem(newItem);
-        qDebug() << "ajoute item";
+        if(listPartie[i].getCampagne().compare(listCampagne[campagneSelect]))
+        {
+            QListWidgetItem *newItem = new QListWidgetItem;
+            // on met le titre de l'objet comme donnée
+            newItem->setData(Qt::UserRole,listPartie[i].getTitre());
+            // le nom de l'objet comme text affiché
+            newItem->setText(listPartie[i].getNom());
+            ui->listPartie->addItem(newItem);
+        }
     }
-    qDebug() << "Fin";
 }
 
 void MainWindow::on_jeuButton_clicked()
@@ -194,17 +193,17 @@ void MainWindow::on_selectionnerCampagneButton_clicked()
 {
     if(ui->listCampagne->currentItem()!=NULL)
     {
+        ui->listPartie->clear();
         indexStack=3;
         ui->contentStack->setCurrentIndex(indexStack);
         remplirListPartie();
-        ui->listPartie->clear();
         for(int i=0;i<listPartie.size();i++)
         {
             if(listPartie[i].getCampagne().compare(listCampagne[campagneSelect]))
             {
                 QListWidgetItem *newItem = new QListWidgetItem;
-                // on met le titre de l'objet comme donnée
-                newItem->setData(Qt::UserRole,listPartie[i].getTitre());
+                // on met l'index de liste comme donnée
+                newItem->setData(Qt::UserRole,i);
                 // le nom de l'objet comme text affiché
                 newItem->setText(listPartie[i].getNom());
                 ui->listPartie->addItem(newItem);
@@ -239,6 +238,9 @@ void MainWindow::on_modifierPartieButton_clicked()
 {
     if(ui->listPartie->currentItem()!=NULL)
     {
+        int index=ui->listPartie->currentItem()->data(Qt::UserRole).toInt();
+        partieSelect=index;
+        listPartie[index].afficher();
         formModifierPartie formModifierPartie;
         QObject::connect(&formModifierPartie, SIGNAL(listPartieChanged()),this, SLOT(changementPartie()));
         formModifierPartie.setModal(true);
@@ -258,4 +260,19 @@ void MainWindow::on_autreButton_clicked()
     form->setAttribute(Qt::WA_DeleteOnClose);//we don't want memory leak
     form->setModal(Qt::NonModal);
     form->show();
+}
+
+void MainWindow::on_listJeu_itemDoubleClicked(QListWidgetItem *item)
+{
+    on_selectionnerJeuButton_clicked();
+}
+
+void MainWindow::on_listCampagne_itemDoubleClicked(QListWidgetItem *item)
+{
+    on_selectionnerCampagneButton_clicked();
+}
+
+void MainWindow::on_listPartie_itemDoubleClicked(QListWidgetItem *item)
+{
+    on_selectionnerPartieButton_clicked();
 }

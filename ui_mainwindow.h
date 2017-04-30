@@ -597,7 +597,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        contentStack->setCurrentIndex(1);
+        contentStack->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(MainWindow);

@@ -17,6 +17,7 @@ class Partie
         QString titreCampagne;
         QVector<Personnage> personnages;
         QVector<QString> titrePersonnages;
+        static int increment;
     public:
         Partie();
         Partie (QString s_nom,QString s_resume,Campagne s_campagne, QVector<Personnage> personnages);	// Constructeur par défaut public
@@ -26,6 +27,7 @@ class Partie
         void afficher () const;	// Affiche les informations du Partie dans la console
         void Save();
         void Load(QString titre);
+        bool compare(Partie p);
         QString getNom();
         QString getResume();
         Campagne getCampagne();

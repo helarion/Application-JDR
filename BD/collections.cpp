@@ -17,6 +17,7 @@ int campagneSelect=-1;
 int partieSelect=-1;
 int attributSelect=-1;
 int playlistSelect=-1;
+int personnageSelect=-1;
 
 void addJeu(Jeu j) { listJeu.prepend(j); }
 void addAttribut(Attribut a) { listAttribut.prepend(a); }
@@ -75,8 +76,13 @@ extern void deleteCampagne(int index)
 
 extern void deletePartie(int index)
 {
-    QString titre=listPartie[index].getTitre();
-    QString path="data/Partie/"+titre+".data";
+    Partie p = listPartie[index];
+    p.afficher();
+    QString c=p.getCampagne().getTitre();
+    QString titre=p.getTitre();
+    qDebug() << "titre:" << titre;
+    QString path="data/Partie/"+c+"_"+titre+".data";
+    qDebug() << "path:" << path;
     QDir d;
     d.remove(path);
     listPartie.remove(index);
@@ -204,6 +210,7 @@ void remplirListCampagne()
 
 void remplirListPartie()
 {
+    listPartie.clear();
     QString nom;
     QStringList list;
     QString path="data/Partie";
@@ -221,6 +228,7 @@ void remplirListPartie()
 
 void remplirListPersonnage()
 {
+    listPersonnage.clear();
     QString nom;
     QStringList list;
     QString path="data/Personnage";
@@ -238,6 +246,7 @@ void remplirListPersonnage()
 
 void remplirListPlaylist()
 {
+    listPlaylist.clear();
     QString nom;
     QStringList list;
     QString path="data/Playlist";
@@ -251,6 +260,15 @@ void remplirListPlaylist()
             listPlaylist.append(p);
         }
     }
+}
+
+int chercheTitrePartie(QString titre)
+{
+    for(int i=0;i<listPartie.size();i++)
+    {
+        if(listPartie[i].getTitre()==titre) return i;
+    }
+    return -1;
 }
 
 int chercheTitreJeu(QString titre)
@@ -276,6 +294,15 @@ int chercheTitreAttribut(QString titre)
     for(int i=0;i<listAttribut.size();i++)
     {
         if(listAttribut[i].getTitre()==titre) return i;
+    }
+    return -1;
+}
+
+int chercheTitrePersonnage(QString titre)
+{
+    for(int i=0;i<listPersonnage.size();i++)
+    {
+        if(listPersonnage[i].getTitre()==titre) return i;
     }
     return -1;
 }

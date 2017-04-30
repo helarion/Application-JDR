@@ -15,6 +15,9 @@ public:
     explicit formModifierPersonnage(QWidget *parent = 0);
     ~formModifierPersonnage();
 
+signals:
+    void listPersonnageChanged();
+
 private:
     Ui::formModifierPersonnage *ui;
 };

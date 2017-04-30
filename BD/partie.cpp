@@ -2,8 +2,12 @@
 #include <iostream>
 #include <QFile>
 #include <QDebug>
+#include <QFileInfo>
+#include <QMessageBox>
 
 #include "BD/Partie.h"
+
+int Partie::increment=0;
 
 Partie::Partie ()
 {
@@ -34,15 +38,16 @@ Partie::Partie (const Partie & Copie)
     campagne = Copie.campagne;
     titreCampagne = Copie.titreCampagne;
 }
-Partie::Partie (QString titre){ Load(titre); }
+Partie::Partie (QString fichier){ Load(fichier); }
 Partie::~Partie()
 {}
 
 void Partie::afficher () const
 {
-    qDebug() << "Affichage Partie:";
-    qDebug() << nom;
-    qDebug() << resume;
+    qDebug() << "Partie:" << nom;
+    qDebug() << "resume:" << resume;
+    qDebug() << "titre:" << titre;
+    campagne.afficher();
 }
 
 QString Partie::getNom()
@@ -86,8 +91,8 @@ void Partie::setNom(QString s_nom)
 
     // suppression du fichier actuel
     QString filename = "data/Partie/";
-    filename+=titre;
-    filename+=".data";
+    QString c=campagne.getTitre();
+    filename+=c+"_"+titre+".data";
     QFile file(filename);
     file.remove();
 
@@ -119,11 +124,52 @@ void Partie::setPersonnages(QVector<Personnage> s_personnages)
     }
 }
 
+bool Partie::compare(Partie p)
+{
+    if(nom==p.getNom() && resume == p.getResume() && titre == p.getTitre()  && campagne.compare(p.getCampagne()))
+        return true;
+    return false;
+}
+
 void Partie::Save()
 {
     QString filename = "data/Partie/";
-    filename+=titre+".data";
+    filename+=campagne.getTitre()+"_"+titre+".data";
     QFile file(filename);
+
+    // test si un fichier existe déja à ce nom
+    QFileInfo check_file(filename);
+    if (check_file.exists() && check_file.isFile())
+    {
+        // si c'est le cas, on compare les deux fichiers
+        Partie p(filename);
+        // s'ils sont différent on fait coexister les fichiers
+        // avec deux titres différents
+        if(compare(p)==false)
+        {
+            QMessageBox msgBox;
+            msgBox.setText("Conflit de sauvegarde");
+            msgBox.setInformativeText("Le fichier que vous vous apprétez à sauvegarder existe déja, écraser ?");
+            msgBox.setStandardButtons(QMessageBox::Save | QMessageBox::Discard);
+            msgBox.setDefaultButton(QMessageBox::Save);
+
+            int ret = msgBox.exec();
+            switch (ret) {
+              case QMessageBox::Save:
+                  break;
+              case QMessageBox::Discard:
+                    return;
+                    break;
+              default:
+                  return;
+                  break;
+            }
+        }
+        else // s'ils sont identiques on annule la sauvegarde qui se trouve être inutile
+        {
+            return;
+        }
+    }
 
     if(!file.open(QIODevice::WriteOnly))
     {
@@ -133,17 +179,19 @@ void Partie::Save()
 
     QDataStream out(&file);
 
-    out << nom << resume << titreCampagne;
+    qDebug() << "titre" << titre;
+
+    out << nom << resume << titre << titreCampagne << titrePersonnages;
 
     file.flush();
     file.close();
     qDebug() << filename << "Sauvegardé !";
 }
 
-void Partie::Load(QString titre)
+void Partie::Load(QString fichier)
 {
     QString filename = "data/Partie/";
-    filename+=titre;
+    filename+=fichier;
     filename+=".data";
     QFile file(filename);
 
@@ -158,9 +206,17 @@ void Partie::Load(QString titre)
 
     in >> nom;
     in >> resume;
+    in >> titre;
     in >> titreCampagne;
+    in >> titrePersonnages;
 
     campagne.Load(titreCampagne);
+
+    for(int i=0; i<titrePersonnages.size(); i++)
+    {
+        Personnage p(titrePersonnages[i]);
+        personnages.append(p);
+    }
 
     file.close();
 }

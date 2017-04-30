@@ -32,11 +32,9 @@ public:
     QVBoxLayout *verticalLayout_3;
     QLabel *label;
     QFormLayout *formLayout;
-    QLineEdit *nomPartie;
     QLabel *label_3;
+    QLineEdit *nomPartie;
     QLabel *label_4;
-    QLabel *label_2;
-    QLineEdit *date;
     QTextEdit *resumePartie;
     QHBoxLayout *horizontalLayout;
     QVBoxLayout *verticalLayout_2;
@@ -67,30 +65,20 @@ public:
         formLayout = new QFormLayout();
         formLayout->setObjectName(QStringLiteral("formLayout"));
         formLayout->setContentsMargins(-1, 0, 0, -1);
-        nomPartie = new QLineEdit(formNouvellePartie);
-        nomPartie->setObjectName(QStringLiteral("nomPartie"));
-
-        formLayout->setWidget(0, QFormLayout::FieldRole, nomPartie);
-
         label_3 = new QLabel(formNouvellePartie);
         label_3->setObjectName(QStringLiteral("label_3"));
 
         formLayout->setWidget(0, QFormLayout::LabelRole, label_3);
 
+        nomPartie = new QLineEdit(formNouvellePartie);
+        nomPartie->setObjectName(QStringLiteral("nomPartie"));
+
+        formLayout->setWidget(0, QFormLayout::FieldRole, nomPartie);
+
         label_4 = new QLabel(formNouvellePartie);
         label_4->setObjectName(QStringLiteral("label_4"));
 
         formLayout->setWidget(2, QFormLayout::LabelRole, label_4);
-
-        label_2 = new QLabel(formNouvellePartie);
-        label_2->setObjectName(QStringLiteral("label_2"));
-
-        formLayout->setWidget(4, QFormLayout::LabelRole, label_2);
-
-        date = new QLineEdit(formNouvellePartie);
-        date->setObjectName(QStringLiteral("date"));
-
-        formLayout->setWidget(4, QFormLayout::FieldRole, date);
 
         resumePartie = new QTextEdit(formNouvellePartie);
         resumePartie->setObjectName(QStringLiteral("resumePartie"));
@@ -166,7 +154,6 @@ public:
         label->setText(QApplication::translate("formNouvellePartie", "Nouvelle Partie :", 0));
         label_3->setText(QApplication::translate("formNouvellePartie", "Nom :", 0));
         label_4->setText(QApplication::translate("formNouvellePartie", "Resum\303\251:", 0));
-        label_2->setText(QApplication::translate("formNouvellePartie", "Date :", 0));
         label_5->setText(QApplication::translate("formNouvellePartie", "Personnages :", 0));
         ajouterPersonnageButton->setText(QApplication::translate("formNouvellePartie", "Ajouter", 0));
         modifierPersonnageButton->setText(QApplication::translate("formNouvellePartie", "Modifier", 0));

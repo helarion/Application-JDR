@@ -47,6 +47,12 @@ private slots:
 
     void on_autreButton_clicked();
 
+    void on_listJeu_itemDoubleClicked(QListWidgetItem *item);
+
+    void on_listCampagne_itemDoubleClicked(QListWidgetItem *item);
+
+    void on_listPartie_itemDoubleClicked(QListWidgetItem *item);
+
 private:
     Ui::MainWindow *ui;
 public slots:

@@ -44,6 +44,8 @@ private slots:
 
     void on_listCompetenceDisp_itemSelectionChanged();
 
+    void on_listInformationSelect_itemSelectionChanged();
+
 signals:
     void listJeuChanged();
 

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>756</width>
-    <height>529</height>
+    <height>629</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,7 +21,7 @@
    <item>
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="FeuillePersonnage">
       <layout class="QVBoxLayout" name="verticalLayout">
@@ -31,14 +31,14 @@
           <widget class="QLabel" name="ImagePerosnnageLabel_3">
            <property name="minimumSize">
             <size>
-             <width>100</width>
-             <height>100</height>
+             <width>50</width>
+             <height>50</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
              <width>300</width>
-             <height>300</height>
+             <height>200</height>
             </size>
            </property>
            <property name="text">
@@ -69,7 +69,20 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="joueurEdit"/>
+          <widget class="QLineEdit" name="joueurEdit">
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>15</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>150</width>
+             <height>25</height>
+            </size>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -86,7 +99,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="NomEdit_3"/>
+          <widget class="QLineEdit" name="NomEdit"/>
          </item>
          <item>
           <widget class="QLabel" name="label_69">
@@ -96,7 +109,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="PrenomPersonnageEdit_3"/>
+          <widget class="QLineEdit" name="PrenomPersonnageEdit"/>
          </item>
          <item>
           <widget class="QLabel" name="label_70">
@@ -106,7 +119,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="AgeEdit_3">
+          <widget class="QLineEdit" name="AgeEdit">
            <property name="maximumSize">
             <size>
              <width>50</width>
@@ -123,7 +136,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="SexeEdit_3"/>
+          <widget class="QLineEdit" name="SexeEdit"/>
          </item>
         </layout>
        </item>
@@ -132,36 +145,6 @@
          <property name="topMargin">
           <number>0</number>
          </property>
-         <item>
-          <widget class="QLabel" name="label_73">
-           <property name="text">
-            <string>Race :</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="RaceEdit_3"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_74">
-           <property name="text">
-            <string>Niveau :</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="NiveauEdit_3"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_75">
-           <property name="text">
-            <string>Classe :</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="ClasseEdit_3"/>
-         </item>
         </layout>
        </item>
        <item>
@@ -237,21 +220,35 @@
          <item>
           <widget class="QTextEdit" name="descirptionEdit"/>
          </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QPushButton" name="ajouterButton">
+             <property name="text">
+              <string>Créer</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="InventaireButton">
+             <property name="text">
+              <string>Inventaire</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="retourButton">
+             <property name="text">
+              <string>Retour</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
         </layout>
-       </item>
-       <item>
-        <widget class="QPushButton" name="InventaireButton">
-         <property name="text">
-          <string>Inventaire</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="retourButton">
-         <property name="text">
-          <string>Retour</string>
-         </property>
-        </widget>
        </item>
       </layout>
      </widget>

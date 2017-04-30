@@ -20,8 +20,14 @@ private slots:
 
     void on_RetourButton_clicked();
 
+    void on_ajouterButton_clicked();
+
+signals:
+    void listPersonnageChanged();
+
 private:
     Ui::formNouveauPersonnage *ui;
+    QVector<QWidget*> listEdit;
 };
 
 #endif // FORMNOUVEAUPERSONNAGE_H

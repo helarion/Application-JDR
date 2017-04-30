@@ -32,11 +32,9 @@ public:
     QVBoxLayout *verticalLayout;
     QLabel *label;
     QFormLayout *formLayout_2;
-    QLineEdit *nomPartie;
     QLabel *label_7;
+    QLineEdit *nomPartie;
     QLabel *label_8;
-    QLabel *label_9;
-    QLineEdit *date_2;
     QTextEdit *resumePartie;
     QHBoxLayout *horizontalLayout_4;
     QVBoxLayout *verticalLayout_3;
@@ -47,6 +45,7 @@ public:
     QPushButton *modifierPersonnageButton;
     QHBoxLayout *horizontalLayout_3;
     QPushButton *modifierButton;
+    QPushButton *supprimerButton;
     QPushButton *retourButton;
 
     void setupUi(QDialog *formModifierPartie)
@@ -65,35 +64,25 @@ public:
         font.setPointSize(20);
         label->setFont(font);
 
-        verticalLayout->addWidget(label);
+        verticalLayout->addWidget(label, 0, Qt::AlignHCenter);
 
         formLayout_2 = new QFormLayout();
         formLayout_2->setObjectName(QStringLiteral("formLayout_2"));
         formLayout_2->setContentsMargins(-1, 0, 0, -1);
-        nomPartie = new QLineEdit(formModifierPartie);
-        nomPartie->setObjectName(QStringLiteral("nomPartie"));
-
-        formLayout_2->setWidget(0, QFormLayout::FieldRole, nomPartie);
-
         label_7 = new QLabel(formModifierPartie);
         label_7->setObjectName(QStringLiteral("label_7"));
 
         formLayout_2->setWidget(0, QFormLayout::LabelRole, label_7);
 
+        nomPartie = new QLineEdit(formModifierPartie);
+        nomPartie->setObjectName(QStringLiteral("nomPartie"));
+
+        formLayout_2->setWidget(0, QFormLayout::FieldRole, nomPartie);
+
         label_8 = new QLabel(formModifierPartie);
         label_8->setObjectName(QStringLiteral("label_8"));
 
         formLayout_2->setWidget(2, QFormLayout::LabelRole, label_8);
-
-        label_9 = new QLabel(formModifierPartie);
-        label_9->setObjectName(QStringLiteral("label_9"));
-
-        formLayout_2->setWidget(4, QFormLayout::LabelRole, label_9);
-
-        date_2 = new QLineEdit(formModifierPartie);
-        date_2->setObjectName(QStringLiteral("date_2"));
-
-        formLayout_2->setWidget(4, QFormLayout::FieldRole, date_2);
 
         resumePartie = new QTextEdit(formModifierPartie);
         resumePartie->setObjectName(QStringLiteral("resumePartie"));
@@ -148,6 +137,11 @@ public:
 
         horizontalLayout_3->addWidget(modifierButton);
 
+        supprimerButton = new QPushButton(formModifierPartie);
+        supprimerButton->setObjectName(QStringLiteral("supprimerButton"));
+
+        horizontalLayout_3->addWidget(supprimerButton);
+
         retourButton = new QPushButton(formModifierPartie);
         retourButton->setObjectName(QStringLiteral("retourButton"));
 
@@ -168,12 +162,12 @@ public:
         formModifierPartie->setWindowTitle(QApplication::translate("formModifierPartie", "Modification partie", 0));
         label->setText(QApplication::translate("formModifierPartie", "Modifier Partie :", 0));
         label_7->setText(QApplication::translate("formModifierPartie", "Nom :", 0));
-        label_8->setText(QApplication::translate("formModifierPartie", "Description :", 0));
-        label_9->setText(QApplication::translate("formModifierPartie", "Date :", 0));
+        label_8->setText(QApplication::translate("formModifierPartie", "R\303\251sum\303\251 :", 0));
         label_6->setText(QApplication::translate("formModifierPartie", "Personnages :", 0));
         ajouterPersonnageButton->setText(QApplication::translate("formModifierPartie", "Ajouter", 0));
         modifierPersonnageButton->setText(QApplication::translate("formModifierPartie", "Modifier", 0));
         modifierButton->setText(QApplication::translate("formModifierPartie", "Modifier", 0));
+        supprimerButton->setText(QApplication::translate("formModifierPartie", "Supprimer", 0));
         retourButton->setText(QApplication::translate("formModifierPartie", "Annuler", 0));
     } // retranslateUi
 

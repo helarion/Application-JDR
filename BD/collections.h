@@ -48,6 +48,8 @@
     extern int chercheTitreJeu(QString titre);
     extern int chercheTitreCampagne(QString titre);
     extern int chercheTitreAttribut(QString titre);
+    extern int chercheTitrePartie(QString titre);
+    extern int chercheTitrePersonnage(QString titre);
 
     // données (collections et index)
     extern QVector<Jeu> listJeu;
