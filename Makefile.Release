@@ -2457,6 +2457,20 @@ release\mainwindow.obj: mainwindow.cpp C:\Qt\5.7\msvc2015_64\include\QtWidgets\Q
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QMainWindow \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QListWidget \
 		ui_mainwindow.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QAction \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QApplication \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QButtonGroup \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QGridLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHBoxLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QLabel \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QMenuBar \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QPushButton \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QSpacerItem \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QStackedWidget \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QStatusBar \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QTextEdit \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout \
 		fenetre/formNouveauJeu.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog \
 		fenetre/formModifierJeu.h \
@@ -2481,14 +2495,17 @@ release\mainwindow.obj: mainwindow.cpp C:\Qt\5.7\msvc2015_64\include\QtWidgets\Q
 		C:\Qt\5.7\msvc2015_64\include\QtMultimedia\qaudio.h \
 		C:\Qt\5.7\msvc2015_64\include\QtNetwork\qnetworkconfiguration.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QListWidgetItem \
+		fenetre/formNouveauPersonnage.h \
+		fenetre/formModifierPersonnage.h \
 		BD/jeu.h \
 		BD/attribut.h \
 		BD/campagne.h \
 		BD\Jeu.h \
 		BD/partie.h \
 		BD\Campagne.h \
-		BD/personnage.h \
 		BD/collections.h \
+		BD/personnage.h \
+		BD\Partie.h \
 		BD/playlist.h
 
 release\attribut.obj: BD\attribut.cpp C:\Qt\5.7\msvc2015_64\include\QtCore\QDataStream \
@@ -2718,8 +2735,9 @@ release\jeu.obj: BD\jeu.cpp C:\Qt\5.7\msvc2015_64\include\QtCore\QDataStream \
 		BD/partie.h \
 		BD\Campagne.h \
 		BD\Jeu.h \
-		BD/personnage.h \
 		BD/campagne.h \
+		BD/personnage.h \
+		BD\Partie.h \
 		BD/playlist.h
 
 release\jeuElement.obj: BD\jeuElement.cpp 
@@ -2840,9 +2858,7 @@ release\partie.obj: BD\partie.cpp C:\Qt\5.7\msvc2015_64\include\QtCore\QDataStre
 		BD\Campagne.h \
 		BD\Jeu.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QVector \
-		BD/attribut.h \
-		BD/personnage.h \
-		BD/campagne.h
+		BD/attribut.h
 
 release\personnage.obj: BD\personnage.cpp BD/personnage.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QString \
@@ -2875,7 +2891,7 @@ release\personnage.obj: BD\personnage.cpp BD/personnage.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qnamespace.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qarraydata.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qstringbuilder.h \
-		BD/campagne.h \
+		BD\Partie.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QVariant \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qvariant.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qlist.h \
@@ -2909,6 +2925,7 @@ release\personnage.obj: BD\personnage.cpp BD/personnage.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qcontiguouscache.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qsharedpointer.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qsharedpointer_impl.h \
+		BD\Campagne.h \
 		BD\Jeu.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QVector \
 		BD/attribut.h \
@@ -3056,7 +3073,8 @@ release\valeurAttribut.obj: BD\valeurAttribut.cpp C:\Qt\5.7\msvc2015_64\include\
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QVariant \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QString \
 		BD/personnage.h \
-		BD/campagne.h \
+		BD\Partie.h \
+		BD\Campagne.h \
 		BD\Jeu.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QVector
 
@@ -3164,8 +3182,63 @@ release\formModifierAttribut.obj: fenetre\formModifierAttribut.cpp C:\Qt\5.7\msv
 		fenetre/formModifierAttribut.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog \
 		ui_formModifierAttribut.h \
-		BD/attribut.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QVariant \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QAction \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qaction.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qicon.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QApplication \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qeventloop.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QButtonGroup \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QCheckBox \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qcheckbox.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QComboBox \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qcombobox.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qvalidator.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qregularexpression.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qslider.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qframe.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QFormLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qformlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHBoxLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QLabel \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlabel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QLineEdit \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlineedit.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextcursor.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextformat.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qpen.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextoption.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QPushButton \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout \
+		BD/attribut.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QString \
 		BD/collections.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QVector \
@@ -3173,8 +3246,9 @@ release\formModifierAttribut.obj: fenetre\formModifierAttribut.cpp C:\Qt\5.7\msv
 		BD/partie.h \
 		BD\Campagne.h \
 		BD\Jeu.h \
-		BD/personnage.h \
 		BD/campagne.h \
+		BD/personnage.h \
+		BD\Partie.h \
 		BD/playlist.h
 
 release\formModifierCampagne.obj: fenetre\formModifierCampagne.cpp C:\Qt\5.7\msvc2015_64\include\QtWidgets\QMessageBox \
@@ -3279,17 +3353,70 @@ release\formModifierCampagne.obj: fenetre\formModifierCampagne.cpp C:\Qt\5.7\msv
 		fenetre/formModifierCampagne.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog \
 		ui_formModifierCampagne.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\QVariant \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QAction \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qaction.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qicon.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QApplication \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qeventloop.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QButtonGroup \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QGridLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHBoxLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qframe.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qvalidator.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qregularexpression.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qslider.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QLabel \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlabel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QLineEdit \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlineedit.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextcursor.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextformat.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qpen.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextoption.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QPushButton \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QTextEdit \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtextedit.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextdocument.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout \
 		BD/collections.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QVector \
 		BD/jeu.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\QVariant \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QString \
 		BD/attribut.h \
 		BD/partie.h \
 		BD\Campagne.h \
 		BD\Jeu.h \
-		BD/personnage.h \
 		BD/campagne.h \
+		BD/personnage.h \
+		BD\Partie.h \
 		BD/playlist.h
 
 release\formModifierJeu.obj: fenetre\formModifierJeu.cpp C:\Qt\5.7\msvc2015_64\include\QtCore\qDebug \
@@ -3402,19 +3529,76 @@ release\formModifierJeu.obj: fenetre\formModifierJeu.cpp C:\Qt\5.7\msvc2015_64\i
 		fenetre/formModifierJeu.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog \
 		ui_formModifierJeu.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\QVariant \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QAction \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qaction.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qicon.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QApplication \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qeventloop.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QButtonGroup \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QFormLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qformlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QGridLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHBoxLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qframe.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qvalidator.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qregularexpression.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qslider.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QLabel \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlabel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QLineEdit \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlineedit.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextcursor.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextformat.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qpen.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextoption.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QListWidget \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlistwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlistview.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QPushButton \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QWidget \
 		fenetre/formNouveauAttribut.h \
 		fenetre/formModifierAttribut.h \
 		BD/collections.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QVector \
 		BD/jeu.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\QVariant \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QString \
 		BD/attribut.h \
 		BD/partie.h \
 		BD\Campagne.h \
 		BD\Jeu.h \
-		BD/personnage.h \
 		BD/campagne.h \
+		BD/personnage.h \
+		BD\Partie.h \
 		BD/playlist.h
 
 release\formNouveauAttribut.obj: fenetre\formNouveauAttribut.cpp fenetre/formNouveauAttribut.h \
@@ -3517,8 +3701,63 @@ release\formNouveauAttribut.obj: fenetre\formNouveauAttribut.cpp fenetre/formNou
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qvector2d.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qtouchdevice.h \
 		ui_formNouveauAttribut.h \
-		BD/attribut.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QVariant \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QAction \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qaction.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qicon.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QApplication \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qeventloop.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QButtonGroup \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QCheckBox \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qcheckbox.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QComboBox \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qcombobox.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qvalidator.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qregularexpression.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qslider.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qframe.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QFormLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qformlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QGridLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHBoxLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QLabel \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlabel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QLineEdit \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlineedit.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextcursor.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextformat.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qpen.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextoption.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QPushButton \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
+		BD/attribut.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QString \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QDir \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qdir.h \
@@ -3630,16 +3869,31 @@ release\formNouveauJeu.obj: fenetre\formNouveauJeu.cpp C:\Qt\5.7\msvc2015_64\inc
 		fenetre/formNouveauJeu.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog \
 		ui_formNouveauJeu.h \
-		fenetre/formNouveauAttribut.h \
-		fenetre/formModifierAttribut.h \
-		mainwindow.h \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QMainWindow \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qmainwindow.h \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\QVariant \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QAction \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qaction.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qicon.h \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QListWidget \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlistwidget.h \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlistview.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QApplication \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qeventloop.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QButtonGroup \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QFormLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qformlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QGridLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHBoxLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qframe.h \
@@ -3654,9 +3908,29 @@ release\formNouveauJeu.obj: fenetre\formNouveauJeu.cpp C:\Qt\5.7\msvc2015_64\inc
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QLabel \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlabel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QLineEdit \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlineedit.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextcursor.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextformat.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qpen.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextoption.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QListWidget \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlistwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlistview.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QPushButton \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout \
+		fenetre/formNouveauAttribut.h \
+		fenetre/formModifierAttribut.h \
+		mainwindow.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QMainWindow \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qmainwindow.h \
 		BD/jeu.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\QVariant \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QString \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QVector \
 		BD/attribut.h \
@@ -3664,8 +3938,9 @@ release\formNouveauJeu.obj: fenetre\formNouveauJeu.cpp C:\Qt\5.7\msvc2015_64\inc
 		BD/partie.h \
 		BD\Campagne.h \
 		BD\Jeu.h \
-		BD/personnage.h \
 		BD/campagne.h \
+		BD/personnage.h \
+		BD\Partie.h \
 		BD/playlist.h
 
 release\formNouvelleCampagne.obj: fenetre\formNouvelleCampagne.cpp fenetre/formNouvelleCampagne.h \
@@ -3768,17 +4043,69 @@ release\formNouvelleCampagne.obj: fenetre\formNouvelleCampagne.cpp fenetre/formN
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qvector2d.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qtouchdevice.h \
 		ui_formNouvelleCampagne.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\QVariant \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QAction \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qaction.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qicon.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QApplication \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qeventloop.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QButtonGroup \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHBoxLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qframe.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qvalidator.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qregularexpression.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qslider.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QLabel \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlabel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QLineEdit \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlineedit.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextcursor.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextformat.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qpen.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextoption.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QPushButton \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QTextEdit \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtextedit.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextdocument.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout \
 		BD/collections.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QVector \
 		BD/jeu.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\QVariant \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QString \
 		BD/attribut.h \
 		BD/partie.h \
 		BD\Campagne.h \
 		BD\Jeu.h \
-		BD/personnage.h \
 		BD/campagne.h \
+		BD/personnage.h \
+		BD\Partie.h \
 		BD/playlist.h
 
 release\formNouvellePartie.obj: fenetre\formNouvellePartie.cpp fenetre/formNouvellePartie.h \
@@ -3881,17 +4208,69 @@ release\formNouvellePartie.obj: fenetre\formNouvellePartie.cpp fenetre/formNouve
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qvector2d.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qtouchdevice.h \
 		ui_formNouvellePartie.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\QVariant \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QAction \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qaction.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qicon.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QApplication \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qeventloop.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QButtonGroup \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QFormLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qformlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHBoxLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qframe.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qvalidator.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qregularexpression.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qslider.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QLabel \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlabel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QLineEdit \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlineedit.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextcursor.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextformat.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qpen.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextoption.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QPushButton \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout \
 		fenetre/formNouveauPersonnage.h \
 		fenetre/formModifierPersonnage.h \
 		BD/personnage.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QString \
-		BD/campagne.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\QVariant \
+		BD\Partie.h \
+		BD\Campagne.h \
 		BD\Jeu.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QVector \
 		BD/attribut.h \
+		BD/campagne.h \
 		BD/partie.h \
-		BD\Campagne.h \
 		BD/collections.h \
 		BD/jeu.h \
 		BD/playlist.h
@@ -3972,8 +4351,9 @@ release\collections.obj: BD\collections.cpp C:\Qt\5.7\msvc2015_64\include\QtCore
 		BD/partie.h \
 		BD\Campagne.h \
 		BD\Jeu.h \
-		BD/personnage.h \
 		BD/campagne.h \
+		BD/personnage.h \
+		BD\Partie.h \
 		BD/playlist.h
 
 release\formModifierPartie.obj: fenetre\formModifierPartie.cpp fenetre/formModifierPartie.h \
@@ -4076,19 +4456,71 @@ release\formModifierPartie.obj: fenetre\formModifierPartie.cpp fenetre/formModif
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qvector2d.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qtouchdevice.h \
 		ui_formModifierPartie.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\QVariant \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QAction \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qaction.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qicon.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QApplication \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qeventloop.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QButtonGroup \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QFormLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qformlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHBoxLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qframe.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qvalidator.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qregularexpression.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qslider.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QLabel \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlabel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QLineEdit \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlineedit.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextcursor.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextformat.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qpen.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextoption.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QPushButton \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout \
 		fenetre/formNouveauPersonnage.h \
 		fenetre/formModifierPersonnage.h \
 		BD/collections.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QVector \
 		BD/jeu.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\QVariant \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QString \
 		BD/attribut.h \
 		BD/partie.h \
 		BD\Campagne.h \
 		BD\Jeu.h \
-		BD/personnage.h \
 		BD/campagne.h \
+		BD/personnage.h \
+		BD\Partie.h \
 		BD/playlist.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QDebug \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QMessageBox \
@@ -4207,24 +4639,70 @@ release\formNouveauPersonnage.obj: fenetre\formNouveauPersonnage.cpp C:\Qt\5.7\m
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdialog.h \
 		ui_formNouveauPersonnage.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\QVariant \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QAction \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qaction.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qicon.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QApplication \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qeventloop.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QButtonGroup \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QFrame \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHBoxLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qvalidator.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qregularexpression.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qslider.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QLabel \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QPushButton \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QSpacerItem \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QStackedWidget \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qstackedwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QTextEdit \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtextedit.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextdocument.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QWidget \
 		BD/collections.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QVector \
 		BD/jeu.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\QVariant \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QString \
 		BD/attribut.h \
 		BD/partie.h \
 		BD\Campagne.h \
 		BD\Jeu.h \
-		BD/personnage.h \
 		BD/campagne.h \
+		BD/personnage.h \
+		BD\Partie.h \
 		BD/playlist.h
 
-release\formModifierPersonnage.obj: fenetre\formModifierPersonnage.cpp fenetre/formModifierPersonnage.h \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdialog.h \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qwidget.h \
-		C:\Qt\5.7\msvc2015_64\include\QtGui\qwindowdefs.h \
+release\formModifierPersonnage.obj: fenetre\formModifierPersonnage.cpp C:\Qt\5.7\msvc2015_64\include\QtCore\QDebug \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qdebug.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qalgorithms.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qglobal.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qconfig.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qfeatures.h \
@@ -4247,58 +4725,68 @@ release\formModifierPersonnage.obj: fenetre\formModifierPersonnage.cpp fenetre/f
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qmutex.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qnumeric.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qversiontagging.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qobjectdefs.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qnamespace.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qobjectdefs_impl.h \
-		C:\Qt\5.7\msvc2015_64\include\QtGui\qwindowdefs_win.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qobject.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qstring.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qhash.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qchar.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qbytearray.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qiterator.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qlist.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qrefcount.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qarraydata.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qstringbuilder.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qlist.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qalgorithms.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qiterator.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qhashfunctions.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qpair.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qbytearraylist.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qbytearray.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qnamespace.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qstring.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qstringbuilder.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qstringlist.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qregexp.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qstringmatcher.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qmap.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qtextstream.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qiodevice.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qobject.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qobjectdefs.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qobjectdefs_impl.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qcoreevent.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qscopedpointer.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qmetatype.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qvarlengtharray.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qcontainerfwd.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qobject_impl.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qlocale.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qvariant.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qshareddata.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qvector.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qpoint.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qset.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qcontiguouscache.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qsharedpointer.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qsharedpointer_impl.h \
+		fenetre/formModifierPersonnage.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QDialog \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdialog.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qwindowdefs.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qwindowdefs_win.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qmargins.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qpaintdevice.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qrect.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qsize.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qpoint.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qpalette.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qcolor.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qrgb.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qrgba64.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qbrush.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qvector.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qmatrix.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qpolygon.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qregion.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qdatastream.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qiodevice.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qline.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qtransform.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qpainterpath.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qimage.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qpixelformat.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qpixmap.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qsharedpointer.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qshareddata.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qhash.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qsharedpointer_impl.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qfont.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qfontmetrics.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qfontinfo.h \
@@ -4306,13 +4794,6 @@ release\formModifierPersonnage.obj: fenetre\formModifierPersonnage.cpp fenetre/f
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qcursor.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qkeysequence.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qevent.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qvariant.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qmap.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qdebug.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qtextstream.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qlocale.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qset.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qcontiguouscache.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qurl.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qurlquery.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qfile.h \
@@ -4320,17 +4801,74 @@ release\formModifierPersonnage.obj: fenetre\formModifierPersonnage.cpp fenetre/f
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qvector2d.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qtouchdevice.h \
 		ui_formModifierPersonnage.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\QVariant \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QAction \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qaction.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qicon.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QApplication \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qeventloop.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QButtonGroup \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QFrame \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qframe.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHBoxLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qvalidator.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qregularexpression.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qslider.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QLabel \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlabel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QLineEdit \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlineedit.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextcursor.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextformat.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qpen.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextoption.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QPushButton \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QSpacerItem \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QStackedWidget \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qstackedwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QTextEdit \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtextedit.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextdocument.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QWidget \
 		BD/personnage.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QString \
-		BD/campagne.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\QVariant \
+		BD\Partie.h \
+		BD\Campagne.h \
 		BD\Jeu.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QVector \
 		BD/attribut.h \
 		BD/collections.h \
 		BD/jeu.h \
 		BD/partie.h \
-		BD\Campagne.h \
+		BD/campagne.h \
 		BD/playlist.h
 
 release\formLecteurMusique.obj: fenetre\formLecteurMusique.cpp fenetre/formLecteurMusique.h \
@@ -4469,6 +5007,35 @@ release\formLecteurMusique.obj: fenetre\formLecteurMusique.cpp fenetre/formLecte
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
 		ui_formLecteurMusique.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QAction \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qaction.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QApplication \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qeventloop.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QButtonGroup \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QCheckBox \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qcheckbox.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHBoxLayout \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QLabel \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qlabel.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QListWidget \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QPushButton \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QSlider \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout \
 		C:\Qt\5.7\msvc2015_64\include\QtMultimedia\QSound \
 		C:\Qt\5.7\msvc2015_64\include\QtMultimedia\qsound.h \
 		C:\Qt\5.7\msvc2015_64\include\QtMultimedia\QMediaPlayer.h \
@@ -4494,8 +5061,6 @@ release\formLecteurMusique.obj: fenetre\formLecteurMusique.cpp fenetre/formLecte
 		C:\Qt\5.7\msvc2015_64\include\QtNetwork\qhostaddress.h \
 		C:\Qt\5.7\msvc2015_64\include\QtNetwork\qabstractsocket.h \
 		C:\Qt\5.7\msvc2015_64\include\QtTest\qtestsystem.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qcoreapplication.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qeventloop.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qelapsedtimer.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\QWindow \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qwindow.h \
@@ -4513,10 +5078,6 @@ release\formLecteurMusique.obj: fenetre\formLecteurMusique.cpp fenetre/formLecte
 		C:\Qt\5.7\msvc2015_64\include\QtTest\qtestkeyboard.h \
 		C:\Qt\5.7\msvc2015_64\include\QtTest\qtestspontaneevent.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qpointer.h \
-		C:\Qt\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
-		C:\Qt\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
-		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
 		C:\Qt\5.7\msvc2015_64\include\QtTest\qtestmouse.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QDebug \
 		C:\Qt\5.7\msvc2015_64\include\QtTest\qtesttouch.h \
@@ -4524,14 +5085,15 @@ release\formLecteurMusique.obj: fenetre\formLecteurMusique.cpp fenetre/formLecte
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QMetaEnum \
 		BD/playlist.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QVector \
-		BD/collections.h \
 		BD/jeu.h \
 		BD/attribut.h \
+		BD/collections.h \
 		BD/partie.h \
 		BD\Campagne.h \
 		BD\Jeu.h \
+		BD/campagne.h \
 		BD/personnage.h \
-		BD/campagne.h
+		BD\Partie.h
 
 release\playlist.obj: BD\playlist.cpp C:\Qt\5.7\msvc2015_64\include\QtCore\QDataStream \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qdatastream.h \
@@ -4603,7 +5165,9 @@ release\playlist.obj: BD\playlist.cpp C:\Qt\5.7\msvc2015_64\include\QtCore\QData
 		BD/playlist.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QVariant \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\QString \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\QVector
+		C:\Qt\5.7\msvc2015_64\include\QtCore\QVector \
+		BD/jeu.h \
+		BD/attribut.h
 
 release\moc_mainwindow.obj: release\moc_mainwindow.cpp 
 

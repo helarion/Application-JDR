@@ -11,12 +11,12 @@ Playlist::Playlist ()
     titre="";
 }
 
-Playlist::Playlist (QString s_nom,QVector<QString> s_liste, Jeu s_jeu)
+Playlist::Playlist (QString s_nom,QVector<QString> s_liste, QString s_titreJeu)
 {
     nom=s_nom;
     liste=s_liste;
-    jeu=s_jeu;
-    titreJeu=jeu.getTitre();
+    //jeu=s_jeu;
+    titreJeu=s_titreJeu;
     titre=nom.toLower();
     titre.replace( " ", "_" );
 }
@@ -26,25 +26,32 @@ Playlist::Playlist (const Playlist & Copie)
     liste = Copie.liste;
     titre = Copie.titre;
 }
-Playlist::Playlist (QString titre){ Load(titre); }
+Playlist::Playlist (QString nomFichier){ Load(nomFichier); }
 
 Playlist::~Playlist()
 {}
 
-void Playlist::afficher () const
+void Playlist::afficher ()
 {
     qDebug() << "Playlist: " << nom;
-    qDebug() << "Liste: ";
+    qDebug() << "Jeu" << titreJeu;
+    /*qDebug() << "Liste: ";
     for(int i=0;i<liste.size();i++)
     {
         qDebug() << liste[i];
-    }
+    }*/
     qDebug() << "titre: " << titre;
 }
 
 QString Playlist::getNom()
 {
     return nom;
+}
+
+QString Playlist::getTitreJeu()
+{
+    //qDebug() << "return titreJeu:" <<titreJeu;
+    return titreJeu;
 }
 
 QString Playlist::getTitre()
@@ -57,10 +64,10 @@ QVector<QString> Playlist::getListe()
     return liste;
 }
 
-Jeu Playlist::getJeu()
+/*Jeu Playlist::getJeu()
 {
     return jeu;
-}
+}*/
 
 void Playlist::setNom(QString nom)
 {
@@ -99,7 +106,9 @@ void Playlist::Save()
 
     QDataStream out(&file);
 
-    out << nom << titre << liste << titreJeu;
+    qDebug() <<"titreJeu sauvé:" << titreJeu;
+
+    out << titreJeu << nom << titre << liste;
 
     file.flush();
     file.close();
@@ -120,16 +129,14 @@ void Playlist::Load(QString nomFichier)
     }
 
     QDataStream in(&file);
-    in.setVersion(QDataStream::Qt_5_1);
+    //in.setVersion(QDataStream::Qt_5_1);
 
+    in >> titreJeu;
     in >> nom;
     in >> titre;
     in >> liste;
-    in >> titreJeu;
 
-    jeu.Load(titreJeu);
-
-    //qDebug() << titre << " Récupéré.";
+    //afficher();
 
     file.close();
 }

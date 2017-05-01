@@ -10,6 +10,7 @@
 #include <QTest>
 
 #include "BD/playlist.h"
+#include "BD/jeu.h"
 #include "BD/collections.h"
 
 formLecteurMusique::formLecteurMusique(QWidget *parent) :
@@ -39,11 +40,11 @@ void formLecteurMusique::Load()
     Jeu j=listJeu[jeuSelect];
     ui->listPlaylist->clear();
     remplirListPlaylist();
-    qDebug() << "jtitre" << j.getTitre();
     for(int i=0;i<listPlaylist.size();i++)
     {
-        qDebug() << "titre boucle" << listPlaylist[i].getJeu().getTitre();
-        if(listPlaylist[i].getJeu().getTitre()==j.getTitre())
+        listPlaylist[i].afficher();
+        //qDebug() << "titre boucle" << listPlaylist[i].getTitreJeu();
+        if(listPlaylist[i].getTitreJeu()==j.getTitre())
         {
             QListWidgetItem *newItem = new QListWidgetItem;
             newItem->setData(Qt::UserRole,i);
@@ -121,7 +122,6 @@ void formLecteurMusique::on_listPlaylist_itemDoubleClicked(QListWidgetItem *item
 {
     player->stop();
     int index=item->data(Qt::UserRole).toInt();
-    qDebug() << "test";
     playlist->clear();
     QVector<QString> l=listPlaylist[index].getListe();
     for(int i=0;i<l.size();i++)
@@ -139,7 +139,7 @@ void formLecteurMusique::on_ajouterPlaylistButton_clicked()
     if(directory.isEmpty()){
         return;}
 
-
+    Jeu j=listJeu[jeuSelect];
 
     QDir dir(directory);
     QStringList splitString = dir.absolutePath().split("/");
@@ -155,7 +155,10 @@ void formLecteurMusique::on_ajouterPlaylistButton_clicked()
         f.copy(dir.path()+"/"+itm,"data/Playlist/"+nom+"/"+itm);
         liste.append("data/Playlist/"+nom+"/"+itm);
     }
-    Playlist p(nom,liste,listJeu[jeuSelect]);
+
+   // qDebug() << "gettitre de j" <<j.getTitre();
+
+    Playlist p(nom,liste,j.getTitre());
     p.Save();
     Load();
 

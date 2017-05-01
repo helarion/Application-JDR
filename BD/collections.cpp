@@ -250,7 +250,8 @@ void remplirListPlaylist()
     QString path="data/Playlist";
     QDir dir(path);
     QFileInfoList files = dir.entryInfoList();
-    foreach (QFileInfo file, files){
+    foreach (QFileInfo file, files)
+    {
         if (!file.isDir()){
             list=file.fileName().split(".data");
             nom=list.at(0);
