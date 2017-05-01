@@ -36,15 +36,21 @@ formLecteurMusique::~formLecteurMusique()
 
 void formLecteurMusique::Load()
 {
+    Jeu j=listJeu[jeuSelect];
     ui->listPlaylist->clear();
     remplirListPlaylist();
+    qDebug() << "jtitre" << j.getTitre();
     for(int i=0;i<listPlaylist.size();i++)
     {
-        QListWidgetItem *newItem = new QListWidgetItem;
-        newItem->setData(Qt::UserRole,i);
-        // le nom de l'objet comme text affiché
-        newItem->setText(listPlaylist[i].getNom());
-        ui->listPlaylist->addItem(newItem);
+        qDebug() << "titre boucle" << listPlaylist[i].getJeu().getTitre();
+        if(listPlaylist[i].getJeu().getTitre()==j.getTitre())
+        {
+            QListWidgetItem *newItem = new QListWidgetItem;
+            newItem->setData(Qt::UserRole,i);
+            // le nom de l'objet comme text affiché
+            newItem->setText(listPlaylist[i].getNom());
+            ui->listPlaylist->addItem(newItem);
+        }
     }
 }
 
@@ -133,17 +139,23 @@ void formLecteurMusique::on_ajouterPlaylistButton_clicked()
     if(directory.isEmpty()){
         return;}
 
+
+
     QDir dir(directory);
     QStringList splitString = dir.absolutePath().split("/");
     QString nom = splitString[splitString.size()-1];
     QStringList files = dir.entryList(QStringList() << "*.mp3",QDir::Files);
 
     QVector<QString> liste;
+    QDir d;
+    d.mkdir("data/Playlist/"+nom);
     foreach(QString itm, files)
     {
-        liste.append(dir.path()+"/"+itm);
+        QFile f;
+        f.copy(dir.path()+"/"+itm,"data/Playlist/"+nom+"/"+itm);
+        liste.append("data/Playlist/"+nom+"/"+itm);
     }
-    Playlist p(nom,liste);
+    Playlist p(nom,liste,listJeu[jeuSelect]);
     p.Save();
     Load();
 

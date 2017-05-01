@@ -10,19 +10,24 @@ Personnage::Personnage()
 
 }
 
-Personnage::Personnage(QString s_nom, QString s_prenom,
-                       int s_age, QString s_description,
-                       QString s_sexe, Campagne s_campagne,
-                       QVector<QString> s_valeurAttribut)
+Personnage::Personnage(QString s_joueur, QString s_nom, QString s_prenom, int s_age,
+                       QString s_description, QString s_background, QString s_invArmure,
+                       QString s_invArme, QString s_invObjet,QString s_sexe,
+                       Partie s_partie, QVector<QString> s_valeurAttribut)
 {
+    joueur=s_joueur;
     nom=s_nom;
     prenom=s_prenom;
     age=s_age;
     description=s_description;
     sexe=s_sexe;
-    campagne=s_campagne;
+    partie=s_partie;
+    background=s_background;
+    invArmure=s_invArmure;
+    invArme=s_invArme;
+    invObjet=s_invObjet;
     valeurAttribut=s_valeurAttribut;
-    titreCampagne=campagne.getTitre();
+    titrePartie=partie.getCampagne().getTitre()+"_"+partie.getTitre();
     titre=nom.toLower();
     titre+=prenom.toLower();
     titre.replace( " ", "_" );
@@ -31,6 +36,11 @@ Personnage::Personnage(QString s_nom, QString s_prenom,
 Personnage::Personnage(QString titre)
 {
     Load(titre);
+}
+
+QString Personnage::getJoueur()
+{
+    return joueur;
 }
 
 QString Personnage::getTitre()
@@ -63,9 +73,52 @@ QString Personnage::getSexe()
     return sexe;
 }
 
+Partie Personnage::getPartie()
+{
+    return partie;
+}
+
+QString Personnage::getBackground()
+{
+    return background;
+}
+
+QString Personnage::getInvArme()
+{
+    return invArme;
+}
+
+QString Personnage::getInvArmure()
+{
+    return invArmure;
+}
+
+QString Personnage::getInvObjet()
+{
+    return invObjet;
+}
+
+void Personnage::setJoueur(QString s_joueur)
+{
+    joueur=s_joueur;
+}
+
 void Personnage::setNom(QString s_nom)
 {
     nom=s_nom;
+    // suppression du fichier actuel
+    QString filename = "data/Partie/";
+    filename+=titrePartie+"_"+titre+".data";
+    QFile file(filename);
+    file.remove();
+
+    // nouveau titre de fichier adapté au nom
+    titre=nom.toLower();
+    titre+=prenom.toLower();
+    titre.replace( " ", "_" );
+
+    // Sauvegarde du nouveau fichier
+    Save();
 }
 
 void Personnage::setPrenom(QString s_prenom)
@@ -83,14 +136,45 @@ void Personnage::setDescription(QString s_description)
     description=s_description;
 }
 
+void Personnage::setBackground(QString s_background)
+{
+    background=s_background;
+}
+
+void Personnage::setInvArme(QString s_invArme)
+{
+    invArme=s_invArme;
+}
+
+void Personnage::setInvArmure(QString s_invArmure)
+{
+    invArmure=s_invArmure;
+}
+
+void Personnage::setInvObjet(QString s_invObjet)
+{
+    invObjet=s_invObjet;
+}
+
+void Personnage::setValeurAttribut(QVector<QString> list)
+{
+    valeurAttribut=list;
+}
+
 void Personnage::setSexe(QString s_sexe)
 {
     sexe=s_sexe;
 }
 
+QVector<QString> Personnage::getValeurAttribut()
+{
+    return valeurAttribut;
+}
+
 void Personnage::afficher()
 {
-    qDebug() << "nom:" << nom;
+    qDebug() << "Personnage:" << nom;
+    qDebug() << "Joueur:" << joueur;
     qDebug() << "prenom:" << prenom;
     qDebug() << "age:" << age;
     qDebug() << "description:" << description;
@@ -100,7 +184,7 @@ void Personnage::afficher()
 void Personnage::Save()
 {
     QString filename = "data/Personnage/";
-    filename+=titreCampagne+"_"+titre;
+    filename+=partie.getTitreCampagne()+"_"+partie.getTitre()+"_"+titre;
     filename+=".data";
     qDebug() << filename;
     QFile file(filename);
@@ -113,7 +197,11 @@ void Personnage::Save()
 
     QDataStream out(&file);
 
-    out << nom << prenom << age << description << sexe << titre << titreCampagne;
+    out << joueur << nom << prenom
+        << age << description << sexe
+        << titre << titrePartie
+        << valeurAttribut << invArme
+        << invArmure << invObjet << background;
 
     file.flush();
     file.close();
@@ -135,15 +223,21 @@ void Personnage::Load(QString nomFichier)
     QDataStream in(&file);
     in.setVersion(QDataStream::Qt_5_1);
 
+    in >> joueur;
     in >> nom;
     in >> prenom;
     in >> age;
     in >> description;
     in >> sexe;
     in >> titre;
-    in >> titreCampagne;
+    in >> titrePartie;
+    in >> valeurAttribut;
+    in >> invArme;
+    in >> invArmure;
+    in >> invObjet;
+    in >> background;
 
-    campagne.Load(titreCampagne);
+    partie.Load(titrePartie);
     file.close();
 
 }

@@ -19,9 +19,7 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
-#include <QtWidgets/QListWidget>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
@@ -34,15 +32,6 @@ public:
     QFormLayout *formLayout;
     QLabel *label_3;
     QLineEdit *nomPartie;
-    QLabel *label_4;
-    QTextEdit *resumePartie;
-    QHBoxLayout *horizontalLayout;
-    QVBoxLayout *verticalLayout_2;
-    QLabel *label_5;
-    QListWidget *listPersonnage;
-    QVBoxLayout *verticalLayout;
-    QPushButton *ajouterPersonnageButton;
-    QPushButton *modifierPersonnageButton;
     QHBoxLayout *horizontalLayout_2;
     QPushButton *validerButton;
     QPushButton *retourButton;
@@ -51,7 +40,7 @@ public:
     {
         if (formNouvellePartie->objectName().isEmpty())
             formNouvellePartie->setObjectName(QStringLiteral("formNouvellePartie"));
-        formNouvellePartie->resize(400, 444);
+        formNouvellePartie->resize(400, 158);
         verticalLayout_3 = new QVBoxLayout(formNouvellePartie);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         label = new QLabel(formNouvellePartie);
@@ -75,55 +64,8 @@ public:
 
         formLayout->setWidget(0, QFormLayout::FieldRole, nomPartie);
 
-        label_4 = new QLabel(formNouvellePartie);
-        label_4->setObjectName(QStringLiteral("label_4"));
-
-        formLayout->setWidget(2, QFormLayout::LabelRole, label_4);
-
-        resumePartie = new QTextEdit(formNouvellePartie);
-        resumePartie->setObjectName(QStringLiteral("resumePartie"));
-
-        formLayout->setWidget(3, QFormLayout::SpanningRole, resumePartie);
-
 
         verticalLayout_3->addLayout(formLayout);
-
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        horizontalLayout->setContentsMargins(-1, -1, 0, -1);
-        verticalLayout_2 = new QVBoxLayout();
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        verticalLayout_2->setContentsMargins(-1, -1, 0, -1);
-        label_5 = new QLabel(formNouvellePartie);
-        label_5->setObjectName(QStringLiteral("label_5"));
-
-        verticalLayout_2->addWidget(label_5);
-
-        listPersonnage = new QListWidget(formNouvellePartie);
-        listPersonnage->setObjectName(QStringLiteral("listPersonnage"));
-
-        verticalLayout_2->addWidget(listPersonnage);
-
-
-        horizontalLayout->addLayout(verticalLayout_2);
-
-        verticalLayout = new QVBoxLayout();
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        ajouterPersonnageButton = new QPushButton(formNouvellePartie);
-        ajouterPersonnageButton->setObjectName(QStringLiteral("ajouterPersonnageButton"));
-
-        verticalLayout->addWidget(ajouterPersonnageButton);
-
-        modifierPersonnageButton = new QPushButton(formNouvellePartie);
-        modifierPersonnageButton->setObjectName(QStringLiteral("modifierPersonnageButton"));
-
-        verticalLayout->addWidget(modifierPersonnageButton);
-
-
-        horizontalLayout->addLayout(verticalLayout);
-
-
-        verticalLayout_3->addLayout(horizontalLayout);
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
@@ -153,10 +95,6 @@ public:
         formNouvellePartie->setWindowTitle(QApplication::translate("formNouvellePartie", "Cr\303\251ation de partie", 0));
         label->setText(QApplication::translate("formNouvellePartie", "Nouvelle Partie :", 0));
         label_3->setText(QApplication::translate("formNouvellePartie", "Nom :", 0));
-        label_4->setText(QApplication::translate("formNouvellePartie", "Resum\303\251:", 0));
-        label_5->setText(QApplication::translate("formNouvellePartie", "Personnages :", 0));
-        ajouterPersonnageButton->setText(QApplication::translate("formNouvellePartie", "Ajouter", 0));
-        modifierPersonnageButton->setText(QApplication::translate("formNouvellePartie", "Modifier", 0));
         validerButton->setText(QApplication::translate("formNouvellePartie", "Valider", 0));
         retourButton->setText(QApplication::translate("formNouvellePartie", "Annuler", 0));
     } // retranslateUi

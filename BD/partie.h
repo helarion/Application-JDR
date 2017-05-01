@@ -5,7 +5,6 @@
 #include <QString>
 
 #include "Campagne.h"
-#include "personnage.h"
 
 class Partie
 {
@@ -15,12 +14,10 @@ class Partie
         QString resume;
         QString titre;
         QString titreCampagne;
-        QVector<Personnage> personnages;
-        QVector<QString> titrePersonnages;
         static int increment;
     public:
         Partie();
-        Partie (QString s_nom,QString s_resume,Campagne s_campagne, QVector<Personnage> personnages);	// Constructeur par défaut public
+        Partie (QString s_nom,Campagne s_campagne);	// Constructeur par défaut public
         Partie (const Partie & copie); // Constructeur de copie public
         Partie (QString titre);
         ~Partie ();				// Destructeur public
@@ -33,12 +30,10 @@ class Partie
         Campagne getCampagne();
         QString getTitreCampagne();
         QString getTitre();
-        QVector<Personnage> getPersonnage();
         QVector<QString> getTitrePersonnages();
         void setNom(QString s_nom);
         void setResume(QString s_resume);
         void setCampagne(Campagne s_campagne);
-        void setPersonnages(QVector<Personnage> s_personnages);
 };
 
 #endif

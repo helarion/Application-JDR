@@ -18,6 +18,8 @@
 #include "fenetre/formNouvellePartie.h"
 #include "fenetre/formModifierPartie.h"
 #include "fenetre/formLecteurMusique.h"
+#include "fenetre/formNouveauPersonnage.h"
+#include "fenetre/formModifierPersonnage.h"
 
 // Database
 #include "BD/jeu.h"
@@ -33,6 +35,18 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->contentStack->setCurrentIndex(indexStack);
     ui->retourButton->hide();
+    ui->playlistButton->hide();
+    remplirListJeu();
+    ui->listJeu->clear();
+    for(int i=0;i<listJeu.size();i++)
+    {
+        QListWidgetItem *newItem = new QListWidgetItem;
+        // on met le titre de l'objet comme donnée
+        newItem->setData(Qt::UserRole,listJeu[i].getTitre());
+        // le nom de l'objet comme text affiché
+        newItem->setText(listJeu[i].getNom());
+        ui->listJeu->addItem(newItem);
+    }
 }
 
 MainWindow::~MainWindow()
@@ -102,29 +116,15 @@ void MainWindow::changementPartie()
     }
 }
 
-void MainWindow::on_jeuButton_clicked()
-{
-   ui->retourButton->setVisible(true);
-   indexStack=1;
-   ui->contentStack->setCurrentIndex(indexStack);
-   remplirListJeu();
-   ui->listJeu->clear();
-   for(int i=0;i<listJeu.size();i++)
-   {
-       QListWidgetItem *newItem = new QListWidgetItem;
-       // on met le titre de l'objet comme donnée
-       newItem->setData(Qt::UserRole,listJeu[i].getTitre());
-       // le nom de l'objet comme text affiché
-       newItem->setText(listJeu[i].getNom());
-       ui->listJeu->addItem(newItem);
-   }
-}
-
 void MainWindow::on_retourButton_clicked()
 {
     indexStack--;
     ui->contentStack->setCurrentIndex(indexStack);
-    if(indexStack==0) ui->retourButton->hide();
+    if(indexStack==0)
+    {
+        ui->retourButton->hide();
+        ui->playlistButton->hide();
+    }
 }
 
 void MainWindow::on_nouveauJeuButton_clicked()
@@ -151,7 +151,9 @@ void MainWindow::on_selectionnerJeuButton_clicked()
 {
     if(ui->listJeu->currentItem()!=NULL)
     {
-        indexStack=2;
+        ui->retourButton->setVisible(true);
+        ui->playlistButton->setVisible(true);
+        indexStack++;
         ui->contentStack->setCurrentIndex(indexStack);
         remplirListCampagne();
         ui->listCampagne->clear();
@@ -194,7 +196,7 @@ void MainWindow::on_selectionnerCampagneButton_clicked()
     if(ui->listCampagne->currentItem()!=NULL)
     {
         ui->listPartie->clear();
-        indexStack=3;
+        indexStack++;
         ui->contentStack->setCurrentIndex(indexStack);
         remplirListPartie();
         for(int i=0;i<listPartie.size();i++)
@@ -250,16 +252,45 @@ void MainWindow::on_modifierPartieButton_clicked()
 
 void MainWindow::on_selectionnerPartieButton_clicked()
 {
-
+    if(ui->listPartie->currentItem()!=NULL)
+    {
+        partieSelect=ui->listPartie->currentItem()->data(Qt::UserRole).toInt();
+        ui->listPersonnage->clear();
+        indexStack++;
+        ui->contentStack->setCurrentIndex(indexStack);
+        remplirListPersonnage();       
+        ui->resumeEdit->setText(listPartie[partieSelect].getResume());
+        for(int i=0;i<listPersonnage.size();i++)
+        {
+            if(listPersonnage[i].getPartie().compare(listPartie[partieSelect]))
+            {
+                QListWidgetItem *newItem = new QListWidgetItem;
+                // on met l'index de liste comme donnée
+                newItem->setData(Qt::UserRole,i);
+                // le nom de l'objet comme text affiché
+                newItem->setText(listPersonnage[i].getNom()+listPersonnage[i].getPrenom());
+                ui->listPersonnage->addItem(newItem);
+            }
+        }
+    }
 }
 
-void MainWindow::on_autreButton_clicked()
+void MainWindow::changementPersonnage()
 {
-    //QMessageBox::information(this,tr("Prochainement !"),tr("Des nouveautés à venir !") );
-    formLecteurMusique *form = new formLecteurMusique();
-    form->setAttribute(Qt::WA_DeleteOnClose);//we don't want memory leak
-    form->setModal(Qt::NonModal);
-    form->show();
+    remplirListPersonnage();
+    ui->listPersonnage->clear();
+    for(int i=0;i<listPersonnage.size();i++)
+    {
+        if(listPersonnage[i].getPartie().compare(listPartie[partieSelect]))
+        {
+            QListWidgetItem *newItem = new QListWidgetItem;
+            // on met le titre de l'objet comme donnée
+            newItem->setData(Qt::UserRole,listPersonnage[i].getTitre());
+            // le nom de l'objet comme text affiché
+            newItem->setText(listPersonnage[i].getNom()+listPersonnage[i].getPrenom());
+            ui->listPersonnage->addItem(newItem);
+        }
+    }
 }
 
 void MainWindow::on_listJeu_itemDoubleClicked(QListWidgetItem *item)
@@ -275,4 +306,37 @@ void MainWindow::on_listCampagne_itemDoubleClicked(QListWidgetItem *item)
 void MainWindow::on_listPartie_itemDoubleClicked(QListWidgetItem *item)
 {
     on_selectionnerPartieButton_clicked();
+}
+
+void MainWindow::on_ajouterPersonnageButton_clicked()
+{
+    formNouveauPersonnage formNouveauPersonnage;
+    formNouveauPersonnage.setModal(true);
+    QObject::connect(&formNouveauPersonnage, SIGNAL(listPersonnageChanged()),this, SLOT(changementPersonnage()));
+    formNouveauPersonnage.exec();
+}
+
+void MainWindow::on_modifierPersonnageButton_clicked()
+{
+    if(ui->listPersonnage->currentItem()!=NULL)
+    {
+        personnageSelect=ui->listPersonnage->currentItem()->data(Qt::UserRole).toInt();
+        formModifierPersonnage formModifierPersonnage;
+        formModifierPersonnage.setModal(true);
+        QObject::connect(&formModifierPersonnage, SIGNAL(listPersonnageChanged()),this, SLOT(changementPersonnage()));
+        formModifierPersonnage.exec();
+    }
+}
+
+void MainWindow::on_listPersonnage_itemDoubleClicked(QListWidgetItem *item)
+{
+    on_modifierPersonnageButton_clicked();
+}
+
+void MainWindow::on_playlistButton_clicked()
+{
+    formLecteurMusique *form = new formLecteurMusique();
+    form->setAttribute(Qt::WA_DeleteOnClose);
+    form->setModal(Qt::NonModal);
+    form->show();
 }

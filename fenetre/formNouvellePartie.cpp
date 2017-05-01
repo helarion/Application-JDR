@@ -23,36 +23,12 @@ formNouvellePartie::~formNouvellePartie()
 void formNouvellePartie::on_validerButton_clicked()
 {
     // récupération des valeurs du formulaire
-    QString nom = ui->nomPartie->text();
-    QString resume = ui->resumePartie->toPlainText();
-    QVector<Personnage> personnages;
-
-    // récupération des attributs selectionnés
-    for(int i=0;i<ui->listPersonnage->count();i++)
-    {
-        int index=ui->listPersonnage->item(i)->data(Qt::UserRole).toInt();
-        personnages.append(listPersonnage[index]);
-    }
-    Partie p(nom,resume,listCampagne[campagneSelect],personnages);
+    QString nom = ui->nomPartie->text(); 
+    Partie p(nom,listCampagne[campagneSelect]);
     p.afficher();
     p.Save();
     emit listPartieChanged();
     this->close();
-}
-
-void formNouvellePartie::changementPersonnage()
-{
-    remplirListPersonnage();
-    ui->listPersonnage->clear();
-    for(int i=0;i<listPersonnage.size();i++)
-    {
-        QListWidgetItem *newItem = new QListWidgetItem;
-        // on met le titre de l'objet comme donnée
-        newItem->setData(Qt::UserRole,listPersonnage[i].getTitre());
-        // le nom de l'objet comme text affiché
-        newItem->setText(listPersonnage[i].getNom());
-        ui->listPersonnage->addItem(newItem);
-    }
 }
 
 void formNouvellePartie::on_ajouterPersonnageButton_clicked()

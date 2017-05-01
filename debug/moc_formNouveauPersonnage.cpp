@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_formNouveauPersonnage_t {
     QByteArrayData data[6];
-    char stringdata0[122];
+    char stringdata0[132];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,15 +32,15 @@ static const qt_meta_stringdata_formNouveauPersonnage_t qt_meta_stringdata_formN
 QT_MOC_LITERAL(0, 0, 21), // "formNouveauPersonnage"
 QT_MOC_LITERAL(1, 22, 21), // "listPersonnageChanged"
 QT_MOC_LITERAL(2, 44, 0), // ""
-QT_MOC_LITERAL(3, 45, 27), // "on_InventaireButton_clicked"
-QT_MOC_LITERAL(4, 73, 23), // "on_RetourButton_clicked"
-QT_MOC_LITERAL(5, 97, 24) // "on_ajouterButton_clicked"
+QT_MOC_LITERAL(3, 45, 24), // "on_ajouterButton_clicked"
+QT_MOC_LITERAL(4, 70, 31), // "on_pagePrecedenteButton_clicked"
+QT_MOC_LITERAL(5, 102, 29) // "on_pageSuivanteButton_clicked"
 
     },
     "formNouveauPersonnage\0listPersonnageChanged\0"
-    "\0on_InventaireButton_clicked\0"
-    "on_RetourButton_clicked\0"
-    "on_ajouterButton_clicked"
+    "\0on_ajouterButton_clicked\0"
+    "on_pagePrecedenteButton_clicked\0"
+    "on_pageSuivanteButton_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -83,9 +83,9 @@ void formNouveauPersonnage::qt_static_metacall(QObject *_o, QMetaObject::Call _c
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->listPersonnageChanged(); break;
-        case 1: _t->on_InventaireButton_clicked(); break;
-        case 2: _t->on_RetourButton_clicked(); break;
-        case 3: _t->on_ajouterButton_clicked(); break;
+        case 1: _t->on_ajouterButton_clicked(); break;
+        case 2: _t->on_pagePrecedenteButton_clicked(); break;
+        case 3: _t->on_pageSuivanteButton_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {

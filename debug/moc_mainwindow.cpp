@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[24];
-    char stringdata0[610];
+    QByteArrayData data[27];
+    char stringdata0[720];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -30,33 +30,35 @@ struct qt_meta_stringdata_MainWindow_t {
 static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
     {
 QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
-QT_MOC_LITERAL(1, 11, 20), // "on_jeuButton_clicked"
-QT_MOC_LITERAL(2, 32, 0), // ""
-QT_MOC_LITERAL(3, 33, 23), // "on_retourButton_clicked"
-QT_MOC_LITERAL(4, 57, 27), // "on_nouveauJeuButton_clicked"
-QT_MOC_LITERAL(5, 85, 28), // "on_modifierJeuButton_clicked"
-QT_MOC_LITERAL(6, 114, 32), // "on_selectionnerJeuButton_clicked"
-QT_MOC_LITERAL(7, 147, 32), // "on_nouveauCampagneButton_clicked"
-QT_MOC_LITERAL(8, 180, 33), // "on_modifierCampagneButton_cli..."
-QT_MOC_LITERAL(9, 214, 37), // "on_selectionnerCampagneButton..."
-QT_MOC_LITERAL(10, 252, 31), // "on_listJeu_itemSelectionChanged"
-QT_MOC_LITERAL(11, 284, 36), // "on_listCampagne_itemSelection..."
-QT_MOC_LITERAL(12, 321, 30), // "on_ajouterPartieButton_clicked"
-QT_MOC_LITERAL(13, 352, 31), // "on_modifierPartieButton_clicked"
-QT_MOC_LITERAL(14, 384, 35), // "on_selectionnerPartieButton_c..."
-QT_MOC_LITERAL(15, 420, 22), // "on_autreButton_clicked"
-QT_MOC_LITERAL(16, 443, 28), // "on_listJeu_itemDoubleClicked"
-QT_MOC_LITERAL(17, 472, 16), // "QListWidgetItem*"
-QT_MOC_LITERAL(18, 489, 4), // "item"
-QT_MOC_LITERAL(19, 494, 33), // "on_listCampagne_itemDoubleCli..."
-QT_MOC_LITERAL(20, 528, 31), // "on_listPartie_itemDoubleClicked"
-QT_MOC_LITERAL(21, 560, 13), // "changementJeu"
-QT_MOC_LITERAL(22, 574, 18), // "changementCampagne"
-QT_MOC_LITERAL(23, 593, 16) // "changementPartie"
+QT_MOC_LITERAL(1, 11, 23), // "on_retourButton_clicked"
+QT_MOC_LITERAL(2, 35, 0), // ""
+QT_MOC_LITERAL(3, 36, 27), // "on_nouveauJeuButton_clicked"
+QT_MOC_LITERAL(4, 64, 28), // "on_modifierJeuButton_clicked"
+QT_MOC_LITERAL(5, 93, 32), // "on_selectionnerJeuButton_clicked"
+QT_MOC_LITERAL(6, 126, 32), // "on_nouveauCampagneButton_clicked"
+QT_MOC_LITERAL(7, 159, 33), // "on_modifierCampagneButton_cli..."
+QT_MOC_LITERAL(8, 193, 37), // "on_selectionnerCampagneButton..."
+QT_MOC_LITERAL(9, 231, 31), // "on_listJeu_itemSelectionChanged"
+QT_MOC_LITERAL(10, 263, 36), // "on_listCampagne_itemSelection..."
+QT_MOC_LITERAL(11, 300, 30), // "on_ajouterPartieButton_clicked"
+QT_MOC_LITERAL(12, 331, 31), // "on_modifierPartieButton_clicked"
+QT_MOC_LITERAL(13, 363, 35), // "on_selectionnerPartieButton_c..."
+QT_MOC_LITERAL(14, 399, 28), // "on_listJeu_itemDoubleClicked"
+QT_MOC_LITERAL(15, 428, 16), // "QListWidgetItem*"
+QT_MOC_LITERAL(16, 445, 4), // "item"
+QT_MOC_LITERAL(17, 450, 33), // "on_listCampagne_itemDoubleCli..."
+QT_MOC_LITERAL(18, 484, 31), // "on_listPartie_itemDoubleClicked"
+QT_MOC_LITERAL(19, 516, 34), // "on_ajouterPersonnageButton_cl..."
+QT_MOC_LITERAL(20, 551, 35), // "on_modifierPersonnageButton_c..."
+QT_MOC_LITERAL(21, 587, 35), // "on_listPersonnage_itemDoubleC..."
+QT_MOC_LITERAL(22, 623, 25), // "on_playlistButton_clicked"
+QT_MOC_LITERAL(23, 649, 13), // "changementJeu"
+QT_MOC_LITERAL(24, 663, 18), // "changementCampagne"
+QT_MOC_LITERAL(25, 682, 16), // "changementPartie"
+QT_MOC_LITERAL(26, 699, 20) // "changementPersonnage"
 
     },
-    "MainWindow\0on_jeuButton_clicked\0\0"
-    "on_retourButton_clicked\0"
+    "MainWindow\0on_retourButton_clicked\0\0"
     "on_nouveauJeuButton_clicked\0"
     "on_modifierJeuButton_clicked\0"
     "on_selectionnerJeuButton_clicked\0"
@@ -68,13 +70,16 @@ QT_MOC_LITERAL(23, 593, 16) // "changementPartie"
     "on_ajouterPartieButton_clicked\0"
     "on_modifierPartieButton_clicked\0"
     "on_selectionnerPartieButton_clicked\0"
-    "on_autreButton_clicked\0"
     "on_listJeu_itemDoubleClicked\0"
     "QListWidgetItem*\0item\0"
     "on_listCampagne_itemDoubleClicked\0"
     "on_listPartie_itemDoubleClicked\0"
-    "changementJeu\0changementCampagne\0"
-    "changementPartie"
+    "on_ajouterPersonnageButton_clicked\0"
+    "on_modifierPersonnageButton_clicked\0"
+    "on_listPersonnage_itemDoubleClicked\0"
+    "on_playlistButton_clicked\0changementJeu\0"
+    "changementCampagne\0changementPartie\0"
+    "changementPersonnage"
 };
 #undef QT_MOC_LITERAL
 
@@ -84,7 +89,7 @@ static const uint qt_meta_data_MainWindow[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      20,   14, // methods
+      23,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -92,26 +97,29 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  114,    2, 0x08 /* Private */,
-       3,    0,  115,    2, 0x08 /* Private */,
-       4,    0,  116,    2, 0x08 /* Private */,
-       5,    0,  117,    2, 0x08 /* Private */,
-       6,    0,  118,    2, 0x08 /* Private */,
-       7,    0,  119,    2, 0x08 /* Private */,
-       8,    0,  120,    2, 0x08 /* Private */,
-       9,    0,  121,    2, 0x08 /* Private */,
-      10,    0,  122,    2, 0x08 /* Private */,
-      11,    0,  123,    2, 0x08 /* Private */,
-      12,    0,  124,    2, 0x08 /* Private */,
-      13,    0,  125,    2, 0x08 /* Private */,
-      14,    0,  126,    2, 0x08 /* Private */,
-      15,    0,  127,    2, 0x08 /* Private */,
-      16,    1,  128,    2, 0x08 /* Private */,
-      19,    1,  131,    2, 0x08 /* Private */,
-      20,    1,  134,    2, 0x08 /* Private */,
-      21,    0,  137,    2, 0x0a /* Public */,
-      22,    0,  138,    2, 0x0a /* Public */,
-      23,    0,  139,    2, 0x0a /* Public */,
+       1,    0,  129,    2, 0x08 /* Private */,
+       3,    0,  130,    2, 0x08 /* Private */,
+       4,    0,  131,    2, 0x08 /* Private */,
+       5,    0,  132,    2, 0x08 /* Private */,
+       6,    0,  133,    2, 0x08 /* Private */,
+       7,    0,  134,    2, 0x08 /* Private */,
+       8,    0,  135,    2, 0x08 /* Private */,
+       9,    0,  136,    2, 0x08 /* Private */,
+      10,    0,  137,    2, 0x08 /* Private */,
+      11,    0,  138,    2, 0x08 /* Private */,
+      12,    0,  139,    2, 0x08 /* Private */,
+      13,    0,  140,    2, 0x08 /* Private */,
+      14,    1,  141,    2, 0x08 /* Private */,
+      17,    1,  144,    2, 0x08 /* Private */,
+      18,    1,  147,    2, 0x08 /* Private */,
+      19,    0,  150,    2, 0x08 /* Private */,
+      20,    0,  151,    2, 0x08 /* Private */,
+      21,    1,  152,    2, 0x08 /* Private */,
+      22,    0,  155,    2, 0x08 /* Private */,
+      23,    0,  156,    2, 0x0a /* Public */,
+      24,    0,  157,    2, 0x0a /* Public */,
+      25,    0,  158,    2, 0x0a /* Public */,
+      26,    0,  159,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void,
@@ -126,11 +134,14 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 15,   16,
+    QMetaType::Void, 0x80000000 | 15,   16,
+    QMetaType::Void, 0x80000000 | 15,   16,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 17,   18,
-    QMetaType::Void, 0x80000000 | 17,   18,
-    QMetaType::Void, 0x80000000 | 17,   18,
+    QMetaType::Void, 0x80000000 | 15,   16,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -144,26 +155,29 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         MainWindow *_t = static_cast<MainWindow *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_jeuButton_clicked(); break;
-        case 1: _t->on_retourButton_clicked(); break;
-        case 2: _t->on_nouveauJeuButton_clicked(); break;
-        case 3: _t->on_modifierJeuButton_clicked(); break;
-        case 4: _t->on_selectionnerJeuButton_clicked(); break;
-        case 5: _t->on_nouveauCampagneButton_clicked(); break;
-        case 6: _t->on_modifierCampagneButton_clicked(); break;
-        case 7: _t->on_selectionnerCampagneButton_clicked(); break;
-        case 8: _t->on_listJeu_itemSelectionChanged(); break;
-        case 9: _t->on_listCampagne_itemSelectionChanged(); break;
-        case 10: _t->on_ajouterPartieButton_clicked(); break;
-        case 11: _t->on_modifierPartieButton_clicked(); break;
-        case 12: _t->on_selectionnerPartieButton_clicked(); break;
-        case 13: _t->on_autreButton_clicked(); break;
-        case 14: _t->on_listJeu_itemDoubleClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
-        case 15: _t->on_listCampagne_itemDoubleClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
-        case 16: _t->on_listPartie_itemDoubleClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
-        case 17: _t->changementJeu(); break;
-        case 18: _t->changementCampagne(); break;
-        case 19: _t->changementPartie(); break;
+        case 0: _t->on_retourButton_clicked(); break;
+        case 1: _t->on_nouveauJeuButton_clicked(); break;
+        case 2: _t->on_modifierJeuButton_clicked(); break;
+        case 3: _t->on_selectionnerJeuButton_clicked(); break;
+        case 4: _t->on_nouveauCampagneButton_clicked(); break;
+        case 5: _t->on_modifierCampagneButton_clicked(); break;
+        case 6: _t->on_selectionnerCampagneButton_clicked(); break;
+        case 7: _t->on_listJeu_itemSelectionChanged(); break;
+        case 8: _t->on_listCampagne_itemSelectionChanged(); break;
+        case 9: _t->on_ajouterPartieButton_clicked(); break;
+        case 10: _t->on_modifierPartieButton_clicked(); break;
+        case 11: _t->on_selectionnerPartieButton_clicked(); break;
+        case 12: _t->on_listJeu_itemDoubleClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
+        case 13: _t->on_listCampagne_itemDoubleClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
+        case 14: _t->on_listPartie_itemDoubleClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
+        case 15: _t->on_ajouterPersonnageButton_clicked(); break;
+        case 16: _t->on_modifierPersonnageButton_clicked(); break;
+        case 17: _t->on_listPersonnage_itemDoubleClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
+        case 18: _t->on_playlistButton_clicked(); break;
+        case 19: _t->changementJeu(); break;
+        case 20: _t->changementCampagne(); break;
+        case 21: _t->changementPartie(); break;
+        case 22: _t->changementPersonnage(); break;
         default: ;
         }
     }
@@ -194,13 +208,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 20)
+        if (_id < 23)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 20;
+        _id -= 23;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 20)
+        if (_id < 23)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 20;
+        _id -= 23;
     }
     return _id;
 }

@@ -20,8 +20,8 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStackedWidget>
-#include <QtWidgets/QTableView>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -31,13 +31,12 @@ QT_BEGIN_NAMESPACE
 class Ui_formModifierPersonnage
 {
 public:
-    QVBoxLayout *verticalLayout_3;
+    QVBoxLayout *verticalLayout_2;
     QStackedWidget *stackedWidget;
     QWidget *FeuillePersonnage;
     QVBoxLayout *verticalLayout;
+    QLabel *titre_2;
     QHBoxLayout *horizontalLayout;
-    QLabel *ImagePerosnnageLabel_3;
-    QLabel *label_67;
     QLabel *label_71;
     QLineEdit *joueurEdit;
     QHBoxLayout *information1Layout;
@@ -49,7 +48,8 @@ public:
     QLineEdit *AgeEdit;
     QLabel *label_72;
     QLineEdit *SexeEdit;
-    QHBoxLayout *information2Layout;
+    QLabel *label;
+    QHBoxLayout *informationLayout;
     QFrame *line_2;
     QLabel *label_76;
     QHBoxLayout *valeurLayout;
@@ -59,23 +59,28 @@ public:
     QFrame *line_3;
     QLabel *label_78;
     QHBoxLayout *competenceLayout;
-    QFrame *line_4;
-    QVBoxLayout *verticalLayout_2;
-    QLabel *label_79;
-    QTextEdit *descirptionEdit;
-    QHBoxLayout *horizontalLayout_2;
-    QPushButton *InventaireButton;
-    QPushButton *retourButton;
     QWidget *Inventaire;
     QVBoxLayout *verticalLayout_4;
     QLabel *titre;
     QLabel *label_87;
-    QTableView *ArmesTable;
+    QTextEdit *invArme;
     QLabel *label_92;
-    QTableView *ArmureTable;
+    QTextEdit *invArmure;
     QLabel *label_80;
-    QTableView *ObjetTable;
-    QPushButton *RetourButton;
+    QTextEdit *invObjet;
+    QWidget *page;
+    QVBoxLayout *verticalLayout_5;
+    QLabel *label_2;
+    QLabel *label_79;
+    QTextEdit *descirptionEdit;
+    QLabel *label_3;
+    QTextEdit *background;
+    QHBoxLayout *horizontalLayout_3;
+    QPushButton *pagePrecedenteButton;
+    QPushButton *pageSuivanteButton;
+    QSpacerItem *horizontalSpacer;
+    QPushButton *modifierButton;
+    QPushButton *retourButton;
 
     void setupUi(QDialog *formModifierPersonnage)
     {
@@ -85,43 +90,36 @@ public:
         QIcon icon;
         icon.addFile(QStringLiteral("../d20.ico"), QSize(), QIcon::Normal, QIcon::Off);
         formModifierPersonnage->setWindowIcon(icon);
-        verticalLayout_3 = new QVBoxLayout(formModifierPersonnage);
-        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
+        verticalLayout_2 = new QVBoxLayout(formModifierPersonnage);
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         stackedWidget = new QStackedWidget(formModifierPersonnage);
         stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
         FeuillePersonnage = new QWidget();
         FeuillePersonnage->setObjectName(QStringLiteral("FeuillePersonnage"));
         verticalLayout = new QVBoxLayout(FeuillePersonnage);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        ImagePerosnnageLabel_3 = new QLabel(FeuillePersonnage);
-        ImagePerosnnageLabel_3->setObjectName(QStringLiteral("ImagePerosnnageLabel_3"));
-        ImagePerosnnageLabel_3->setMinimumSize(QSize(50, 50));
-        ImagePerosnnageLabel_3->setMaximumSize(QSize(300, 200));
-
-        horizontalLayout->addWidget(ImagePerosnnageLabel_3);
-
-        label_67 = new QLabel(FeuillePersonnage);
-        label_67->setObjectName(QStringLiteral("label_67"));
+        titre_2 = new QLabel(FeuillePersonnage);
+        titre_2->setObjectName(QStringLiteral("titre_2"));
         QFont font;
         font.setPointSize(18);
-        label_67->setFont(font);
-        label_67->setAlignment(Qt::AlignCenter);
+        titre_2->setFont(font);
+        titre_2->setAlignment(Qt::AlignCenter);
 
-        horizontalLayout->addWidget(label_67, 0, Qt::AlignHCenter);
+        verticalLayout->addWidget(titre_2);
 
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         label_71 = new QLabel(FeuillePersonnage);
         label_71->setObjectName(QStringLiteral("label_71"));
 
-        horizontalLayout->addWidget(label_71);
+        horizontalLayout->addWidget(label_71, 0, Qt::AlignRight);
 
         joueurEdit = new QLineEdit(FeuillePersonnage);
         joueurEdit->setObjectName(QStringLiteral("joueurEdit"));
         joueurEdit->setMinimumSize(QSize(50, 15));
         joueurEdit->setMaximumSize(QSize(150, 25));
 
-        horizontalLayout->addWidget(joueurEdit);
+        horizontalLayout->addWidget(joueurEdit, 0, Qt::AlignRight);
 
 
         verticalLayout->addLayout(horizontalLayout);
@@ -173,11 +171,16 @@ public:
 
         verticalLayout->addLayout(information1Layout);
 
-        information2Layout = new QHBoxLayout();
-        information2Layout->setObjectName(QStringLiteral("information2Layout"));
-        information2Layout->setContentsMargins(-1, 0, -1, -1);
+        label = new QLabel(FeuillePersonnage);
+        label->setObjectName(QStringLiteral("label"));
 
-        verticalLayout->addLayout(information2Layout);
+        verticalLayout->addWidget(label);
+
+        informationLayout = new QHBoxLayout();
+        informationLayout->setObjectName(QStringLiteral("informationLayout"));
+        informationLayout->setContentsMargins(-1, 0, -1, -1);
+
+        verticalLayout->addLayout(informationLayout);
 
         line_2 = new QFrame(FeuillePersonnage);
         line_2->setObjectName(QStringLiteral("line_2"));
@@ -230,45 +233,6 @@ public:
 
         verticalLayout->addLayout(competenceLayout);
 
-        line_4 = new QFrame(FeuillePersonnage);
-        line_4->setObjectName(QStringLiteral("line_4"));
-        line_4->setFrameShape(QFrame::HLine);
-        line_4->setFrameShadow(QFrame::Sunken);
-
-        verticalLayout->addWidget(line_4);
-
-        verticalLayout_2 = new QVBoxLayout();
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        verticalLayout_2->setContentsMargins(-1, 0, -1, -1);
-        label_79 = new QLabel(FeuillePersonnage);
-        label_79->setObjectName(QStringLiteral("label_79"));
-
-        verticalLayout_2->addWidget(label_79);
-
-        descirptionEdit = new QTextEdit(FeuillePersonnage);
-        descirptionEdit->setObjectName(QStringLiteral("descirptionEdit"));
-
-        verticalLayout_2->addWidget(descirptionEdit);
-
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        horizontalLayout_2->setContentsMargins(-1, 0, -1, -1);
-        InventaireButton = new QPushButton(FeuillePersonnage);
-        InventaireButton->setObjectName(QStringLiteral("InventaireButton"));
-
-        horizontalLayout_2->addWidget(InventaireButton);
-
-        retourButton = new QPushButton(FeuillePersonnage);
-        retourButton->setObjectName(QStringLiteral("retourButton"));
-
-        horizontalLayout_2->addWidget(retourButton);
-
-
-        verticalLayout_2->addLayout(horizontalLayout_2);
-
-
-        verticalLayout->addLayout(verticalLayout_2);
-
         stackedWidget->addWidget(FeuillePersonnage);
         Inventaire = new QWidget();
         Inventaire->setObjectName(QStringLiteral("Inventaire"));
@@ -290,39 +254,97 @@ public:
 
         verticalLayout_4->addWidget(label_87);
 
-        ArmesTable = new QTableView(Inventaire);
-        ArmesTable->setObjectName(QStringLiteral("ArmesTable"));
+        invArme = new QTextEdit(Inventaire);
+        invArme->setObjectName(QStringLiteral("invArme"));
 
-        verticalLayout_4->addWidget(ArmesTable);
+        verticalLayout_4->addWidget(invArme);
 
         label_92 = new QLabel(Inventaire);
         label_92->setObjectName(QStringLiteral("label_92"));
 
         verticalLayout_4->addWidget(label_92);
 
-        ArmureTable = new QTableView(Inventaire);
-        ArmureTable->setObjectName(QStringLiteral("ArmureTable"));
+        invArmure = new QTextEdit(Inventaire);
+        invArmure->setObjectName(QStringLiteral("invArmure"));
 
-        verticalLayout_4->addWidget(ArmureTable);
+        verticalLayout_4->addWidget(invArmure);
 
         label_80 = new QLabel(Inventaire);
         label_80->setObjectName(QStringLiteral("label_80"));
 
         verticalLayout_4->addWidget(label_80);
 
-        ObjetTable = new QTableView(Inventaire);
-        ObjetTable->setObjectName(QStringLiteral("ObjetTable"));
+        invObjet = new QTextEdit(Inventaire);
+        invObjet->setObjectName(QStringLiteral("invObjet"));
 
-        verticalLayout_4->addWidget(ObjetTable);
-
-        RetourButton = new QPushButton(Inventaire);
-        RetourButton->setObjectName(QStringLiteral("RetourButton"));
-
-        verticalLayout_4->addWidget(RetourButton);
+        verticalLayout_4->addWidget(invObjet);
 
         stackedWidget->addWidget(Inventaire);
+        page = new QWidget();
+        page->setObjectName(QStringLiteral("page"));
+        verticalLayout_5 = new QVBoxLayout(page);
+        verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
+        label_2 = new QLabel(page);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        QFont font2;
+        font2.setPointSize(20);
+        label_2->setFont(font2);
 
-        verticalLayout_3->addWidget(stackedWidget);
+        verticalLayout_5->addWidget(label_2, 0, Qt::AlignHCenter);
+
+        label_79 = new QLabel(page);
+        label_79->setObjectName(QStringLiteral("label_79"));
+
+        verticalLayout_5->addWidget(label_79);
+
+        descirptionEdit = new QTextEdit(page);
+        descirptionEdit->setObjectName(QStringLiteral("descirptionEdit"));
+
+        verticalLayout_5->addWidget(descirptionEdit);
+
+        label_3 = new QLabel(page);
+        label_3->setObjectName(QStringLiteral("label_3"));
+
+        verticalLayout_5->addWidget(label_3);
+
+        background = new QTextEdit(page);
+        background->setObjectName(QStringLiteral("background"));
+
+        verticalLayout_5->addWidget(background);
+
+        stackedWidget->addWidget(page);
+
+        verticalLayout_2->addWidget(stackedWidget);
+
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        horizontalLayout_3->setContentsMargins(-1, 0, -1, -1);
+        pagePrecedenteButton = new QPushButton(formModifierPersonnage);
+        pagePrecedenteButton->setObjectName(QStringLiteral("pagePrecedenteButton"));
+
+        horizontalLayout_3->addWidget(pagePrecedenteButton);
+
+        pageSuivanteButton = new QPushButton(formModifierPersonnage);
+        pageSuivanteButton->setObjectName(QStringLiteral("pageSuivanteButton"));
+
+        horizontalLayout_3->addWidget(pageSuivanteButton);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer);
+
+        modifierButton = new QPushButton(formModifierPersonnage);
+        modifierButton->setObjectName(QStringLiteral("modifierButton"));
+
+        horizontalLayout_3->addWidget(modifierButton);
+
+        retourButton = new QPushButton(formModifierPersonnage);
+        retourButton->setObjectName(QStringLiteral("retourButton"));
+
+        horizontalLayout_3->addWidget(retourButton);
+
+
+        verticalLayout_2->addLayout(horizontalLayout_3);
 
 
         retranslateUi(formModifierPersonnage);
@@ -336,24 +358,27 @@ public:
     void retranslateUi(QDialog *formModifierPersonnage)
     {
         formModifierPersonnage->setWindowTitle(QApplication::translate("formModifierPersonnage", "Modification de personnage", 0));
-        ImagePerosnnageLabel_3->setText(QString());
-        label_67->setText(QApplication::translate("formModifierPersonnage", "Feuille de Personnage :", 0));
+        titre_2->setText(QApplication::translate("formModifierPersonnage", "Feuille de Personnage :", 0));
         label_71->setText(QApplication::translate("formModifierPersonnage", "Joueur :", 0));
         label_68->setText(QApplication::translate("formModifierPersonnage", "Nom :", 0));
         label_69->setText(QApplication::translate("formModifierPersonnage", "Pr\303\251nom :", 0));
         label_70->setText(QApplication::translate("formModifierPersonnage", "Age :", 0));
         label_72->setText(QApplication::translate("formModifierPersonnage", "Sexe :", 0));
-        label_76->setText(QApplication::translate("formModifierPersonnage", "Valeurs", 0));
-        label_77->setText(QApplication::translate("formModifierPersonnage", "Attributs", 0));
+        label->setText(QApplication::translate("formModifierPersonnage", "Informations :", 0));
+        label_76->setText(QApplication::translate("formModifierPersonnage", "Valeurs :", 0));
+        label_77->setText(QApplication::translate("formModifierPersonnage", "Attributs :", 0));
         label_78->setText(QApplication::translate("formModifierPersonnage", "Comp\303\251tences :", 0));
-        label_79->setText(QApplication::translate("formModifierPersonnage", "Description / Background :", 0));
-        InventaireButton->setText(QApplication::translate("formModifierPersonnage", "Inventaire", 0));
-        retourButton->setText(QApplication::translate("formModifierPersonnage", "Retour", 0));
         titre->setText(QApplication::translate("formModifierPersonnage", "Inventaire", 0));
         label_87->setText(QApplication::translate("formModifierPersonnage", "Armes :", 0));
         label_92->setText(QApplication::translate("formModifierPersonnage", "Armures :", 0));
-        label_80->setText(QApplication::translate("formModifierPersonnage", "Autres :", 0));
-        RetourButton->setText(QApplication::translate("formModifierPersonnage", "Retour", 0));
+        label_80->setText(QApplication::translate("formModifierPersonnage", "Objets :", 0));
+        label_2->setText(QApplication::translate("formModifierPersonnage", "Backstory", 0));
+        label_79->setText(QApplication::translate("formModifierPersonnage", "Description :", 0));
+        label_3->setText(QApplication::translate("formModifierPersonnage", "Background :", 0));
+        pagePrecedenteButton->setText(QApplication::translate("formModifierPersonnage", "<--", 0));
+        pageSuivanteButton->setText(QApplication::translate("formModifierPersonnage", "-->", 0));
+        modifierButton->setText(QApplication::translate("formModifierPersonnage", "Modifier", 0));
+        retourButton->setText(QApplication::translate("formModifierPersonnage", "Annuler", 0));
     } // retranslateUi
 
 };

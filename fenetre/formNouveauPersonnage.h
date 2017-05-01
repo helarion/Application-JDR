@@ -16,11 +16,11 @@ public:
     ~formNouveauPersonnage();
 
 private slots:
-    void on_InventaireButton_clicked();
-
-    void on_RetourButton_clicked();
-
     void on_ajouterButton_clicked();
+
+    void on_pagePrecedenteButton_clicked();
+
+    void on_pageSuivanteButton_clicked();
 
 signals:
     void listPersonnageChanged();

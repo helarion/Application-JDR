@@ -19,8 +19,6 @@ public:
 
 private slots:
 
-    void on_jeuButton_clicked();
-
     void on_retourButton_clicked();
 
     void on_nouveauJeuButton_clicked();
@@ -45,13 +43,19 @@ private slots:
 
     void on_selectionnerPartieButton_clicked();
 
-    void on_autreButton_clicked();
-
     void on_listJeu_itemDoubleClicked(QListWidgetItem *item);
 
     void on_listCampagne_itemDoubleClicked(QListWidgetItem *item);
 
     void on_listPartie_itemDoubleClicked(QListWidgetItem *item);
+
+    void on_ajouterPersonnageButton_clicked();
+
+    void on_modifierPersonnageButton_clicked();
+
+    void on_listPersonnage_itemDoubleClicked(QListWidgetItem *item);
+
+    void on_playlistButton_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -59,6 +63,7 @@ public slots:
     void changementJeu();
     void changementCampagne();
     void changementPartie();
+    void changementPersonnage();
 };
 
 #endif // MAINWINDOW_H

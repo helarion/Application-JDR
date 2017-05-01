@@ -18,8 +18,16 @@ public:
 signals:
     void listPersonnageChanged();
 
+private slots:
+    void on_pagePrecedenteButton_clicked();
+
+    void on_pageSuivanteButton_clicked();
+
+    void on_modifierButton_clicked();
+
 private:
     Ui::formModifierPersonnage *ui;
+    QVector<QWidget*> listEdit;
 };
 
 #endif // FORMMODIFIERPERSONNAGE_H

@@ -80,9 +80,7 @@ extern void deletePartie(int index)
     p.afficher();
     QString c=p.getCampagne().getTitre();
     QString titre=p.getTitre();
-    qDebug() << "titre:" << titre;
     QString path="data/Partie/"+c+"_"+titre+".data";
-    qDebug() << "path:" << path;
     QDir d;
     d.remove(path);
     listPartie.remove(index);

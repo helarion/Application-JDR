@@ -131,8 +131,8 @@ formNouveauPersonnage::formNouveauPersonnage(QWidget *parent) :
             label->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Minimum);
             label->setWordWrap(true);
             //edit->setMaximumWidth(50);
-            ui->valeurLayout->addWidget(label);
-            ui->valeurLayout->addWidget(edit);
+            ui->informationLayout->addWidget(label);
+            ui->informationLayout->addWidget(edit);
             listEdit.append(edit);
         }
     }
@@ -143,24 +143,19 @@ formNouveauPersonnage::~formNouveauPersonnage()
     delete ui;
 }
 
-void formNouveauPersonnage::on_InventaireButton_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(1);
-}
-
-void formNouveauPersonnage::on_RetourButton_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(0);
-}
-
 void formNouveauPersonnage::on_ajouterButton_clicked()
 {
+    QString joueur=ui->joueurEdit->text();
+    QString background=ui->background->toPlainText();
+    QString invArme=ui->invArme->toPlainText();
+    QString invArmure=ui->invArmure->toPlainText();
+    QString invObjet=ui->invObjet->toPlainText();
     QString nom=ui->NomEdit->text();
     QString prenom=ui->PrenomPersonnageEdit->text();
     int age=ui->AgeEdit->text().toInt();
     QString description=ui->descirptionEdit->toPlainText();
     QString sexe=ui->SexeEdit->text();
-    Campagne c=listCampagne[campagneSelect];
+    Partie partie=listPartie[partieSelect];
     QVector<QString> valeurA;
     for(int i=0;i<listEdit.size();i++)
     {
@@ -173,8 +168,22 @@ void formNouveauPersonnage::on_ajouterButton_clicked()
             valeurA.append(textEdit->toPlainText());
         }
     }
-    Personnage p(nom,prenom,age,description,sexe,c,valeurA);
+    Personnage p(joueur,nom,prenom,age,description,background,invArmure,
+                 invArme,invObjet,sexe,partie,valeurA);
+
     p.Save();
     emit listPersonnageChanged();
     this->close();
+}
+
+void formNouveauPersonnage::on_pagePrecedenteButton_clicked()
+{
+    int index=ui->stackedWidget->currentIndex();
+    if(index>0)ui->stackedWidget->setCurrentIndex(index-1);
+}
+
+void formNouveauPersonnage::on_pageSuivanteButton_clicked()
+{
+    int index=ui->stackedWidget->currentIndex();
+    if(index<2)ui->stackedWidget->setCurrentIndex(index+1);
 }

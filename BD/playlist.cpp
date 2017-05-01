@@ -11,10 +11,12 @@ Playlist::Playlist ()
     titre="";
 }
 
-Playlist::Playlist (QString s_nom,QVector<QString> s_liste)
+Playlist::Playlist (QString s_nom,QVector<QString> s_liste, Jeu s_jeu)
 {
     nom=s_nom;
     liste=s_liste;
+    jeu=s_jeu;
+    titreJeu=jeu.getTitre();
     titre=nom.toLower();
     titre.replace( " ", "_" );
 }
@@ -55,13 +57,17 @@ QVector<QString> Playlist::getListe()
     return liste;
 }
 
+Jeu Playlist::getJeu()
+{
+    return jeu;
+}
+
 void Playlist::setNom(QString nom)
 {
     this->nom=nom;
 
     QString filename = "data/Playlist/";
-    filename+=titre;
-    filename+=".data";
+    filename+=titreJeu+"_"+titre+".data";
     QFile file(filename);
     file.remove();
 
@@ -81,7 +87,7 @@ void Playlist::setListe(QVector<QString> s_liste)
 void Playlist::Save()
 {
     QString filename = "data/Playlist/";
-    filename+=titre+".data";
+    filename+=titreJeu+"_"+titre+".data";
     qDebug() << filename;
     QFile file(filename);
 
@@ -93,7 +99,7 @@ void Playlist::Save()
 
     QDataStream out(&file);
 
-    out << nom << titre << liste;
+    out << nom << titre << liste << titreJeu;
 
     file.flush();
     file.close();
@@ -119,6 +125,9 @@ void Playlist::Load(QString nomFichier)
     in >> nom;
     in >> titre;
     in >> liste;
+    in >> titreJeu;
+
+    jeu.Load(titreJeu);
 
     //qDebug() << titre << " Récupéré.";
 

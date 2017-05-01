@@ -3,45 +3,56 @@
 
 #include <QString>
 
-#include "BD/campagne.h"
+#include "BD/Partie.h"
 
 class Personnage
 {
 	private:
+        QString joueur;
         QString nom;
         QString prenom;
 		int age;
         QString description;
+        QString background;
+        QString invArmure;
+        QString invArme;
+        QString invObjet;
         QString sexe;
         QString titre;
-        Campagne campagne;
-        QString titreCampagne;
+        Partie partie;
+        QString titrePartie;
         QVector<QString> valeurAttribut;
 	public:
         Personnage();
         Personnage(QString titre);
-        Personnage(QString s_nom, QString s_prenom, int s_age,
-                   QString s_description, QString s_sexe,
-                   Campagne s_campagne, QVector<QString> s_valeurAttribut);
+        Personnage(QString s_joueur, QString s_nom, QString s_prenom, int s_age,
+                   QString s_description, QString s_background, QString s_invArmure,
+                   QString s_invArme, QString s_invObjet,QString s_sexe,
+                   Partie s_partie, QVector<QString> s_valeurAttribut);
         QString getTitre();
         QString getNom();
         QString getPrenom();
+        QString getJoueur();
+        QString getBackground();
+        QString getInvArme();
+        QString getInvArmure();
+        QString getInvObjet();
         int getAge();
         QString getDescription();
         QString getSexe();
+        Partie getPartie();
         QVector<QString> getValeurAttribut();
-        QVector<QString> getValeurInformation();
-        QVector<QString> getValeurValeur();
-        QVector<QString> getValeurCompetence();
         void setValeurAttribut(QVector<QString> list);
-        void setValeurValeur(QVector<QString> list);
-        void setValeurCompetence(QVector<QString> list);
-        void setValeurInformation(QVector<QString> list);
         void setNom(QString s_nom);
         void setPrenom(QString s_prenom);
         void setAge(int s_age);
+        void setJoueur(QString s_joueur);
         void setDescription(QString s_description);
         void setSexe(QString s_sexe);
+        void setInvObjet(QString s_invObjet);
+        void setInvArmure(QString s_invArmure);
+        void setInvArme(QString s_invArme);
+        void setBackground(QString s_background);
         void afficher();
         void Save();
         void Load(QString titre);

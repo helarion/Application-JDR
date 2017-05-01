@@ -21,15 +21,10 @@ signals:
 
 
 private slots:
-    void on_ajouterPersonnageButton_clicked();
-
-    void changementPersonnage();
 
     void on_supprimerButton_clicked();
 
     void on_modifierButton_clicked();
-
-    void on_modifierPersonnageButton_clicked();
 
 private:
     Ui::formModifierPartie *ui;

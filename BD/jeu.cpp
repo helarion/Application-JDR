@@ -124,7 +124,7 @@ void Jeu::editAttribut(int index, QString titre)
 
 bool Jeu::compare(Jeu j)
 {
-    if(nom==j.getNom() && adrTheme==j.getTheme()) return true;
+    if(titre==j.getTitre()) return true;
     return false;
 }
 

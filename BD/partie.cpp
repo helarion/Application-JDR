@@ -16,16 +16,11 @@ Partie::Partie ()
     titre="";
 }
 
-Partie::Partie (QString s_nom, QString s_resume, Campagne s_campagne, QVector<Personnage> s_personnages)
+Partie::Partie (QString s_nom,Campagne s_campagne)
 {
     nom=s_nom;
-    resume=s_resume;
     campagne=s_campagne;
-    personnages=s_personnages;
-    for(int i=0;i<personnages.size();i++)
-    {
-        titrePersonnages.append(personnages[i].getTitre());
-    }
+    resume="";
     titreCampagne=campagne.getTitre();
     titre=nom.toLower();
     titre.replace( " ", "_" );
@@ -75,15 +70,6 @@ QString Partie::getTitre()
     return titre;
 }
 
-QVector<Personnage> Partie::getPersonnage()
-{
-    return personnages;
-}
-
-QVector<QString> Partie::getTitrePersonnages()
-{
-    return titrePersonnages;
-}
 
 void Partie::setNom(QString s_nom)
 {
@@ -112,16 +98,6 @@ void Partie::setResume(QString s_resume)
 void Partie::setCampagne(Campagne s_campagne)
 {
     campagne=s_campagne;
-}
-
-void Partie::setPersonnages(QVector<Personnage> s_personnages)
-{
-    personnages=s_personnages;
-    titrePersonnages.clear();
-    for(int i=0;i<personnages.size();i++)
-    {
-        titrePersonnages.append(personnages[i].getTitre());
-    }
 }
 
 bool Partie::compare(Partie p)
@@ -181,7 +157,7 @@ void Partie::Save()
 
     qDebug() << "titre" << titre;
 
-    out << nom << resume << titre << titreCampagne << titrePersonnages;
+    out << nom << titre << titreCampagne;
 
     file.flush();
     file.close();
@@ -205,18 +181,12 @@ void Partie::Load(QString fichier)
     in.setVersion(QDataStream::Qt_5_1);
 
     in >> nom;
-    in >> resume;
     in >> titre;
     in >> titreCampagne;
-    in >> titrePersonnages;
+
+    qDebug() << "titrecampagne:"<<titreCampagne;
 
     campagne.Load(titreCampagne);
-
-    for(int i=0; i<titrePersonnages.size(); i++)
-    {
-        Personnage p(titrePersonnages[i]);
-        personnages.append(p);
-    }
 
     file.close();
 }
