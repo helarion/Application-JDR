@@ -49,6 +49,7 @@ class Personnage
         void setJoueur(QString s_joueur);
         void setDescription(QString s_description);
         void setSexe(QString s_sexe);
+        void setPartie(Partie s_partie);
         void setInvObjet(QString s_invObjet);
         void setInvArmure(QString s_invArmure);
         void setInvArme(QString s_invArme);

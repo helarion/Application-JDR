@@ -107,7 +107,7 @@ void Personnage::setNom(QString s_nom)
 {
     nom=s_nom;
     // suppression du fichier actuel
-    QString filename = "data/Partie/";
+    QString filename = "data/Personnage/";
     filename+=titrePartie+"_"+titre+".data";
     QFile file(filename);
     file.remove();
@@ -164,6 +164,22 @@ void Personnage::setValeurAttribut(QVector<QString> list)
 void Personnage::setSexe(QString s_sexe)
 {
     sexe=s_sexe;
+}
+
+void Personnage::setPartie(Partie s_partie)
+{
+    // suppression du fichier actuel
+    QString filename = "data/Partie/";
+    filename+=partie.getTitreCampagne()+"_"+partie.getTitre()+".data";
+    QFile file(filename);
+    file.remove();
+
+    // nouveau titre de fichier adapté au nom
+    partie=s_partie;
+    titrePartie=partie.getTitre();
+
+    // Sauvegarde du nouveau fichier
+    Save();
 }
 
 QVector<QString> Personnage::getValeurAttribut()

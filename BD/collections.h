@@ -27,6 +27,9 @@
 
     // mises à jour d'un objet
     extern void updateJeu(Jeu precedent, Jeu nouveau);
+    extern void updateAttribut(Attribut precedent, Attribut nouveau);
+    extern void updateCampagne(Campagne precedent, Campagne nouveau);
+    extern void updatePartie(Partie prec, Partie suiv);
 
     //affichage des listes
     void afficherJeu();

@@ -29,6 +29,7 @@ class Campagne
         bool compare(Campagne c);
         void setScenario(QString scenario);
         void setNom(QString nom);
+        void setJeu(Jeu j);
         void setTitreJeu(QString titreJeu);
         Jeu getJeu();
 };

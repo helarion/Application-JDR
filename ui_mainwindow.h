@@ -72,8 +72,8 @@ public:
     QWidget *Personnages;
     QGridLayout *gridLayout_14;
     QLabel *label_7;
-    QTextEdit *resumeEdit;
     QLabel *titreLabel;
+    QTextEdit *resumeEdit;
     QHBoxLayout *horizontalLayout_4;
     QVBoxLayout *verticalLayout_6;
     QLabel *label_8;
@@ -81,6 +81,9 @@ public:
     QVBoxLayout *verticalLayout_7;
     QPushButton *ajouterPersonnageButton;
     QPushButton *modifierPersonnageButton;
+    QHBoxLayout *horizontalLayout_5;
+    QSpacerItem *horizontalSpacer_2;
+    QPushButton *modiferResumeButton;
     QWidget *page_5;
     QHBoxLayout *horizontalLayout;
     QPushButton *playlistButton;
@@ -298,16 +301,16 @@ public:
 
         gridLayout_14->addWidget(label_7, 1, 0, 1, 1);
 
-        resumeEdit = new QTextEdit(Personnages);
-        resumeEdit->setObjectName(QStringLiteral("resumeEdit"));
-
-        gridLayout_14->addWidget(resumeEdit, 2, 0, 1, 1);
-
         titreLabel = new QLabel(Personnages);
         titreLabel->setObjectName(QStringLiteral("titreLabel"));
         titreLabel->setFont(font);
 
         gridLayout_14->addWidget(titreLabel, 0, 0, 1, 1, Qt::AlignHCenter|Qt::AlignTop);
+
+        resumeEdit = new QTextEdit(Personnages);
+        resumeEdit->setObjectName(QStringLiteral("resumeEdit"));
+
+        gridLayout_14->addWidget(resumeEdit, 2, 0, 1, 1);
 
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setSpacing(6);
@@ -347,7 +350,23 @@ public:
         horizontalLayout_4->addLayout(verticalLayout_7);
 
 
-        gridLayout_14->addLayout(horizontalLayout_4, 3, 0, 1, 1);
+        gridLayout_14->addLayout(horizontalLayout_4, 4, 0, 1, 1);
+
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setSpacing(6);
+        horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
+        horizontalLayout_5->setContentsMargins(0, 0, -1, -1);
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_5->addItem(horizontalSpacer_2);
+
+        modiferResumeButton = new QPushButton(Personnages);
+        modiferResumeButton->setObjectName(QStringLiteral("modiferResumeButton"));
+
+        horizontalLayout_5->addWidget(modiferResumeButton);
+
+
+        gridLayout_14->addLayout(horizontalLayout_5, 3, 0, 1, 1);
 
         contentStack->addWidget(Personnages);
         page_5 = new QWidget();
@@ -388,7 +407,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        contentStack->setCurrentIndex(1);
+        contentStack->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -416,6 +435,7 @@ public:
         label_8->setText(QApplication::translate("MainWindow", "Personnages :", 0));
         ajouterPersonnageButton->setText(QApplication::translate("MainWindow", "Ajouter", 0));
         modifierPersonnageButton->setText(QApplication::translate("MainWindow", "Modifier", 0));
+        modiferResumeButton->setText(QApplication::translate("MainWindow", "Sauvegarder", 0));
         playlistButton->setText(QApplication::translate("MainWindow", "Playlist", 0));
         retourButton->setText(QApplication::translate("MainWindow", "Retour", 0));
     } // retranslateUi

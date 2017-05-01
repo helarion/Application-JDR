@@ -54,7 +54,7 @@ formModifierJeu::formModifierJeu(QWidget *parent) :
         else if (a.getType()==VALEUR) ui->listValeurSelect->addItem(newItem);
         else if (a.getType()==COMPETENCE) ui->listCompetenceSelect->addItem(newItem);
         else if (a.getType()==INFORMATION) ui->listInformationSelect->addItem(newItem);
-        qDebug() << "taille" << ui->listInformationSelect->count();
+        //qDebug() << "taille" << ui->listInformationSelect->count();
     }
     Load();
 }
@@ -65,7 +65,7 @@ void formModifierJeu::Load()
     bool test=true;
     for(int i=0;i<listAttribut.size();i++)
     {
-        listAttribut[i].afficher();
+        //listAttribut[i].afficher();
         test=true;
         QString titre;
         if(listAttribut[i].getType()==ATTRIBUT)
@@ -133,7 +133,7 @@ void formModifierJeu::Load()
             else if(listAttribut[i].getType()==4)ui->listInformationDisp->addItem(newItem);
         }
     }
-    qDebug() << "fin";
+    //qDebug() << "fin";
     QPixmap p(listJeu[jeuSelect].getTheme());
     int w = ui->themeImage->width();
     int h = ui->themeImage->height();
@@ -172,6 +172,7 @@ void formModifierJeu::on_supprimerJeuButton_clicked()
 void formModifierJeu::on_modifierJeuButton_clicked()
 {
     // on récupère les données
+    Jeu prec=listJeu[jeuSelect];
     QString fileName=ui->theme->text();
     if(listJeu[jeuSelect].getTheme()!=fileName) listJeu[jeuSelect].setTheme(fileName);
     // on liste les attributs selectionnés
@@ -201,8 +202,13 @@ void formModifierJeu::on_modifierJeuButton_clicked()
         list.append(a);
     }
     listJeu[jeuSelect].setListAttribut(list);
+    remplirListCampagne();
+    remplirListPlaylist();
     listJeu[jeuSelect].setNom(ui->nomJeu->text());
     // on signale une modification
+    //prec.afficher();
+    //listJeu[jeuSelect].afficher();
+    updateJeu(prec,listJeu[jeuSelect]);
     emit listJeuChanged();
     // on ferme le formulaire
     this->close();
@@ -319,9 +325,30 @@ void formModifierJeu::on_supprimerButton_clicked()
 
 void formModifierJeu::on_modifierAttribut_clicked()
 {
-    if(ui->listAttributDisp->currentItem()!=NULL)
+    bool test=false;
+    if(ui->listAttributDisp->currentItem()->isSelected()==true)
     {
         attributSelect=chercheTitreAttribut(ui->listAttributDisp->currentItem()->data(Qt::UserRole).toString());
+        test=true;
+    }
+    else if(ui->listValeurDisp->currentItem()->isSelected()==true)
+    {
+        attributSelect=chercheTitreAttribut(ui->listValeurDisp->currentItem()->data(Qt::UserRole).toString());
+        test=true;
+    }
+    else if(ui->listCompetenceDisp->currentItem()->isSelected()==true)
+    {
+        attributSelect=chercheTitreAttribut(ui->listCompetenceDisp->currentItem()->data(Qt::UserRole).toString());
+        test=true;
+    }
+    else if(ui->listInformationDisp->currentItem()->isSelected()==true)
+    {
+        attributSelect=chercheTitreAttribut(ui->listInformationDisp->currentItem()->data(Qt::UserRole).toString());
+        test=true;
+    }
+    qDebug() << "attributSelect:" << attributSelect;
+    if(test==true)
+    {
         formModifierAttribut formModifierAttribut;
         formModifierAttribut.setModal(true);
         QObject::connect(&formModifierAttribut, SIGNAL(listAttributChanged()),this, SLOT(changementAttribut()));
@@ -403,5 +430,16 @@ void formModifierJeu::on_listInformationSelect_itemSelectionChanged()
     ui->listValeurSelect->clearSelection();
     ui->listCompetenceSelect->clearSelection();
     ui->listCompetenceDisp->clearSelection();
+    ui->listInformationDisp->clearSelection();
+}
+
+void formModifierJeu::on_listInformationDisp_itemSelectionChanged()
+{
+    ui->listAttributDisp->clearSelection();
+    ui->listValeurDisp->clearSelection();
+    ui->listAttributSelect->clearSelection();
+    ui->listValeurSelect->clearSelection();
     ui->listCompetenceSelect->clearSelection();
+    ui->listCompetenceDisp->clearSelection();
+    ui->listInformationSelect->clearSelection();
 }

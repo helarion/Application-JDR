@@ -37,8 +37,10 @@ void formModifierPartie::on_supprimerButton_clicked()
 
 void formModifierPartie::on_modifierButton_clicked()
 {
+    Partie prec=listPartie[partieSelect];
     QString nom=ui->nomPartie->text();
     listPartie[partieSelect].setNom(nom);
+    updatePartie(prec,listPartie[partieSelect]);
     emit listPartieChanged();
     this->close();
 }

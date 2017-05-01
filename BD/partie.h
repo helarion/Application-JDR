@@ -34,6 +34,7 @@ class Partie
         void setNom(QString s_nom);
         void setResume(QString s_resume);
         void setCampagne(Campagne s_campagne);
+        void setTitreCampagne(QString s_titreCampagne);
 };
 
 #endif

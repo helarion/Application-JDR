@@ -36,6 +36,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->contentStack->setCurrentIndex(indexStack);
     ui->retourButton->hide();
     ui->playlistButton->hide();
+
+    remplirListCampagne();
+    //afficherCampagne();
+
     remplirListJeu();
     ui->listJeu->clear();
     for(int i=0;i<listJeu.size();i++)
@@ -57,51 +61,55 @@ MainWindow::~MainWindow()
 void MainWindow::changementJeu()
 {
     remplirListJeu();
-    qDebug() << "remplit le vector";
-    ui->listJeu->clear();
-    qDebug() << "vide la liste";
+    //qDebug() << "remplit le vector";
+    //ui->listJeu->clear();
+    int count=ui->listJeu->count();
+    for(int i=count-1;i>=0;i--)
+    {
+        ui->listJeu->clearSelection();
+        delete ui->listJeu->item(i);
+        //ui->listJeu->removeItemWidget(ui->listJeu->item(i));
+    }
+   // qDebug() << "vide la liste";
     for(int i=0;i<listJeu.size();i++)
     {
-        qDebug() << "fait un item";
         QListWidgetItem *newItem = new QListWidgetItem;
         // on met le titre de l'objet comme donnée
         newItem->setData(Qt::UserRole,listJeu[i].getTitre());
         // le nom de l'objet comme text affiché
         newItem->setText(listJeu[i].getNom());
         ui->listJeu->addItem(newItem);
-        qDebug() << "ajoute item";
     }
-    qDebug() << "Fin";
 }
 
 void MainWindow::changementCampagne()
 {
     remplirListCampagne();
-    qDebug() << "remplit le vector";
+    //qDebug() << "remplit le vector";
     ui->listCampagne->clear();
-    qDebug() << "vide la liste";
+    //qDebug() << "vide la liste";
     for(int i=0;i<listCampagne.size();i++)
     {
         if(listCampagne[i].getJeu().compare(listJeu[jeuSelect]))
         {
-            qDebug() << "fait un item";
+            //qDebug() << "fait un item";
             QListWidgetItem *newItem = new QListWidgetItem;
             // on met le titre de l'objet comme donnée
             newItem->setData(Qt::UserRole,listCampagne[i].getTitre());
             // le nom de l'objet comme text affiché
             newItem->setText(listCampagne[i].getNom());
             ui->listCampagne->addItem(newItem);
-            qDebug() << "ajoute item";
+            //qDebug() << "ajoute item";
         }
     }
-    qDebug() << "Fin";
+    //qDebug() << "Fin";
 }
 
 void MainWindow::changementPartie()
 {
     remplirListPartie();
     ui->listPartie->clear();
-    qDebug() << "vide la liste";
+    //qDebug() << "vide la liste";
     for(int i=0;i<listPartie.size();i++)
     {
         if(listPartie[i].getCampagne().compare(listCampagne[campagneSelect]))
@@ -159,6 +167,7 @@ void MainWindow::on_selectionnerJeuButton_clicked()
         ui->listCampagne->clear();
         for(int i=0;i<listCampagne.size();i++)
         {
+            qDebug() << "test" << listCampagne[i].getJeu().getTitre();
             if(listCampagne[i].getJeu().compare(listJeu[jeuSelect]))
             {
                 QListWidgetItem *newItem = new QListWidgetItem;
@@ -216,11 +225,21 @@ void MainWindow::on_selectionnerCampagneButton_clicked()
 
 void MainWindow::on_listJeu_itemSelectionChanged()
 {
-    jeuSelect=chercheTitreJeu(ui->listJeu->currentItem()->data(Qt::UserRole).toString());
-    QPixmap p(listJeu[jeuSelect].getTheme());
-    int w = ui->themeJeu->width();
-    int h = ui->themeJeu->height();
-    ui->themeJeu->setPixmap(p.scaled(w,h,Qt::KeepAspectRatio));
+    int temp=jeuSelect;
+    jeuSelect=-1;
+    if(ui->listJeu->currentItem()!=NULL)
+    {
+        jeuSelect=chercheTitreJeu(ui->listJeu->currentItem()->data(Qt::UserRole).toString());
+        if(jeuSelect!=-1)
+        {
+            QPixmap p(listJeu[jeuSelect].getTheme());
+            int w = ui->themeJeu->width();
+            int h = ui->themeJeu->height();
+            ui->themeJeu->setPixmap(p.scaled(w,h,Qt::KeepAspectRatio));
+        }
+        else jeuSelect=temp;
+    }
+
 }
 
 void MainWindow::on_listCampagne_itemSelectionChanged()
@@ -339,4 +358,11 @@ void MainWindow::on_playlistButton_clicked()
     form->setAttribute(Qt::WA_DeleteOnClose);
     form->setModal(Qt::NonModal);
     form->show();
+}
+
+void MainWindow::on_modiferResumeButton_clicked()
+{
+    QString resume=ui->resumeEdit->toPlainText();
+    listPartie[partieSelect].setResume(resume);
+    listPartie[partieSelect].Save();
 }

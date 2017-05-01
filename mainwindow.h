@@ -57,6 +57,8 @@ private slots:
 
     void on_playlistButton_clicked();
 
+    void on_modiferResumeButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 public slots:

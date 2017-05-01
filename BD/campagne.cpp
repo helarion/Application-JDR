@@ -38,6 +38,8 @@ void Campagne::afficher () const
     qDebug() << "Affichage Campagne:";
     qDebug() << nom;
     qDebug() << scenario;
+    jeu.afficher();
+    qDebug() << "";
 }
 
 QString Campagne::getNom()
@@ -68,7 +70,7 @@ QString Campagne::getTitreJeu()
 void Campagne::setNom(QString s_nom)
 {
     nom=s_nom; // modification du nom
-
+    qDebug() << "jeu:" << titreJeu;
     // suppression du fichier actuel
     QString filename = "data/Campagne/";
     filename+=titre;
@@ -81,7 +83,8 @@ void Campagne::setNom(QString s_nom)
     titre.replace( " ", "_" );
 
     // Sauvegarde du nouveau fichier
-    Save();
+    //Save();
+    qDebug() << "jeu:" << titreJeu;
 }
 
 void Campagne::setScenario(QString s_scenario)
@@ -89,15 +92,21 @@ void Campagne::setScenario(QString s_scenario)
     scenario=s_scenario;
 }
 
-void Campagne::setTitreJeu(QString titreJeu)
+void Campagne::setJeu(Jeu j)
+{
+    jeu=j;
+    titreJeu=j.getTitre();
+}
+
+void Campagne::setTitreJeu(QString s_titreJeu)
 {
     jeu=Jeu(titreJeu);
-    this->titreJeu=titreJeu;
+    titreJeu=s_titreJeu;
 }
 
 bool Campagne::compare(Campagne c)
 {
-    if(nom==c.getNom() && scenario==c.getScenario() && titre==c.getTitre() && jeu.compare(c.getJeu())) return true;
+    if(titre==c.getTitre()) return true;
     return false;
 }
 

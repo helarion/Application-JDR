@@ -41,12 +41,15 @@ void formModifierAttribut::on_supprimerButton_clicked()
 
 void formModifierAttribut::on_modifierAttributButton_clicked()
 {
+    Attribut prec=listAttribut[attributSelect];
     QString nom=ui->Nom->text();
     int type=ui->typeAttributCombo->currentIndex();
     bool preset=ui->presetCheck->isChecked();
+    remplirListJeu();
     listAttribut[attributSelect].setType(type);
     listAttribut[attributSelect].setPreset(preset);
     listAttribut[attributSelect].setNom(nom);
+    updateAttribut(prec,listAttribut[attributSelect]);
     // update la liste dans formJeu
     emit listAttributChanged();
     this->close();

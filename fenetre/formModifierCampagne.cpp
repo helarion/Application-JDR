@@ -35,10 +35,17 @@ void formModifierCampagne::on_supprimerButton_clicked()
 
 void formModifierCampagne::on_modifierCampagneButton_clicked()
 {
+    Campagne prec=listCampagne[campagneSelect];
     // on récupère les données
     QString scenario=ui->scenarioCampagne->toPlainText();
-    listCampagne[campagneSelect].setScenario(scenario);
-    listCampagne[campagneSelect].setNom(ui->nomCampagne->text());
+    QString nom=ui->nomCampagne->text();
+    QString titreJeu=listJeu[jeuSelect].getTitre();
+
+    deleteCampagne(campagneSelect);
+    Campagne c(nom,scenario,titreJeu);
+    c.Save();
+
+    //updateCampagne(prec,listCampagne[campagneSelect]);
     // on signale une modification
     emit listCampagneChanged();
     // on ferme le formulaire

@@ -3,12 +3,19 @@
 
 #include "collections.h"
 
-QVector<Jeu> listJeu;
-QVector<Attribut> listAttribut;
-QVector<Campagne> listCampagne;
-QVector<Partie> listPartie;
-QVector<Personnage> listPersonnage;
-QVector<Playlist> listPlaylist;
+QVector<Jeu> listJeu(1000);
+QVector<Attribut> listAttribut(10000);
+QVector<Campagne> listCampagne(5000);
+QVector<Partie> listPartie(10000);
+QVector<Personnage> listPersonnage(50000);
+QVector<Playlist> listPlaylist(10000);
+
+/*listJeu.(1000);
+listAttribut(10000);
+listCampagne(5000);
+listPartie(10000);
+listPersonnage(50000);
+listPlaylist(10000);*/
 
 quint8 indexStack=0;
 
@@ -26,24 +33,61 @@ void addPartie(Partie p) { listPartie.prepend(p); }
 void addPersonnage(Personnage p) { listPersonnage.prepend(p); }
 void addPlaylist(Playlist p) { listPlaylist.prepend(p); }
 
-void updateJeu(QString prec, QString suiv)
+void updateJeu(Jeu prec, Jeu suiv)
 {
     for(int i=0;i<listCampagne.size(); i++)
     {
-        if(listCampagne[i].getTitreJeu()==prec) listCampagne[i].setTitreJeu(suiv);
+        qDebug() << "Jeu:"<<listCampagne[i].getJeu().getNom();
+        qDebug() << "titreJeu:"<<listCampagne[i].getJeu().getTitre();
+        if(listCampagne[i].getJeu().getTitre()==prec.getTitre())
+        {
+            Campagne precC=listCampagne[i];
+            listCampagne[i].setJeu(suiv);
+            listCampagne[i].Save();
+            updateCampagne(precC,listCampagne[i]);
+        }
+    }
+    for(int i=0;i<listPlaylist.size(); i++)
+    {
+        if(listPlaylist[i].getTitreJeu()==prec.getTitre()) listPlaylist[i].setTitreJeu(suiv.getTitre());
     }
 }
 
-void updateAttribut(QString prec, QString suiv)
+void updateAttribut(Attribut prec, Attribut suiv)
 {
     for(int i=0;i<listJeu.size(); i++)
     {
         QVector<QString> l=listJeu[i].getListTitreAttribut();
         for (int j=0;j<l.size();j++)
         {
-            if(l[j]==(prec)) listJeu[i].editAttribut(j,suiv);
+            if(l[j]==(prec).getTitre())
+            {
+                listJeu[i].editAttribut(j,suiv.getTitre());
+                listJeu[i].Save();
+            }
         }
+    }
+}
 
+void updateCampagne(Campagne prec, Campagne suiv)
+{
+    for(int i=0;i<listPartie.size(); i++)
+    {
+        if(listPartie[i].getCampagne().getTitre()==prec.getTitre())
+        {
+            Partie precP=listPartie[i];
+            listPartie[i].setCampagne(suiv);
+            listPartie[i].Save();
+            updatePartie(precP,listPartie[i]);
+        }
+    }
+}
+
+void updatePartie(Partie prec, Partie suiv)
+{
+    for(int i=0;i<listPersonnage.size(); i++)
+    {
+        if(listPersonnage[i].getPartie().getTitre()==prec.getTitre()) listPersonnage[i].setPartie(suiv);
     }
 }
 
@@ -179,7 +223,7 @@ void remplirListAttribut()
     QDir dir(path);
     QFileInfoList files = dir.entryInfoList();
     foreach (QFileInfo file, files){
-        if (!file.isDir()){
+        if (!file.isDir() && file.fileName().contains(".data")){
             list=file.fileName().split(".data");
             nom=list.at(0);
             Attribut a(nom);
@@ -197,7 +241,7 @@ void remplirListCampagne()
     QDir dir(path);
     QFileInfoList files = dir.entryInfoList();
     foreach (QFileInfo file, files){
-        if (!file.isDir()){
+        if (!file.isDir() && file.fileName().contains(".data")){
             list=file.fileName().split(".data");
             nom=list.at(0);
             Campagne c(nom);
@@ -215,7 +259,7 @@ void remplirListPartie()
     QDir dir(path);
     QFileInfoList files = dir.entryInfoList();
     foreach (QFileInfo file, files){
-        if (!file.isDir()){
+        if (!file.isDir() && file.fileName().contains(".data")){
             list=file.fileName().split(".data");
             nom=list.at(0);
             Partie p(nom);
@@ -233,7 +277,7 @@ void remplirListPersonnage()
     QDir dir(path);
     QFileInfoList files = dir.entryInfoList();
     foreach (QFileInfo file, files){
-        if (!file.isDir()){
+        if (!file.isDir() && file.fileName().contains(".data")){
             list=file.fileName().split(".data");
             nom=list.at(0);
             Personnage p(nom);
@@ -252,7 +296,7 @@ void remplirListPlaylist()
     QFileInfoList files = dir.entryInfoList();
     foreach (QFileInfo file, files)
     {
-        if (!file.isDir()){
+        if (!file.isDir() && file.fileName().contains(".data")){
             list=file.fileName().split(".data");
             nom=list.at(0);
             Playlist p(nom);

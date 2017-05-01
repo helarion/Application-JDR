@@ -77,12 +77,12 @@ void Partie::setNom(QString s_nom)
 
     // suppression du fichier actuel
     QString filename = "data/Partie/";
-    QString c=campagne.getTitre();
-    filename+=c+"_"+titre+".data";
+    filename+=campagne.getTitre()+"_"+titre+".data";
     QFile file(filename);
     file.remove();
 
     // nouveau titre de fichier adapté au nom
+    titreCampagne=campagne.getTitre();
     titre=nom.toLower();
     titre.replace( " ", "_" );
 
@@ -97,7 +97,20 @@ void Partie::setResume(QString s_resume)
 
 void Partie::setCampagne(Campagne s_campagne)
 {
+    // suppression du fichier actuel
+    QString filename = "data/Partie/";
+    filename+=campagne.getTitre()+"_"+titre+".data";
+    QFile file(filename);
+    file.remove();
+
+    // nouveau titre de fichier adapté au nom
     campagne=s_campagne;
+    titreCampagne=campagne.getTitre();
+    titre=nom.toLower();
+    titre.replace( " ", "_" );
+
+    // Sauvegarde du nouveau fichier
+    Save();
 }
 
 bool Partie::compare(Partie p)
@@ -107,18 +120,27 @@ bool Partie::compare(Partie p)
     return false;
 }
 
+void Partie::setTitreCampagne(QString s_titreCampagne)
+{
+    titreCampagne=s_titreCampagne;
+    campagne.Load(titreCampagne);
+    Save();
+}
+
 void Partie::Save()
 {
     QString filename = "data/Partie/";
-    filename+=campagne.getTitre()+"_"+titre+".data";
-    QFile file(filename);
+    QString titreTemp=campagne.getTitre()+"_"+titre;
+    filename+=titreTemp+".data";
 
+    QFile file(filename);
+    //qDebug() << "filename:" << filename;
     // test si un fichier existe déja à ce nom
     QFileInfo check_file(filename);
     if (check_file.exists() && check_file.isFile())
     {
         // si c'est le cas, on compare les deux fichiers
-        Partie p(filename);
+        Partie p(titreTemp);
         // s'ils sont différent on fait coexister les fichiers
         // avec deux titres différents
         if(compare(p)==false)
@@ -128,7 +150,7 @@ void Partie::Save()
             msgBox.setInformativeText("Le fichier que vous vous apprétez à sauvegarder existe déja, écraser ?");
             msgBox.setStandardButtons(QMessageBox::Save | QMessageBox::Discard);
             msgBox.setDefaultButton(QMessageBox::Save);
-
+            qDebug() << "filename:" << filename;
             int ret = msgBox.exec();
             switch (ret) {
               case QMessageBox::Save:
@@ -157,7 +179,7 @@ void Partie::Save()
 
     qDebug() << "titre" << titre;
 
-    out << nom << titre << titreCampagne;
+    out << nom << resume << titre << titreCampagne;
 
     file.flush();
     file.close();
@@ -181,6 +203,7 @@ void Partie::Load(QString fichier)
     in.setVersion(QDataStream::Qt_5_1);
 
     in >> nom;
+    in >> resume;
     in >> titre;
     in >> titreCampagne;
 

@@ -30,6 +30,7 @@ class Playlist
         //Jeu getJeu();
         void setNom(QString nom);
         void setListe(QVector<QString> s_liste);
+        void setTitreJeu(QString s_titreJeu);
 };
 
 #endif // PLAYLIST_H

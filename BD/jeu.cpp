@@ -49,6 +49,7 @@ void Jeu::afficher () const
     qDebug() << nom;
     qDebug() << adrTheme;
     qDebug() << titre;
+    qDebug() <<"";
 }
 
 QString Jeu::getTitre()
@@ -120,6 +121,7 @@ void Jeu::setListAttribut(QVector<Attribut> list)
 void Jeu::editAttribut(int index, QString titre)
 {
     listTitreAttribut.replace(index,titre);
+    listAttribut[index].Load(titre);
 }
 
 bool Jeu::compare(Jeu j)

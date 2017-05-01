@@ -91,6 +91,11 @@ void Playlist::setListe(QVector<QString> s_liste)
     this->liste=s_liste;
 }
 
+void Playlist::setTitreJeu(QString s_titreJeu)
+{
+    titreJeu=s_titreJeu;
+}
+
 void Playlist::Save()
 {
     QString filename = "data/Playlist/";
