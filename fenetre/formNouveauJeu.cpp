@@ -104,16 +104,137 @@ void formNouveauJeu::on_nouveauAttributButton_clicked()
     QObject::connect(&formNouveauAttribut, SIGNAL(listAttributChanged()),this, SLOT(changementAttribut()));
     formNouveauAttribut.exec();
 }
-
-void formNouveauJeu::on_ajouterButton_clicked()
+/*
+void formNouveauJeu::on_listAttributSelect_itemSelectionChanged()
 {
-    // on vérifie qu'un item est selectionné
-    if(ui->listAttributDisp->currentItem()!=NULL)
+    if(ui->listAttributSelect->currentItem()->isSelected()==true)
     {
+        ui->listAttributDisp->clearSelection();
+        ui->listValeurDisp->clearSelection();
+        ui->listCompetenceDisp->clearSelection();
+        ui->listValeurSelect->clearSelection();
+        ui->listCompetenceSelect->clearSelection();
+        ui->listInformationSelect->clearSelection();
+        ui->listInformationDisp->clearSelection();
+    }
+}
+
+void formNouveauJeu::on_listAttributDisp_itemSelectionChanged()
+{
+    if(ui->listAttributDisp->currentItem()->isSelected()==true)
+    {
+        ui->listAttributSelect->clearSelection();
+        ui->listValeurDisp->clearSelection();
+        ui->listCompetenceDisp->clearSelection();
+        ui->listValeurSelect->clearSelection();
+        ui->listCompetenceSelect->clearSelection();
+        ui->listInformationSelect->clearSelection();
+        ui->listInformationDisp->clearSelection();
+    }
+}
+
+void formNouveauJeu::on_listValeurSelect_itemSelectionChanged()
+{
+    if(ui->listValeurSelect->currentItem()->isSelected()==true)
+    {
+        ui->listAttributDisp->clearSelection();
+        ui->listValeurDisp->clearSelection();
+        ui->listCompetenceDisp->clearSelection();
+        ui->listAttributSelect->clearSelection();
+        ui->listCompetenceSelect->clearSelection();
+        ui->listInformationSelect->clearSelection();
+        ui->listInformationDisp->clearSelection();
+    }
+}
+
+void formNouveauJeu::on_listValeurDisp_itemSelectionChanged()
+{
+    if(ui->listValeurDisp->currentItem()->isSelected()==true)
+    {
+        ui->listAttributDisp->clearSelection();
+        ui->listAttributSelect->clearSelection();
+        ui->listCompetenceDisp->clearSelection();
+        ui->listValeurSelect->clearSelection();
+        ui->listCompetenceSelect->clearSelection();
+        ui->listInformationSelect->clearSelection();
+        ui->listInformationDisp->clearSelection();
+    }
+}
+
+void formNouveauJeu::on_listCompetenceSelect_itemSelectionChanged()
+{
+    if(ui->listCompetenceSelect->currentItem()->isSelected()==true)
+    {
+        ui->listAttributDisp->clearSelection();
+        ui->listValeurDisp->clearSelection();
+        ui->listCompetenceDisp->clearSelection();
+        ui->listValeurSelect->clearSelection();
+        ui->listAttributSelect->clearSelection();
+        ui->listInformationSelect->clearSelection();
+        ui->listInformationDisp->clearSelection();
+    }
+}
+
+void formNouveauJeu::on_listCompetenceDisp_itemSelectionChanged()
+{
+    if(ui->listCompetenceDisp->currentItem()->isSelected()==true)
+    {
+        ui->listAttributDisp->clearSelection();
+        ui->listValeurDisp->clearSelection();
+        ui->listAttributSelect->clearSelection();
+        ui->listValeurSelect->clearSelection();
+        ui->listCompetenceSelect->clearSelection();
+        ui->listInformationSelect->clearSelection();
+        ui->listInformationDisp->clearSelection();
+    }
+}
+
+void formNouveauJeu::on_listInformationSelect_itemSelectionChanged()
+{
+    if(ui->listInformationSelect->currentItem()->isSelected()==true)
+    {
+        ui->listAttributDisp->clearSelection();
+        ui->listValeurDisp->clearSelection();
+        ui->listAttributSelect->clearSelection();
+        ui->listValeurSelect->clearSelection();
+        ui->listCompetenceSelect->clearSelection();
+        ui->listCompetenceDisp->clearSelection();
+        ui->listInformationDisp->clearSelection();
+    }
+}
+
+void formNouveauJeu::on_listInformationDisp_itemSelectionChanged()
+{
+   if(ui->listInformationDisp->currentItem()->isSelected()==true)
+    {
+        ui->listAttributDisp->clearSelection();
+        ui->listValeurDisp->clearSelection();
+        ui->listAttributSelect->clearSelection();
+        ui->listValeurSelect->clearSelection();
+        ui->listCompetenceSelect->clearSelection();
+        ui->listCompetenceDisp->clearSelection();
+        ui->listInformationSelect->clearSelection();
+    }
+}*/
+
+void formNouveauJeu::on_nouveauAttribut_clicked()
+{
+    formNouveauAttribut formNouveauAttribut;
+    formNouveauAttribut.setModal(true);
+    QObject::connect(&formNouveauAttribut, SIGNAL(listAttributChanged()),this, SLOT(changementAttribut()));
+    formNouveauAttribut.exec();
+}
+
+void formNouveauJeu::on_ajouterAttributButton_clicked()
+{
+    QListWidgetItem* item;
+    QListWidgetItem *newItem = new QListWidgetItem;
+    if(ui->listAttributDisp->currentItem()->isSelected()==true)
+    {
+        // on vérifie qu'un item est selectionné
         // on met l'attribut dispo seclectionné dans la liste des attributs select
         // et on le supprime de la liste dispo
-        QListWidgetItem* item = ui->listAttributDisp->currentItem();
-        QListWidgetItem *newItem = new QListWidgetItem;
+        item = ui->listAttributDisp->currentItem();
         // on met le titre de l'objet comme donnée
         newItem->setData(Qt::UserRole,item->data(Qt::UserRole));
         // le nom de l'objet comme text affiché
@@ -123,15 +244,102 @@ void formNouveauJeu::on_ajouterButton_clicked()
     }
 }
 
-void formNouveauJeu::on_retirerButton_clicked()
+void formNouveauJeu::on_ajouterValeurButton_clicked()
 {
+    QListWidgetItem* item;
+    QListWidgetItem *newItem = new QListWidgetItem;
+    if(ui->listValeurDisp->currentItem()->isSelected()==true)
+    {
+        item = ui->listValeurDisp->currentItem();
+        newItem->setData(Qt::UserRole,item->data(Qt::UserRole));
+        newItem->setText(item->text());
+        ui->listValeurSelect->addItem(newItem);
+        delete item;
+    }
+}
+
+void formNouveauJeu::on_supprimerValeurButton_clicked()
+{
+    QListWidgetItem* item;
+    QListWidgetItem *newItem = new QListWidgetItem;
     // on vérifie qu'un item est selectionné
-    if(ui->listAttributSelect->currentItem()!=NULL)
+    if(ui->listValeurSelect->currentItem()->isSelected()==true)
+    {
+        item = ui->listValeurSelect->currentItem();
+        newItem->setData(Qt::UserRole,item->data(Qt::UserRole));
+        newItem->setText(item->text());
+        ui->listValeurDisp->addItem(newItem);
+        delete item;
+    }
+}
+
+void formNouveauJeu::on_ajouterCompetenceButton_clicked()
+{
+    QListWidgetItem* item;
+    QListWidgetItem *newItem = new QListWidgetItem;
+    if(ui->listCompetenceDisp->currentItem()->isSelected()==true)
+    {
+        item = ui->listCompetenceDisp->currentItem();
+        newItem->setData(Qt::UserRole,item->data(Qt::UserRole));
+        newItem->setText(item->text());
+        ui->listCompetenceSelect->addItem(newItem);
+        delete item;
+    }
+}
+
+void formNouveauJeu::on_supprimerCompetenceButton_clicked()
+{
+    QListWidgetItem* item;
+    QListWidgetItem *newItem = new QListWidgetItem;
+    if(ui->listCompetenceSelect->currentItem()->isSelected()==true)
+    {
+        item = ui->listCompetenceSelect->currentItem();
+        newItem->setData(Qt::UserRole,item->data(Qt::UserRole));
+        newItem->setText(item->text());
+        ui->listCompetenceDisp->addItem(newItem);
+        delete item;
+    }
+}
+
+void formNouveauJeu::on_ajouterInformationButton_clicked()
+{
+    QListWidgetItem* item;
+    QListWidgetItem *newItem = new QListWidgetItem;
+    if(ui->listInformationDisp->currentItem()->isSelected()==true)
+    {
+        item = ui->listInformationDisp->currentItem();
+        newItem->setData(Qt::UserRole,item->data(Qt::UserRole));
+        newItem->setText(item->text());
+        ui->listInformationSelect->addItem(newItem);
+        delete item;
+    }
+}
+
+void formNouveauJeu::on_supprimerInformationButton_clicked()
+{
+    QListWidgetItem* item;
+    QListWidgetItem *newItem = new QListWidgetItem;
+
+    if(ui->listInformationSelect->currentItem()->isSelected()==true)
+    {
+        item = ui->listInformationSelect->takeItem(ui->listInformationSelect->currentRow());//currentItem();
+        newItem->setData(Qt::UserRole,item->data(Qt::UserRole));
+        newItem->setText(item->text());
+        ui->listInformationDisp->addItem(newItem);
+        //if(item!=NULL)delete item;
+        qDebug() << "test3";
+    }
+}
+
+void formNouveauJeu::on_supprimerAttributButton_clicked()
+{
+    QListWidgetItem* item;
+    QListWidgetItem *newItem = new QListWidgetItem;
+    if(ui->listAttributSelect->currentItem()->isSelected()==true)
     {
         // on met l'attribut dispo seclectionné dans la liste des attributs select
         // et on le supprime de la liste dispo
-        QListWidgetItem* item = ui->listAttributSelect->currentItem();
-        QListWidgetItem *newItem = new QListWidgetItem;
+        item = ui->listAttributSelect->currentItem();
         // on met le titre de l'objet comme donnée
         newItem->setData(Qt::UserRole,item->data(Qt::UserRole));
         // le nom de l'objet comme text affiché
@@ -139,142 +347,6 @@ void formNouveauJeu::on_retirerButton_clicked()
         ui->listAttributDisp->addItem(newItem);
         delete item;
     }
-}
-
-void formNouveauJeu::on_modifierAttributButton_clicked()
-{
-    formModifierAttribut formModifierAttribut;
-    formModifierAttribut.setModal(true);
-    formModifierAttribut.exec();
-}
-
-void formNouveauJeu::on_listAttributSelect_itemSelectionChanged()
-{
-    ui->listAttributDisp->clearSelection();
-    ui->listValeurDisp->clearSelection();
-    ui->listCompetenceDisp->clearSelection();
-    ui->listValeurSelect->clearSelection();
-    ui->listCompetenceSelect->clearSelection();
-    ui->listInformationSelect->clearSelection();
-    ui->listInformationDisp->clearSelection();
-}
-
-void formNouveauJeu::on_listAttributDisp_itemSelectionChanged()
-{
-    ui->listAttributSelect->clearSelection();
-    ui->listValeurDisp->clearSelection();
-    ui->listCompetenceDisp->clearSelection();
-    ui->listValeurSelect->clearSelection();
-    ui->listCompetenceSelect->clearSelection();
-    ui->listInformationSelect->clearSelection();
-    ui->listInformationDisp->clearSelection();
-}
-
-void formNouveauJeu::on_listValeurSelect_itemSelectionChanged()
-{
-    ui->listAttributDisp->clearSelection();
-    ui->listValeurDisp->clearSelection();
-    ui->listCompetenceDisp->clearSelection();
-    ui->listAttributSelect->clearSelection();
-    ui->listCompetenceSelect->clearSelection();
-    ui->listInformationSelect->clearSelection();
-    ui->listInformationDisp->clearSelection();
-}
-
-void formNouveauJeu::on_listValeurDisp_itemSelectionChanged()
-{
-    ui->listAttributDisp->clearSelection();
-    ui->listAttributSelect->clearSelection();
-    ui->listCompetenceDisp->clearSelection();
-    ui->listValeurSelect->clearSelection();
-    ui->listCompetenceSelect->clearSelection();
-    ui->listInformationSelect->clearSelection();
-    ui->listInformationDisp->clearSelection();
-}
-
-void formNouveauJeu::on_listCompetenceSelect_itemSelectionChanged()
-{
-    ui->listAttributDisp->clearSelection();
-    ui->listValeurDisp->clearSelection();
-    ui->listCompetenceDisp->clearSelection();
-    ui->listValeurSelect->clearSelection();
-    ui->listAttributSelect->clearSelection();
-    ui->listInformationSelect->clearSelection();
-    ui->listInformationDisp->clearSelection();
-}
-
-void formNouveauJeu::on_listCompetenceDisp_itemSelectionChanged()
-{
-    ui->listAttributDisp->clearSelection();
-    ui->listValeurDisp->clearSelection();
-    ui->listAttributSelect->clearSelection();
-    ui->listValeurSelect->clearSelection();
-    ui->listCompetenceSelect->clearSelection();
-    ui->listInformationSelect->clearSelection();
-    ui->listInformationDisp->clearSelection();
-}
-
-void formNouveauJeu::on_listInformationSelect_itemSelectionChanged()
-{
-    ui->listAttributDisp->clearSelection();
-    ui->listValeurDisp->clearSelection();
-    ui->listAttributSelect->clearSelection();
-    ui->listValeurSelect->clearSelection();
-    ui->listCompetenceSelect->clearSelection();
-    ui->listCompetenceDisp->clearSelection();
-    ui->listInformationDisp->clearSelection();
-}
-
-void formNouveauJeu::on_listInformationDisp_itemSelectionChanged()
-{
-    ui->listAttributDisp->clearSelection();
-    ui->listValeurDisp->clearSelection();
-    ui->listAttributSelect->clearSelection();
-    ui->listValeurSelect->clearSelection();
-    ui->listCompetenceSelect->clearSelection();
-    ui->listCompetenceDisp->clearSelection();
-    ui->listInformationSelect->clearSelection();
-}
-
-void formNouveauJeu::on_modifierAttribut_clicked()
-{
-    bool test=false;
-    if(ui->listAttributDisp->currentItem()->isSelected()==true)
-    {
-        attributSelect=chercheTitreAttribut(ui->listAttributDisp->currentItem()->data(Qt::UserRole).toString());
-        test=true;
-    }
-    else if(ui->listValeurDisp->currentItem()->isSelected()==true)
-    {
-        attributSelect=chercheTitreAttribut(ui->listValeurDisp->currentItem()->data(Qt::UserRole).toString());
-        test=true;
-    }
-    else if(ui->listCompetenceDisp->currentItem()->isSelected()==true)
-    {
-        attributSelect=chercheTitreAttribut(ui->listCompetenceDisp->currentItem()->data(Qt::UserRole).toString());
-        test=true;
-    }
-    else if(ui->listInformationDisp->currentItem()->isSelected()==true)
-    {
-        attributSelect=chercheTitreAttribut(ui->listInformationDisp->currentItem()->data(Qt::UserRole).toString());
-        test=true;
-    }
-    qDebug() << "attributSelect:" << attributSelect;
-    if(test==true)
-    {
-        formModifierAttribut formModifierAttribut;
-        formModifierAttribut.setModal(true);
-        QObject::connect(&formModifierAttribut, SIGNAL(listAttributChanged()),this, SLOT(changementAttribut()));
-        formModifierAttribut.exec();
-    }
-}
-
-void formNouveauJeu::on_nouveauAttribut_clicked()
-{
-    formNouveauAttribut formNouveauAttribut;
-    formNouveauAttribut.setModal(true);
-    QObject::connect(&formNouveauAttribut, SIGNAL(listAttributChanged()),this, SLOT(changementAttribut()));
-    formNouveauAttribut.exec();
 }
 
 void formNouveauJeu::on_ajouterJeuButton_clicked()
@@ -312,4 +384,52 @@ void formNouveauJeu::on_ajouterJeuButton_clicked()
     j.Save();
     emit listJeuChanged();
     this->close();
+}
+
+void formNouveauJeu::on_modifierInformationButton_clicked()
+{
+    if(ui->listInformationDisp->currentItem()->isSelected()==true)
+    {
+        attributSelect=chercheTitreAttribut(ui->listInformationDisp->currentItem()->data(Qt::UserRole).toString());
+        formModifierAttribut formModifierAttribut;
+        formModifierAttribut.setModal(true);
+        QObject::connect(&formModifierAttribut, SIGNAL(listAttributChanged()),this, SLOT(changementAttribut()));
+        formModifierAttribut.exec();
+    }
+}
+
+void formNouveauJeu::on_modifierCompetenceButton_clicked()
+{
+    if(ui->listCompetenceDisp->currentItem()->isSelected()==true)
+    {
+        attributSelect=chercheTitreAttribut(ui->listCompetenceDisp->currentItem()->data(Qt::UserRole).toString());
+        formModifierAttribut formModifierAttribut;
+        formModifierAttribut.setModal(true);
+        QObject::connect(&formModifierAttribut, SIGNAL(listAttributChanged()),this, SLOT(changementAttribut()));
+        formModifierAttribut.exec();
+    }
+}
+
+void formNouveauJeu::on_modifierValeurButton_clicked()
+{
+    if(ui->listValeurDisp->currentItem()->isSelected()==true)
+    {
+        attributSelect=chercheTitreAttribut(ui->listValeurDisp->currentItem()->data(Qt::UserRole).toString());
+        formModifierAttribut formModifierAttribut;
+        formModifierAttribut.setModal(true);
+        QObject::connect(&formModifierAttribut, SIGNAL(listAttributChanged()),this, SLOT(changementAttribut()));
+        formModifierAttribut.exec();
+    }
+}
+
+void formNouveauJeu::on_modifierAttributButton_clicked()
+{
+    if(ui->listAttributDisp->currentItem()->isSelected()==true)
+    {
+        attributSelect=chercheTitreAttribut(ui->listAttributDisp->currentItem()->data(Qt::UserRole).toString());
+        formModifierAttribut formModifierAttribut;
+        formModifierAttribut.setModal(true);
+        QObject::connect(&formModifierAttribut, SIGNAL(listAttributChanged()),this, SLOT(changementAttribut()));
+        formModifierAttribut.exec();
+    }
 }

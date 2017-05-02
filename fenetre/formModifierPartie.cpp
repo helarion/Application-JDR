@@ -14,7 +14,6 @@ formModifierPartie::formModifierPartie(QWidget *parent) :
 {
     ui->setupUi(this);
     Partie p=listPartie[partieSelect];
-    qDebug() << "test";
     ui->nomPartie->setText(p.getNom());
 }
 
@@ -37,10 +36,15 @@ void formModifierPartie::on_supprimerButton_clicked()
 
 void formModifierPartie::on_modifierButton_clicked()
 {
+    remplirListPersonnage();
     Partie prec=listPartie[partieSelect];
+    Partie p=listPartie[partieSelect];
     QString nom=ui->nomPartie->text();
-    listPartie[partieSelect].setNom(nom);
-    updatePartie(prec,listPartie[partieSelect]);
+    p.setNom(nom);
+    deletePartie(partieSelect);
+    p.Save();
+    //remplirListPartie();
+    updatePartie(prec,p);
     emit listPartieChanged();
     this->close();
 }

@@ -7,8 +7,6 @@
 
 #include "BD/Partie.h"
 
-int Partie::increment=0;
-
 Partie::Partie ()
 {
     nom="";
@@ -75,19 +73,10 @@ void Partie::setNom(QString s_nom)
 {
     nom=s_nom; // modification du nom
 
-    // suppression du fichier actuel
-    QString filename = "data/Partie/";
-    filename+=campagne.getTitre()+"_"+titre+".data";
-    QFile file(filename);
-    file.remove();
-
     // nouveau titre de fichier adapté au nom
     titreCampagne=campagne.getTitre();
     titre=nom.toLower();
     titre.replace( " ", "_" );
-
-    // Sauvegarde du nouveau fichier
-    Save();
 }
 
 void Partie::setResume(QString s_resume)
@@ -97,20 +86,9 @@ void Partie::setResume(QString s_resume)
 
 void Partie::setCampagne(Campagne s_campagne)
 {
-    // suppression du fichier actuel
-    QString filename = "data/Partie/";
-    filename+=campagne.getTitre()+"_"+titre+".data";
-    QFile file(filename);
-    file.remove();
-
     // nouveau titre de fichier adapté au nom
     campagne=s_campagne;
     titreCampagne=campagne.getTitre();
-    titre=nom.toLower();
-    titre.replace( " ", "_" );
-
-    // Sauvegarde du nouveau fichier
-    Save();
 }
 
 bool Partie::compare(Partie p)
@@ -207,7 +185,7 @@ void Partie::Load(QString fichier)
     in >> titre;
     in >> titreCampagne;
 
-    qDebug() << "titrecampagne:"<<titreCampagne;
+   // qDebug() << "titrecampagne:"<<titreCampagne;
 
     campagne.Load(titreCampagne);
 

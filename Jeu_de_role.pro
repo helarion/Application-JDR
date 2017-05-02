@@ -29,19 +29,10 @@ HEADERS += \
     ui_mainwindow.h \
     mainwindow.h \
     BD/attribut.h \
-    BD/attributObjet.h \
     BD/campagne.h \
-    BD/groupe.h \
     BD/jeu.h \
-    BD/jeuElement.h \
-    BD/joueur.h \
-    BD/objetCol.h \
-    BD/objetLig.h \
     BD/partie.h \
     BD/personnage.h \
-    BD/typeattribut.h \
-    BD/valeurAttribut.h \
-    BD/valeurObjet.h \
     fenetre/formCampagne.h \
     fenetre/formInventaire.h \
     fenetre/formModifierAttribut.h \
@@ -77,19 +68,10 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     BD/attribut.cpp \
-    BD/attributObjet.cpp \
     BD/campagne.cpp \
-    BD/grouper.cpp \
     BD/jeu.cpp \
-    BD/jeuElement.cpp \
-    BD/joueur.cpp \
-    BD/objetCol.cpp \
-    BD/objetLig.cpp \
     BD/partie.cpp \
     BD/personnage.cpp \
-    BD/typeattribut.cpp \
-    BD/valeurAttribut.cpp \
-    BD/valeurObjet.cpp \
     fenetre/formModifierAttribut.cpp \
     fenetre/formModifierCampagne.cpp \
     fenetre/formModifierJeu.cpp \

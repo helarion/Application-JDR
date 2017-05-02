@@ -32,6 +32,7 @@ private slots:
 
     void on_modifierAttribut_clicked();
 
+    /*
     void on_listAttributSelect_itemSelectionChanged();
 
     void on_listAttributDisp_itemSelectionChanged();
@@ -47,6 +48,32 @@ private slots:
     void on_listInformationSelect_itemSelectionChanged();
 
     void on_listInformationDisp_itemSelectionChanged();
+    */
+
+    void on_ajouterAttributButton_clicked();
+
+    void on_supprimerAttributButton_clicked();
+
+    void on_ajouterValeurButton_clicked();
+
+    void on_supprimerValeurButton_clicked();
+
+    void on_ajouterCompetenceButton_clicked();
+
+    void on_supprimerCompetenceButton_clicked();
+
+    void on_ajouterInformationButton_clicked();
+
+    void on_supprimerInformationButton_clicked();
+
+
+    void on_modifierAttributButton_clicked();
+
+    void on_modifierValeurButton_clicked();
+
+    void on_modifierCompetenceButton_clicked();
+
+    void on_modifierInformationButton_clicked();
 
 signals:
     void listJeuChanged();

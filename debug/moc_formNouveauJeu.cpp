@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_formNouveauJeu_t {
     QByteArrayData data[20];
-    char stringdata0[619];
+    char stringdata0[582];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -35,39 +35,39 @@ QT_MOC_LITERAL(2, 30, 0), // ""
 QT_MOC_LITERAL(3, 31, 26), // "on_parcourirButton_clicked"
 QT_MOC_LITERAL(4, 58, 32), // "on_nouveauAttributButton_clicked"
 QT_MOC_LITERAL(5, 91, 18), // "changementAttribut"
-QT_MOC_LITERAL(6, 110, 24), // "on_ajouterButton_clicked"
-QT_MOC_LITERAL(7, 135, 24), // "on_retirerButton_clicked"
-QT_MOC_LITERAL(8, 160, 33), // "on_modifierAttributButton_cli..."
-QT_MOC_LITERAL(9, 194, 40), // "on_listAttributDisp_itemSelec..."
-QT_MOC_LITERAL(10, 235, 38), // "on_listValeurDisp_itemSelecti..."
-QT_MOC_LITERAL(11, 274, 42), // "on_listCompetenceDisp_itemSel..."
-QT_MOC_LITERAL(12, 317, 43), // "on_listInformationDisp_itemSe..."
-QT_MOC_LITERAL(13, 361, 45), // "on_listInformationSelect_item..."
-QT_MOC_LITERAL(14, 407, 44), // "on_listCompetenceSelect_itemS..."
-QT_MOC_LITERAL(15, 452, 40), // "on_listValeurSelect_itemSelec..."
-QT_MOC_LITERAL(16, 493, 42), // "on_listAttributSelect_itemSel..."
-QT_MOC_LITERAL(17, 536, 27), // "on_modifierAttribut_clicked"
-QT_MOC_LITERAL(18, 564, 26), // "on_nouveauAttribut_clicked"
-QT_MOC_LITERAL(19, 591, 27) // "on_ajouterJeuButton_clicked"
+QT_MOC_LITERAL(6, 110, 26), // "on_nouveauAttribut_clicked"
+QT_MOC_LITERAL(7, 137, 32), // "on_ajouterAttributButton_clicked"
+QT_MOC_LITERAL(8, 170, 34), // "on_supprimerAttributButton_cl..."
+QT_MOC_LITERAL(9, 205, 30), // "on_ajouterValeurButton_clicked"
+QT_MOC_LITERAL(10, 236, 32), // "on_supprimerValeurButton_clicked"
+QT_MOC_LITERAL(11, 269, 34), // "on_ajouterCompetenceButton_cl..."
+QT_MOC_LITERAL(12, 304, 36), // "on_supprimerCompetenceButton_..."
+QT_MOC_LITERAL(13, 341, 35), // "on_ajouterInformationButton_c..."
+QT_MOC_LITERAL(14, 377, 37), // "on_supprimerInformationButton..."
+QT_MOC_LITERAL(15, 415, 27), // "on_ajouterJeuButton_clicked"
+QT_MOC_LITERAL(16, 443, 36), // "on_modifierInformationButton_..."
+QT_MOC_LITERAL(17, 480, 35), // "on_modifierCompetenceButton_c..."
+QT_MOC_LITERAL(18, 516, 31), // "on_modifierValeurButton_clicked"
+QT_MOC_LITERAL(19, 548, 33) // "on_modifierAttributButton_cli..."
 
     },
     "formNouveauJeu\0listJeuChanged\0\0"
     "on_parcourirButton_clicked\0"
     "on_nouveauAttributButton_clicked\0"
-    "changementAttribut\0on_ajouterButton_clicked\0"
-    "on_retirerButton_clicked\0"
-    "on_modifierAttributButton_clicked\0"
-    "on_listAttributDisp_itemSelectionChanged\0"
-    "on_listValeurDisp_itemSelectionChanged\0"
-    "on_listCompetenceDisp_itemSelectionChanged\0"
-    "on_listInformationDisp_itemSelectionChanged\0"
-    "on_listInformationSelect_itemSelectionChanged\0"
-    "on_listCompetenceSelect_itemSelectionChanged\0"
-    "on_listValeurSelect_itemSelectionChanged\0"
-    "on_listAttributSelect_itemSelectionChanged\0"
-    "on_modifierAttribut_clicked\0"
-    "on_nouveauAttribut_clicked\0"
-    "on_ajouterJeuButton_clicked"
+    "changementAttribut\0on_nouveauAttribut_clicked\0"
+    "on_ajouterAttributButton_clicked\0"
+    "on_supprimerAttributButton_clicked\0"
+    "on_ajouterValeurButton_clicked\0"
+    "on_supprimerValeurButton_clicked\0"
+    "on_ajouterCompetenceButton_clicked\0"
+    "on_supprimerCompetenceButton_clicked\0"
+    "on_ajouterInformationButton_clicked\0"
+    "on_supprimerInformationButton_clicked\0"
+    "on_ajouterJeuButton_clicked\0"
+    "on_modifierInformationButton_clicked\0"
+    "on_modifierCompetenceButton_clicked\0"
+    "on_modifierValeurButton_clicked\0"
+    "on_modifierAttributButton_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -141,20 +141,20 @@ void formNouveauJeu::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 1: _t->on_parcourirButton_clicked(); break;
         case 2: _t->on_nouveauAttributButton_clicked(); break;
         case 3: _t->changementAttribut(); break;
-        case 4: _t->on_ajouterButton_clicked(); break;
-        case 5: _t->on_retirerButton_clicked(); break;
-        case 6: _t->on_modifierAttributButton_clicked(); break;
-        case 7: _t->on_listAttributDisp_itemSelectionChanged(); break;
-        case 8: _t->on_listValeurDisp_itemSelectionChanged(); break;
-        case 9: _t->on_listCompetenceDisp_itemSelectionChanged(); break;
-        case 10: _t->on_listInformationDisp_itemSelectionChanged(); break;
-        case 11: _t->on_listInformationSelect_itemSelectionChanged(); break;
-        case 12: _t->on_listCompetenceSelect_itemSelectionChanged(); break;
-        case 13: _t->on_listValeurSelect_itemSelectionChanged(); break;
-        case 14: _t->on_listAttributSelect_itemSelectionChanged(); break;
-        case 15: _t->on_modifierAttribut_clicked(); break;
-        case 16: _t->on_nouveauAttribut_clicked(); break;
-        case 17: _t->on_ajouterJeuButton_clicked(); break;
+        case 4: _t->on_nouveauAttribut_clicked(); break;
+        case 5: _t->on_ajouterAttributButton_clicked(); break;
+        case 6: _t->on_supprimerAttributButton_clicked(); break;
+        case 7: _t->on_ajouterValeurButton_clicked(); break;
+        case 8: _t->on_supprimerValeurButton_clicked(); break;
+        case 9: _t->on_ajouterCompetenceButton_clicked(); break;
+        case 10: _t->on_supprimerCompetenceButton_clicked(); break;
+        case 11: _t->on_ajouterInformationButton_clicked(); break;
+        case 12: _t->on_supprimerInformationButton_clicked(); break;
+        case 13: _t->on_ajouterJeuButton_clicked(); break;
+        case 14: _t->on_modifierInformationButton_clicked(); break;
+        case 15: _t->on_modifierCompetenceButton_clicked(); break;
+        case 16: _t->on_modifierValeurButton_clicked(); break;
+        case 17: _t->on_modifierAttributButton_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {

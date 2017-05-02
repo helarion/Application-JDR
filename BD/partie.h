@@ -14,7 +14,6 @@ class Partie
         QString resume;
         QString titre;
         QString titreCampagne;
-        static int increment;
     public:
         Partie();
         Partie (QString s_nom,Campagne s_campagne);	// Constructeur par défaut public

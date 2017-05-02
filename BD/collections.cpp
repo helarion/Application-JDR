@@ -10,13 +10,6 @@ QVector<Partie> listPartie(10000);
 QVector<Personnage> listPersonnage(50000);
 QVector<Playlist> listPlaylist(10000);
 
-/*listJeu.(1000);
-listAttribut(10000);
-listCampagne(5000);
-listPartie(10000);
-listPersonnage(50000);
-listPlaylist(10000);*/
-
 quint8 indexStack=0;
 
 int jeuSelect=-1;
@@ -42,14 +35,22 @@ void updateJeu(Jeu prec, Jeu suiv)
         if(listCampagne[i].getJeu().getTitre()==prec.getTitre())
         {
             Campagne precC=listCampagne[i];
-            listCampagne[i].setJeu(suiv);
-            listCampagne[i].Save();
-            updateCampagne(precC,listCampagne[i]);
+            Campagne c=listCampagne[i];
+            c.setJeu(suiv);
+            deleteCampagne(i);
+            c.Save();
+            updateCampagne(precC,c);
         }
     }
     for(int i=0;i<listPlaylist.size(); i++)
     {
-        if(listPlaylist[i].getTitreJeu()==prec.getTitre()) listPlaylist[i].setTitreJeu(suiv.getTitre());
+        if(listPlaylist[i].getTitreJeu()==prec.getTitre())
+        {
+            Playlist p=listPlaylist[i];
+            p.setTitreJeu(suiv.getTitre());
+            deletePlaylist(i);
+            p.Save();
+        }
     }
 }
 
@@ -71,15 +72,22 @@ void updateAttribut(Attribut prec, Attribut suiv)
 
 void updateCampagne(Campagne prec, Campagne suiv)
 {
+
     for(int i=0;i<listPartie.size(); i++)
     {
+        qDebug() << "partie i";
+        listPartie[i].afficher();
+        qDebug() << "campagne prec" << prec.getTitre();
         if(listPartie[i].getCampagne().getTitre()==prec.getTitre())
-        {
+        {        
             Partie precP=listPartie[i];
-            listPartie[i].setCampagne(suiv);
-            listPartie[i].Save();
-            updatePartie(precP,listPartie[i]);
-        }
+            Partie p=listPartie[i];
+            deletePartie(i);
+
+            p.setCampagne(suiv);
+            p.Save();
+            updatePartie(precP,p);
+         }
     }
 }
 
@@ -87,7 +95,13 @@ void updatePartie(Partie prec, Partie suiv)
 {
     for(int i=0;i<listPersonnage.size(); i++)
     {
-        if(listPersonnage[i].getPartie().getTitre()==prec.getTitre()) listPersonnage[i].setPartie(suiv);
+        if(listPersonnage[i].getPartie().getTitre()==prec.getTitre())
+        {
+            Personnage p=listPersonnage[i];
+            p.setPartie(suiv);
+            deletePersonnage(i);
+            p.Save();
+        }
     }
 }
 
@@ -125,6 +139,7 @@ extern void deletePartie(int index)
     QString c=p.getCampagne().getTitre();
     QString titre=p.getTitre();
     QString path="data/Partie/"+c+"_"+titre+".data";
+
     QDir d;
     d.remove(path);
     listPartie.remove(index);
@@ -133,7 +148,9 @@ extern void deletePartie(int index)
 extern void deletePersonnage(int index)
 {
     QString titre=listPersonnage[index].getTitre();
-    QString path="data/Personnage/"+titre+".data";
+    QString titrePartie=listPersonnage[index].getTitrePartie();
+
+    QString path="data/Personnage/"+titrePartie+"_"+titre+".data";
     QDir d;
     d.remove(path);
     listPersonnage.remove(index);

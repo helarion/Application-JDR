@@ -33,6 +33,24 @@ Personnage::Personnage(QString s_joueur, QString s_nom, QString s_prenom, int s_
     titre.replace( " ", "_" );
 }
 
+Personnage::Personnage (const Personnage & copie)
+{
+    joueur = copie.joueur;
+    nom = copie.nom;
+    prenom = copie.prenom;
+    age = copie.age;
+    description = copie.description;
+    background = copie.background;
+    invArmure = copie.invArmure;
+    invArme = copie.invArme;
+    invObjet = copie.invObjet;
+    sexe = copie.sexe;
+    titre = copie.titre;
+    partie = copie.partie;
+    titrePartie = copie.titrePartie;
+    valeurAttribut = copie.valeurAttribut;
+}
+
 Personnage::Personnage(QString titre)
 {
     Load(titre);
@@ -168,23 +186,19 @@ void Personnage::setSexe(QString s_sexe)
 
 void Personnage::setPartie(Partie s_partie)
 {
-    // suppression du fichier actuel
-    QString filename = "data/Partie/";
-    filename+=partie.getTitreCampagne()+"_"+partie.getTitre()+".data";
-    QFile file(filename);
-    file.remove();
-
     // nouveau titre de fichier adapté au nom
     partie=s_partie;
-    titrePartie=partie.getTitre();
-
-    // Sauvegarde du nouveau fichier
-    Save();
+    titrePartie=partie.getCampagne().getTitre()+"_"+partie.getTitre();
 }
 
 QVector<QString> Personnage::getValeurAttribut()
 {
     return valeurAttribut;
+}
+
+QString Personnage::getTitrePartie()
+{
+    return titrePartie;
 }
 
 void Personnage::afficher()
@@ -253,6 +267,7 @@ void Personnage::Load(QString nomFichier)
     in >> invObjet;
     in >> background;
 
+    qDebug() << "test";
     partie.Load(titrePartie);
     file.close();
 

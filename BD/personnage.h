@@ -24,6 +24,7 @@ class Personnage
         QVector<QString> valeurAttribut;
 	public:
         Personnage();
+        Personnage (const Personnage & copie); // Constructeur de copie public
         Personnage(QString titre);
         Personnage(QString s_joueur, QString s_nom, QString s_prenom, int s_age,
                    QString s_description, QString s_background, QString s_invArmure,
@@ -37,6 +38,7 @@ class Personnage
         QString getInvArme();
         QString getInvArmure();
         QString getInvObjet();
+        QString getTitrePartie();
         int getAge();
         QString getDescription();
         QString getSexe();

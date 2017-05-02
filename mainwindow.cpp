@@ -37,8 +37,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->retourButton->hide();
     ui->playlistButton->hide();
 
-    remplirListCampagne();
-    //afficherCampagne();
+    remplirListPlaylist();
+    afficherPlaylist();
 
     remplirListJeu();
     ui->listJeu->clear();
@@ -167,7 +167,7 @@ void MainWindow::on_selectionnerJeuButton_clicked()
         ui->listCampagne->clear();
         for(int i=0;i<listCampagne.size();i++)
         {
-            qDebug() << "test" << listCampagne[i].getJeu().getTitre();
+            //qDebug() << "test" << listCampagne[i].getJeu().getTitre();
             if(listCampagne[i].getJeu().compare(listJeu[jeuSelect]))
             {
                 QListWidgetItem *newItem = new QListWidgetItem;
@@ -261,7 +261,7 @@ void MainWindow::on_modifierPartieButton_clicked()
     {
         int index=ui->listPartie->currentItem()->data(Qt::UserRole).toInt();
         partieSelect=index;
-        listPartie[index].afficher();
+        //listPartie[index].afficher();
         formModifierPartie formModifierPartie;
         QObject::connect(&formModifierPartie, SIGNAL(listPartieChanged()),this, SLOT(changementPartie()));
         formModifierPartie.setModal(true);
@@ -287,7 +287,7 @@ void MainWindow::on_selectionnerPartieButton_clicked()
                 // on met l'index de liste comme donnée
                 newItem->setData(Qt::UserRole,i);
                 // le nom de l'objet comme text affiché
-                newItem->setText(listPersonnage[i].getNom()+listPersonnage[i].getPrenom());
+                newItem->setText(listPersonnage[i].getNom()+" "+listPersonnage[i].getPrenom());
                 ui->listPersonnage->addItem(newItem);
             }
         }
@@ -306,7 +306,7 @@ void MainWindow::changementPersonnage()
             // on met le titre de l'objet comme donnée
             newItem->setData(Qt::UserRole,listPersonnage[i].getTitre());
             // le nom de l'objet comme text affiché
-            newItem->setText(listPersonnage[i].getNom()+listPersonnage[i].getPrenom());
+            newItem->setText(listPersonnage[i].getNom()+" "+listPersonnage[i].getPrenom());
             ui->listPersonnage->addItem(newItem);
         }
     }

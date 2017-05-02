@@ -1,8 +1,7 @@
 #define ATTRIBUT 0
 #define VALEUR 1
 #define COMPETENCE 2
-#define LISTE 3
-#define INFORMATION 4
+#define INFORMATION 3
 
 #include <QDebug>
 #include <Qlabel>
@@ -66,6 +65,8 @@ formNouveauPersonnage::formNouveauPersonnage(QWidget *parent) :
     scroll->setLayout(ui->competenceLayout);
     scroll->show();*/
 
+    QSpacerItem *spacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+    ui->valeurLayout->addItem(spacer);
     int indexCompetence=0;
     for(int i=0;i<attributs.size();i++)
     {
@@ -130,12 +131,12 @@ formNouveauPersonnage::formNouveauPersonnage(QWidget *parent) :
             QLineEdit *edit= new QLineEdit;
             label->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Minimum);
             label->setWordWrap(true);
-            //edit->setMaximumWidth(50);
             ui->informationLayout->addWidget(label);
             ui->informationLayout->addWidget(edit);
             listEdit.append(edit);
         }
     }
+    ui->valeurLayout->addItem(spacer);
 }
 
 formNouveauPersonnage::~formNouveauPersonnage()

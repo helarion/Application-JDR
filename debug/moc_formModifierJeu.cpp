@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_formModifierJeu_t {
-    QByteArrayData data[19];
-    char stringdata0[586];
+    QByteArrayData data[23];
+    char stringdata0[661];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -40,14 +40,18 @@ QT_MOC_LITERAL(7, 145, 18), // "changementAttribut"
 QT_MOC_LITERAL(8, 164, 24), // "on_ajouterButton_clicked"
 QT_MOC_LITERAL(9, 189, 26), // "on_supprimerButton_clicked"
 QT_MOC_LITERAL(10, 216, 27), // "on_modifierAttribut_clicked"
-QT_MOC_LITERAL(11, 244, 42), // "on_listAttributSelect_itemSel..."
-QT_MOC_LITERAL(12, 287, 40), // "on_listAttributDisp_itemSelec..."
-QT_MOC_LITERAL(13, 328, 40), // "on_listValeurSelect_itemSelec..."
-QT_MOC_LITERAL(14, 369, 38), // "on_listValeurDisp_itemSelecti..."
-QT_MOC_LITERAL(15, 408, 44), // "on_listCompetenceSelect_itemS..."
-QT_MOC_LITERAL(16, 453, 42), // "on_listCompetenceDisp_itemSel..."
-QT_MOC_LITERAL(17, 496, 45), // "on_listInformationSelect_item..."
-QT_MOC_LITERAL(18, 542, 43) // "on_listInformationDisp_itemSe..."
+QT_MOC_LITERAL(11, 244, 32), // "on_ajouterAttributButton_clicked"
+QT_MOC_LITERAL(12, 277, 34), // "on_supprimerAttributButton_cl..."
+QT_MOC_LITERAL(13, 312, 30), // "on_ajouterValeurButton_clicked"
+QT_MOC_LITERAL(14, 343, 32), // "on_supprimerValeurButton_clicked"
+QT_MOC_LITERAL(15, 376, 34), // "on_ajouterCompetenceButton_cl..."
+QT_MOC_LITERAL(16, 411, 36), // "on_supprimerCompetenceButton_..."
+QT_MOC_LITERAL(17, 448, 35), // "on_ajouterInformationButton_c..."
+QT_MOC_LITERAL(18, 484, 37), // "on_supprimerInformationButton..."
+QT_MOC_LITERAL(19, 522, 33), // "on_modifierAttributButton_cli..."
+QT_MOC_LITERAL(20, 556, 31), // "on_modifierValeurButton_clicked"
+QT_MOC_LITERAL(21, 588, 35), // "on_modifierCompetenceButton_c..."
+QT_MOC_LITERAL(22, 624, 36) // "on_modifierInformationButton_..."
 
     },
     "formModifierJeu\0listJeuChanged\0\0"
@@ -58,14 +62,18 @@ QT_MOC_LITERAL(18, 542, 43) // "on_listInformationDisp_itemSe..."
     "changementAttribut\0on_ajouterButton_clicked\0"
     "on_supprimerButton_clicked\0"
     "on_modifierAttribut_clicked\0"
-    "on_listAttributSelect_itemSelectionChanged\0"
-    "on_listAttributDisp_itemSelectionChanged\0"
-    "on_listValeurSelect_itemSelectionChanged\0"
-    "on_listValeurDisp_itemSelectionChanged\0"
-    "on_listCompetenceSelect_itemSelectionChanged\0"
-    "on_listCompetenceDisp_itemSelectionChanged\0"
-    "on_listInformationSelect_itemSelectionChanged\0"
-    "on_listInformationDisp_itemSelectionChanged"
+    "on_ajouterAttributButton_clicked\0"
+    "on_supprimerAttributButton_clicked\0"
+    "on_ajouterValeurButton_clicked\0"
+    "on_supprimerValeurButton_clicked\0"
+    "on_ajouterCompetenceButton_clicked\0"
+    "on_supprimerCompetenceButton_clicked\0"
+    "on_ajouterInformationButton_clicked\0"
+    "on_supprimerInformationButton_clicked\0"
+    "on_modifierAttributButton_clicked\0"
+    "on_modifierValeurButton_clicked\0"
+    "on_modifierCompetenceButton_clicked\0"
+    "on_modifierInformationButton_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -75,7 +83,7 @@ static const uint qt_meta_data_formModifierJeu[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      17,   14, // methods
+      21,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -83,30 +91,38 @@ static const uint qt_meta_data_formModifierJeu[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   99,    2, 0x06 /* Public */,
+       1,    0,  119,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,  100,    2, 0x08 /* Private */,
-       4,    0,  101,    2, 0x08 /* Private */,
-       5,    0,  102,    2, 0x08 /* Private */,
-       6,    0,  103,    2, 0x08 /* Private */,
-       7,    0,  104,    2, 0x08 /* Private */,
-       8,    0,  105,    2, 0x08 /* Private */,
-       9,    0,  106,    2, 0x08 /* Private */,
-      10,    0,  107,    2, 0x08 /* Private */,
-      11,    0,  108,    2, 0x08 /* Private */,
-      12,    0,  109,    2, 0x08 /* Private */,
-      13,    0,  110,    2, 0x08 /* Private */,
-      14,    0,  111,    2, 0x08 /* Private */,
-      15,    0,  112,    2, 0x08 /* Private */,
-      16,    0,  113,    2, 0x08 /* Private */,
-      17,    0,  114,    2, 0x08 /* Private */,
-      18,    0,  115,    2, 0x08 /* Private */,
+       3,    0,  120,    2, 0x08 /* Private */,
+       4,    0,  121,    2, 0x08 /* Private */,
+       5,    0,  122,    2, 0x08 /* Private */,
+       6,    0,  123,    2, 0x08 /* Private */,
+       7,    0,  124,    2, 0x08 /* Private */,
+       8,    0,  125,    2, 0x08 /* Private */,
+       9,    0,  126,    2, 0x08 /* Private */,
+      10,    0,  127,    2, 0x08 /* Private */,
+      11,    0,  128,    2, 0x08 /* Private */,
+      12,    0,  129,    2, 0x08 /* Private */,
+      13,    0,  130,    2, 0x08 /* Private */,
+      14,    0,  131,    2, 0x08 /* Private */,
+      15,    0,  132,    2, 0x08 /* Private */,
+      16,    0,  133,    2, 0x08 /* Private */,
+      17,    0,  134,    2, 0x08 /* Private */,
+      18,    0,  135,    2, 0x08 /* Private */,
+      19,    0,  136,    2, 0x08 /* Private */,
+      20,    0,  137,    2, 0x08 /* Private */,
+      21,    0,  138,    2, 0x08 /* Private */,
+      22,    0,  139,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
 
  // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -142,14 +158,18 @@ void formModifierJeu::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         case 6: _t->on_ajouterButton_clicked(); break;
         case 7: _t->on_supprimerButton_clicked(); break;
         case 8: _t->on_modifierAttribut_clicked(); break;
-        case 9: _t->on_listAttributSelect_itemSelectionChanged(); break;
-        case 10: _t->on_listAttributDisp_itemSelectionChanged(); break;
-        case 11: _t->on_listValeurSelect_itemSelectionChanged(); break;
-        case 12: _t->on_listValeurDisp_itemSelectionChanged(); break;
-        case 13: _t->on_listCompetenceSelect_itemSelectionChanged(); break;
-        case 14: _t->on_listCompetenceDisp_itemSelectionChanged(); break;
-        case 15: _t->on_listInformationSelect_itemSelectionChanged(); break;
-        case 16: _t->on_listInformationDisp_itemSelectionChanged(); break;
+        case 9: _t->on_ajouterAttributButton_clicked(); break;
+        case 10: _t->on_supprimerAttributButton_clicked(); break;
+        case 11: _t->on_ajouterValeurButton_clicked(); break;
+        case 12: _t->on_supprimerValeurButton_clicked(); break;
+        case 13: _t->on_ajouterCompetenceButton_clicked(); break;
+        case 14: _t->on_supprimerCompetenceButton_clicked(); break;
+        case 15: _t->on_ajouterInformationButton_clicked(); break;
+        case 16: _t->on_supprimerInformationButton_clicked(); break;
+        case 17: _t->on_modifierAttributButton_clicked(); break;
+        case 18: _t->on_modifierValeurButton_clicked(); break;
+        case 19: _t->on_modifierCompetenceButton_clicked(); break;
+        case 20: _t->on_modifierInformationButton_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -191,13 +211,13 @@ int formModifierJeu::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 17)
+        if (_id < 21)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 17;
+        _id -= 21;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 17)
+        if (_id < 21)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 17;
+        _id -= 21;
     }
     return _id;
 }

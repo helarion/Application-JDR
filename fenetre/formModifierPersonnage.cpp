@@ -1,8 +1,7 @@
 #define ATTRIBUT 0
 #define VALEUR 1
 #define COMPETENCE 2
-#define LISTE 3
-#define INFORMATION 4
+#define INFORMATION 3
 
 #include <QDebug>
 
@@ -60,6 +59,8 @@ formModifierPersonnage::formModifierPersonnage(QWidget *parent) :
     scroll->show();*/
 
     int indexCompetence=0;
+    QSpacerItem *spacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+    ui->valeurLayout->addItem(spacer);
     for(int i=0;i<attributs.size();i++)
     {
         QLabel *label = new QLabel;
@@ -90,6 +91,9 @@ formModifierPersonnage::formModifierPersonnage(QWidget *parent) :
             ui->valeurLayout->addWidget(edit2);
             listEdit.append(edit1);
             listEdit.append(edit2);
+            edit1->setAlignment(Qt::AlignLeft);
+            edit2->setAlignment(Qt::AlignLeft);
+            label2->setAlignment(Qt::AlignLeft);
         }
         else if(attributs[i].getType()==COMPETENCE) // Compétence
         {
@@ -129,7 +133,7 @@ formModifierPersonnage::formModifierPersonnage(QWidget *parent) :
             listEdit.append(edit);
         }
     }
-
+    ui->valeurLayout->addItem(spacer);
     QVector<QString> valAtt=p.getValeurAttribut();
     for(int i=0;i<listEdit.size();i++)
     {

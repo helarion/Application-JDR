@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>725</width>
-    <height>727</height>
+    <height>800</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -40,190 +40,6 @@
      </property>
      <item>
       <layout class="QFormLayout" name="formulaire">
-       <item row="5" column="1">
-        <layout class="QGridLayout" name="gridLayout">
-         <property name="topMargin">
-          <number>0</number>
-         </property>
-         <item row="10" column="0">
-          <widget class="QListWidget" name="listInformationSelect">
-           <property name="maximumSize">
-            <size>
-             <width>250</width>
-             <height>400</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item row="9" column="0">
-          <widget class="QLabel" name="label_7">
-           <property name="text">
-            <string>Informations :</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="0">
-          <widget class="QLabel" name="label_6">
-           <property name="text">
-            <string>Compétences :</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="1">
-          <layout class="QVBoxLayout" name="verticalLayout_3">
-           <property name="rightMargin">
-            <number>0</number>
-           </property>
-           <item>
-            <widget class="QPushButton" name="ajouterButton">
-             <property name="text">
-              <string>&lt;--</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="supprimerButton">
-             <property name="text">
-              <string>--&gt;</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item row="0" column="0" alignment="Qt::AlignHCenter">
-          <widget class="QLabel" name="label_8">
-           <property name="text">
-            <string>Selectionnés</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="0">
-          <widget class="QListWidget" name="listValeurSelect">
-           <property name="maximumSize">
-            <size>
-             <width>250</width>
-             <height>400</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
-          <widget class="QListWidget" name="listAttributSelect">
-           <property name="minimumSize">
-            <size>
-             <width>50</width>
-             <height>50</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>250</width>
-             <height>400</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="2">
-          <widget class="QListWidget" name="listAttributDisp">
-           <property name="maximumSize">
-            <size>
-             <width>250</width>
-             <height>400</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="2">
-          <widget class="QListWidget" name="listValeurDisp">
-           <property name="maximumSize">
-            <size>
-             <width>250</width>
-             <height>400</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="label_5">
-           <property name="text">
-            <string>Valeurs :</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="2" alignment="Qt::AlignHCenter">
-          <widget class="QLabel" name="label_9">
-           <property name="text">
-            <string>Disponibles</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="label_4">
-           <property name="text">
-            <string>Attributs </string>
-           </property>
-          </widget>
-         </item>
-         <item row="7" column="0">
-          <widget class="QListWidget" name="listCompetenceSelect">
-           <property name="maximumSize">
-            <size>
-             <width>250</width>
-             <height>400</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item row="7" column="2">
-          <widget class="QListWidget" name="listCompetenceDisp">
-           <property name="maximumSize">
-            <size>
-             <width>250</width>
-             <height>400</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item row="10" column="2">
-          <widget class="QListWidget" name="listInformationDisp">
-           <property name="maximumSize">
-            <size>
-             <width>250</width>
-             <height>400</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="3">
-          <layout class="QVBoxLayout" name="boutons">
-           <item>
-            <widget class="QPushButton" name="nouveauAttribut">
-             <property name="text">
-              <string>Nouveau</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="modifierAttribut">
-             <property name="text">
-              <string>Modifier</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </item>
-       <item row="7" column="1">
-        <layout class="QHBoxLayout" name="Attributs">
-         <property name="rightMargin">
-          <number>0</number>
-         </property>
-         <property name="bottomMargin">
-          <number>0</number>
-         </property>
-        </layout>
-       </item>
        <item row="0" column="1">
         <layout class="QHBoxLayout" name="horizontalLayout_4">
          <property name="topMargin">
@@ -282,6 +98,293 @@
            </property>
            <property name="text">
             <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="5" column="1">
+        <layout class="QGridLayout" name="gridLayout">
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <item row="6" column="1">
+          <layout class="QVBoxLayout" name="verticalLayout_7">
+           <item>
+            <widget class="QPushButton" name="ajouterCompetenceButton">
+             <property name="text">
+              <string>&lt;--</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="supprimerCompetenceButton">
+             <property name="text">
+              <string>--&gt;</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="9" column="1">
+          <layout class="QVBoxLayout" name="verticalLayout_8">
+           <item>
+            <widget class="QPushButton" name="ajouterInformationButton">
+             <property name="text">
+              <string>&lt;--</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="supprimerInformationButton">
+             <property name="text">
+              <string>--&gt;</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="2" column="1">
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QPushButton" name="ajouterAttributButton">
+             <property name="text">
+              <string>&lt;--</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="supprimerAttributButton">
+             <property name="text">
+              <string>--&gt;</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="4" column="1">
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QPushButton" name="ajouterValeurButton">
+             <property name="text">
+              <string>&lt;--</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="supprimerValeurButton">
+             <property name="text">
+              <string>--&gt;</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="4" column="2">
+          <widget class="QListWidget" name="listValeurDisp">
+           <property name="maximumSize">
+            <size>
+             <width>250</width>
+             <height>400</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>Attributs </string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QListWidget" name="listValeurSelect">
+           <property name="maximumSize">
+            <size>
+             <width>250</width>
+             <height>400</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>Compétences :</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QListWidget" name="listAttributSelect">
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>250</width>
+             <height>400</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0" alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>Selectionnés</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2" alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="label_9">
+           <property name="text">
+            <string>Disponibles</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QListWidget" name="listAttributDisp">
+           <property name="maximumSize">
+            <size>
+             <width>250</width>
+             <height>400</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>Valeurs :</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="2">
+          <widget class="QListWidget" name="listCompetenceDisp">
+           <property name="maximumSize">
+            <size>
+             <width>250</width>
+             <height>400</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="0">
+          <widget class="QListWidget" name="listInformationSelect">
+           <property name="maximumSize">
+            <size>
+             <width>250</width>
+             <height>400</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>Informations :</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="QListWidget" name="listCompetenceSelect">
+           <property name="maximumSize">
+            <size>
+             <width>250</width>
+             <height>400</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="2">
+          <widget class="QListWidget" name="listInformationDisp">
+           <property name="maximumSize">
+            <size>
+             <width>250</width>
+             <height>400</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="3">
+          <widget class="QPushButton" name="modifierAttributButton">
+           <property name="text">
+            <string>Modifier</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="3">
+          <widget class="QPushButton" name="modifierValeurButton">
+           <property name="text">
+            <string>Modifier</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="3">
+          <widget class="QPushButton" name="modifierCompetenceButton">
+           <property name="text">
+            <string>Modifier</string>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="3">
+          <widget class="QPushButton" name="modifierInformationButton">
+           <property name="text">
+            <string>Modifier</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="7" column="1">
+        <layout class="QHBoxLayout" name="Attributs">
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+        </layout>
+       </item>
+       <item row="1" column="1">
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_10">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Attributs :</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="nouveauAttribut">
+           <property name="text">
+            <string>Nouveau</string>
            </property>
           </widget>
          </item>

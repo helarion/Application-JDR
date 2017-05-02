@@ -360,7 +360,7 @@ public:
         retranslateUi(formNouveauPersonnage);
         QObject::connect(retourButton, SIGNAL(clicked()), formNouveauPersonnage, SLOT(close()));
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(formNouveauPersonnage);

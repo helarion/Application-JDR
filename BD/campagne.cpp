@@ -27,6 +27,7 @@ Campagne::Campagne (const Campagne & Copie)
     scenario = Copie.scenario;
     titre = Copie.titre;
     jeu = Copie.jeu;
+    titreJeu = Copie.titreJeu;
 }
 Campagne::Campagne (QString titre){ Load(titre); }
 
@@ -70,21 +71,10 @@ QString Campagne::getTitreJeu()
 void Campagne::setNom(QString s_nom)
 {
     nom=s_nom; // modification du nom
-    qDebug() << "jeu:" << titreJeu;
-    // suppression du fichier actuel
-    QString filename = "data/Campagne/";
-    filename+=titre;
-    filename+=".data";
-    QFile file(filename);
-    file.remove();
 
     // nouveau titre de fichier adapté au nom
     titre=nom.toLower();
     titre.replace( " ", "_" );
-
-    // Sauvegarde du nouveau fichier
-    //Save();
-    qDebug() << "jeu:" << titreJeu;
 }
 
 void Campagne::setScenario(QString s_scenario)
