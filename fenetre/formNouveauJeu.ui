@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>704</width>
-    <height>475</height>
+    <width>725</width>
+    <height>727</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,146 +17,271 @@
    <iconset>
     <normaloff>../d20.ico</normaloff>../d20.ico</iconset>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="6" column="0">
-    <layout class="QHBoxLayout" name="horizontalLayout_3">
-     <item>
-      <widget class="QPushButton" name="CreerJeu">
-       <property name="text">
-        <string>Creer</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="AnnulerJeu">
-       <property name="text">
-        <string>Annuler</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="0" column="0" colspan="2">
-    <widget class="QLabel" name="label_3">
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="label">
      <property name="font">
       <font>
        <pointsize>20</pointsize>
       </font>
      </property>
      <property name="text">
-      <string>Nouveau Jeu :</string>
+      <string>Creation Jeu</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </item>
-   <item row="1" column="1">
-    <widget class="QLabel" name="themeImage">
-     <property name="enabled">
-      <bool>true</bool>
+   <item>
+    <layout class="QHBoxLayout" name="CentreV">
+     <property name="topMargin">
+      <number>0</number>
      </property>
-     <property name="minimumSize">
-      <size>
-       <width>300</width>
-       <height>300</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>300</width>
-       <height>300</height>
-      </size>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="0">
-    <layout class="QFormLayout" name="formLayout">
-     <item row="0" column="0">
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>Nom du nouveau Jeu :</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QLineEdit" name="nomJeu"/>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_2">
-       <property name="text">
-        <string>Image thème :</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="theme"/>
-     </item>
-     <item row="2" column="1">
-      <widget class="QPushButton" name="parcourirButton">
-       <property name="text">
-        <string>Parcourir</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="label_4">
-       <property name="text">
-        <string>Attributs</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="0" colspan="2">
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <property name="bottomMargin">
-        <number>0</number>
-       </property>
-       <item>
-        <widget class="QListWidget" name="listAttributSelect"/>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout_2">
-         <property name="rightMargin">
+     <item>
+      <layout class="QFormLayout" name="formulaire">
+       <item row="5" column="1">
+        <layout class="QGridLayout" name="gridLayout">
+         <property name="topMargin">
           <number>0</number>
          </property>
-         <item>
-          <widget class="QPushButton" name="ajouterButton">
-           <property name="text">
-            <string>&lt;--</string>
+         <item row="10" column="0">
+          <widget class="QListWidget" name="listInformationSelect">
+           <property name="maximumSize">
+            <size>
+             <width>250</width>
+             <height>400</height>
+            </size>
            </property>
           </widget>
          </item>
-         <item>
-          <widget class="QPushButton" name="retirerButton">
+         <item row="9" column="0">
+          <widget class="QLabel" name="label_7">
            <property name="text">
-            <string>--&gt;</string>
+            <string>Informations :</string>
            </property>
           </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>Compétences :</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QPushButton" name="ajouterButton">
+             <property name="text">
+              <string>&lt;--</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="supprimerButton">
+             <property name="text">
+              <string>--&gt;</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="0" column="0" alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>Selectionnés</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QListWidget" name="listValeurSelect">
+           <property name="maximumSize">
+            <size>
+             <width>250</width>
+             <height>400</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QListWidget" name="listAttributSelect">
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>250</width>
+             <height>400</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QListWidget" name="listAttributDisp">
+           <property name="maximumSize">
+            <size>
+             <width>250</width>
+             <height>400</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="2">
+          <widget class="QListWidget" name="listValeurDisp">
+           <property name="maximumSize">
+            <size>
+             <width>250</width>
+             <height>400</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>Valeurs :</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2" alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="label_9">
+           <property name="text">
+            <string>Disponibles</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>Attributs </string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="0">
+          <widget class="QListWidget" name="listCompetenceSelect">
+           <property name="maximumSize">
+            <size>
+             <width>250</width>
+             <height>400</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="2">
+          <widget class="QListWidget" name="listCompetenceDisp">
+           <property name="maximumSize">
+            <size>
+             <width>250</width>
+             <height>400</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="2">
+          <widget class="QListWidget" name="listInformationDisp">
+           <property name="maximumSize">
+            <size>
+             <width>250</width>
+             <height>400</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="3">
+          <layout class="QVBoxLayout" name="boutons">
+           <item>
+            <widget class="QPushButton" name="nouveauAttribut">
+             <property name="text">
+              <string>Nouveau</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="modifierAttribut">
+             <property name="text">
+              <string>Modifier</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
         </layout>
        </item>
-       <item>
-        <widget class="QListWidget" name="listAttributDisp"/>
+       <item row="7" column="1">
+        <layout class="QHBoxLayout" name="Attributs">
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+        </layout>
        </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout">
+       <item row="0" column="1">
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <property name="topMargin">
+          <number>0</number>
+         </property>
          <property name="rightMargin">
           <number>0</number>
          </property>
          <item>
-          <widget class="QPushButton" name="nouveauAttributButton">
-           <property name="text">
-            <string>Nouveau</string>
+          <layout class="QFormLayout" name="formLayout">
+           <property name="topMargin">
+            <number>0</number>
            </property>
-          </widget>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>Thème</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>Nom du jeu</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="nomJeu"/>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="theme"/>
+           </item>
+           <item row="3" column="1">
+            <widget class="QPushButton" name="parcourirButton">
+             <property name="text">
+              <string>Parcourir</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
-          <widget class="QPushButton" name="modifierAttributButton">
+          <widget class="QLabel" name="themeImage">
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>300</width>
+             <height>300</height>
+            </size>
+           </property>
            <property name="text">
-            <string>Modifier</string>
+            <string/>
            </property>
           </widget>
          </item>
@@ -166,23 +291,44 @@
      </item>
     </layout>
    </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="ajouterJeuButton">
+       <property name="text">
+        <string>Créer</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="retourButton">
+       <property name="text">
+        <string>Annuler</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
   </layout>
  </widget>
  <resources/>
  <connections>
   <connection>
-   <sender>AnnulerJeu</sender>
+   <sender>retourButton</sender>
    <signal>clicked()</signal>
    <receiver>formNouveauJeu</receiver>
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>288</x>
-     <y>271</y>
+     <x>539</x>
+     <y>702</y>
     </hint>
     <hint type="destinationlabel">
-     <x>206</x>
-     <y>266</y>
+     <x>362</x>
+     <y>363</y>
     </hint>
    </hints>
   </connection>

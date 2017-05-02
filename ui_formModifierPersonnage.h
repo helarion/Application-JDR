@@ -348,6 +348,7 @@ public:
 
 
         retranslateUi(formModifierPersonnage);
+        QObject::connect(retourButton, SIGNAL(clicked()), formModifierPersonnage, SLOT(close()));
 
         stackedWidget->setCurrentIndex(0);
 

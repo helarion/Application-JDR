@@ -1,4 +1,5 @@
 #include <QFileDialog>
+#include <QDebug>
 
 #include "fenetre/formNouveauJeu.h"
 #include "ui_formNouveauJeu.h"
@@ -10,23 +11,29 @@
 #include "BD/attribut.h"
 #include "BD/collections.h"
 
+#define ATTRIBUT 0
+#define VALEUR 1
+#define COMPETENCE 2
+#define INFORMATION 3
+
 formNouveauJeu::formNouveauJeu(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::formNouveauJeu)
 {
     ui->setupUi(this);
-    remplirListAttribut();
+
     ui->listAttributDisp->clear();
     ui->listAttributSelect->clear();
+    ui->listCompetenceDisp->clear();
+    ui->listCompetenceSelect->clear();
+    ui->listValeurDisp->clear();
+    ui->listValeurSelect->clear();
+    ui->listInformationDisp->clear();
+    ui->listInformationSelect->clear();
 
-    for(int i=0;i<listAttribut.size();i++)
-    {
-        QListWidgetItem *newItem = new QListWidgetItem;
-        newItem->setData(Qt::UserRole,i); // on met l'index de l'objet dans la liste comme donnée
-        newItem->setText(listAttribut[i].getNom()); // le nom de l'objet comme text affiché
-        if(listAttribut[i].getPreset()) ui->listAttributSelect->addItem(newItem);
-        else ui->listAttributDisp->addItem(newItem);
-    }
+    remplirListAttribut();
+
+    Load();
 }
 
 formNouveauJeu::~formNouveauJeu()
@@ -34,53 +41,49 @@ formNouveauJeu::~formNouveauJeu()
     delete ui;
 }
 
-void formNouveauJeu::changementAttribut()
+void formNouveauJeu::Load()
 {
-    bool test=true;
-    remplirListAttribut();
-    ui->listAttributDisp->clear();
     // ajout des attributs non séléctionnés dans la liste des attributs dispnibles
     for(int i=0;i<listAttribut.size();i++)
     {
-        test=true;
-        for(int j=0;i<ui->listAttributSelect->count();j++)
+        QListWidgetItem *newItem = new QListWidgetItem;
+        // on met le titre de l'objet comme donnée
+        newItem->setData(Qt::UserRole,listAttribut[i].getTitre());
+        // le nom de l'objet comme text affiché
+        newItem->setText(listAttribut[i].getNom());
+        if(listAttribut[i].getType()==ATTRIBUT)
         {
-            // teste si l'attribut regardé de la liste est déja selectionné
-            if(ui->listAttributSelect->item(j)->data(Qt::UserRole).toString()==listAttribut[i].getTitre())
-            {
-                test=false;
-                break;
-            }
+            if(listAttribut[i].getPreset()) ui->listAttributSelect->addItem(newItem);
+            else ui->listAttributDisp->addItem(newItem);
         }
-        if(test) // si l'attribut regardé n'est pas déja selectionné on l'ajoute dans la liste des disponibles
+        else if(listAttribut[i].getType()==VALEUR)
         {
-            QListWidgetItem *newItem = new QListWidgetItem;
-            // on met le titre de l'objet comme donnée
-            newItem->setData(Qt::UserRole,listAttribut[i].getTitre());
-            // le nom de l'objet comme text affiché
-            newItem->setText(listAttribut[i].getNom());
-            ui->listAttributDisp->addItem(newItem);
+            if(listAttribut[i].getPreset()) ui->listValeurSelect->addItem(newItem);
+            else ui->listValeurDisp->addItem(newItem);
+        }
+        else if(listAttribut[i].getType()==COMPETENCE)
+        {
+            if(listAttribut[i].getPreset()) ui->listCompetenceSelect->addItem(newItem);
+            else ui->listCompetenceDisp->addItem(newItem);
+        }
+        else if(listAttribut[i].getType()==INFORMATION)
+        {
+            if(listAttribut[i].getPreset()) ui->listInformationSelect->addItem(newItem);
+            else ui->listInformationDisp->addItem(newItem);
         }
     }
 }
 
-
-void formNouveauJeu::on_CreerJeu_clicked()
+void formNouveauJeu::changementAttribut()
 {
-    // récupération des valeurs du formulaire
-    QString nom = ui->nomJeu->text();
-    QString theme = ui->theme->text();
-    // récupération des attributs selectionnés
-    QVector<Attribut> list;
-    for(int i=0;i<ui->listAttributSelect->count();i++)
-    {
-        int index=ui->listAttributSelect->item(i)->data(Qt::UserRole).toInt();
-        list.append(listAttribut[index]);
-    }
-    Jeu j(nom,theme,list);
-    j.Save();
-    emit listJeuChanged();
-    this->close();
+    ui->listAttributDisp->clear();
+    ui->listCompetenceDisp->clear();
+    ui->listValeurDisp->clear();
+    ui->listInformationDisp->clear();
+
+    remplirListAttribut();
+
+    Load();
 }
 
 void formNouveauJeu::on_parcourirButton_clicked()
@@ -138,14 +141,175 @@ void formNouveauJeu::on_retirerButton_clicked()
     }
 }
 
-void formNouveauJeu::on_supprimerAttributButton_clicked()
-{
-
-}
-
 void formNouveauJeu::on_modifierAttributButton_clicked()
 {
     formModifierAttribut formModifierAttribut;
     formModifierAttribut.setModal(true);
     formModifierAttribut.exec();
+}
+
+void formNouveauJeu::on_listAttributSelect_itemSelectionChanged()
+{
+    ui->listAttributDisp->clearSelection();
+    ui->listValeurDisp->clearSelection();
+    ui->listCompetenceDisp->clearSelection();
+    ui->listValeurSelect->clearSelection();
+    ui->listCompetenceSelect->clearSelection();
+    ui->listInformationSelect->clearSelection();
+    ui->listInformationDisp->clearSelection();
+}
+
+void formNouveauJeu::on_listAttributDisp_itemSelectionChanged()
+{
+    ui->listAttributSelect->clearSelection();
+    ui->listValeurDisp->clearSelection();
+    ui->listCompetenceDisp->clearSelection();
+    ui->listValeurSelect->clearSelection();
+    ui->listCompetenceSelect->clearSelection();
+    ui->listInformationSelect->clearSelection();
+    ui->listInformationDisp->clearSelection();
+}
+
+void formNouveauJeu::on_listValeurSelect_itemSelectionChanged()
+{
+    ui->listAttributDisp->clearSelection();
+    ui->listValeurDisp->clearSelection();
+    ui->listCompetenceDisp->clearSelection();
+    ui->listAttributSelect->clearSelection();
+    ui->listCompetenceSelect->clearSelection();
+    ui->listInformationSelect->clearSelection();
+    ui->listInformationDisp->clearSelection();
+}
+
+void formNouveauJeu::on_listValeurDisp_itemSelectionChanged()
+{
+    ui->listAttributDisp->clearSelection();
+    ui->listAttributSelect->clearSelection();
+    ui->listCompetenceDisp->clearSelection();
+    ui->listValeurSelect->clearSelection();
+    ui->listCompetenceSelect->clearSelection();
+    ui->listInformationSelect->clearSelection();
+    ui->listInformationDisp->clearSelection();
+}
+
+void formNouveauJeu::on_listCompetenceSelect_itemSelectionChanged()
+{
+    ui->listAttributDisp->clearSelection();
+    ui->listValeurDisp->clearSelection();
+    ui->listCompetenceDisp->clearSelection();
+    ui->listValeurSelect->clearSelection();
+    ui->listAttributSelect->clearSelection();
+    ui->listInformationSelect->clearSelection();
+    ui->listInformationDisp->clearSelection();
+}
+
+void formNouveauJeu::on_listCompetenceDisp_itemSelectionChanged()
+{
+    ui->listAttributDisp->clearSelection();
+    ui->listValeurDisp->clearSelection();
+    ui->listAttributSelect->clearSelection();
+    ui->listValeurSelect->clearSelection();
+    ui->listCompetenceSelect->clearSelection();
+    ui->listInformationSelect->clearSelection();
+    ui->listInformationDisp->clearSelection();
+}
+
+void formNouveauJeu::on_listInformationSelect_itemSelectionChanged()
+{
+    ui->listAttributDisp->clearSelection();
+    ui->listValeurDisp->clearSelection();
+    ui->listAttributSelect->clearSelection();
+    ui->listValeurSelect->clearSelection();
+    ui->listCompetenceSelect->clearSelection();
+    ui->listCompetenceDisp->clearSelection();
+    ui->listInformationDisp->clearSelection();
+}
+
+void formNouveauJeu::on_listInformationDisp_itemSelectionChanged()
+{
+    ui->listAttributDisp->clearSelection();
+    ui->listValeurDisp->clearSelection();
+    ui->listAttributSelect->clearSelection();
+    ui->listValeurSelect->clearSelection();
+    ui->listCompetenceSelect->clearSelection();
+    ui->listCompetenceDisp->clearSelection();
+    ui->listInformationSelect->clearSelection();
+}
+
+void formNouveauJeu::on_modifierAttribut_clicked()
+{
+    bool test=false;
+    if(ui->listAttributDisp->currentItem()->isSelected()==true)
+    {
+        attributSelect=chercheTitreAttribut(ui->listAttributDisp->currentItem()->data(Qt::UserRole).toString());
+        test=true;
+    }
+    else if(ui->listValeurDisp->currentItem()->isSelected()==true)
+    {
+        attributSelect=chercheTitreAttribut(ui->listValeurDisp->currentItem()->data(Qt::UserRole).toString());
+        test=true;
+    }
+    else if(ui->listCompetenceDisp->currentItem()->isSelected()==true)
+    {
+        attributSelect=chercheTitreAttribut(ui->listCompetenceDisp->currentItem()->data(Qt::UserRole).toString());
+        test=true;
+    }
+    else if(ui->listInformationDisp->currentItem()->isSelected()==true)
+    {
+        attributSelect=chercheTitreAttribut(ui->listInformationDisp->currentItem()->data(Qt::UserRole).toString());
+        test=true;
+    }
+    qDebug() << "attributSelect:" << attributSelect;
+    if(test==true)
+    {
+        formModifierAttribut formModifierAttribut;
+        formModifierAttribut.setModal(true);
+        QObject::connect(&formModifierAttribut, SIGNAL(listAttributChanged()),this, SLOT(changementAttribut()));
+        formModifierAttribut.exec();
+    }
+}
+
+void formNouveauJeu::on_nouveauAttribut_clicked()
+{
+    formNouveauAttribut formNouveauAttribut;
+    formNouveauAttribut.setModal(true);
+    QObject::connect(&formNouveauAttribut, SIGNAL(listAttributChanged()),this, SLOT(changementAttribut()));
+    formNouveauAttribut.exec();
+}
+
+void formNouveauJeu::on_ajouterJeuButton_clicked()
+{
+    // récupération des valeurs du formulaire
+    QString nom = ui->nomJeu->text();
+    QString theme = ui->theme->text();
+    // récupération des attributs selectionnés
+    QVector<Attribut> list;
+    for(int i=0;i<ui->listAttributSelect->count();i++)
+    {
+        QString titre=ui->listAttributSelect->item(i)->data(Qt::UserRole).toString();
+        Attribut a(titre);
+        list.append(a);
+    }
+    for(int i=0;i<ui->listValeurSelect->count();i++)
+    {
+        QString titre=ui->listValeurSelect->item(i)->data(Qt::UserRole).toString();
+        Attribut a(titre);
+        list.append(a);
+    }
+    for(int i=0;i<ui->listCompetenceSelect->count();i++)
+    {
+        QString titre=ui->listCompetenceSelect->item(i)->data(Qt::UserRole).toString();
+        Attribut a(titre);
+        list.append(a);
+    }
+    for(int i=0;i<ui->listInformationSelect->count();i++)
+    {
+        QString titre=ui->listInformationSelect->item(i)->data(Qt::UserRole).toString();
+        Attribut a(titre);
+        list.append(a);
+    }
+    Jeu j(nom,theme,list);
+    j.Save();
+    emit listJeuChanged();
+    this->close();
 }

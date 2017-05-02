@@ -328,5 +328,22 @@
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>retourButton</sender>
+   <signal>clicked()</signal>
+   <receiver>formModifierPersonnage</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>866</x>
+     <y>523</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>459</x>
+     <y>273</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

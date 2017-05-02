@@ -15,8 +15,7 @@
 #define ATTRIBUT 0
 #define VALEUR 1
 #define COMPETENCE 2
-#define LISTE 3
-#define INFORMATION 4
+#define INFORMATION 3
 
 formModifierJeu::formModifierJeu(QWidget *parent) :
     QDialog(parent),
@@ -127,10 +126,10 @@ void formModifierJeu::Load()
             newItem->setData(Qt::UserRole,listAttribut[i].getTitre());
             // le nom de l'objet comme text affiché
             newItem->setText(listAttribut[i].getNom());
-            if(listAttribut[i].getType()==0)ui->listAttributDisp->addItem(newItem);
-            else if(listAttribut[i].getType()==1)ui->listValeurDisp->addItem(newItem);
-            else if(listAttribut[i].getType()==2)ui->listCompetenceDisp->addItem(newItem);
-            else if(listAttribut[i].getType()==4)ui->listInformationDisp->addItem(newItem);
+            if(listAttribut[i].getType()==ATTRIBUT)ui->listAttributDisp->addItem(newItem);
+            else if(listAttribut[i].getType()==VALEUR)ui->listValeurDisp->addItem(newItem);
+            else if(listAttribut[i].getType()==COMPETENCE)ui->listCompetenceDisp->addItem(newItem);
+            else if(listAttribut[i].getType()==INFORMATION)ui->listInformationDisp->addItem(newItem);
         }
     }
     //qDebug() << "fin";
