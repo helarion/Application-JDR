@@ -30,7 +30,9 @@ class Ui_formLecteurMusique
 public:
     QVBoxLayout *verticalLayout;
     QLabel *label;
+    QHBoxLayout *horizontalLayout_4;
     QListWidget *listPlaylist;
+    QPushButton *supprimerPlaylistButton;
     QHBoxLayout *horizontalLayout_3;
     QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout;
@@ -61,11 +63,22 @@ public:
 
         verticalLayout->addWidget(label);
 
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
+        horizontalLayout_4->setContentsMargins(-1, 0, -1, -1);
         listPlaylist = new QListWidget(formLecteurMusique);
         listPlaylist->setObjectName(QStringLiteral("listPlaylist"));
         listPlaylist->setFont(font);
 
-        verticalLayout->addWidget(listPlaylist);
+        horizontalLayout_4->addWidget(listPlaylist);
+
+        supprimerPlaylistButton = new QPushButton(formLecteurMusique);
+        supprimerPlaylistButton->setObjectName(QStringLiteral("supprimerPlaylistButton"));
+
+        horizontalLayout_4->addWidget(supprimerPlaylistButton);
+
+
+        verticalLayout->addLayout(horizontalLayout_4);
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
@@ -147,6 +160,7 @@ public:
     {
         formLecteurMusique->setWindowTitle(QApplication::translate("formLecteurMusique", "Lecteur playlist", 0));
         label->setText(QApplication::translate("formLecteurMusique", "Lecteur de son", 0));
+        supprimerPlaylistButton->setText(QApplication::translate("formLecteurMusique", "Supprimer", 0));
         PlayButton->setText(QApplication::translate("formLecteurMusique", "Play", 0));
         PauseButton->setText(QApplication::translate("formLecteurMusique", "Pause", 0));
         StopButton->setText(QApplication::translate("formLecteurMusique", "Stop", 0));

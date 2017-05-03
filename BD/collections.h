@@ -70,5 +70,6 @@
     extern int attributSelect;
     extern int personnageSelect;
     extern int listSelect;
+    extern int playlistSelect;
 
 #endif // COLLECTIONS_H

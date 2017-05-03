@@ -59,14 +59,6 @@ formNouveauPersonnage::formNouveauPersonnage(QWidget *parent) :
     ui->competenceLayout->addLayout(layout3);
     ui->competenceLayout->addLayout(layout4);
 
-    /*QScrollArea *scroll= new QScrollArea();
-    scroll->setWidgetResizable(true);
-    scroll->setWidget(ui->FeuillePersonnage);
-    scroll->setLayout(ui->competenceLayout);
-    scroll->show();*/
-
-    QSpacerItem *spacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-    ui->valeurLayout->addItem(spacer);
     int indexCompetence=0;
     for(int i=0;i<attributs.size();i++)
     {
@@ -136,6 +128,7 @@ formNouveauPersonnage::formNouveauPersonnage(QWidget *parent) :
             listEdit.append(edit);
         }
     }
+    QSpacerItem *spacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
     ui->valeurLayout->addItem(spacer);
 }
 

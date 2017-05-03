@@ -30,13 +30,27 @@
     </widget>
    </item>
    <item>
-    <widget class="QListWidget" name="listPlaylist">
-     <property name="font">
-      <font>
-       <pointsize>16</pointsize>
-      </font>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <property name="topMargin">
+      <number>0</number>
      </property>
-    </widget>
+     <item>
+      <widget class="QListWidget" name="listPlaylist">
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="supprimerPlaylistButton">
+       <property name="text">
+        <string>Supprimer</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_3">

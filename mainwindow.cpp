@@ -37,9 +37,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->retourButton->hide();
     ui->playlistButton->hide();
 
-    remplirListPlaylist();
-    afficherPlaylist();
-
     remplirListJeu();
     ui->listJeu->clear();
     for(int i=0;i<listJeu.size();i++)
@@ -116,7 +113,7 @@ void MainWindow::changementPartie()
         {
             QListWidgetItem *newItem = new QListWidgetItem;
             // on met le titre de l'objet comme donnée
-            newItem->setData(Qt::UserRole,listPartie[i].getTitre());
+            newItem->setData(Qt::UserRole,i);
             // le nom de l'objet comme text affiché
             newItem->setText(listPartie[i].getNom());
             ui->listPartie->addItem(newItem);
@@ -277,6 +274,7 @@ void MainWindow::on_selectionnerPartieButton_clicked()
         ui->listPersonnage->clear();
         indexStack++;
         ui->contentStack->setCurrentIndex(indexStack);
+        ui->titreLabel->setText(listPartie[partieSelect].getNom());
         remplirListPersonnage();       
         ui->resumeEdit->setText(listPartie[partieSelect].getResume());
         for(int i=0;i<listPersonnage.size();i++)

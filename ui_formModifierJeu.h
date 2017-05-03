@@ -143,7 +143,7 @@ public:
 
         themeImage = new QLabel(formModifierJeu);
         themeImage->setObjectName(QStringLiteral("themeImage"));
-        themeImage->setMinimumSize(QSize(50, 50));
+        themeImage->setMinimumSize(QSize(150, 150));
         themeImage->setMaximumSize(QSize(300, 300));
 
         horizontalLayout_4->addWidget(themeImage);

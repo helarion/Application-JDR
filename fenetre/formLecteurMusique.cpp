@@ -42,7 +42,7 @@ void formLecteurMusique::Load()
     remplirListPlaylist();
     for(int i=0;i<listPlaylist.size();i++)
     {
-        listPlaylist[i].afficher();
+        //listPlaylist[i].afficher();
         //qDebug() << "titre boucle" << listPlaylist[i].getTitreJeu();
         if(listPlaylist[i].getTitreJeu()==j.getTitre())
         {
@@ -88,7 +88,6 @@ void formLecteurMusique::on_positionChanged(qint64 position)
 
 void formLecteurMusique::on_SongChanged()
 {
-
     if(ui->RandomCheckBox->isChecked()){
         compteur++;
         if(compteur%2==0){
@@ -148,12 +147,13 @@ void formLecteurMusique::on_ajouterPlaylistButton_clicked()
 
     QVector<QString> liste;
     QDir d;
-    d.mkdir("data/Playlist/"+nom);
+    QString path="data/Playlist/"+j.getTitre()+"_"+nom;
+    d.mkdir(path);
     foreach(QString itm, files)
     {
         QFile f;
-        f.copy(dir.path()+"/"+itm,"data/Playlist/"+nom+"/"+itm);
-        liste.append("data/Playlist/"+nom+"/"+itm);
+        f.copy(dir.path()+"/"+itm,path+"/"+itm);
+        liste.append(path+"/"+itm);
     }
 
    // qDebug() << "gettitre de j" <<j.getTitre();
@@ -161,23 +161,16 @@ void formLecteurMusique::on_ajouterPlaylistButton_clicked()
     Playlist p(nom,liste,j.getTitre());
     p.Save();
     Load();
+}
 
-    ///////////////Version sans BD ////////////////////////
-    /*
-    QString directory = QFileDialog::getExistingDirectory(this,tr("Selectionner un dossier :"));
-       if(directory.isEmpty()){
-           return;}
-
-       QDir dir(directory);
-       QStringList files = dir.entryList(QStringList() << "*.mp3",QDir::Files);
-
-       QVector<QString> liste;
-       foreach(QString itm, files){
-           liste.append(QUrl(dir.path()+"/"+itm).toString());
-           //qDebug() << QUrl(dir.path()+"/"+itm);
-           playlist->addMedia(QUrl(dir.path()+"/"+itm));
-           player->setMedia(playlist);
-       }
-        */
-       ////////////////////////////////////////////////////////
+void formLecteurMusique::on_supprimerPlaylistButton_clicked()
+{
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(this, "Suppression", "Etes vous sur de vouloir supprimer cette playlist ?",
+                                    QMessageBox::Yes|QMessageBox::No);
+    if (reply == QMessageBox::Yes) {
+        playlistSelect=ui->listPlaylist->currentItem()->data(Qt::UserRole).toInt();
+        deletePlaylist(playlistSelect);
+        Load();
+    }
 }

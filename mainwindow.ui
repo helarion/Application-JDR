@@ -22,7 +22,7 @@
     <item>
      <widget class="QStackedWidget" name="contentStack">
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="Jeux">
        <layout class="QGridLayout" name="gridLayout_11">

@@ -10,7 +10,8 @@ QT += core gui
       core
       uitools
 QT += multimedia
-QT += testlib
+
+CONFIG -= console
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 

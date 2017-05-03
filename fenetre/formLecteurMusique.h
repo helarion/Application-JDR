@@ -45,6 +45,8 @@ private slots:
 
     void on_ajouterPlaylistButton_clicked();
 
+    void on_supprimerPlaylistButton_clicked();
+
 private:
     Ui::formLecteurMusique *ui;
     QMediaPlayer* player;

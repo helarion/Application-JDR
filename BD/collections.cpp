@@ -16,8 +16,8 @@ int jeuSelect=-1;
 int campagneSelect=-1;
 int partieSelect=-1;
 int attributSelect=-1;
-int playlistSelect=-1;
 int personnageSelect=-1;
+int playlistSelect=-1;
 
 void addJeu(Jeu j) { listJeu.prepend(j); }
 void addAttribut(Attribut a) { listAttribut.prepend(a); }
@@ -47,9 +47,21 @@ void updateJeu(Jeu prec, Jeu suiv)
         if(listPlaylist[i].getTitreJeu()==prec.getTitre())
         {
             Playlist p=listPlaylist[i];
+
+            QString nom=p.getNom();
+            QString oldPathDirectory="data/Playlist/"+prec.getTitre()+"_"+nom+"/";
+
             p.setTitreJeu(suiv.getTitre());
+
+            QString newPathDirectory="data/Playlist/"+suiv.getTitre()+"_"+nom+"/";
+            QDir d;
+            d.rename(oldPathDirectory,newPathDirectory);
+
+            //QString newName = suiv.getTitre()+"_"+nom;
+
             deletePlaylist(i);
             p.Save();
+
         }
     }
 }
@@ -103,6 +115,7 @@ void updatePartie(Partie prec, Partie suiv)
             p.Save();
         }
     }
+    remplirListPersonnage();
 }
 
 extern void deleteJeu(int index)
@@ -111,7 +124,7 @@ extern void deleteJeu(int index)
     QString path="data/Jeu/"+titre+".data";
     QDir d;
     d.remove(path);
-    listJeu.remove(index);
+    //listJeu.remove(index);
 }
 
 extern void deleteAttribut(int index)
@@ -120,7 +133,7 @@ extern void deleteAttribut(int index)
     QString path="data/Attribut/"+titre+".data";
     QDir d;
     d.remove(path);
-    listAttribut.remove(index);
+    //listAttribut.remove(index);
 }
 
 extern void deleteCampagne(int index)
@@ -129,7 +142,7 @@ extern void deleteCampagne(int index)
     QString path="data/Campagne/"+titre+".data";
     QDir d;
     d.remove(path);
-    listCampagne.remove(index);
+    //listCampagne.remove(index);
 }
 
 extern void deletePartie(int index)
@@ -142,7 +155,7 @@ extern void deletePartie(int index)
 
     QDir d;
     d.remove(path);
-    listPartie.remove(index);
+    //listPartie.remove(index);
 }
 
 extern void deletePersonnage(int index)
@@ -153,16 +166,22 @@ extern void deletePersonnage(int index)
     QString path="data/Personnage/"+titrePartie+"_"+titre+".data";
     QDir d;
     d.remove(path);
-    listPersonnage.remove(index);
+    //listPersonnage.remove(index);
 }
 
 extern void deletePlaylist(int index)
 {
     QString titre=listPlaylist[index].getTitre();
-    QString path="data/Playlist/"+titre+".data";
+    QString titreJeu=listPlaylist[index].getTitreJeu();
+    QString nom=listPlaylist[index].getNom();
+    QString pathFile="data/Playlist/"+titreJeu+"_"+titre+".data";
+    QString pathDirectory="data/Playlist/"+titreJeu+"_"+nom+"/";
+    QDir dossier(pathDirectory);
+    dossier.removeRecursively();
+    qDebug() << "dossier:" << pathDirectory;
     QDir d;
-    d.remove(path);
-    listPlaylist.remove(index);
+    d.remove(pathFile);
+    //listPlaylist.remove(index);
 }
 
 void afficherJeu()
